@@ -1,0 +1,698 @@
+{
+  "date": "2026-04-29",
+  "stats": {
+    "688531": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "300632": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603399": {
+      "zt_count": 2,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 1,
+      "promotion_rate": 0.5
+    },
+    "002903": {
+      "zt_count": 3,
+      "zb_count": 1,
+      "zb_rate": 0.333,
+      "promoted_count": 1,
+      "promotion_rate": 0.333
+    },
+    "002652": {
+      "zt_count": 3,
+      "zb_count": 1,
+      "zb_rate": 0.333,
+      "promoted_count": 1,
+      "promotion_rate": 0.333
+    },
+    "002081": {
+      "zt_count": 6,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 5,
+      "promotion_rate": 0.833
+    },
+    "600379": {
+      "zt_count": 1,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 1,
+      "promotion_rate": 1.0
+    },
+    "000402": {
+      "zt_count": 2,
+      "zb_count": 1,
+      "zb_rate": 0.5,
+      "promoted_count": 1,
+      "promotion_rate": 0.5
+    },
+    "603013": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "001266": {
+      "zt_count": 2,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 1,
+      "promotion_rate": 0.5
+    },
+    "603803": {
+      "zt_count": 7,
+      "zb_count": 4,
+      "zb_rate": 0.571,
+      "promoted_count": 1,
+      "promotion_rate": 0.143
+    },
+    "002210": {
+      "zt_count": 2,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 2,
+      "promotion_rate": 1.0
+    },
+    "002568": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "600881": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "600606": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "600186": {
+      "zt_count": 5,
+      "zb_count": 2,
+      "zb_rate": 0.4,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603017": {
+      "zt_count": 6,
+      "zb_count": 1,
+      "zb_rate": 0.167,
+      "promoted_count": 1,
+      "promotion_rate": 0.167
+    },
+    "603629": {
+      "zt_count": 14,
+      "zb_count": 4,
+      "zb_rate": 0.286,
+      "promoted_count": 4,
+      "promotion_rate": 0.286
+    },
+    "000818": {
+      "zt_count": 2,
+      "zb_count": 1,
+      "zb_rate": 0.5,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "000551": {
+      "zt_count": 1,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "605168": {
+      "zt_count": 3,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 1,
+      "promotion_rate": 0.333
+    },
+    "600156": {
+      "zt_count": 6,
+      "zb_count": 1,
+      "zb_rate": 0.167,
+      "promoted_count": 3,
+      "promotion_rate": 0.5
+    },
+    "002111": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002174": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603933": {
+      "zt_count": 3,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 1,
+      "promotion_rate": 0.333
+    },
+    "605099": {
+      "zt_count": 3,
+      "zb_count": 1,
+      "zb_rate": 0.333,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "000567": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603345": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002842": {
+      "zt_count": 8,
+      "zb_count": 3,
+      "zb_rate": 0.375,
+      "promoted_count": 2,
+      "promotion_rate": 0.25
+    },
+    "000716": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603317": {
+      "zt_count": 1,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 1,
+      "promotion_rate": 1.0
+    },
+    "002805": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603095": {
+      "zt_count": 5,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 3,
+      "promotion_rate": 0.6
+    },
+    "603139": {
+      "zt_count": 3,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "000692": {
+      "zt_count": 1,
+      "zb_count": 1,
+      "zb_rate": 1.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603256": {
+      "zt_count": 9,
+      "zb_count": 4,
+      "zb_rate": 0.444,
+      "promoted_count": 3,
+      "promotion_rate": 0.333
+    },
+    "002847": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "000980": {
+      "zt_count": 1,
+      "zb_count": 1,
+      "zb_rate": 1.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "600714": {
+      "zt_count": 5,
+      "zb_count": 2,
+      "zb_rate": 0.4,
+      "promoted_count": 1,
+      "promotion_rate": 0.2
+    },
+    "603906": {
+      "zt_count": 2,
+      "zb_count": 2,
+      "zb_rate": 1.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002354": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002867": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002520": {
+      "zt_count": 2,
+      "zb_count": 1,
+      "zb_rate": 0.5,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "600654": {
+      "zt_count": 4,
+      "zb_count": 2,
+      "zb_rate": 0.5,
+      "promoted_count": 2,
+      "promotion_rate": 0.5
+    },
+    "603937": {
+      "zt_count": 4,
+      "zb_count": 1,
+      "zb_rate": 0.25,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "605006": {
+      "zt_count": 6,
+      "zb_count": 2,
+      "zb_rate": 0.333,
+      "promoted_count": 1,
+      "promotion_rate": 0.167
+    },
+    "002786": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603489": {
+      "zt_count": 2,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002627": {
+      "zt_count": 1,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002956": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "605299": {
+      "zt_count": 9,
+      "zb_count": 4,
+      "zb_rate": 0.444,
+      "promoted_count": 1,
+      "promotion_rate": 0.111
+    },
+    "603508": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "600545": {
+      "zt_count": 10,
+      "zb_count": 1,
+      "zb_rate": 0.1,
+      "promoted_count": 4,
+      "promotion_rate": 0.4
+    },
+    "002875": {
+      "zt_count": 2,
+      "zb_count": 1,
+      "zb_rate": 0.5,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002348": {
+      "zt_count": 3,
+      "zb_count": 1,
+      "zb_rate": 0.333,
+      "promoted_count": 1,
+      "promotion_rate": 0.333
+    },
+    "001396": {
+      "zt_count": 3,
+      "zb_count": 1,
+      "zb_rate": 0.333,
+      "promoted_count": 1,
+      "promotion_rate": 0.333
+    },
+    "002832": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002548": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "605158": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "001203": {
+      "zt_count": 6,
+      "zb_count": 4,
+      "zb_rate": 0.667,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "601233": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603516": {
+      "zt_count": 1,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002136": {
+      "zt_count": 1,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "300982": {
+      "zt_count": 1,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002655": {
+      "zt_count": 2,
+      "zb_count": 1,
+      "zb_rate": 0.5,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002851": {
+      "zt_count": 1,
+      "zb_count": 1,
+      "zb_rate": 1.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "300769": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "001336": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "600135": {
+      "zt_count": 4,
+      "zb_count": 1,
+      "zb_rate": 0.25,
+      "promoted_count": 1,
+      "promotion_rate": 0.25
+    },
+    "002079": {
+      "zt_count": 1,
+      "zb_count": 1,
+      "zb_rate": 1.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "000973": {
+      "zt_count": 2,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "000831": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603083": {
+      "zt_count": 3,
+      "zb_count": 1,
+      "zb_rate": 0.333,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002645": {
+      "zt_count": 3,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002969": {
+      "zt_count": 6,
+      "zb_count": 4,
+      "zb_rate": 0.667,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002709": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603026": {
+      "zt_count": 5,
+      "zb_count": 2,
+      "zb_rate": 0.4,
+      "promoted_count": 1,
+      "promotion_rate": 0.2
+    },
+    "002818": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "600367": {
+      "zt_count": 2,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 1,
+      "promotion_rate": 0.5
+    },
+    "600397": {
+      "zt_count": 6,
+      "zb_count": 2,
+      "zb_rate": 0.333,
+      "promoted_count": 2,
+      "promotion_rate": 0.333
+    },
+    "002176": {
+      "zt_count": 3,
+      "zb_count": 2,
+      "zb_rate": 0.667,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "000657": {
+      "zt_count": 6,
+      "zb_count": 3,
+      "zb_rate": 0.5,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002522": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "000039": {
+      "zt_count": 2,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 1,
+      "promotion_rate": 0.5
+    },
+    "002756": {
+      "zt_count": 3,
+      "zb_count": 1,
+      "zb_rate": 0.333,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "000901": {
+      "zt_count": 1,
+      "zb_count": 1,
+      "zb_rate": 1.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002498": {
+      "zt_count": 12,
+      "zb_count": 4,
+      "zb_rate": 0.333,
+      "promoted_count": 5,
+      "promotion_rate": 0.417
+    },
+    "600392": {
+      "zt_count": 2,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "600338": {
+      "zt_count": 3,
+      "zb_count": 1,
+      "zb_rate": 0.333,
+      "promoted_count": 1,
+      "promotion_rate": 0.333
+    },
+    "600111": {
+      "zt_count": 1,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "002192": {
+      "zt_count": 5,
+      "zb_count": 2,
+      "zb_rate": 0.4,
+      "promoted_count": 3,
+      "promotion_rate": 0.6
+    },
+    "002378": {
+      "zt_count": 6,
+      "zb_count": 2,
+      "zb_rate": 0.333,
+      "promoted_count": 3,
+      "promotion_rate": 0.5
+    },
+    "300438": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603773": {
+      "zt_count": 12,
+      "zb_count": 5,
+      "zb_rate": 0.417,
+      "promoted_count": 2,
+      "promotion_rate": 0.167
+    },
+    "600708": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "603353": {
+      "zt_count": 7,
+      "zb_count": 3,
+      "zb_rate": 0.429,
+      "promoted_count": 2,
+      "promotion_rate": 0.286
+    },
+    "603738": {
+      "zt_count": 7,
+      "zb_count": 2,
+      "zb_rate": 0.286,
+      "promoted_count": 1,
+      "promotion_rate": 0.143
+    },
+    "002497": {
+      "zt_count": 0,
+      "zb_count": 0,
+      "zb_rate": 0.0,
+      "promoted_count": 0,
+      "promotion_rate": 0.0
+    },
+    "301217": {
+      "zt_count": 4,
+      "zb_count": 1,
+      "zb_rate": 0.25,
+      "promoted_count": 1,
+      "promotion_rate": 0.25
+    }
+  }
+}
