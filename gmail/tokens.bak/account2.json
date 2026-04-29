@@ -1,0 +1,15 @@
+{
+  "authorizedEmailAddress": "tes.grands.yeux@gmail.com",
+  "createdAt": "2026-02-07T23:32:18.631Z",
+  "scopes": [
+    "https://www.googleapis.com/auth/gmail.readonly"
+  ],
+  "tokens": {
+    "access_token": "ya29.a0AUMWg_LXaTv_0D4Jd3xujnC3uD80QBsudO9h-LfZoV6bPKro849N-_OLnQZgjMqXIr2j7TInAJXIdA7HVdPaiJ6GInVc9eQBzh57tCdkJxeXbP_KAliqw3oPBO4aCDL02srvIJyE4uBGeDX8YS_EODdBsBx2Zk9YQGzNdrjWDDz9S49imKHAzkwhqY5vONRMoInmU4YaCgYKATsSARESFQHGX2MimsiX41_h12pvkFiH6ecphQ0206",
+    "refresh_token": "1//01esIziMXVKbwCgYIARAAGAESNwF-L9IrOBViZvv2H1RUrGNyJC9IArsdcEhKrmxSEJR5oMqCXQjN4TsFspIzCSlckpuCfA5gVWk",
+    "scope": "https://www.googleapis.com/auth/gmail.readonly",
+    "token_type": "Bearer",
+    "refresh_token_expires_in": 604799,
+    "expiry_date": 1770510737250
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "authorizedEmailAddress": "hello@dongshi.me",
+  "scopes": [
+    "https://www.googleapis.com/auth/calendar",
+    "https://www.googleapis.com/auth/gmail.modify",
+    "https://www.googleapis.com/auth/gmail.send"
+  ],
+  "createdAt": "2026-02-16T22:01:13.799Z",
+  "tokens": {
+    "access_token": "ya29.a0Aa7MYiqXBpy5e6vrTy_U1DIIbRRbruyBJNK1jE_eswB6UWG7yJTA1kYjvRnKMFR6v5JND_C6JY6U08CAWIOJiBTLyvMrE7uVP6o61P6JcmEeGbhJ6E1GCiOZ3jXF2iytH20jrrFZhFgYALOPzCAxswXCGNfgfhi2eOEO5Z85GzJtq3XqAqzk93-dq1ozWHEDaaMwdgLfEQaCgYKAQQSARESFQHGX2MiF8y7iuZ07jDxtzZSFj0RMw0209",
+    "refresh_token": "1//01kum_txuu5PUCgYIARAAGAESNwF-L9IrssteIUbmW--J-eoXKlM6t96VSDOuhNPekNsmXHa-IAF-i1VxpS7t9aPGHSwVpJl2yuY",
+    "scope": "https://www.googleapis.com/auth/gmail.send https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/gmail.modify",
+    "token_type": "Bearer",
+    "expiry_date": 1777254319260
+  }
+}

@@ -1,0 +1,5 @@
+
+# Local secrets - never commit
+secrets/
+*.qq.smtp.json
+qq-send.log
