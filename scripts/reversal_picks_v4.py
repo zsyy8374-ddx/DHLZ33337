@@ -322,16 +322,39 @@ def fetch_market_style(end_date):
     style["sh_1d"] = last1d(sh)
     style["cy_1d"] = last1d(cy)
     style["kc_1d"] = last1d(kc)
+    style["market_regime"] = "normal"
     
-    # 极端分化检测: 4-30 复盘发现
-    # 当三大指数单日表现极差 >2pp 且 主板 ≤0.5%, 连板型会跳水
-    one_d = [v for v in [style["sh_1d"], style["cy_1d"], style["kc_1d"]] if v is not None]
-    if len(one_d) == 3:
+    # 三大指数状态分类 (基于 1151 事件 + 120 天指数回测)
+    sh1 = style["sh_1d"] or 0
+    sz1 = style["cy_1d"] or 0
+    kc1 = style["kc_1d"] or 0
+    one_d = [sh1, sz1, kc1]
+    if all(v is not None for v in [style["sh_1d"], style["cy_1d"], style["kc_1d"]]):
         spread = max(one_d) - min(one_d)
         style["index_spread_1d"] = round(spread, 3)
-        # 极端分化: spread > 3pp 且 (主板平 + 科创独狂 或 主板跌 + 某板独涨)
-        if spread > 3 and (style["sh_1d"] or 0) < 0.5:
+        avg = (sh1 + sz1 + kc1) / 3
+        
+        # 科创独红 (历史 2.6% 反转率, 极险)
+        if kc1 > 2 and sh1 < 0.5:
             style["extreme_split"] = True
+            style["market_regime"] = "kc_only_red"
+        # 主板独红 (历史 12.5% 反转率, 险)
+        elif sh1 > 0.5 and sz1 < -0.3 and kc1 < -0.3:
+            style["market_regime"] = "sh_only_red"
+            style["extreme_split"] = True  # 也当极端分化处理
+        # 创业板独红 (历史 80% 反转率, 佳)
+        elif sz1 > 2 and sh1 < 0.5:
+            style["market_regime"] = "sz_only_red"
+        # 大幅分化 (spread > 4) 普涨型 (历史 2.6%, 极险)
+        elif spread > 4 and avg > 0:
+            style["market_regime"] = "spread_high_up"
+            style["extreme_split"] = True
+        # 共振小跌 (spread<1 + avg<=-0.5, 历史 37.5%, 偏差)
+        elif spread < 1 and avg <= -0.5:
+            style["market_regime"] = "weak_resonant"
+        # 共振小涨 (spread<1 + avg>=0.5, 历史 64.6%, 优)
+        elif spread < 1 and avg >= 0.5:
+            style["market_regime"] = "strong_resonant"
     
     return style
 
@@ -364,20 +387,32 @@ def style_boost(c, style):
     if cb1 >= 1:
         boost -= 0.05
     
-    # R7 (4-30 复盘 + 历史 5 样本验证): 极端分化日整组降权
-    # 历史数据 (1151 事件, 5 个 R7 触发日):
-    #   R7 未触发日: lbc=1 反转率 51.3%, lbc≥2 70.3%
-    #   R7 触发日:   lbc=1 反转率 12.5%, lbc≥2 14.3%
-    # 结论: 极端分化日所有型都偏差, 连板型更差
-    if style and style.get("extreme_split"):
+    # R7 + R9 + R10: 基于市场 regime 的调权
+    # 历史 1151 事件验证:
+    #   kc_only_red:   2.6% 反转率 (极险)
+    #   sh_only_red:  12.5% 反转率 (险)
+    #   spread_high_up: 2.6% (极险)
+    #   weak_resonant: 37.5% (偏差)
+    #   sz_only_red: 80.0% (佳, 加分)
+    #   strong_resonant: 64.6% (优)
+    if style:
+        regime = style.get("market_regime", "normal")
         lbc = c.get("d0_lbc", 1) or 1
-        if lbc >= 3:
-            boost -= 0.35  # 三板+: P 0.85 → 0.50 (反转率仅 14%)
-        elif lbc >= 2:
-            boost -= 0.25  # 二板:   P 0.85 → 0.60
-        else:
-            boost -= 0.10  # 1 板也降点权 (反转率 12.5% vs 平日 51.3%)
-        # 注: R8 (R7 下强势整理加分) 试过, CV AUC 不胜出, 未部署
+        
+        if regime in ("kc_only_red", "spread_high_up"):  # 2.6% 反转率
+            if lbc >= 3: boost -= 0.40
+            elif lbc >= 2: boost -= 0.30
+            else: boost -= 0.15
+        elif regime == "sh_only_red":  # 12.5% 反转率
+            if lbc >= 3: boost -= 0.30
+            elif lbc >= 2: boost -= 0.20
+            else: boost -= 0.08
+        elif regime == "weak_resonant":  # 37.5% 偏差
+            boost -= 0.05
+        elif regime == "sz_only_red":  # 80% 佳, 加分
+            boost += 0.05
+        elif regime == "strong_resonant":  # 64.6% 优
+            boost += 0.02
     
     return boost
 
