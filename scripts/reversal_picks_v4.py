@@ -288,6 +288,52 @@ def extract_v4(c):
     }
 
 
+def fetch_market_style(end_date):
+    """拉市场风格指标: 上证 5 日、创业板 5 日、两者差 (cy-sh)。到 end_date 为止 (不含 D0)"""
+    style = {"sh_5d": None, "cy_5d": None, "cy_sh_diff": None}
+    
+    def fetch_idx(sym):
+        url = f"https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param={sym},day,{end_date},{end_date},20,qfq"
+        # 拉 30 个交易日 为了充分提供
+        url = f"https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param={sym},day,,{end_date},20,qfq"
+        d = http_get_json(url)
+        if not d: return []
+        klines = d.get("data", {}).get(sym, {}).get("day", []) or []
+        return [(k[0], float(k[2])) for k in klines if len(k) >= 3]
+    
+    sh = fetch_idx("sh000001")
+    cy = fetch_idx("sz399006")
+    
+    # 上证 5 日: end_date 前 5 个交易日 (含 end_date)
+    if len(sh) >= 6:
+        style["sh_5d"] = round((sh[-1][1] - sh[-6][1]) / sh[-6][1] * 100, 3)
+    if len(cy) >= 6:
+        style["cy_5d"] = round((cy[-1][1] - cy[-6][1]) / cy[-6][1] * 100, 3)
+    if style["sh_5d"] is not None and style["cy_5d"] is not None:
+        style["cy_sh_diff"] = round(style["cy_5d"] - style["sh_5d"], 3)
+    
+    return style
+
+
+def style_boost(c, style):
+    """根据市场风格为 P 加减分 (5 折滚动验证过, R1+R3 稳定):
+    R1: 弱势市 (sh_5d ≤ -1%) + cb5 主力 ≥2亿 → +0.10 (历史 93.5% 命中)
+    R3: 大盘风 (cy-sh ≤ -1%) + 1 板 → +0.05 (历史 59% vs 小盘风 1板 44%)
+    """
+    if not style or style.get("sh_5d") is None: return 0.0
+    boost = 0.0
+    sh_5d = style.get("sh_5d", 0)
+    diff = style.get("cy_sh_diff", 0) or 0
+    cb5 = c.get("cb5_main_avg", 0) or 0
+    lbc = c.get("d0_lbc", 1) or 1
+    
+    if sh_5d <= -1 and cb5 >= 2:
+        boost += 0.10
+    if diff <= -1 and lbc == 1:
+        boost += 0.05
+    return boost
+
+
 def predict_lr(c, model):
     f = extract_v4(c)
     means = model["feature_means"]; stds = model["feature_stds"]
@@ -477,19 +523,41 @@ def main():
     print(f"   时序 AUC: {model['ts_auc']:.4f}, Top10%: {model['top10_hit']*100:.1f}%", flush=True)
     print(f"   阈值: P_high={model['P_high']}, P_mid={model['P_mid']}", flush=True)
     
+    # 拉市场风格指标
+    print("🌍 拉市场风格...", flush=True)
+    style = fetch_market_style(target_date)
+    print(f"   上证 5日: {style.get('sh_5d')}%, 创业 5日: {style.get('cy_5d')}%, 差异: {style.get('cy_sh_diff')}%", flush=True)
+    sh_5d = style.get("sh_5d") or 0
+    diff = style.get("cy_sh_diff") or 0
+    if sh_5d <= -1: stype1 = "弱势"
+    elif sh_5d >= 1: stype1 = "强势"
+    else: stype1 = "震荡"
+    if diff <= -1: stype2 = "大盘风"
+    elif diff >= 1: stype2 = "小盘风"
+    else: stype2 = "均衡"
+    print(f"   风格: {stype1} + {stype2}", flush=True)
+    
     candidates = get_candidates(target_date)
     if not candidates:
         print("❌ 无候选", flush=True)
         sys.exit(1)
     
-    # LR 预测
+    # LR 预测 (style boost 只记录, 不启用——5折验证不够稳定)
     for c in candidates:
-        c["lr_prob"] = round(predict_lr(c, model), 4)
+        base = predict_lr(c, model)
+        boost = style_boost(c, style)
+        c["lr_prob_base"] = round(base, 4)
+        c["lr_prob_boost"] = round(boost, 4)
+        # 调试用: lr_prob_with_boost
+        c["lr_prob_with_boost"] = round(min(0.99, max(0.01, base + boost)), 4)
+        # 实际出调仍用 base
+        c["lr_prob"] = round(base, 4)
     
     # 落档
     save_path = PICKS_DIR / f"reversal-v4-{target_date}.json"
     with open(save_path, "w", encoding="utf-8") as f:
         json.dump({"date": target_date, "model_version": model["version"],
+                   "market_style": style, "style_label": f"{stype1}+{stype2}",
                    "candidates": candidates}, f, ensure_ascii=False, indent=2)
     print(f"\n📁 候选股落档: {save_path}", flush=True)
     
