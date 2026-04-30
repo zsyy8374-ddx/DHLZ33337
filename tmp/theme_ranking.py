@@ -1,6 +1,6 @@
 import os, json, time, urllib.request, re
 
-# 待深度分析的题材股名单 (基于 4/27 涨停及 Shi 的反馈)
+# 待深度分析的题材股名单 (基于 4/27 涨停及 Dengxian 的反馈)
 stocks = [
     {"code": "000925", "name": "众合科技", "desc": "算力/交通"},
     {"code": "300582", "name": "英飞特", "desc": "20CM领头羊/算力"},

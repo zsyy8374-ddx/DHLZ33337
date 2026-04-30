@@ -609,7 +609,7 @@ def main():
         print("📭 dry-run, 跳过推送", flush=True)
         sys.exit(0)
     
-    # v3.0 双通道: 微信 + 邮件并行 (Shi 2026-04-29 同意的新规)
+    # v3.0 双通道: 微信 + 邮件并行 (Dengxian 2026-04-29 同意的新规)
     wx_ok = send_wechat(msg)
     # 微信成功也发邮件 (平衡微信间歇丢信风险, 邮件作为另一个送达保障)
     if wx_ok:

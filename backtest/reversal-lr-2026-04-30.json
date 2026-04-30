@@ -1,0 +1,36 @@
+{
+  "version": "reversal-lr-v0.1",
+  "trained_at": "2026-04-30",
+  "n_samples": 1151,
+  "n_pos": 613,
+  "rand_auc": 0.7337729273757226,
+  "ts_auc": 0.732119638357163,
+  "top10_hit": 0.8210526315789475,
+  "weights": {
+    "callback_pct": -0.09787594038839967,
+    "min_close_pct": -0.38506134814641685,
+    "broke_ma5": 0.13942879050115076,
+    "broke_ma10": -0.3001111685763819,
+    "shallow": 0.3496377606781044,
+    "no_close_break": 0.10445900166661787,
+    "vol_compress": 0.23252197140490452,
+    "vol_dead": -0.7582620344250983,
+    "vol_explode": 0.48910018436784375,
+    "is_20cm": -0.3423910206528651
+  },
+  "bias": -0.05345670816356437,
+  "feature_means": {
+    "callback_pct": 7.7264726324934765,
+    "min_close_pct": 6.048010425716771
+  },
+  "feature_stds": {
+    "callback_pct": 7.227289525307054,
+    "min_close_pct": 7.115238376447435
+  },
+  "cont_keys": [
+    "callback_pct",
+    "min_close_pct"
+  ],
+  "P_high": 0.789,
+  "P_mid": 0.451
+}

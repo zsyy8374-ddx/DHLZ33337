@@ -1,7 +1,7 @@
 import os, json, time, urllib.request, re
 
 # 精选今日 84 家涨停中具代表性的非 ST 标的
-# 基于 Shi 提供的 XLS 数据和游资关注度
+# 基于 Dengxian 提供的 XLS 数据和游资关注度
 stocks = [
     {"code": "000925", "name": "众合科技"},
     {"code": "003036", "name": "泰坦股份"},

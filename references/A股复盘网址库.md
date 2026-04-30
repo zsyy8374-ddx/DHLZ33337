@@ -1,6 +1,6 @@
 # A 股复盘网址库 (北京时间) v1.0
 
-**创建：2026-04-28 (周二) by dengxian for Shi**
+**创建：2026-04-28 (周二) by dengxian for Dengxian**
 **用途：每日盘后复盘 / 龙虎榜分析 / 涨停板研究 的标准网址清单**
 
 ---
@@ -35,7 +35,7 @@
 |---|---|---|
 | **九阳公社** | https://www.jiuyangongshe.com/ | ⭐⭐⭐⭐⭐ 最详细的板块/题材分组+封板时间, 我们 4/28 PDF 来源 |
 | **同花顺问财** | https://www.iwencai.com/customized/index | 自然语言查询: "今日涨停板块" |
-| **通达信问小达** | https://wenda.tdx.com.cn/site/wenda/stock_index.html | 通达信内嵌 (JS 渲染, 我抓不到, Shi 自查) |
+| **通达信问小达** | https://wenda.tdx.com.cn/site/wenda/stock_index.html | 通达信内嵌 (JS 渲染, 我抓不到, Dengxian 自查) |
 | **东方财富涨停复盘** | https://caifuhao.eastmoney.com/ | 财富号社区, 多个复盘博主 |
 | **复盘啦** | https://www.fupanlapro.com/ | 涨停复盘工具 |
 | **股票复盘网** | https://www.fupanwang.com/ | 个股龙虎榜历史, 格式: `https://[code].fupanwang.com/longhu/[YYYY-MM-DD].html` |
@@ -178,14 +178,14 @@
 - 股票复盘网 fupanwang.com (个股历史龙虎榜, 链接格式固定)
 - 大部分搜索引擎能爬到的复盘文章
 
-### ❌ 我抓不到的 (Shi 需要手动转给我)
+### ❌ 我抓不到的 (Dengxian 需要手动转给我)
 - **通达信问小达** (wenda.tdx.com.cn) — JS 渲染, 需登录态
 - **财通乐赚 H5** (lz.cfzq.com) — App 内嵌页, 纯 SPA
 - **同花顺 PC 客户端数据** — 需客户端权限
 - **闽发论坛 / 雪球某些深度内容** — Cookie/会员墙
 - **微信公众号文章** — 需在微信打开
 
-→ 这些场景请 Shi: ①截图发我 ②直接复制文字 ③告诉我大意
+→ 这些场景请 Dengxian: ①截图发我 ②直接复制文字 ③告诉我大意
 
 ---
 
@@ -219,7 +219,7 @@
 
 1. **17:00 前不要查龙虎榜** — 数据没出齐, 容易漏顶级游资
 2. **业绩披露窗口 (4 月底/8 月底/10 月底) 必查最近一季报** — 三人行 4/28 业绩雷踩过
-3. **JS 渲染网站 (通达信问小达/财通乐赚) 我看不到** — 别浪费时间 curl, 直接请 Shi 转
+3. **JS 渲染网站 (通达信问小达/财通乐赚) 我看不到** — 别浪费时间 curl, 直接请 Dengxian 转
 4. **股票复盘网链接格式好记** — `https://[code].fupanwang.com/longhu/[YYYY-MM-DD].html` 直接拼
 5. **东财个股龙虎榜链接** — `https://data.eastmoney.com/stock/lhb,YYYY-MM-DD,CODE.html`
 6. **时区**: 我所有数据查询要按北京时间, 不能用美西时间反推
