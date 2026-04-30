@@ -82,6 +82,23 @@
 - `qq-send.js` — QQ SMTP 发件
 - 通达信公式 `牛股启动雷达 v3.0`（已邮件留底，msg id: d1608ea4-...）
 
+## ⚠️ 金融 ML 踩过的坑: 窗口长度泄漏 (2026-04-29)
+
+**事件**: REVERSAL v0.3 AUC 0.80 / Top10% 96% 是假的, 是 mining 泄漏.
+- reversal_mine_v3_sina.py:96 里, callback_dates = D0+1 到 D_t-1
+  - reversal 事件: 1-9 天 (有 D_t)
+  - failed 事件: 10 天 (没 D_t, 默认 D0+10)
+- callback_window 就 100% 区分 reversal 与 failed
+- 资金流的均值 间接编码了 outcome
+
+**教训** (写入脑子):
+- 不要让正负样本的特征窗口长度由 outcome 决定
+- 所有事件必须用 统一的、不依赖 D_t 的窗口 (如 D0+1 到 D0+5)
+- **金融 ML AUC > 0.85 是很罕见的, 看到立刻警惕泄漏**
+- v0.3 推送的“主力洗盘”类型是全假的 (实际命中 35%, 不是 90%)
+
+**修复**: v0.4 用 cb1/cb3/cb5 统一窗口, 真实 AUC 0.77 / Top10% 91% (OOS 严格验证)
+
 ## ⚠️ Cron 踩过的坑 (2026-04-26)
 - **尾盘选股 cron 9619b9b5 触发但消息未送达给 Dengxian**。原因推测: `--session main + --system-event` 可能路由到默认主会话, 而不是当前活跃的 openclaw-weixin 会话。
 - **以后设 cron 的规矩** (Dengxian 说过 "你可以早点干活"):
