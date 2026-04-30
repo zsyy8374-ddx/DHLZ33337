@@ -289,12 +289,14 @@ def extract_v4(c):
 
 
 def fetch_market_style(end_date):
-    """拉市场风格指标: 上证 5 日、创业板 5 日、两者差 (cy-sh)。到 end_date 为止 (不含 D0)"""
-    style = {"sh_5d": None, "cy_5d": None, "cy_sh_diff": None}
+    """拉市场风格指标: 上证 5 日、创业板 5 日、两者差 (cy-sh)。到 end_date 为止 (不含 D0)
+    + 今日三大指数单日涨跌 + 极端分化检测 (4-30 复盘新增)
+    """
+    style = {"sh_5d": None, "cy_5d": None, "cy_sh_diff": None,
+             "sh_1d": None, "cy_1d": None, "kc_1d": None,
+             "index_spread_1d": None, "extreme_split": False}
     
     def fetch_idx(sym):
-        url = f"https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param={sym},day,{end_date},{end_date},20,qfq"
-        # 拉 30 个交易日 为了充分提供
         url = f"https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param={sym},day,,{end_date},20,qfq"
         d = http_get_json(url)
         if not d: return []
@@ -303,14 +305,33 @@ def fetch_market_style(end_date):
     
     sh = fetch_idx("sh000001")
     cy = fetch_idx("sz399006")
+    kc = fetch_idx("sh000688")
     
-    # 上证 5 日: end_date 前 5 个交易日 (含 end_date)
     if len(sh) >= 6:
         style["sh_5d"] = round((sh[-1][1] - sh[-6][1]) / sh[-6][1] * 100, 3)
     if len(cy) >= 6:
         style["cy_5d"] = round((cy[-1][1] - cy[-6][1]) / cy[-6][1] * 100, 3)
     if style["sh_5d"] is not None and style["cy_5d"] is not None:
         style["cy_sh_diff"] = round(style["cy_5d"] - style["sh_5d"], 3)
+    
+    # 单日涨跌 (最后一根 vs 上一根)
+    def last1d(rows):
+        if len(rows) >= 2:
+            return round((rows[-1][1] - rows[-2][1]) / rows[-2][1] * 100, 3)
+        return None
+    style["sh_1d"] = last1d(sh)
+    style["cy_1d"] = last1d(cy)
+    style["kc_1d"] = last1d(kc)
+    
+    # 极端分化检测: 4-30 复盘发现
+    # 当三大指数单日表现极差 >2pp 且 主板 ≤0.5%, 连板型会跳水
+    one_d = [v for v in [style["sh_1d"], style["cy_1d"], style["kc_1d"]] if v is not None]
+    if len(one_d) == 3:
+        spread = max(one_d) - min(one_d)
+        style["index_spread_1d"] = round(spread, 3)
+        # 极端分化: spread > 3pp 且 (主板平 + 科创独狂 或 主板跌 + 某板独涨)
+        if spread > 3 and (style["sh_1d"] or 0) < 0.5:
+            style["extreme_split"] = True
     
     return style
 
@@ -342,6 +363,16 @@ def style_boost(c, style):
     cb1 = c.get("cb1_main_avg", 0) or 0
     if cb1 >= 1:
         boost -= 0.05
+    
+    # R7 (4-30 复盘新增): 极端分化日 连板型大降权
+    # 4-30 表现: 该日 lbc≥2 的 26 只 全部 0 涨停平均 -2.4%
+    # 1 板型 190 只, 11 只涨停 (5.8%) - 连板不走不接力
+    if style and style.get("extreme_split"):
+        lbc = c.get("d0_lbc", 1) or 1
+        if lbc >= 3:
+            boost -= 0.30  # 三板+: P 0.85 → 0.55
+        elif lbc >= 2:
+            boost -= 0.20  # 二板: P 0.85 → 0.65
     
     return boost
 
