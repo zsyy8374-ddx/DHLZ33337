@@ -316,21 +316,33 @@ def fetch_market_style(end_date):
 
 
 def style_boost(c, style):
-    """根据市场风格为 P 加减分 (5 折滚动验证过, R1+R3 稳定):
-    R1: 弱势市 (sh_5d ≤ -1%) + cb5 主力 ≥2亿 → +0.10 (历史 93.5% 命中)
-    R3: 大盘风 (cy-sh ≤ -1%) + 1 板 → +0.05 (历史 59% vs 小盘风 1板 44%)
-    """
-    if not style or style.get("sh_5d") is None: return 0.0
-    boost = 0.0
-    sh_5d = style.get("sh_5d", 0)
-    diff = style.get("cy_sh_diff", 0) or 0
-    cb5 = c.get("cb5_main_avg", 0) or 0
-    lbc = c.get("d0_lbc", 1) or 1
+    """根据市场风格 + 4-30 复盘发现为 P 加减分
     
-    if sh_5d <= -1 and cb5 >= 2:
-        boost += 0.10
-    if diff <= -1 and lbc == 1:
-        boost += 0.05
+    严谨 5 折验证过的规则:
+    R1: 弱势市 (sh_5d ≤ -1%) + cb5 ≥2亿 → +0.10 (历史 93.5%)
+    R3: 大盘风 (cy-sh ≤ -1%) + 1板 → +0.05 (59% vs 44%)
+    R6 (4-30 复盘新): cb1 ≥1亿 → -0.05 (5折 AUC +0.004, 4/5 fold 正向, T10 +2pp)
+         说明: cb1 = D0+1 主力日均。过高 = 主力次日快速出货信号
+    """
+    boost = 0.0
+    
+    # R1, R3 需要 style
+    if style and style.get("sh_5d") is not None:
+        sh_5d = style.get("sh_5d", 0)
+        diff = style.get("cy_sh_diff", 0) or 0
+        cb5 = c.get("cb5_main_avg", 0) or 0
+        lbc = c.get("d0_lbc", 1) or 1
+        
+        if sh_5d <= -1 and cb5 >= 2:
+            boost += 0.10
+        if diff <= -1 and lbc == 1:
+            boost += 0.05
+    
+    # R6: cb1 过大 (不需 style, 独立生效)
+    cb1 = c.get("cb1_main_avg", 0) or 0
+    if cb1 >= 1:
+        boost -= 0.05
+    
     return boost
 
 
