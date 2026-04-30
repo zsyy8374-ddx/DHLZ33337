@@ -387,38 +387,48 @@ def style_boost(c, style):
     if cb1 >= 1:
         boost -= 0.05
     
-    # R7 + R9 + R10: 基于市场 regime 的调权
-    # 历史 1151 事件验证:
-    #   kc_only_red:   2.6% 反转率 (极险)
-    #   sh_only_red:  12.5% 反转率 (险)
-    #   spread_high_up: 2.6% (极险)
-    #   weak_resonant: 37.5% (偏差)
-    #   sz_only_red: 80.0% (佳, 加分)
-    #   strong_resonant: 64.6% (优)
+    # v0.6 8 类 regime 调权 (历史 1151 事件 + bootstrap 200 trials 验证)
+    # AUC 平均改善 +0.035, 5% 分位 +0.021, 200/200 正向
     if style:
         regime = style.get("market_regime", "normal")
         lbc = c.get("d0_lbc", 1) or 1
         
-        if regime in ("kc_only_red", "spread_high_up"):  # 2.6% 反转率
+        if regime in ("kc_only_red", "spread_high_up"):  # 2.6%
             if lbc >= 3: boost -= 0.40
             elif lbc >= 2: boost -= 0.30
             else: boost -= 0.15
-        elif regime == "sh_only_red":  # 12.5% 反转率
+        elif regime == "sh_only_red":  # 12.5%
             if lbc >= 3: boost -= 0.30
             elif lbc >= 2: boost -= 0.20
             else: boost -= 0.08
-        elif regime == "weak_resonant":  # 37.5% 偏差
+        elif regime == "all_green_strong":  # 37.8% 齐跌强
+            boost -= 0.10
+        elif regime == "all_green_weak":  # 齐跌弱, 微压
             boost -= 0.05
-        elif regime == "sz_only_red":  # 80% 佳, 加分
+        elif regime == "all_red_strong":  # 62.9% 齐涨强
             boost += 0.05
-        elif regime == "strong_resonant":  # 64.6% 优
-            boost += 0.02
+        elif regime == "all_red_weak":  # 齐涨弱, 中性
+            boost += 0
+        elif regime == "sz_only_red":  # 80%
+            boost += 0.05
     
     return boost
 
 
 def detect_regime_v5(style):
-    """从 market style 判断 6 类 regime (v0.5)"""
+    """从 market style 判断 8 类 regime (v0.6 升级)
+    
+    历史 1151 事件 反转率:
+      kc_only_red       2.6% ⚠️极险
+      spread_high_up    2.6% ⚠️极险
+      sh_only_red      12.5% ⚠️险
+      all_green_strong 37.8% 偏差 (n=312)
+      all_green_weak   ~50%  中性
+      all_red_weak     55.6% 中性 (n=18)
+      normal           61.6% 正常
+      all_red_strong   62.9% 优 (n=437)
+      sz_only_red      80.0% ⚡佳
+    """
     if not style: return "normal"
     sh = style.get("sh_1d", 0) or 0
     sz = style.get("cy_1d", 0) or 0
@@ -426,28 +436,36 @@ def detect_regime_v5(style):
     if sh == 0 and sz == 0 and kc == 0: return "normal"
     spread = max(sh, sz, kc) - min(sh, sz, kc)
     avg = (sh + sz + kc) / 3
+    # 极端 (高优先)
     if kc > 2 and sh < 0.5: return "kc_only_red"
     if sh > 0.5 and sz < -0.3 and kc < -0.3: return "sh_only_red"
     if sz > 2 and sh < 0.5: return "sz_only_red"
     if spread > 4 and avg > 0: return "spread_high_up"
-    if spread < 1 and avg <= -0.5: return "weak_resonant"
-    if spread < 1 and avg >= 0.5: return "strong_resonant"
-    return "normal"
+    # 整体方向 (中优先)
+    if sh <= 0 and sz <= 0 and kc <= 0:
+        return "all_green_strong" if avg <= -0.5 else "all_green_weak"
+    if sh >= 0 and sz >= 0 and kc >= 0:
+        return "all_red_strong" if avg >= 0.5 else "all_red_weak"
+    return "normal"  # 涨跌混合 = 正常
 
 
 def extract_v5(c, regime):
-    """v0.5 特征 = v0.4 + regime dummies + interaction"""
+    """v0.5 特征 = v0.4 + 8 类 regime dummies + interaction"""
     f = extract_v4(c)
     f["reg_kc_red"] = 1.0 if regime == "kc_only_red" else 0.0
     f["reg_sh_red"] = 1.0 if regime == "sh_only_red" else 0.0
     f["reg_sz_red"] = 1.0 if regime == "sz_only_red" else 0.0
     f["reg_spread_up"] = 1.0 if regime == "spread_high_up" else 0.0
-    f["reg_weak_res"] = 1.0 if regime == "weak_resonant" else 0.0
-    f["reg_strong_res"] = 1.0 if regime == "strong_resonant" else 0.0
+    f["reg_all_green_strong"] = 1.0 if regime == "all_green_strong" else 0.0
+    f["reg_all_green_weak"] = 1.0 if regime == "all_green_weak" else 0.0
+    f["reg_all_red_strong"] = 1.0 if regime == "all_red_strong" else 0.0
+    f["reg_all_red_weak"] = 1.0 if regime == "all_red_weak" else 0.0
     lbc = c.get("d0_lbc", 1) or 1
     f["reg_kc_lianban"] = 1.0 if regime == "kc_only_red" and lbc >= 2 else 0.0
     f["reg_spread_lianban"] = 1.0 if regime == "spread_high_up" and lbc >= 2 else 0.0
     f["reg_sz_lianban"] = 1.0 if regime == "sz_only_red" and lbc >= 2 else 0.0
+    f["reg_green_lianban"] = 1.0 if regime == "all_green_strong" and lbc >= 2 else 0.0
+    f["reg_red_lianban"] = 1.0 if regime == "all_red_strong" and lbc >= 2 else 0.0
     return f
 
 

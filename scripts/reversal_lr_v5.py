@@ -26,6 +26,7 @@ def load_index_data():
 
 
 def detect_regime(idx_by_date, date):
+    """v0.6 8 类 regime"""
     if date not in idx_by_date: return "normal"
     d = idx_by_date[date]
     sh = d.get("sh000001", 0); sz = d.get("sz399006", 0); kc = d.get("sh000688", 0)
@@ -35,8 +36,10 @@ def detect_regime(idx_by_date, date):
     if sh > 0.5 and sz < -0.3 and kc < -0.3: return "sh_only_red"
     if sz > 2 and sh < 0.5: return "sz_only_red"
     if spread > 4 and avg > 0: return "spread_high_up"
-    if spread < 1 and avg <= -0.5: return "weak_resonant"
-    if spread < 1 and avg >= 0.5: return "strong_resonant"
+    if sh <= 0 and sz <= 0 and kc <= 0:
+        return "all_green_strong" if avg <= -0.5 else "all_green_weak"
+    if sh >= 0 and sz >= 0 and kc >= 0:
+        return "all_red_strong" if avg >= 0.5 else "all_red_weak"
     return "normal"
 
 
@@ -50,18 +53,22 @@ def get_eval_date(e, sorted_dates):
 
 
 def extract_v5(e, regime):
-    """v0.5 特征 = v0.4 + regime dummies + interaction"""
+    """v0.5 特征 = v0.4 + 8 类 regime dummies + interaction (升级 v0.6 regime)"""
     f = extract_v4(e)
     f["reg_kc_red"] = 1.0 if regime == "kc_only_red" else 0.0
     f["reg_sh_red"] = 1.0 if regime == "sh_only_red" else 0.0
     f["reg_sz_red"] = 1.0 if regime == "sz_only_red" else 0.0
     f["reg_spread_up"] = 1.0 if regime == "spread_high_up" else 0.0
-    f["reg_weak_res"] = 1.0 if regime == "weak_resonant" else 0.0
-    f["reg_strong_res"] = 1.0 if regime == "strong_resonant" else 0.0
+    f["reg_all_green_strong"] = 1.0 if regime == "all_green_strong" else 0.0
+    f["reg_all_green_weak"] = 1.0 if regime == "all_green_weak" else 0.0
+    f["reg_all_red_strong"] = 1.0 if regime == "all_red_strong" else 0.0
+    f["reg_all_red_weak"] = 1.0 if regime == "all_red_weak" else 0.0
     lbc = e.get("d0_lbc", 1) or 1
     f["reg_kc_lianban"] = 1.0 if regime == "kc_only_red" and lbc >= 2 else 0.0
     f["reg_spread_lianban"] = 1.0 if regime == "spread_high_up" and lbc >= 2 else 0.0
     f["reg_sz_lianban"] = 1.0 if regime == "sz_only_red" and lbc >= 2 else 0.0
+    f["reg_green_lianban"] = 1.0 if regime == "all_green_strong" and lbc >= 2 else 0.0
+    f["reg_red_lianban"] = 1.0 if regime == "all_red_strong" and lbc >= 2 else 0.0
     return f
 
 
