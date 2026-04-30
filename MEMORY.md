@@ -99,6 +99,21 @@
 
 **修复**: v0.4 用 cb1/cb3/cb5 统一窗口, 真实 AUC 0.77 / Top10% 91% (OOS 严格验证)
 
+## ⚠️ 金融 ML 踩过的坑: in-sample 阈值校准 (2026-04-30)
+
+**事件**: v0.4 主要阈值用训练集校准, 导致推送时 "极强档 0 只".
+- calibrate_thresholds() 在训练集上跳 P=0.97 才能 ≥85% 命中
+- OOS 测试集上 P=0.784 就能 ≥85% 命中
+- 阈值设太高 → 真实信号被埋, 推荐变空
+
+**教训** (写入脑子):
+- AUC 是排序质量, P 阈值是切档界限, **两件事**
+- 切档界限永远要用 OOS 校准, 不能 in-sample
+- 可靠指标是 "OOS Top N 命中率", Top 20 是金型师本金律
+- 不要相信训练集上的 P-命中率 mapping
+
+**修复**: scripts/reversal_recalibrate.py 干这件, 阈值从 0.97 调到 0.784
+
 ## ⚠️ Cron 踩过的坑 (2026-04-26)
 - **尾盘选股 cron 9619b9b5 触发但消息未送达给 Dengxian**。原因推测: `--session main + --system-event` 可能路由到默认主会话, 而不是当前活跃的 openclaw-weixin 会话。
 - **以后设 cron 的规矩** (Dengxian 说过 "你可以早点干活"):
