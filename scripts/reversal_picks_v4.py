@@ -377,6 +377,7 @@ def style_boost(c, style):
             boost -= 0.25  # 二板:   P 0.85 → 0.60
         else:
             boost -= 0.10  # 1 板也降点权 (反转率 12.5% vs 平日 51.3%)
+        # 注: R8 (R7 下强势整理加分) 试过, CV AUC 不胜出, 未部署
     
     return boost
 
