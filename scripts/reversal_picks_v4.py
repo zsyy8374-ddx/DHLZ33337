@@ -417,8 +417,46 @@ def style_boost(c, style):
     return boost
 
 
-def predict_lr(c, model):
+def detect_regime_v5(style):
+    """从 market style 判断 6 类 regime (v0.5)"""
+    if not style: return "normal"
+    sh = style.get("sh_1d", 0) or 0
+    sz = style.get("cy_1d", 0) or 0
+    kc = style.get("kc_1d", 0) or 0
+    if sh == 0 and sz == 0 and kc == 0: return "normal"
+    spread = max(sh, sz, kc) - min(sh, sz, kc)
+    avg = (sh + sz + kc) / 3
+    if kc > 2 and sh < 0.5: return "kc_only_red"
+    if sh > 0.5 and sz < -0.3 and kc < -0.3: return "sh_only_red"
+    if sz > 2 and sh < 0.5: return "sz_only_red"
+    if spread > 4 and avg > 0: return "spread_high_up"
+    if spread < 1 and avg <= -0.5: return "weak_resonant"
+    if spread < 1 and avg >= 0.5: return "strong_resonant"
+    return "normal"
+
+
+def extract_v5(c, regime):
+    """v0.5 特征 = v0.4 + regime dummies + interaction"""
     f = extract_v4(c)
+    f["reg_kc_red"] = 1.0 if regime == "kc_only_red" else 0.0
+    f["reg_sh_red"] = 1.0 if regime == "sh_only_red" else 0.0
+    f["reg_sz_red"] = 1.0 if regime == "sz_only_red" else 0.0
+    f["reg_spread_up"] = 1.0 if regime == "spread_high_up" else 0.0
+    f["reg_weak_res"] = 1.0 if regime == "weak_resonant" else 0.0
+    f["reg_strong_res"] = 1.0 if regime == "strong_resonant" else 0.0
+    lbc = c.get("d0_lbc", 1) or 1
+    f["reg_kc_lianban"] = 1.0 if regime == "kc_only_red" and lbc >= 2 else 0.0
+    f["reg_spread_lianban"] = 1.0 if regime == "spread_high_up" and lbc >= 2 else 0.0
+    f["reg_sz_lianban"] = 1.0 if regime == "sz_only_red" and lbc >= 2 else 0.0
+    return f
+
+
+def predict_lr(c, model, regime="normal"):
+    """兼容 v4 / v5 模型"""
+    if model.get("regime_used"):
+        f = extract_v5(c, regime)
+    else:
+        f = extract_v4(c)
     means = model["feature_means"]; stds = model["feature_stds"]
     cont_keys = model["cont_keys"]
     fn = {}
@@ -593,16 +631,20 @@ def main():
     if not target_date:
         target_date = datetime.now(BJT).strftime("%Y-%m-%d")
     
-    # 找最新 v0.4 模型
-    cands = sorted(BACKTEST_DIR.glob("reversal-lr-*-v4.json"), reverse=True)
-    if not cands:
-        print("❌ 没有 v0.4 模型, 请先跑 reversal_lr_v4.py", flush=True)
+    # 优先找 v0.5 模型, fallback v0.4
+    cands_v5 = sorted(BACKTEST_DIR.glob("reversal-lr-*-v5.json"), reverse=True)
+    cands_v4 = sorted(BACKTEST_DIR.glob("reversal-lr-*-v4.json"), reverse=True)
+    if cands_v5:
+        model_path = cands_v5[0]
+    elif cands_v4:
+        model_path = cands_v4[0]
+    else:
+        print("❌ 没有模型, 请先跑 reversal_lr_v5.py 或 v4", flush=True)
         sys.exit(1)
-    model_path = cands[0]
     
     with open(model_path, encoding="utf-8") as f:
         model = json.load(f)
-    print(f"📦 加载模型: {model_path.name}", flush=True)
+    print(f"📦 加载模型: {model_path.name} (regime_used={model.get('regime_used', False)})", flush=True)
     print(f"   时序 AUC: {model['ts_auc']:.4f}, Top10%: {model['top10_hit']*100:.1f}%", flush=True)
     print(f"   阈值: P_high={model['P_high']}, P_mid={model['P_mid']}", flush=True)
     
@@ -625,16 +667,26 @@ def main():
         print("❌ 无候选", flush=True)
         sys.exit(1)
     
-    # LR 预测 (style boost 只记录, 不启用——5折验证不够稳定)
+    # 检测今日市场 regime
+    regime = detect_regime_v5(style)
+    print(f"🌺 今日 regime: {regime}", flush=True)
+    
+    # LR 预测: regime 进入 model + post-hoc 调权
     for c in candidates:
-        base = predict_lr(c, model)
-        boost = style_boost(c, style)
+        base = predict_lr(c, model, regime=regime)
+        boost = style_boost(c, style)  # 含 6 类 regime post-hoc 调权
         c["lr_prob_base"] = round(base, 4)
         c["lr_prob_boost"] = round(boost, 4)
-        # 调试用: lr_prob_with_boost
-        c["lr_prob_with_boost"] = round(min(0.99, max(0.01, base + boost)), 4)
-        # 实际出调仍用 base
-        c["lr_prob"] = round(base, 4)
+        c["market_regime"] = regime
+        # v0.5 联合使用 base + post-hoc boost
+        if model.get("regime_used"):
+            adjusted = base + boost
+            c["lr_prob"] = round(min(0.99, max(0.01, adjusted)), 4)
+            c["lr_prob_with_boost"] = c["lr_prob"]
+        else:
+            # v0.4 fallback: 纯 base
+            c["lr_prob_with_boost"] = round(min(0.99, max(0.01, base + boost)), 4)
+            c["lr_prob"] = round(base, 4)
     
     # 落档
     save_path = PICKS_DIR / f"reversal-v4-{target_date}.json"
