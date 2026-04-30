@@ -61,6 +61,17 @@
     "d0_main_flow",
     "pre_d0_5d_main_avg"
   ],
-  "P_high": 0.968,
-  "P_mid": 0.475
+  "P_high": 0.784,
+  "P_mid": 0.665,
+  "P_high_method": "OOS_calibration_85pct",
+  "P_mid_method": "OOS_calibration_70pct",
+  "P_old_high_in_sample": 0.968,
+  "P_old_mid_in_sample": 0.475,
+  "oos_top_n_hits": {
+    "10": 0.9,
+    "15": 0.9333333333333333,
+    "20": 0.95,
+    "25": 0.92,
+    "30": 0.9
+  }
 }
