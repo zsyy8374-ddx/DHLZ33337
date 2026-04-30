@@ -62,12 +62,13 @@ def is_zt(code, chg_pct):
 
 def find_recent_picks(target_date):
     """找 target_date 之前最近一天的推荐 (上一交易日推的, 今天来评估)"""
-    # 倒推 7 天找
+    # 倒推 7 天找 (优先 v4 > v3)
     for back in range(1, 8):
         d_str = (datetime.strptime(target_date, "%Y-%m-%d") - timedelta(days=back)).strftime("%Y-%m-%d")
-        path = PICKS_DIR / f"reversal-v3-{d_str}.json"
-        if path.exists():
-            return path, d_str
+        for ver in ["v4", "v3"]:
+            path = PICKS_DIR / f"reversal-{ver}-{d_str}.json"
+            if path.exists():
+                return path, d_str
     return None, None
 
 
