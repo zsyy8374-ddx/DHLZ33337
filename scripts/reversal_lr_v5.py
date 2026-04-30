@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""reversal_lr_v5.py — v0.5 加板块强度特征"""
-import json, math
+"""reversal_lr_v5.py — 加入市场 regime 特征 + 训练保存"""
+import json, math, sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -8,148 +8,134 @@ WORKSPACE = Path("/Users/openclaw/.openclaw/workspace-dengxian")
 BACKTEST_DIR = WORKSPACE / "backtest"
 BJT = timezone(timedelta(hours=8))
 
-
-def sigmoid(z):
-    if z < -500: return 0.0
-    if z > 500: return 1.0
-    return 1.0 / (1.0 + math.exp(-z))
+sys.path.insert(0, str(WORKSPACE / "scripts"))
+from reversal_lr_v4 import sigmoid, extract_v4, normalize, train_lr, predict
 
 
-def extract_v5(e):
-    callback = e.get("callback_pct", 0) or 0
-    min_close = e.get("min_close_pct", 0) or 0
-    vol_ratio = e.get("vol_callback_ratio", 0) or 0
-    d0_chg = e.get("d0_chg", 10) or 10
+def load_index_data():
+    """加载三大指数日数据"""
+    with open(BACKTEST_DIR / "index_daily.json") as f:
+        idx_data = json.load(f)
+    idx_by_date = {}
+    sorted_dates = []
+    for code, info in idx_data.items():
+        for r in info["rows"]:
+            idx_by_date.setdefault(r["date"], {})[code] = r["chg_pct"]
+    sorted_dates = sorted(idx_by_date.keys())
+    return idx_by_date, sorted_dates
+
+
+def detect_regime(idx_by_date, date):
+    if date not in idx_by_date: return "normal"
+    d = idx_by_date[date]
+    sh = d.get("sh000001", 0); sz = d.get("sz399006", 0); kc = d.get("sh000688", 0)
+    spread = max(sh, sz, kc) - min(sh, sz, kc)
+    avg = (sh + sz + kc) / 3
+    if kc > 2 and sh < 0.5: return "kc_only_red"
+    if sh > 0.5 and sz < -0.3 and kc < -0.3: return "sh_only_red"
+    if sz > 2 and sh < 0.5: return "sz_only_red"
+    if spread > 4 and avg > 0: return "spread_high_up"
+    if spread < 1 and avg <= -0.5: return "weak_resonant"
+    if spread < 1 and avg >= 0.5: return "strong_resonant"
+    return "normal"
+
+
+def get_eval_date(e, sorted_dates):
+    if e.get("d_t_date"): return e["d_t_date"]
+    d0 = e["d0_date"]
+    if d0 not in sorted_dates: return None
+    i = sorted_dates.index(d0)
+    if i + 10 >= len(sorted_dates): return None
+    return sorted_dates[i + 10]
+
+
+def extract_v5(e, regime):
+    """v0.5 特征 = v0.4 + regime dummies + interaction"""
+    f = extract_v4(e)
+    f["reg_kc_red"] = 1.0 if regime == "kc_only_red" else 0.0
+    f["reg_sh_red"] = 1.0 if regime == "sh_only_red" else 0.0
+    f["reg_sz_red"] = 1.0 if regime == "sz_only_red" else 0.0
+    f["reg_spread_up"] = 1.0 if regime == "spread_high_up" else 0.0
+    f["reg_weak_res"] = 1.0 if regime == "weak_resonant" else 0.0
+    f["reg_strong_res"] = 1.0 if regime == "strong_resonant" else 0.0
     lbc = e.get("d0_lbc", 1) or 1
-    cb5_main = e.get("cb5_main_avg", 0) or 0
-    cb5_in = e.get("cb5_in_ratio", 0) or 0
-    cb3_main = e.get("cb3_main_avg", 0) or 0
-    cb1_main = e.get("cb1_main_avg", 0) or 0
-    d0_main = e.get("d0_main_flow", 0) or 0
-    pre_avg = e.get("pre_d0_5d_main_avg", 0) or 0
-    # v0.5 板块特征
-    sec_cb5 = e.get("sector_cb5_excess") if e.get("sector_cb5_window", 0) > 0 else None
-    sec_d0 = e.get("sector_d0_chg") if e.get("sector") else None
-    has_sector = 1.0 if sec_cb5 is not None else 0.0
-    
-    return {
-        "callback_pct": callback,
-        "min_close_pct": min_close,
-        "broke_ma5": 1.0 if e.get("broke_ma5") else 0.0,
-        "broke_ma10": 1.0 if e.get("broke_ma10") else 0.0,
-        "shallow": 1.0 if callback < 3 else 0.0,
-        "no_close_break": 1.0 if min_close < 3 else 0.0,
-        "vol_dead": 1.0 if 0.5 <= vol_ratio < 0.7 else 0.0,
-        "vol_explode": 1.0 if vol_ratio >= 1.5 else 0.0,
-        "is_20cm": 1.0 if d0_chg >= 19.5 and d0_chg < 25 else 0.0,
-        "lbc_num": lbc,
-        "is_lianban": 1.0 if lbc >= 2 else 0.0,
-        "cb5_main_strong_pos": 1.0 if cb5_main >= 2 else 0.0,
-        "cb5_main_pos": 1.0 if 0.5 <= cb5_main < 2 else 0.0,
-        "cb5_main_neg": 1.0 if cb5_main < -0.5 else 0.0,
-        "cb5_in_high": 1.0 if cb5_in >= 0.6 else 0.0,
-        "cb5_in_low": 1.0 if cb5_in < 0.4 else 0.0,
-        "cb5_main_avg": cb5_main,
-        "cb3_main_avg": cb3_main,
-        "cb1_main_avg": cb1_main,
-        "d0_main_flow": d0_main,
-        "pre_d0_5d_main_avg": pre_avg,
-        # 板块
-        "has_sector": has_sector,
-        "sec_cb5_excess": sec_cb5 if sec_cb5 is not None else 0,
-        "sec_d0_chg": sec_d0 if sec_d0 is not None else 0,
-        # 板块 dummies
-        "sec_strong_excess": 1.0 if (sec_cb5 is not None and sec_cb5 >= 1) else 0.0,
-        "sec_weak_excess": 1.0 if (sec_cb5 is not None and sec_cb5 < -0.3) else 0.0,
-        "sec_d0_pos_alpha": 1.0 if (sec_d0 is not None and sec_d0 < -0.5) else 0.0,  # D0 板块跌但个股涨停 = 独狼
-    }
-
-
-def normalize(features, cont_keys):
-    means, stds = {}, {}
-    for k in cont_keys:
-        vals = [f[k] for f in features]
-        m = sum(vals) / len(vals)
-        v = sum((x-m)**2 for x in vals) / len(vals)
-        s = math.sqrt(v) if v > 0 else 1.0
-        means[k] = m; stds[k] = s
-    out = []
-    for f in features:
-        nf = {}
-        for k, v in f.items():
-            nf[k] = (v - means[k]) / stds[k] if k in cont_keys else v
-        out.append(nf)
-    return out, means, stds
-
-
-def train_lr(X, y, lr=0.2, iters=500, l2=0.01):
-    keys = list(X[0].keys())
-    n = len(X)
-    weights = {k: 0.0 for k in keys}
-    bias = 0.0
-    for _ in range(iters):
-        gw = {k: 0.0 for k in keys}
-        gb = 0.0
-        for i in range(n):
-            z = bias + sum(weights[k] * X[i][k] for k in keys)
-            err = sigmoid(z) - y[i]
-            for k in keys:
-                gw[k] += err * X[i][k]
-            gb += err
-        for k in keys:
-            gw[k] = gw[k] / n + l2 * weights[k]
-            weights[k] -= lr * gw[k]
-        bias -= lr * gb / n
-    return weights, bias
-
-
-def predict(X, weights, bias):
-    keys = list(weights.keys())
-    return [sigmoid(bias + sum(weights[k] * x[k] for k in keys)) for x in X]
+    f["reg_kc_lianban"] = 1.0 if regime == "kc_only_red" and lbc >= 2 else 0.0
+    f["reg_spread_lianban"] = 1.0 if regime == "spread_high_up" and lbc >= 2 else 0.0
+    f["reg_sz_lianban"] = 1.0 if regime == "sz_only_red" and lbc >= 2 else 0.0
+    return f
 
 
 def auc(y_true, y_pred):
     paired = sorted(zip(y_pred, y_true), reverse=True)
-    n_pos = sum(y_true); n_neg = len(y_true) - n_pos
-    if n_pos == 0 or n_neg == 0: return 0.5
-    tp = fp = 0; auc_val = 0.0
-    prev_score = None; prev_tp = prev_fp = 0
-    for score, label in paired:
-        if score != prev_score:
-            auc_val += (fp - prev_fp) * (tp + prev_tp) / 2
-            prev_score = score; prev_tp = tp; prev_fp = fp
-        if label == 1: tp += 1
-        else: fp += 1
-    auc_val += (fp - prev_fp) * (tp + prev_tp) / 2
-    return auc_val / (n_pos * n_neg)
+    pos = sum(y_true); neg = len(y_true) - pos
+    if pos == 0 or neg == 0: return 0.5
+    s = 0; tp = 0
+    for _, yi in paired:
+        if yi == 1: tp += 1
+        else: s += tp
+    return s / (pos * neg)
 
 
-def time_series_cv(events, X, y, n_splits=5):
-    indexed = sorted(range(len(events)), key=lambda i: events[i].get("d0_date", ""))
-    n = len(indexed)
-    fold_size = n // (n_splits + 1)
-    aucs = []; top10 = []
-    for k in range(n_splits):
-        train_end = fold_size * (k + 1)
-        test_start = train_end; test_end = train_end + fold_size
-        train_idx = indexed[:train_end]
-        test_idx = indexed[test_start:test_end]
-        if len(train_idx) < 50 or len(test_idx) < 5: continue
-        Xtr = [X[i] for i in train_idx]; ytr = [y[i] for i in train_idx]
-        Xte = [X[i] for i in test_idx]; yte = [y[i] for i in test_idx]
-        w, b = train_lr(Xtr, ytr, lr=0.2, iters=500, l2=0.01)
-        preds = predict(Xte, w, b)
-        aucs.append(auc(yte, preds))
-        top_n = max(5, len(preds) // 10)
-        ranked = sorted(zip(preds, yte), reverse=True)[:top_n]
-        if ranked:
-            top10.append(sum(yi for _, yi in ranked) / len(ranked))
-    return aucs, top10
-
-
-def calibrate_thresholds(X, y, w, b):
-    preds = predict(X, w, b)
-    paired = sorted(zip(preds, y), reverse=True)
+def main():
+    today = datetime.now(BJT).strftime("%Y-%m-%d")
+    
+    # 找最新的 events 文件
+    candidates = sorted(BACKTEST_DIR.glob("reversal-events-*-v6.json"))
+    if not candidates:
+        candidates = sorted(BACKTEST_DIR.glob("reversal-events-*-v4.json"))
+    src = candidates[-1]
+    print(f"📂 数据源: {src.name}")
+    
+    with open(src, encoding="utf-8") as f:
+        d = json.load(f)
+    events = d["events"]
+    
+    idx_by_date, sorted_dates = load_index_data()
+    event_regimes = []
+    for e in events:
+        eval_d = get_eval_date(e, sorted_dates)
+        event_regimes.append(detect_regime(idx_by_date, eval_d or ""))
+    
+    from collections import Counter
+    print(f"📊 总事件 {len(events)}, regime 分布:")
+    for r, n in Counter(event_regimes).most_common():
+        rev = sum(1 for i, e in enumerate(events) if event_regimes[i]==r and e["outcome"]=="reversal")
+        print(f"   {r:<20} n={n:>4}  反转率 {rev/n*100:.1f}%")
+    
+    features = [extract_v5(e, event_regimes[i]) for i, e in enumerate(events)]
+    labels = [1 if e["outcome"]=="reversal" else 0 for e in events]
+    cont_keys = ["callback_pct","min_close_pct","cb5_main_avg","cb3_main_avg","cb1_main_avg","d0_main_flow","pre_d0_5d_main_avg","lbc_num"]
+    
+    X_norm, means, stds = normalize(features, cont_keys)
+    
+    # 时序 80/20
+    sorted_idx = sorted(range(len(events)), key=lambda i: events[i].get("d0_date", ""))
+    n = len(sorted_idx); split = int(n * 0.8)
+    train_idx = sorted_idx[:split]; test_idx = sorted_idx[split:]
+    Xtr = [X_norm[i] for i in train_idx]; ytr = [labels[i] for i in train_idx]
+    Xte = [X_norm[i] for i in test_idx]; yte = [labels[i] for i in test_idx]
+    
+    w_split, b_split = train_lr(Xtr, ytr, lr=0.2, iters=500, l2=0.01)
+    test_preds = predict(Xte, w_split, b_split)
+    test_auc = auc(yte, test_preds)
+    n_top = max(5, len(test_preds) // 10)
+    test_top10 = sum(yi for _, yi in sorted(zip(test_preds, yte), reverse=True)[:n_top]) / n_top
+    print(f"\n📊 时序 80/20 split:")
+    print(f"   测试 AUC: {test_auc:.4f}")
+    print(f"   测试 Top {n_top} 命中: {test_top10*100:.1f}%")
+    
+    # 全量训练
+    weights, bias = train_lr(X_norm, labels, lr=0.2, iters=500, l2=0.01)
+    
+    print(f"\n📊 全量训练 Top 权重:")
+    weighted = sorted(weights.items(), key=lambda x: -abs(x[1]))
+    for k, w in weighted[:20]:
+        eff = "↑" if w > 0 else "↓"
+        print(f"   {k:<25} {w:+.4f} {eff}")
+    
+    # 校准阈值
+    train_preds = predict(X_norm, weights, bias)
+    paired = sorted(zip(train_preds, labels), reverse=True)
     P_high = 0.7; P_mid = 0.55
     n_pos = 0
     for i, (p, yi) in enumerate(paired):
@@ -160,77 +146,38 @@ def calibrate_thresholds(X, y, w, b):
         if i + 1 >= 10 and rate >= 0.7:
             P_mid = round(p, 3)
     if P_high < P_mid: P_high = P_mid + 0.05
-    return P_high, P_mid
-
-
-def main():
-    today = datetime.now(BJT).strftime("%Y-%m-%d")
-    src = BACKTEST_DIR / f"reversal-events-{today}-v5.json"
     
-    with open(src, encoding="utf-8") as f:
-        d = json.load(f)
-    events = d["events"]
-    print(f"📊 v0.5: {len(events)} 个事件 (基础胜率 {sum(1 for e in events if e['outcome']=='reversal')/len(events)*100:.1f}%)\n", flush=True)
+    print(f"\n🎚️ 阈值: P_high={P_high}, P_mid={P_mid}")
     
-    features = [extract_v5(e) for e in events]
-    labels = [1 if e["outcome"] == "reversal" else 0 for e in events]
-    cont_keys = ["callback_pct", "min_close_pct", "lbc_num", "cb5_main_avg",
-                 "cb3_main_avg", "cb1_main_avg", "d0_main_flow", "pre_d0_5d_main_avg",
-                 "sec_cb5_excess", "sec_d0_chg"]
-    X_norm, means, stds = normalize(features, cont_keys)
-    
-    # 时序 CV
-    ts_aucs, top10 = time_series_cv(events, X_norm, labels, n_splits=5)
-    ts_avg = sum(ts_aucs) / len(ts_aucs)
-    top10_avg = sum(top10) / len(top10) if top10 else 0
-    print(f"📅 v0.5 时序 AUC: {ts_avg:.4f} (vs v0.4 0.7698, v0.3 假 0.7976)", flush=True)
-    print(f"📅 v0.5 Top 10% 命中: {top10_avg*100:.1f}%", flush=True)
-    
-    # 时序 80/20 split (更严)
-    sorted_idx = sorted(range(len(events)), key=lambda i: events[i].get("d0_date", ""))
-    n = len(sorted_idx); split = int(n * 0.8)
-    train_idx = sorted_idx[:split]; test_idx = sorted_idx[split:]
-    Xtr = [X_norm[i] for i in train_idx]; ytr = [labels[i] for i in train_idx]
-    Xte = [X_norm[i] for i in test_idx]; yte = [labels[i] for i in test_idx]
-    
-    w_split, b_split = train_lr(Xtr, ytr, lr=0.2, iters=500, l2=0.01)
-    test_preds = predict(Xte, w_split, b_split)
-    train_preds = predict(Xtr, w_split, b_split)
-    test_auc = auc(yte, test_preds); train_auc = auc(ytr, train_preds)
-    n_top = max(5, len(test_preds) // 10)
-    test_top10 = sum(yi for _, yi in sorted(zip(test_preds, yte), reverse=True)[:n_top]) / n_top
-    
-    print(f"\n📊 严格 80/20 split:", flush=True)
-    print(f"   训练 AUC: {train_auc:.4f}", flush=True)
-    print(f"   测试 AUC: {test_auc:.4f}", flush=True)
-    print(f"   测试 Top {n_top} 命中: {test_top10*100:.1f}%", flush=True)
-    print(f"   过拟合: {train_auc - test_auc:+.4f}", flush=True)
-    
-    # 全量训练
-    weights, bias = train_lr(X_norm, labels, lr=0.2, iters=500, l2=0.01)
-    print(f"\n📊 全量训练 Top 权重:", flush=True)
-    weighted = sorted(weights.items(), key=lambda x: -abs(x[1]))
-    for k, w in weighted[:18]:
-        eff = "↑" if w > 0 else "↓"
-        print(f"   {k:<25} {w:+.4f} {eff}", flush=True)
-    
-    P_high, P_mid = calibrate_thresholds(X_norm, labels, weights, bias)
-    print(f"\n🎚️ 阈值: P_high={P_high}, P_mid={P_mid}", flush=True)
-    
-    # 落档
-    out = {
-        "version": "reversal-lr-v0.5",
-        "trained_at": today, "n_samples": len(events), "n_pos": sum(labels),
-        "ts_auc": ts_avg, "top10_hit": top10_avg,
-        "test_auc_oos": test_auc, "test_top10_oos": test_top10,
-        "weights": weights, "bias": bias,
-        "feature_means": means, "feature_stds": stds,
-        "cont_keys": cont_keys, "P_high": P_high, "P_mid": P_mid,
+    # 保存模型 (兼容 v4 格式)
+    model = {
+        "version": "v0.5",
+        "trained_at": datetime.now(BJT).isoformat(),
+        "n_samples": len(events),
+        "n_pos": sum(labels),
+        "ts_auc": test_auc,
+        "top10_hit": test_top10,
+        "test_auc_oos": test_auc,
+        "test_top10_oos": test_top10,
+        "weights": weights,
+        "bias": bias,
+        "feature_means": means,
+        "feature_stds": stds,
+        "cont_keys": cont_keys,
+        "P_high": P_high,
+        "P_mid": P_mid,
+        "feature_keys": list(features[0].keys()),
+        "regime_used": True,
     }
-    save_path = BACKTEST_DIR / f"reversal-lr-{today}-v5.json"
-    with open(save_path, "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"\n📁 已落档: {save_path}", flush=True)
+    # 保存两处 (picks/ 与 backtest/ 甚趋于 v4)
+    out1 = WORKSPACE / "picks" / "lr_v5_model.json"
+    out1.parent.mkdir(parents=True, exist_ok=True)
+    with open(out1, "w", encoding="utf-8") as f:
+        json.dump(model, f, ensure_ascii=False, indent=2)
+    out2 = BACKTEST_DIR / f"reversal-lr-{today}-v5.json"
+    with open(out2, "w", encoding="utf-8") as f:
+        json.dump(model, f, ensure_ascii=False, indent=2)
+    print(f"\n💾 模型已保存: {out1.name} + {out2.name}")
 
 
 if __name__ == "__main__":
