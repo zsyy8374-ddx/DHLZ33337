@@ -1,0 +1,43 @@
+{
+  "version": "reversal-lr-v0.2",
+  "trained_at": "2026-04-30",
+  "n_samples": 1151,
+  "n_pos": 613,
+  "ts_auc": 0.7430701609078885,
+  "top10_hit": 0.8842105263157893,
+  "weights": {
+    "callback_pct": -0.18689827773619827,
+    "min_close_pct": -0.45050271755233906,
+    "broke_ma5": 0.2578984302894678,
+    "broke_ma10": -0.17175946976134013,
+    "shallow": 0.3063092225478582,
+    "no_close_break": 0.06581690180118233,
+    "vol_compress": 0.1799754227884062,
+    "vol_dead": -0.7352812233378252,
+    "vol_explode": 0.39121161386243103,
+    "is_20cm": -0.31266030084132895,
+    "lbc_num": 0.2046619237780587,
+    "is_lianban": 0.3315861585418354,
+    "is_long_lianban": 0.07187058633809895,
+    "vol_z_low": 0.09096332430064577,
+    "vol_z_explode": 0.10412464168688261
+  },
+  "bias": -0.15571087042326678,
+  "feature_means": {
+    "callback_pct": 7.7264726324934765,
+    "min_close_pct": 6.048010425716771,
+    "lbc_num": 1.3336229365768897
+  },
+  "feature_stds": {
+    "callback_pct": 7.227289525307054,
+    "min_close_pct": 7.115238376447435,
+    "lbc_num": 0.8167920511790232
+  },
+  "cont_keys": [
+    "callback_pct",
+    "min_close_pct",
+    "lbc_num"
+  ],
+  "P_high": 0.915,
+  "P_mid": 0.436
+}
