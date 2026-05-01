@@ -44,12 +44,23 @@ def detect_regime(idx_by_date, date):
 
 
 def get_eval_date(e, sorted_dates):
+    """事件评估日 D_t (反转日或 D0+10)"""
     if e.get("d_t_date"): return e["d_t_date"]
     d0 = e["d0_date"]
     if d0 not in sorted_dates: return None
     i = sorted_dates.index(d0)
     if i + 10 >= len(sorted_dates): return None
     return sorted_dates[i + 10]
+
+
+def get_dminus1_date(e, sorted_dates):
+    """v0.7: 推送日 (D_t 前 1 交易日) — 推送时可见的 regime"""
+    eval_d = get_eval_date(e, sorted_dates)
+    if not eval_d: return None
+    if eval_d not in sorted_dates: return None
+    i = sorted_dates.index(eval_d)
+    if i == 0: return None
+    return sorted_dates[i - 1]
 
 
 def extract_v5(e, regime):
@@ -98,10 +109,11 @@ def main():
     events = d["events"]
     
     idx_by_date, sorted_dates = load_index_data()
+    # ⚠️ v0.7 重大修复: 用 D-1 regime 训模型, 不是 D_t (避免信息泄漏)
     event_regimes = []
     for e in events:
-        eval_d = get_eval_date(e, sorted_dates)
-        event_regimes.append(detect_regime(idx_by_date, eval_d or ""))
+        dm1 = get_dminus1_date(e, sorted_dates)
+        event_regimes.append(detect_regime(idx_by_date, dm1 or ""))
     
     from collections import Counter
     print(f"📊 总事件 {len(events)}, regime 分布:")

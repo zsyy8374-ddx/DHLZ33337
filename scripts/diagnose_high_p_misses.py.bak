@@ -1,0 +1,75 @@
+"""分析 v0.6 极强档失误模式 - 哪些 P 高但跌的票 共性是什么"""
+import json
+
+with open('/Users/openclaw/.openclaw/workspace-dengxian/picks/reversal-v6-rerun-2026-04-29.json') as f:
+    d = json.load(f)
+cands = d['candidates']
+
+# 极强档 12 只 + 强中档前 50
+top62 = cands[:62]
+qiang = cands[:12]
+mid = cands[12:62]
+
+print(f"=== Top 62 命中分析 (v0.6 极强 12 + 强中前 50) ===\n")
+
+# 看实际涨跌幅分布
+def stats(arr, label):
+    n = len(arr)
+    zt = sum(1 for r in arr if r['is_zt_4_30'])
+    up = sum(1 for r in arr if r['chg_4_30'] > 0)
+    avg = sum(r['chg_4_30'] for r in arr) / n
+    big_drop = sum(1 for r in arr if r['chg_4_30'] < -3)
+    big_up = sum(1 for r in arr if r['chg_4_30'] > 3)
+    return f"{label:<15} n={n:>3}  涨停 {zt}  上涨 {up}  >+3% {big_up}  <-3% {big_drop}  平均 {avg:+.2f}%"
+
+print(stats(qiang, "极强 (P≥.85)"))
+print(stats(mid[:20], "强中前20"))
+print(stats(mid[20:50], "强中21-50"))
+print(stats(cands[62:100], "中档 (62-100)"))
+print(stats(cands[100:200], "100-200"))
+print(stats(cands[200:], "200+ (尾部)"))
+
+# 极强档 12 只的 cb5_main / lbc 分布
+print(f"\n=== 极强档 12 只特征分布 ===")
+for r in qiang:
+    print(f"  {r['code']} {r['name'][:6]:<8} P={r['p_new']:.3f} lbc={r['lbc']} cb={r['callback']:.1f}% cb5={r['cb5_main']:+.2f}亿  4-30: {'🚀涨停' if r['is_zt_4_30'] else f\"{r['chg_4_30']:+.1f}%\"}")
+
+# v0.4 极强档跟 v0.6 的差别
+v4_sorted = sorted(cands, key=lambda r: r['p_old'], reverse=True)
+v4_qiang = [r for r in v4_sorted if r['p_old'] >= 0.85][:12]
+
+v4_codes = set(r['code'] for r in v4_qiang)
+v6_codes = set(r['code'] for r in qiang)
+overlap = v4_codes & v6_codes
+v6_new = v6_codes - v4_codes
+v4_only = v4_codes - v6_codes
+
+print(f"\n=== v0.4 vs v0.6 极强档差异 ===")
+print(f"  共同 ({len(overlap)}): {sorted(overlap)}")
+print(f"  v0.6 新加 ({len(v6_new)}): {sorted(v6_new)}")
+print(f"  v0.4 才有 ({len(v4_only)}): {sorted(v4_only)}")
+
+# 分析 v0.6 新加的票 表现
+print(f"\nv0.6 加进来的:")
+for r in qiang:
+    if r['code'] in v6_new:
+        print(f"  {r['code']} {r['name'][:6]:<8} P_old={r['p_old']:.3f} → P_new={r['p_new']:.3f}, boost={r['p_new_boost']:+.3f}, lbc={r['lbc']}, 4-30: {'🚀涨停' if r['is_zt_4_30'] else f\"{r['chg_4_30']:+.1f}%\"}")
+
+# 找 4-30 涨停股在原 P (v0.4) 排名 vs v0.6
+print(f"\n=== 4-30 涨停股 v0.4 vs v0.6 排名 ===")
+zt_stocks = [r for r in cands if r['is_zt_4_30']]
+v4_ranks = {r['code']: i+1 for i, r in enumerate(v4_sorted)}
+for r in zt_stocks:
+    code = r['code']
+    v6_rank = next(i+1 for i, x in enumerate(cands) if x['code'] == code)
+    v4_rank = v4_ranks[code]
+    print(f"  {code} {r['name'][:6]:<8} lbc={r['lbc']}  v0.4 #{v4_rank:<3} → v0.6 #{v6_rank:<3} (P {r['p_old']:.3f}→{r['p_new']:.3f})")
+
+# 如果不加 boost, 极强档命中咋样
+print(f"\n=== 假设 4-29 不加 +0.05 boost (即 v0.6 同 v0.4) ===")
+no_boost = sorted(cands, key=lambda r: r['p_new_base'], reverse=True)
+for n in [10, 12, 20, 30, 50]:
+    sub = no_boost[:n]
+    zt = sum(1 for r in sub if r['is_zt_4_30'])
+    avg = sum(r['chg_4_30'] for r in sub) / n
+    print(f"  Top {n}: 涨停 {zt}, 平均 {avg:+.2f}%")

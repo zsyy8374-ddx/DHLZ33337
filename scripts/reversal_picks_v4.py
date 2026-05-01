@@ -387,30 +387,39 @@ def style_boost(c, style):
     if cb1 >= 1:
         boost -= 0.05
     
-    # v0.6 8 类 regime 调权 (历史 1151 事件 + bootstrap 200 trials 验证)
-    # AUC 平均改善 +0.035, 5% 分位 +0.021, 200/200 正向
+    # ⚠️ v0.7 修复重大 bug: 之前 v0.6 用 D_t (事件评估日) 的 regime 反转率设 boost,
+    # 但推送时 (D-1) 看不到 D_t regime —— 两个只有 24.6% 一致
+    # 正确做法: 用 D-1 regime 对应的 D_t 实际反转率
+    # 
+    # 历史 D-1 regime → D_t 实际反转率 (n=1151):
+    #   kc_only_red       n=38   0.0%  (原以为 2.6%, 实际 0% —— 极险)
+    #   sh_only_red       n=13  15.4%  (原 12.5%)
+    #   sz_only_red       n=12  41.7%  (原以为 80% —— 原加分是错的!)
+    #   all_green_strong  n=377 57.8%  (原以为 37.8% —— 原压低是错的!)
+    #   all_red_strong    n=412 57.5%  (原 62.9%)
+    #   normal            n=295 50.2%
+    # 整体基线 53.3%
     if style:
         regime = style.get("market_regime", "normal")
         lbc = c.get("d0_lbc", 1) or 1
         
-        if regime in ("kc_only_red", "spread_high_up"):  # 2.6%
-            if lbc >= 3: boost -= 0.40
-            elif lbc >= 2: boost -= 0.30
-            else: boost -= 0.15
-        elif regime == "sh_only_red":  # 12.5%
-            if lbc >= 3: boost -= 0.30
-            elif lbc >= 2: boost -= 0.20
-            else: boost -= 0.08
-        elif regime == "all_green_strong":  # 37.8% 齐跌强
-            boost -= 0.10
-        elif regime == "all_green_weak":  # 齐跌弱, 微压
-            boost -= 0.05
-        elif regime == "all_red_strong":  # 62.9% 齐涨强
-            boost += 0.05
-        elif regime == "all_red_weak":  # 齐涨弱, 中性
-            boost += 0
-        elif regime == "sz_only_red":  # 80%
-            boost += 0.05
+        # base boost 以反转率 vs 基线偏离异设
+        base_boost_map = {
+            "kc_only_red":     -0.50,  # 0% 实际 → 重压
+            "sh_only_red":     -0.30,
+            "spread_high_up":  -0.30,
+            "sz_only_red":     -0.10,
+            "normal":          -0.02,
+            "all_red_strong":  +0.03,
+            "all_green_strong":+0.04,
+            "all_red_weak":     0,
+            "all_green_weak":  -0.05,
+        }
+        boost += base_boost_map.get(regime, 0)
+        # 险 regime 上 lbc 越高越压
+        if regime in ("kc_only_red", "sh_only_red", "spread_high_up"):
+            if lbc >= 3: boost -= 0.10
+            elif lbc >= 2: boost -= 0.05
     
     return boost
 
