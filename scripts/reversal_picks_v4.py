@@ -506,6 +506,17 @@ def extract_v8(c, regime):
     return f
 
 
+def extract_v11(c, regime, recent_5d=0.5, recent_10d=0.5, recent_20d=0.5):
+    """v1.1 特征: v1.0 + 近期反转率 (周级 regime)"""
+    f = extract_v10(c, regime)
+    f["recent_5d_rev_rate"] = recent_5d
+    f["recent_10d_rev_rate"] = recent_10d
+    f["recent_20d_rev_rate"] = recent_20d
+    f["strong_relay"] = 1.0 if recent_10d >= 0.6 else 0.0
+    f["weak_relay"] = 1.0 if recent_10d < 0.3 else 0.0
+    return f
+
+
 def extract_v10(c, regime):
     """v1.0 特征: 大样本 3262 训的模型需要的完整特征"""
     f = extract_v4(c)
@@ -541,10 +552,12 @@ def extract_v10(c, regime):
     return f
 
 
-def predict_lr(c, model, regime="normal"):
-    """兼容 v1.0 / v0.8 / v0.5 / v0.4 模型"""
+def predict_lr(c, model, regime="normal", recent_5d=0.5, recent_10d=0.5, recent_20d=0.5):
+    """兼容 v1.1 / v1.0 / v0.8 / v0.5 / v0.4 模型"""
     ver = model.get("version", "")
-    if "v1.0" in ver:
+    if "v1.1" in ver:
+        f = extract_v11(c, regime, recent_5d, recent_10d, recent_20d)
+    elif "v1.0" in ver:
         f = extract_v10(c, regime)
     elif "v0.8" in ver:
         f = extract_v8(c, regime)
@@ -726,12 +739,15 @@ def main():
     if not target_date:
         target_date = datetime.now(BJT).strftime("%Y-%m-%d")
     
-    # 优先 v1.0 (大样本 3262 + 资金流), fallback v0.8/v0.5/v0.4
+    # 优先 v1.1 (含 recent_rev_rate 周级 regime), fallback v1.0/v0.8/v0.5/v0.4
+    v11_path = WORKSPACE / "picks" / "lr_v11_model.json"
     v10_path = WORKSPACE / "picks" / "lr_v10_model.json"
     v8_path = WORKSPACE / "picks" / "lr_v8_model.json"
     cands_v5 = sorted(BACKTEST_DIR.glob("reversal-lr-*-v5.json"), reverse=True)
     cands_v4 = sorted(BACKTEST_DIR.glob("reversal-lr-*-v4.json"), reverse=True)
-    if v10_path.exists():
+    if v11_path.exists():
+        model_path = v11_path
+    elif v10_path.exists():
         model_path = v10_path
     elif v8_path.exists():
         model_path = v8_path
@@ -772,9 +788,56 @@ def main():
     regime = detect_regime_v5(style)
     print(f"🌺 今日 regime: {regime}", flush=True)
     
+    # v1.1: 拿近期反转率 (周级 regime)
+    # 从 backtest/reversal-events-2026-05-01-v8-enriched.json 中拿出近 5/10/20 交易日反转率
+    recent_5d = recent_10d = recent_20d = 0.5
+    if "v1.1" in model.get("version", ""):
+        try:
+            evts_path = BACKTEST_DIR / "reversal-events-2026-05-01-v8-enriched.json"
+            if evts_path.exists():
+                with open(evts_path) as f:
+                    hist_events = json.load(f)["events"]
+                # 拿 target_date 之前最近 5/10/20 日的 lbc=1 事件
+                from collections import defaultdict
+                date_evs = defaultdict(list)
+                for e in hist_events:
+                    if e.get("d0_lbc", 1) == 1:
+                        date_evs[e["d0_date"]].append(e)
+                all_dates = sorted(date_evs.keys())
+                # 找 target_date 前的交易日
+                prev_dates = [d for d in all_dates if d < target_date]
+                if prev_dates:
+                    for nd, key in [(5, "5"), (10, "10"), (20, "20")]:
+                        sub_dates = prev_dates[-nd:]
+                        related = []
+                        for d in sub_dates:
+                            related.extend(date_evs[d])
+                        if related:
+                            rate = sum(1 for e in related if e["outcome"]=="reversal") / len(related)
+                            if key == "5": recent_5d = rate
+                            elif key == "10": recent_10d = rate
+                            else: recent_20d = rate
+                print(f"   近期反转率 (全 lbc=1 事件): 5日 {recent_5d*100:.1f}%, 10日 {recent_10d*100:.1f}%, 20日 {recent_20d*100:.1f}%", flush=True)
+        except Exception as e:
+            print(f"   ⚠️ 近期反转率计算失败: {e}", flush=True)
+    
+    # v1.1 weak_market_penalty: 近 10 交易日反转率很低时, 全局压低 P
+    weak_market_penalty = 0.0
+    if "v1.1" in model.get("version", ""):
+        if recent_10d < 0.30:
+            weak_market_penalty = -0.15  # 弱接力市场
+            print(f"   ⚠️ weak_market_penalty {weak_market_penalty:+.2f} (10日反转率仅 {recent_10d*100:.1f}%)", flush=True)
+        elif recent_10d < 0.40:
+            weak_market_penalty = -0.08
+            print(f"   weak_market_penalty {weak_market_penalty:+.2f} (10日反转率 {recent_10d*100:.1f}%)", flush=True)
+        elif recent_10d > 0.55:
+            weak_market_penalty = +0.05  # 强接力市场, 加分
+            print(f"   weak_market_penalty {weak_market_penalty:+.2f} (强接力)", flush=True)
+    
     # LR 预测: regime 进入 model + post-hoc 调权
     for c in candidates:
-        base = predict_lr(c, model, regime=regime)
+        base = predict_lr(c, model, regime=regime, recent_5d=recent_5d, recent_10d=recent_10d, recent_20d=recent_20d)
+        base = max(0.001, min(0.999, base + weak_market_penalty))
         boost = style_boost(c, style)  # 含 6 类 regime post-hoc 调权
         c["lr_prob_base"] = round(base, 4)
         c["lr_prob_boost"] = round(boost, 4)
