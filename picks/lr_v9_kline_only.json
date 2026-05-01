@@ -1,0 +1,58 @@
+{
+  "version": "v0.9",
+  "data_basis": "扩展 3262 events (2025-02 至 2026-04)",
+  "features": [
+    "callback_pct",
+    "min_close_pct",
+    "broke_ma5",
+    "double_break",
+    "shallow",
+    "deep",
+    "vol_extreme_low",
+    "vol_dead_zone",
+    "vol_explode",
+    "vol_callback_ratio",
+    "is_20cm",
+    "lbc_num",
+    "is_lianban",
+    "lianban_shallow"
+  ],
+  "cont_keys": [
+    "callback_pct",
+    "min_close_pct",
+    "vol_callback_ratio",
+    "lbc_num"
+  ],
+  "feature_means": {
+    "callback_pct": 7.32895462906192,
+    "min_close_pct": 7.32895462906192,
+    "vol_callback_ratio": 1.3318681790312732,
+    "lbc_num": 1.3209687308399756
+  },
+  "feature_stds": {
+    "callback_pct": 7.8875145642342295,
+    "min_close_pct": 7.8875145642342295,
+    "vol_callback_ratio": 2.4437270597941985,
+    "lbc_num": 0.8384070284984049
+  },
+  "weights": {
+    "callback_pct": -0.2498256030106994,
+    "min_close_pct": -0.2498256030106994,
+    "broke_ma5": -0.04031174889369035,
+    "double_break": -0.10604791775963761,
+    "shallow": 0.08820559450492793,
+    "deep": -0.1799556665354414,
+    "vol_extreme_low": -0.00730165580099404,
+    "vol_dead_zone": -0.48764417898109474,
+    "vol_explode": 0.32090608938263987,
+    "vol_callback_ratio": 0.2736738640905198,
+    "is_20cm": -0.17370880084277482,
+    "lbc_num": 0.28603614639050895,
+    "is_lianban": 0.10763497735575514,
+    "lianban_shallow": 0.05196240649387388
+  },
+  "bias": -0.5094873759614564,
+  "ts_auc": 0.6998966845120691,
+  "n_events": 3262,
+  "reversal_rate": 0.36817903126916
+}
