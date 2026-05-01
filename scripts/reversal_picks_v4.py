@@ -478,9 +478,40 @@ def extract_v5(c, regime):
     return f
 
 
+def extract_v8(c, regime):
+    """v0.8 特征: v0.5 + 5 个新交互/非线性特征 + reg_spread_high_up rename"""
+    f = extract_v4(c)
+    callback = c.get("callback_pct", 0) or 0
+    vol_ratio = c.get("vol_callback_ratio", 0) or 0
+    cb5 = c.get("cb5_main_avg", 0) or 0
+    cb1 = c.get("cb1_main_avg", 0) or 0
+    lbc = c.get("d0_lbc", 1) or 1
+    
+    # ⚠️ 新 5 个 v0.8 交互特征
+    f["double_break"] = 1.0 if c.get("broke_ma5") and c.get("broke_ma10") else 0.0
+    f["vol_extreme_low"] = 1.0 if vol_ratio < 0.3 else 0.0
+    f["vol_dead_zone"] = 1.0 if 0.5 <= vol_ratio < 0.7 else 0.0
+    f["lianban_shallow"] = 1.0 if lbc >= 2 and 2 <= callback < 5 else 0.0
+    f["shake_signal"] = 1.0 if cb5 >= 1 and cb1 < 0 else 0.0
+    
+    # regime dummies
+    f["reg_kc_red"] = 1.0 if regime == "kc_only_red" else 0.0
+    f["reg_sh_red"] = 1.0 if regime == "sh_only_red" else 0.0
+    f["reg_sz_red"] = 1.0 if regime == "sz_only_red" else 0.0
+    f["reg_spread_high_up"] = 1.0 if regime == "spread_high_up" else 0.0
+    f["reg_all_red_strong"] = 1.0 if regime == "all_red_strong" else 0.0
+    f["reg_all_red_weak"] = 1.0 if regime == "all_red_weak" else 0.0
+    f["reg_all_green_strong"] = 1.0 if regime == "all_green_strong" else 0.0
+    f["reg_all_green_weak"] = 1.0 if regime == "all_green_weak" else 0.0
+    return f
+
+
 def predict_lr(c, model, regime="normal"):
-    """兼容 v4 / v5 模型"""
-    if model.get("regime_used"):
+    """兼容 v0.8 / v0.5 / v0.4 模型"""
+    ver = model.get("version", "")
+    if "v0.8" in ver:
+        f = extract_v8(c, regime)
+    elif model.get("regime_used") or "v0.5" in ver or "v0.6" in ver or "v0.7" in ver:
         f = extract_v5(c, regime)
     else:
         f = extract_v4(c)
@@ -658,22 +689,25 @@ def main():
     if not target_date:
         target_date = datetime.now(BJT).strftime("%Y-%m-%d")
     
-    # 优先找 v0.5 模型, fallback v0.4
+    # 优先 v0.8 (D-1 regime + 交互特征), fallback v0.5/v0.4
+    v8_path = WORKSPACE / "picks" / "lr_v8_model.json"
     cands_v5 = sorted(BACKTEST_DIR.glob("reversal-lr-*-v5.json"), reverse=True)
     cands_v4 = sorted(BACKTEST_DIR.glob("reversal-lr-*-v4.json"), reverse=True)
-    if cands_v5:
+    if v8_path.exists():
+        model_path = v8_path
+    elif cands_v5:
         model_path = cands_v5[0]
     elif cands_v4:
         model_path = cands_v4[0]
     else:
-        print("❌ 没有模型, 请先跑 reversal_lr_v5.py 或 v4", flush=True)
+        print("❌ 没有模型", flush=True)
         sys.exit(1)
     
     with open(model_path, encoding="utf-8") as f:
         model = json.load(f)
-    print(f"📦 加载模型: {model_path.name} (regime_used={model.get('regime_used', False)})", flush=True)
-    print(f"   时序 AUC: {model['ts_auc']:.4f}, Top10%: {model['top10_hit']*100:.1f}%", flush=True)
-    print(f"   阈值: P_high={model['P_high']}, P_mid={model['P_mid']}", flush=True)
+    print(f"📦 加载模型: {model_path.name} (version={model.get('version','?')})", flush=True)
+    print(f"   时序 AUC: {model.get('ts_auc', 0):.4f}", flush=True)
+    print(f"   阈值: P_high={model.get('P_high','?')}, P_mid={model.get('P_mid','?')}", flush=True)
     
     # 拉市场风格指标
     print("🌍 拉市场风格...", flush=True)
