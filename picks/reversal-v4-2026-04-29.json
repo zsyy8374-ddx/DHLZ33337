@@ -1,6 +1,18 @@
 {
   "date": "2026-04-29",
-  "model_version": "reversal-lr-v0.4",
+  "model_version": "v0.5",
+  "market_style": {
+    "sh_5d": 0.03,
+    "cy_5d": -1.748,
+    "cy_sh_diff": -1.778,
+    "sh_1d": 0.708,
+    "cy_1d": 2.515,
+    "kc_1d": 0.325,
+    "index_spread_1d": 2.19,
+    "extreme_split": false,
+    "market_regime": "normal"
+  },
+  "style_label": "震荡+大盘风",
   "candidates": [
     {
       "code": "000037",
@@ -22,7 +34,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.1136,
       "name": "深南电A",
-      "lr_prob": 0.5574
+      "lr_prob_base": 0.6654,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7154,
+      "lr_prob_with_boost": 0.7154
     },
     {
       "code": "000056",
@@ -44,7 +60,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.0354,
       "name": "*ST皇庭",
-      "lr_prob": 0.3064
+      "lr_prob_base": 0.3973,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4473,
+      "lr_prob_with_boost": 0.4473
     },
     {
       "code": "000062",
@@ -61,12 +81,16 @@
       "d0_lbc": 2,
       "d0_main_flow": 13.6015,
       "cb1_main_avg": -4.0366,
-      "cb3_main_avg": -2.3038,
-      "cb5_main_avg": -2.3038,
-      "cb5_in_ratio": 0.0,
+      "cb3_main_avg": -1.4466,
+      "cb5_main_avg": -1.4466,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 3.308,
       "name": "深圳华强",
-      "lr_prob": 0.4864
+      "lr_prob_base": 0.6952,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6952,
+      "lr_prob_with_boost": 0.6952
     },
     {
       "code": "000070",
@@ -88,7 +112,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.3851,
       "name": "特发信息",
-      "lr_prob": 0.304
+      "lr_prob_base": 0.3903,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3903,
+      "lr_prob_with_boost": 0.3903
     },
     {
       "code": "000404",
@@ -110,7 +138,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": -0.0082,
       "name": "长虹华意",
-      "lr_prob": 0.6652
+      "lr_prob_base": 0.7556,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8056,
+      "lr_prob_with_boost": 0.8056
     },
     {
       "code": "000537",
@@ -128,11 +160,15 @@
       "d0_main_flow": 4.1916,
       "cb1_main_avg": -1.4422,
       "cb3_main_avg": -0.7505,
-      "cb5_main_avg": -0.69,
+      "cb5_main_avg": -0.6189,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.1859,
       "name": "绿发电力",
-      "lr_prob": 0.1996
+      "lr_prob_base": 0.276,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.326,
+      "lr_prob_with_boost": 0.326
     },
     {
       "code": "000539",
@@ -154,7 +190,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.1974,
       "name": "粤电力Ａ",
-      "lr_prob": 0.825
+      "lr_prob_base": 0.8798,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.9298,
+      "lr_prob_with_boost": 0.9298
     },
     {
       "code": "000546",
@@ -172,11 +212,15 @@
       "d0_main_flow": 4.043,
       "cb1_main_avg": 1.1333,
       "cb3_main_avg": 0.2515,
-      "cb5_main_avg": 0.2515,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": 0.435,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": -0.2831,
       "name": "金圆股份",
-      "lr_prob": 0.3317
+      "lr_prob_base": 0.4813,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4813,
+      "lr_prob_with_boost": 0.4813
     },
     {
       "code": "000565",
@@ -193,12 +237,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.3853,
       "cb1_main_avg": -0.0823,
-      "cb3_main_avg": -0.0399,
-      "cb5_main_avg": -0.0399,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": -0.0325,
+      "cb5_main_avg": -0.0325,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.0022,
       "name": "渝三峡Ａ",
-      "lr_prob": 0.6271
+      "lr_prob_base": 0.6968,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7468,
+      "lr_prob_with_boost": 0.7468
     },
     {
       "code": "000570",
@@ -220,7 +268,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.3015,
       "name": "苏常柴Ａ",
-      "lr_prob": 0.4192
+      "lr_prob_base": 0.5182,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5682,
+      "lr_prob_with_boost": 0.5682
     },
     {
       "code": "000571",
@@ -242,7 +294,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": -0.0965,
       "name": "新大洲A",
-      "lr_prob": 0.4793
+      "lr_prob_base": 0.5902,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6402,
+      "lr_prob_with_boost": 0.6402
     },
     {
       "code": "000586",
@@ -264,7 +320,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.6318,
       "name": "汇源通信",
-      "lr_prob": 0.1855
+      "lr_prob_base": 0.2476,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.2976,
+      "lr_prob_with_boost": 0.2976
     },
     {
       "code": "000690",
@@ -286,7 +346,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.0527,
       "name": "宝新能源",
-      "lr_prob": 0.6117
+      "lr_prob_base": 0.7012,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7512,
+      "lr_prob_with_boost": 0.7512
     },
     {
       "code": "000715",
@@ -304,11 +368,15 @@
       "d0_main_flow": 1.5955,
       "cb1_main_avg": -0.253,
       "cb3_main_avg": -0.0452,
-      "cb5_main_avg": -0.0067,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": -0.0196,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.057,
       "name": "中兴商业",
-      "lr_prob": 0.411
+      "lr_prob_base": 0.5023,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5523,
+      "lr_prob_with_boost": 0.5523
     },
     {
       "code": "000751",
@@ -330,7 +398,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.324,
       "name": "锌业股份",
-      "lr_prob": 0.3925
+      "lr_prob_base": 0.4881,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5381,
+      "lr_prob_with_boost": 0.5381
     },
     {
       "code": "000762",
@@ -352,7 +424,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 2.3936,
       "name": "西藏矿业",
-      "lr_prob": 0.4681
+      "lr_prob_base": 0.5483,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5983,
+      "lr_prob_with_boost": 0.5983
     },
     {
       "code": "000782",
@@ -374,7 +450,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": -0.0159,
       "name": "恒申新材",
-      "lr_prob": 0.6629
+      "lr_prob_base": 0.7539,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8039,
+      "lr_prob_with_boost": 0.8039
     },
     {
       "code": "000802",
@@ -396,7 +476,11 @@
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.0192,
       "name": "北京文化",
-      "lr_prob": 0.3156
+      "lr_prob_base": 0.4045,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4545,
+      "lr_prob_with_boost": 0.4545
     },
     {
       "code": "000811",
@@ -418,7 +502,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.2301,
       "name": "冰轮环境",
-      "lr_prob": 0.5413
+      "lr_prob_base": 0.6432,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6932,
+      "lr_prob_with_boost": 0.6932
     },
     {
       "code": "000815",
@@ -440,7 +528,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": -0.1255,
       "name": "美利云",
-      "lr_prob": 0.2693
+      "lr_prob_base": 0.3569,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4069,
+      "lr_prob_with_boost": 0.4069
     },
     {
       "code": "000819",
@@ -462,7 +554,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0523,
       "name": "岳阳兴长",
-      "lr_prob": 0.3879
+      "lr_prob_base": 0.4859,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5359,
+      "lr_prob_with_boost": 0.5359
     },
     {
       "code": "000880",
@@ -484,7 +580,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0731,
       "name": "潍柴重机",
-      "lr_prob": 0.2301
+      "lr_prob_base": 0.3061,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3061,
+      "lr_prob_with_boost": 0.3061
     },
     {
       "code": "000890",
@@ -502,11 +602,15 @@
       "d0_main_flow": 3.1955,
       "cb1_main_avg": 0.0879,
       "cb3_main_avg": 0.1712,
-      "cb5_main_avg": 0.827,
-      "cb5_in_ratio": 1.0,
+      "cb5_main_avg": 0.1752,
+      "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": -0.3304,
       "name": "法尔胜",
-      "lr_prob": 0.5123
+      "lr_prob_base": 0.4548,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5048,
+      "lr_prob_with_boost": 0.5048
     },
     {
       "code": "000906",
@@ -524,11 +628,15 @@
       "d0_main_flow": 1.3314,
       "cb1_main_avg": -0.2572,
       "cb3_main_avg": -0.0791,
-      "cb5_main_avg": -0.0791,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.0541,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": -0.0021,
       "name": "浙商中拓",
-      "lr_prob": 0.4775
+      "lr_prob_base": 0.6135,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6635,
+      "lr_prob_with_boost": 0.6635
     },
     {
       "code": "000925",
@@ -545,12 +653,16 @@
       "d0_lbc": 3,
       "d0_main_flow": -0.313,
       "cb1_main_avg": -1.3668,
-      "cb3_main_avg": 0.3794,
-      "cb5_main_avg": 0.3794,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": 0.358,
+      "cb5_main_avg": 0.358,
+      "cb5_in_ratio": 0.667,
       "pre_d0_5d_main_avg": 1.0872,
       "name": "众合科技",
-      "lr_prob": 0.8041
+      "lr_prob_base": 0.8465,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8465,
+      "lr_prob_with_boost": 0.8465
     },
     {
       "code": "000936",
@@ -572,7 +684,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0396,
       "name": "华西股份",
-      "lr_prob": 0.3531
+      "lr_prob_base": 0.4403,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4903,
+      "lr_prob_with_boost": 0.4903
     },
     {
       "code": "000949",
@@ -594,7 +710,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0494,
       "name": "新乡化纤",
-      "lr_prob": 0.3712
+      "lr_prob_base": 0.4677,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4677,
+      "lr_prob_with_boost": 0.4677
     },
     {
       "code": "000952",
@@ -611,12 +731,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.2771,
       "cb1_main_avg": 0.2481,
-      "cb3_main_avg": 0.1616,
-      "cb5_main_avg": 0.1616,
+      "cb3_main_avg": 0.1227,
+      "cb5_main_avg": 0.1227,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.0025,
       "name": "广济药业",
-      "lr_prob": 0.5531
+      "lr_prob_base": 0.6493,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6993,
+      "lr_prob_with_boost": 0.6993
     },
     {
       "code": "000990",
@@ -638,7 +762,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.3944,
       "name": "诚志股份",
-      "lr_prob": 0.5057
+      "lr_prob_base": 0.6086,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6586,
+      "lr_prob_with_boost": 0.6586
     },
     {
       "code": "001211",
@@ -655,12 +783,16 @@
       "d0_lbc": 2,
       "d0_main_flow": 0.9279,
       "cb1_main_avg": 0.202,
-      "cb3_main_avg": 0.2295,
-      "cb5_main_avg": 0.2295,
+      "cb3_main_avg": 0.1647,
+      "cb5_main_avg": 0.1647,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.0683,
       "name": "双枪科技",
-      "lr_prob": 0.7009
+      "lr_prob_base": 0.8029,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8029,
+      "lr_prob_with_boost": 0.8029
     },
     {
       "code": "001215",
@@ -678,11 +810,15 @@
       "d0_main_flow": 1.0386,
       "cb1_main_avg": -0.0388,
       "cb3_main_avg": 0.1419,
-      "cb5_main_avg": 0.2409,
-      "cb5_in_ratio": 0.75,
+      "cb5_main_avg": 0.3141,
+      "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0124,
       "name": "千味央厨",
-      "lr_prob": 0.4773
+      "lr_prob_base": 0.5934,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6434,
+      "lr_prob_with_boost": 0.6434
     },
     {
       "code": "001229",
@@ -704,7 +840,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0308,
       "name": "魅视科技",
-      "lr_prob": 0.4671
+      "lr_prob_base": 0.5624,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6124,
+      "lr_prob_with_boost": 0.6124
     },
     {
       "code": "001230",
@@ -726,7 +866,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0004,
       "name": "劲旅环境",
-      "lr_prob": 0.5095
+      "lr_prob_base": 0.613,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.663,
+      "lr_prob_with_boost": 0.663
     },
     {
       "code": "001234",
@@ -744,11 +888,15 @@
       "d0_main_flow": 0.9244,
       "cb1_main_avg": -0.466,
       "cb3_main_avg": -0.5222,
-      "cb5_main_avg": -0.5222,
+      "cb5_main_avg": -0.404,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.3845,
       "name": "泰慕士",
-      "lr_prob": 0.4493
+      "lr_prob_base": 0.565,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.565,
+      "lr_prob_with_boost": 0.565
     },
     {
       "code": "001267",
@@ -766,11 +914,15 @@
       "d0_main_flow": 4.7459,
       "cb1_main_avg": -2.3989,
       "cb3_main_avg": 3.3079,
-      "cb5_main_avg": 2.7919,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": 2.2783,
+      "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 1.5992,
       "name": "汇绿生态",
-      "lr_prob": 0.8436
+      "lr_prob_base": 0.8236,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8736,
+      "lr_prob_with_boost": 0.8736
     },
     {
       "code": "001268",
@@ -792,7 +944,11 @@
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.0436,
       "name": "联合精密",
-      "lr_prob": 0.215
+      "lr_prob_base": 0.2887,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3387,
+      "lr_prob_with_boost": 0.3387
     },
     {
       "code": "001314",
@@ -810,11 +966,15 @@
       "d0_main_flow": 1.2091,
       "cb1_main_avg": 0.3738,
       "cb3_main_avg": 0.4286,
-      "cb5_main_avg": 0.4186,
+      "cb5_main_avg": 0.3568,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.0037,
       "name": "亿道信息",
-      "lr_prob": 0.5127
+      "lr_prob_base": 0.6135,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6635,
+      "lr_prob_with_boost": 0.6635
     },
     {
       "code": "001330",
@@ -836,7 +996,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.2334,
       "name": "博纳影业",
-      "lr_prob": 0.4243
+      "lr_prob_base": 0.5189,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5689,
+      "lr_prob_with_boost": 0.5689
     },
     {
       "code": "001332",
@@ -853,12 +1017,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.348,
       "cb1_main_avg": 0.5826,
-      "cb3_main_avg": 0.3247,
-      "cb5_main_avg": 0.3247,
+      "cb3_main_avg": 0.2351,
+      "cb5_main_avg": 0.2351,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": -0.0148,
       "name": "锡装股份",
-      "lr_prob": 0.6672
+      "lr_prob_base": 0.7494,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7994,
+      "lr_prob_with_boost": 0.7994
     },
     {
       "code": "001339",
@@ -876,11 +1044,15 @@
       "d0_main_flow": 1.9884,
       "cb1_main_avg": 0.0195,
       "cb3_main_avg": 1.9814,
-      "cb5_main_avg": 1.9814,
+      "cb5_main_avg": 1.5686,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.3072,
       "name": "智微智能",
-      "lr_prob": 0.7548
+      "lr_prob_base": 0.7988,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8488,
+      "lr_prob_with_boost": 0.8488
     },
     {
       "code": "001366",
@@ -902,7 +1074,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0002,
       "name": "播恩集团",
-      "lr_prob": 0.3965
+      "lr_prob_base": 0.4889,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5389,
+      "lr_prob_with_boost": 0.5389
     },
     {
       "code": "001389",
@@ -924,7 +1100,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0272,
       "name": "广合科技",
-      "lr_prob": 0.7094
+      "lr_prob_base": 0.7864,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7864,
+      "lr_prob_with_boost": 0.7864
     },
     {
       "code": "001400",
@@ -946,7 +1126,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.2382,
       "name": "江顺科技",
-      "lr_prob": 0.4185
+      "lr_prob_base": 0.5531,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5531,
+      "lr_prob_with_boost": 0.5531
     },
     {
       "code": "001896",
@@ -968,7 +1152,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 3.8884,
       "name": "豫能控股",
-      "lr_prob": 0.3969
+      "lr_prob_base": 0.471,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.521,
+      "lr_prob_with_boost": 0.521
     },
     {
       "code": "002008",
@@ -986,11 +1174,15 @@
       "d0_main_flow": 13.2347,
       "cb1_main_avg": -0.2734,
       "cb3_main_avg": 1.2452,
-      "cb5_main_avg": 0.9675,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": 1.5577,
+      "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 4.3775,
       "name": "大族激光",
-      "lr_prob": 0.7806
+      "lr_prob_base": 0.8333,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8833,
+      "lr_prob_with_boost": 0.8833
     },
     {
       "code": "002029",
@@ -1007,12 +1199,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.7771,
       "cb1_main_avg": -0.0167,
-      "cb3_main_avg": 0.0709,
-      "cb5_main_avg": 0.0709,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": 0.0537,
+      "cb5_main_avg": 0.0537,
+      "cb5_in_ratio": 0.667,
       "pre_d0_5d_main_avg": 0.1338,
       "name": "七 匹 狼",
-      "lr_prob": 0.641
+      "lr_prob_base": 0.6692,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7192,
+      "lr_prob_with_boost": 0.7192
     },
     {
       "code": "002033",
@@ -1034,7 +1230,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.3049,
       "name": "丽江股份",
-      "lr_prob": 0.4724
+      "lr_prob_base": 0.6029,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6029,
+      "lr_prob_with_boost": 0.6029
     },
     {
       "code": "002062",
@@ -1056,7 +1256,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0317,
       "name": "宏润建设",
-      "lr_prob": 0.6691
+      "lr_prob_base": 0.7583,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8083,
+      "lr_prob_with_boost": 0.8083
     },
     {
       "code": "002108",
@@ -1078,7 +1282,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.4128,
       "name": "沧州明珠",
-      "lr_prob": 0.6756
+      "lr_prob_base": 0.7614,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7614,
+      "lr_prob_with_boost": 0.7614
     },
     {
       "code": "002115",
@@ -1095,12 +1303,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 2.5092,
       "cb1_main_avg": 2.115,
-      "cb3_main_avg": 2.0952,
-      "cb5_main_avg": 2.0952,
-      "cb5_in_ratio": 1.0,
+      "cb3_main_avg": 0.5866,
+      "cb5_main_avg": 0.5866,
+      "cb5_in_ratio": 0.667,
       "pre_d0_5d_main_avg": -0.1966,
       "name": "三维通信",
-      "lr_prob": 0.8224
+      "lr_prob_base": 0.8026,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8026,
+      "lr_prob_with_boost": 0.8026
     },
     {
       "code": "002120",
@@ -1117,12 +1329,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 3.9665,
       "cb1_main_avg": 1.7273,
-      "cb3_main_avg": 0.6046,
-      "cb5_main_avg": 0.6046,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": 0.2715,
+      "cb5_main_avg": 0.2715,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.6916,
       "name": "韵达股份",
-      "lr_prob": 0.5923
+      "lr_prob_base": 0.5459,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5459,
+      "lr_prob_with_boost": 0.5459
     },
     {
       "code": "002127",
@@ -1140,11 +1356,15 @@
       "d0_main_flow": 1.0232,
       "cb1_main_avg": -0.1393,
       "cb3_main_avg": -0.167,
-      "cb5_main_avg": -0.167,
-      "cb5_in_ratio": 0.0,
+      "cb5_main_avg": -0.1208,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": -0.0,
       "name": "南极电商",
-      "lr_prob": 0.5577
+      "lr_prob_base": 0.6635,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7135,
+      "lr_prob_with_boost": 0.7135
     },
     {
       "code": "002134",
@@ -1161,12 +1381,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 1.6329,
       "cb1_main_avg": -0.2051,
-      "cb3_main_avg": 0.0151,
-      "cb5_main_avg": 0.0151,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": -0.0176,
+      "cb5_main_avg": -0.0176,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": -0.031,
       "name": "天津普林",
-      "lr_prob": 0.6336
+      "lr_prob_base": 0.6989,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7489,
+      "lr_prob_with_boost": 0.7489
     },
     {
       "code": "002149",
@@ -1188,7 +1412,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 7.1927,
       "name": "西部材料",
-      "lr_prob": 0.3503
+      "lr_prob_base": 0.4201,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4701,
+      "lr_prob_with_boost": 0.4701
     },
     {
       "code": "002154",
@@ -1205,12 +1433,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 1.5656,
       "cb1_main_avg": 0.3831,
-      "cb3_main_avg": 0.3593,
-      "cb5_main_avg": 0.3593,
+      "cb3_main_avg": 0.2522,
+      "cb5_main_avg": 0.2522,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.0058,
       "name": "报 喜 鸟",
-      "lr_prob": 0.5812
+      "lr_prob_base": 0.6679,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7179,
+      "lr_prob_with_boost": 0.7179
     },
     {
       "code": "002181",
@@ -1227,12 +1459,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 3.4675,
       "cb1_main_avg": 1.0466,
-      "cb3_main_avg": 1.4424,
-      "cb5_main_avg": 1.4424,
+      "cb3_main_avg": 1.9435,
+      "cb5_main_avg": 1.9435,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": -0.2459,
       "name": "粤 传 媒",
-      "lr_prob": 0.7348
+      "lr_prob_base": 0.8412,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8412,
+      "lr_prob_with_boost": 0.8412
     },
     {
       "code": "002194",
@@ -1254,7 +1490,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0355,
       "name": "武汉凡谷",
-      "lr_prob": 0.4598
+      "lr_prob_base": 0.5629,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6129,
+      "lr_prob_with_boost": 0.6129
     },
     {
       "code": "002201",
@@ -1276,7 +1516,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.528,
       "name": "九鼎新材",
-      "lr_prob": 0.2843
+      "lr_prob_base": 0.4012,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4012,
+      "lr_prob_with_boost": 0.4012
     },
     {
       "code": "002203",
@@ -1298,7 +1542,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.6127,
       "name": "海亮股份",
-      "lr_prob": 0.48
+      "lr_prob_base": 0.5841,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6341,
+      "lr_prob_with_boost": 0.6341
     },
     {
       "code": "002209",
@@ -1320,7 +1568,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0005,
       "name": "达 意 隆",
-      "lr_prob": 0.4518
+      "lr_prob_base": 0.5614,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6114,
+      "lr_prob_with_boost": 0.6114
     },
     {
       "code": "002213",
@@ -1342,7 +1594,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 1.8494,
       "name": "大为股份",
-      "lr_prob": 0.3848
+      "lr_prob_base": 0.4712,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5212,
+      "lr_prob_with_boost": 0.5212
     },
     {
       "code": "002217",
@@ -1359,12 +1615,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 10.622,
       "cb1_main_avg": 8.7827,
-      "cb3_main_avg": 6.342,
-      "cb5_main_avg": 6.342,
-      "cb5_in_ratio": 1.0,
+      "cb3_main_avg": 3.3928,
+      "cb5_main_avg": 3.3928,
+      "cb5_in_ratio": 0.667,
       "pre_d0_5d_main_avg": 1.7181,
       "name": "合力泰",
-      "lr_prob": 0.9187
+      "lr_prob_base": 0.822,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.822,
+      "lr_prob_with_boost": 0.822
     },
     {
       "code": "002237",
@@ -1386,7 +1646,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0547,
       "name": "恒邦股份",
-      "lr_prob": 0.5052
+      "lr_prob_base": 0.6067,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6067,
+      "lr_prob_with_boost": 0.6067
     },
     {
       "code": "002240",
@@ -1404,11 +1668,15 @@
       "d0_main_flow": 6.2461,
       "cb1_main_avg": 1.8874,
       "cb3_main_avg": 0.2335,
-      "cb5_main_avg": 0.2335,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": 2.6455,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": -0.5355,
       "name": "盛新锂能",
-      "lr_prob": 0.5398
+      "lr_prob_base": 0.8847,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8847,
+      "lr_prob_with_boost": 0.8847
     },
     {
       "code": "002242",
@@ -1426,11 +1694,15 @@
       "d0_main_flow": 1.0933,
       "cb1_main_avg": 0.0946,
       "cb3_main_avg": 0.1362,
-      "cb5_main_avg": 0.0639,
-      "cb5_in_ratio": 0.75,
+      "cb5_main_avg": 0.1337,
+      "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0391,
       "name": "九阳股份",
-      "lr_prob": 0.423
+      "lr_prob_base": 0.5312,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5812,
+      "lr_prob_with_boost": 0.5812
     },
     {
       "code": "002256",
@@ -1452,7 +1724,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.2141,
       "name": "兆新股份",
-      "lr_prob": 0.522
+      "lr_prob_base": 0.6255,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6755,
+      "lr_prob_with_boost": 0.6755
     },
     {
       "code": "002259",
@@ -1474,7 +1750,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.0829,
       "name": "升达林业",
-      "lr_prob": 0.3134
+      "lr_prob_base": 0.4036,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4536,
+      "lr_prob_with_boost": 0.4536
     },
     {
       "code": "002281",
@@ -1496,7 +1776,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -4.4583,
       "name": "光迅科技",
-      "lr_prob": 0.4126
+      "lr_prob_base": 0.5261,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5761,
+      "lr_prob_with_boost": 0.5761
     },
     {
       "code": "002290",
@@ -1514,11 +1798,15 @@
       "d0_main_flow": 8.5067,
       "cb1_main_avg": 0.5517,
       "cb3_main_avg": -1.1642,
-      "cb5_main_avg": -1.1642,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.5826,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": 0.4891,
       "name": "禾盛新材",
-      "lr_prob": 0.2941
+      "lr_prob_base": 0.4693,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5193,
+      "lr_prob_with_boost": 0.5193
     },
     {
       "code": "002300",
@@ -1540,7 +1828,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.2286,
       "name": "太阳电缆",
-      "lr_prob": 0.4189
+      "lr_prob_base": 0.5195,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5695,
+      "lr_prob_with_boost": 0.5695
     },
     {
       "code": "002301",
@@ -1558,11 +1850,15 @@
       "d0_main_flow": 0.4923,
       "cb1_main_avg": -0.4206,
       "cb3_main_avg": -0.3596,
-      "cb5_main_avg": -0.2615,
-      "cb5_in_ratio": 0.25,
+      "cb5_main_avg": -0.2052,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0211,
       "name": "齐心集团",
-      "lr_prob": 0.3823
+      "lr_prob_base": 0.5122,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5622,
+      "lr_prob_with_boost": 0.5622
     },
     {
       "code": "002309",
@@ -1584,7 +1880,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.465,
       "name": "中利集团",
-      "lr_prob": 0.4299
+      "lr_prob_base": 0.5346,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5846,
+      "lr_prob_with_boost": 0.5846
     },
     {
       "code": "002324",
@@ -1606,7 +1906,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.184,
       "name": "普利特",
-      "lr_prob": 0.2639
+      "lr_prob_base": 0.3456,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3956,
+      "lr_prob_with_boost": 0.3956
     },
     {
       "code": "002331",
@@ -1624,11 +1928,15 @@
       "d0_main_flow": 1.6438,
       "cb1_main_avg": -0.202,
       "cb3_main_avg": -0.0691,
-      "cb5_main_avg": -0.0691,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.0619,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": 0.1058,
       "name": "皖通科技",
-      "lr_prob": 0.3784
+      "lr_prob_base": 0.4764,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5264,
+      "lr_prob_with_boost": 0.5264
     },
     {
       "code": "002333",
@@ -1650,7 +1958,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.078,
       "name": "罗普斯金",
-      "lr_prob": 0.1877
+      "lr_prob_base": 0.2538,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3038,
+      "lr_prob_with_boost": 0.3038
     },
     {
       "code": "002338",
@@ -1672,7 +1984,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.6268,
       "name": "奥普光电",
-      "lr_prob": 0.3543
+      "lr_prob_base": 0.444,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.444,
+      "lr_prob_with_boost": 0.444
     },
     {
       "code": "002342",
@@ -1694,7 +2010,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 1.0555,
       "name": "巨力索具",
-      "lr_prob": 0.4661
+      "lr_prob_base": 0.5506,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6006,
+      "lr_prob_with_boost": 0.6006
     },
     {
       "code": "002360",
@@ -1716,7 +2036,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.0325,
       "name": "ST同德",
-      "lr_prob": 0.2785
+      "lr_prob_base": 0.3633,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4133,
+      "lr_prob_with_boost": 0.4133
     },
     {
       "code": "002361",
@@ -1738,7 +2062,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 5.4477,
       "name": "神剑股份",
-      "lr_prob": 0.5891
+      "lr_prob_base": 0.6823,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6823,
+      "lr_prob_with_boost": 0.6823
     },
     {
       "code": "002384",
@@ -1760,7 +2088,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 8.7468,
       "name": "东山精密",
-      "lr_prob": 0.8953
+      "lr_prob_base": 0.9101,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.9601,
+      "lr_prob_with_boost": 0.9601
     },
     {
       "code": "002397",
@@ -1782,7 +2114,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.0056,
       "name": "梦洁股份",
-      "lr_prob": 0.4013
+      "lr_prob_base": 0.5019,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5519,
+      "lr_prob_with_boost": 0.5519
     },
     {
       "code": "002406",
@@ -1800,11 +2136,15 @@
       "d0_main_flow": 0.7913,
       "cb1_main_avg": 0.9986,
       "cb3_main_avg": 0.2555,
-      "cb5_main_avg": 0.2555,
-      "cb5_in_ratio": 0.667,
+      "cb5_main_avg": 0.1241,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": -0.0164,
       "name": "远东传动",
-      "lr_prob": 0.4786
+      "lr_prob_base": 0.6333,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6833,
+      "lr_prob_with_boost": 0.6833
     },
     {
       "code": "002407",
@@ -1822,11 +2162,15 @@
       "d0_main_flow": 18.7718,
       "cb1_main_avg": 4.7683,
       "cb3_main_avg": 1.855,
-      "cb5_main_avg": 1.855,
-      "cb5_in_ratio": 0.667,
+      "cb5_main_avg": 0.3527,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": -0.21,
       "name": "多氟多",
-      "lr_prob": 0.6507
+      "lr_prob_base": 0.5671,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5671,
+      "lr_prob_with_boost": 0.5671
     },
     {
       "code": "002418",
@@ -1848,7 +2192,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.905,
       "name": "康盛股份",
-      "lr_prob": 0.2691
+      "lr_prob_base": 0.3523,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4023,
+      "lr_prob_with_boost": 0.4023
     },
     {
       "code": "002421",
@@ -1870,7 +2218,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.0976,
       "name": "达实智能",
-      "lr_prob": 0.2215
+      "lr_prob_base": 0.2977,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3477,
+      "lr_prob_with_boost": 0.3477
     },
     {
       "code": "002428",
@@ -1892,7 +2244,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 9.8222,
       "name": "云南锗业",
-      "lr_prob": 0.4291
+      "lr_prob_base": 0.487,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.487,
+      "lr_prob_with_boost": 0.487
     },
     {
       "code": "002429",
@@ -1910,11 +2266,15 @@
       "d0_main_flow": 24.8454,
       "cb1_main_avg": -4.4225,
       "cb3_main_avg": -0.73,
-      "cb5_main_avg": -0.7185,
-      "cb5_in_ratio": 0.25,
+      "cb5_main_avg": -0.7541,
+      "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 2.4573,
       "name": "兆驰股份",
-      "lr_prob": 0.2438
+      "lr_prob_base": 0.3022,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3522,
+      "lr_prob_with_boost": 0.3522
     },
     {
       "code": "002432",
@@ -1936,7 +2296,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.471,
       "name": "九安医疗",
-      "lr_prob": 0.2531
+      "lr_prob_base": 0.3341,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3841,
+      "lr_prob_with_boost": 0.3841
     },
     {
       "code": "002443",
@@ -1958,7 +2322,11 @@
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": -0.0207,
       "name": "金洲管道",
-      "lr_prob": 0.6704
+      "lr_prob_base": 0.7596,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8096,
+      "lr_prob_with_boost": 0.8096
     },
     {
       "code": "002448",
@@ -1976,11 +2344,15 @@
       "d0_main_flow": 3.6762,
       "cb1_main_avg": -0.4124,
       "cb3_main_avg": -0.3826,
-      "cb5_main_avg": -0.2299,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": -0.1891,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.3088,
       "name": "中原内配",
-      "lr_prob": 0.1892
+      "lr_prob_base": 0.2524,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3024,
+      "lr_prob_with_boost": 0.3024
     },
     {
       "code": "002468",
@@ -2002,7 +2374,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.0076,
       "name": "申通快递",
-      "lr_prob": 0.5213
+      "lr_prob_base": 0.6462,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6462,
+      "lr_prob_with_boost": 0.6462
     },
     {
       "code": "002484",
@@ -2019,12 +2395,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 6.455,
       "cb1_main_avg": 3.7129,
-      "cb3_main_avg": 1.8601,
-      "cb5_main_avg": 1.8601,
+      "cb3_main_avg": 1.2579,
+      "cb5_main_avg": 1.2579,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 1.0448,
       "name": "江海股份",
-      "lr_prob": 0.6688
+      "lr_prob_base": 0.7024,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7024,
+      "lr_prob_with_boost": 0.7024
     },
     {
       "code": "002487",
@@ -2046,7 +2426,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.2626,
       "name": "大金重工",
-      "lr_prob": 0.7538
+      "lr_prob_base": 0.8237,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8237,
+      "lr_prob_with_boost": 0.8237
     },
     {
       "code": "002490",
@@ -2064,11 +2448,15 @@
       "d0_main_flow": 2.3551,
       "cb1_main_avg": 0.8695,
       "cb3_main_avg": 0.0987,
-      "cb5_main_avg": -0.0634,
-      "cb5_in_ratio": 0.25,
+      "cb5_main_avg": 0.0394,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.1503,
       "name": "山东墨龙",
-      "lr_prob": 0.5792
+      "lr_prob_base": 0.7096,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7596,
+      "lr_prob_with_boost": 0.7596
     },
     {
       "code": "002491",
@@ -2090,7 +2478,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 2.5342,
       "name": "通鼎互联",
-      "lr_prob": 0.5521
+      "lr_prob_base": 0.6405,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6905,
+      "lr_prob_with_boost": 0.6905
     },
     {
       "code": "002492",
@@ -2112,7 +2504,11 @@
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.0103,
       "name": "恒基达鑫",
-      "lr_prob": 0.3746
+      "lr_prob_base": 0.4768,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5268,
+      "lr_prob_with_boost": 0.5268
     },
     {
       "code": "002536",
@@ -2134,7 +2530,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0232,
       "name": "飞龙股份",
-      "lr_prob": 0.3811
+      "lr_prob_base": 0.4744,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5244,
+      "lr_prob_with_boost": 0.5244
     },
     {
       "code": "002547",
@@ -2156,7 +2556,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.0839,
       "name": "*ST春兴",
-      "lr_prob": 0.2049
+      "lr_prob_base": 0.2768,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3268,
+      "lr_prob_with_boost": 0.3268
     },
     {
       "code": "002560",
@@ -2173,12 +2577,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 6.2896,
       "cb1_main_avg": -2.23,
-      "cb3_main_avg": -1.1557,
-      "cb5_main_avg": -1.1557,
+      "cb3_main_avg": -1.3648,
+      "cb5_main_avg": -1.3648,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": -0.1803,
       "name": "通达股份",
-      "lr_prob": 0.3909
+      "lr_prob_base": 0.4715,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5215,
+      "lr_prob_with_boost": 0.5215
     },
     {
       "code": "002565",
@@ -2200,7 +2608,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 1.4308,
       "name": "顺灏股份",
-      "lr_prob": 0.2167
+      "lr_prob_base": 0.2786,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3286,
+      "lr_prob_with_boost": 0.3286
     },
     {
       "code": "002580",
@@ -2222,7 +2634,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 6.3641,
       "name": "圣阳股份",
-      "lr_prob": 0.5089
+      "lr_prob_base": 0.6437,
+      "lr_prob_boost": -0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5937,
+      "lr_prob_with_boost": 0.5937
     },
     {
       "code": "002588",
@@ -2244,7 +2660,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0551,
       "name": "史丹利",
-      "lr_prob": 0.3904
+      "lr_prob_base": 0.4895,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5395,
+      "lr_prob_with_boost": 0.5395
     },
     {
       "code": "002595",
@@ -2266,7 +2686,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": -0.0647,
       "name": "豪迈科技",
-      "lr_prob": 0.5356
+      "lr_prob_base": 0.6361,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6861,
+      "lr_prob_with_boost": 0.6861
     },
     {
       "code": "002606",
@@ -2284,11 +2708,15 @@
       "d0_main_flow": 0.2365,
       "cb1_main_avg": 6.4353,
       "cb3_main_avg": 3.0472,
-      "cb5_main_avg": 2.1226,
-      "cb5_in_ratio": 0.75,
+      "cb5_main_avg": 1.8124,
+      "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": -0.0891,
       "name": "大连电瓷",
-      "lr_prob": 0.7469
+      "lr_prob_base": 0.8132,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8132,
+      "lr_prob_with_boost": 0.8132
     },
     {
       "code": "002613",
@@ -2310,7 +2738,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0681,
       "name": "北玻股份",
-      "lr_prob": 0.4603
+      "lr_prob_base": 0.5547,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6047,
+      "lr_prob_with_boost": 0.6047
     },
     {
       "code": "002628",
@@ -2332,7 +2764,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0187,
       "name": "成都路桥",
-      "lr_prob": 0.5342
+      "lr_prob_base": 0.6356,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6856,
+      "lr_prob_with_boost": 0.6856
     },
     {
       "code": "002636",
@@ -2354,7 +2790,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.7136,
       "name": "金安国纪",
-      "lr_prob": 0.5635
+      "lr_prob_base": 0.6494,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6994,
+      "lr_prob_with_boost": 0.6994
     },
     {
       "code": "002686",
@@ -2376,7 +2816,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.254,
       "name": "亿利达",
-      "lr_prob": 0.3551
+      "lr_prob_base": 0.4469,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4969,
+      "lr_prob_with_boost": 0.4969
     },
     {
       "code": "002706",
@@ -2393,12 +2837,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 3.8239,
       "cb1_main_avg": -0.664,
-      "cb3_main_avg": -0.428,
-      "cb5_main_avg": -0.428,
-      "cb5_in_ratio": 0.0,
+      "cb3_main_avg": -0.0695,
+      "cb5_main_avg": -0.0695,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": -0.2027,
       "name": "良信股份",
-      "lr_prob": 0.548
+      "lr_prob_base": 0.685,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.735,
+      "lr_prob_with_boost": 0.735
     },
     {
       "code": "002726",
@@ -2420,7 +2868,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.1011,
       "name": "ST龙大",
-      "lr_prob": 0.2881
+      "lr_prob_base": 0.3641,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4141,
+      "lr_prob_with_boost": 0.4141
     },
     {
       "code": "002741",
@@ -2437,12 +2889,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 3.172,
       "cb1_main_avg": -0.0359,
-      "cb3_main_avg": -0.455,
-      "cb5_main_avg": -0.455,
+      "cb3_main_avg": -0.3068,
+      "cb5_main_avg": -0.3068,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.2616,
       "name": "光华科技",
-      "lr_prob": 0.4333
+      "lr_prob_base": 0.5578,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6078,
+      "lr_prob_with_boost": 0.6078
     },
     {
       "code": "002752",
@@ -2464,7 +2920,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": -0.0253,
       "name": "昇兴股份",
-      "lr_prob": 0.6758
+      "lr_prob_base": 0.7647,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7647,
+      "lr_prob_with_boost": 0.7647
     },
     {
       "code": "002757",
@@ -2486,7 +2946,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0439,
       "name": "南兴股份",
-      "lr_prob": 0.4232
+      "lr_prob_base": 0.53,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.58,
+      "lr_prob_with_boost": 0.58
     },
     {
       "code": "002785",
@@ -2503,12 +2967,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 2.8283,
       "cb1_main_avg": 0.7423,
-      "cb3_main_avg": 0.6358,
-      "cb5_main_avg": 0.6358,
+      "cb3_main_avg": 1.5217,
+      "cb5_main_avg": 1.5217,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.1466,
       "name": "万里石",
-      "lr_prob": 0.6729
+      "lr_prob_base": 0.8224,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8724,
+      "lr_prob_with_boost": 0.8724
     },
     {
       "code": "002787",
@@ -2526,11 +2994,15 @@
       "d0_main_flow": 1.2862,
       "cb1_main_avg": -0.9276,
       "cb3_main_avg": 0.3553,
-      "cb5_main_avg": 0.3553,
-      "cb5_in_ratio": 0.667,
+      "cb5_main_avg": 0.2979,
+      "cb5_in_ratio": 0.75,
       "pre_d0_5d_main_avg": 0.6367,
       "name": "华源控股",
-      "lr_prob": 0.5053
+      "lr_prob_base": 0.6289,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6289,
+      "lr_prob_with_boost": 0.6289
     },
     {
       "code": "002793",
@@ -2548,11 +3020,15 @@
       "d0_main_flow": 0.8453,
       "cb1_main_avg": -0.2342,
       "cb3_main_avg": -0.0812,
-      "cb5_main_avg": -0.0922,
-      "cb5_in_ratio": 0.25,
+      "cb5_main_avg": -0.0354,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.036,
       "name": "罗欣药业",
-      "lr_prob": 0.503
+      "lr_prob_base": 0.6367,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6867,
+      "lr_prob_with_boost": 0.6867
     },
     {
       "code": "002795",
@@ -2570,11 +3046,15 @@
       "d0_main_flow": 0.7677,
       "cb1_main_avg": -0.0345,
       "cb3_main_avg": -0.1651,
-      "cb5_main_avg": -0.1651,
-      "cb5_in_ratio": 0.0,
+      "cb5_main_avg": -0.0819,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": -0.0172,
       "name": "永和智控",
-      "lr_prob": 0.6416
+      "lr_prob_base": 0.7433,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7933,
+      "lr_prob_with_boost": 0.7933
     },
     {
       "code": "002796",
@@ -2596,7 +3076,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 1.4167,
       "name": "世嘉科技",
-      "lr_prob": 0.4101
+      "lr_prob_base": 0.4921,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5421,
+      "lr_prob_with_boost": 0.5421
     },
     {
       "code": "002802",
@@ -2618,7 +3102,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.1484,
       "name": "洪汇新材",
-      "lr_prob": 0.5082
+      "lr_prob_base": 0.6354,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6354,
+      "lr_prob_with_boost": 0.6354
     },
     {
       "code": "002803",
@@ -2640,7 +3128,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.1347,
       "name": "吉宏股份",
-      "lr_prob": 0.39
+      "lr_prob_base": 0.4873,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5373,
+      "lr_prob_with_boost": 0.5373
     },
     {
       "code": "002810",
@@ -2658,11 +3150,15 @@
       "d0_main_flow": 1.4913,
       "cb1_main_avg": -0.6257,
       "cb3_main_avg": -0.2421,
-      "cb5_main_avg": -0.2421,
+      "cb5_main_avg": -0.1831,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.1801,
       "name": "山东赫达",
-      "lr_prob": 0.3974
+      "lr_prob_base": 0.503,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.553,
+      "lr_prob_with_boost": 0.553
     },
     {
       "code": "002812",
@@ -2680,11 +3176,15 @@
       "d0_main_flow": 19.9249,
       "cb1_main_avg": 1.3035,
       "cb3_main_avg": -0.0695,
-      "cb5_main_avg": -0.0695,
-      "cb5_in_ratio": 0.667,
+      "cb5_main_avg": -1.5879,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": -0.1758,
       "name": "恩捷股份",
-      "lr_prob": 0.4554
+      "lr_prob_base": 0.4857,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4857,
+      "lr_prob_with_boost": 0.4857
     },
     {
       "code": "002843",
@@ -2706,7 +3206,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.4283,
       "name": "泰嘉股份",
-      "lr_prob": 0.5218
+      "lr_prob_base": 0.6139,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6639,
+      "lr_prob_with_boost": 0.6639
     },
     {
       "code": "002846",
@@ -2728,7 +3232,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0366,
       "name": "英联股份",
-      "lr_prob": 0.4394
+      "lr_prob_base": 0.5347,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5847,
+      "lr_prob_with_boost": 0.5847
     },
     {
       "code": "002850",
@@ -2750,7 +3258,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.1846,
       "name": "科达利",
-      "lr_prob": 0.3405
+      "lr_prob_base": 0.4303,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4803,
+      "lr_prob_with_boost": 0.4803
     },
     {
       "code": "002853",
@@ -2772,7 +3284,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.0298,
       "name": "皮阿诺",
-      "lr_prob": 0.3763
+      "lr_prob_base": 0.4722,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5222,
+      "lr_prob_with_boost": 0.5222
     },
     {
       "code": "002859",
@@ -2794,7 +3310,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.3188,
       "name": "洁美科技",
-      "lr_prob": 0.5045
+      "lr_prob_base": 0.6065,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6565,
+      "lr_prob_with_boost": 0.6565
     },
     {
       "code": "002866",
@@ -2816,7 +3336,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.4189,
       "name": "传艺科技",
-      "lr_prob": 0.463
+      "lr_prob_base": 0.5605,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6105,
+      "lr_prob_with_boost": 0.6105
     },
     {
       "code": "002885",
@@ -2838,7 +3362,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.0079,
       "name": "京泉华",
-      "lr_prob": 0.5705
+      "lr_prob_base": 0.6694,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7194,
+      "lr_prob_with_boost": 0.7194
     },
     {
       "code": "002929",
@@ -2860,7 +3388,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.9923,
       "name": "润建股份",
-      "lr_prob": 0.1852
+      "lr_prob_base": 0.245,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.295,
+      "lr_prob_with_boost": 0.295
     },
     {
       "code": "002935",
@@ -2882,7 +3414,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.004,
       "name": "天奥电子",
-      "lr_prob": 0.6079
+      "lr_prob_base": 0.6986,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7486,
+      "lr_prob_with_boost": 0.7486
     },
     {
       "code": "002938",
@@ -2904,7 +3440,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 1.9029,
       "name": "鹏鼎控股",
-      "lr_prob": 0.59
+      "lr_prob_base": 0.6769,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7269,
+      "lr_prob_with_boost": 0.7269
     },
     {
       "code": "002940",
@@ -2926,7 +3466,11 @@
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.5396,
       "name": "昂利康",
-      "lr_prob": 0.4022
+      "lr_prob_base": 0.5295,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5295,
+      "lr_prob_with_boost": 0.5295
     },
     {
       "code": "002950",
@@ -2948,7 +3492,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.0724,
       "name": "奥美医疗",
-      "lr_prob": 0.2813
+      "lr_prob_base": 0.3717,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4217,
+      "lr_prob_with_boost": 0.4217
     },
     {
       "code": "002952",
@@ -2970,7 +3518,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0844,
       "name": "亚世光电",
-      "lr_prob": 0.4493
+      "lr_prob_base": 0.5586,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6086,
+      "lr_prob_with_boost": 0.6086
     },
     {
       "code": "002957",
@@ -2992,7 +3544,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.4237,
       "name": "科瑞技术",
-      "lr_prob": 0.4901
+      "lr_prob_base": 0.5836,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6336,
+      "lr_prob_with_boost": 0.6336
     },
     {
       "code": "002971",
@@ -3010,11 +3566,15 @@
       "d0_main_flow": 1.9547,
       "cb1_main_avg": -0.4249,
       "cb3_main_avg": 0.0817,
-      "cb5_main_avg": 0.0432,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": 0.0278,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0664,
       "name": "和远气体",
-      "lr_prob": 0.4694
+      "lr_prob_base": 0.5633,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6133,
+      "lr_prob_with_boost": 0.6133
     },
     {
       "code": "002975",
@@ -3036,7 +3596,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 1.0366,
       "name": "博杰股份",
-      "lr_prob": 0.5688
+      "lr_prob_base": 0.6605,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7105,
+      "lr_prob_with_boost": 0.7105
     },
     {
       "code": "002980",
@@ -3058,7 +3622,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 2.2674,
       "name": "华盛昌",
-      "lr_prob": 0.7313
+      "lr_prob_base": 0.7973,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8473,
+      "lr_prob_with_boost": 0.8473
     },
     {
       "code": "002982",
@@ -3080,7 +3648,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.0083,
       "name": "湘佳股份",
-      "lr_prob": 0.3618
+      "lr_prob_base": 0.458,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.508,
+      "lr_prob_with_boost": 0.508
     },
     {
       "code": "002990",
@@ -3098,11 +3670,15 @@
       "d0_main_flow": 1.6957,
       "cb1_main_avg": -1.0535,
       "cb3_main_avg": -0.1101,
-      "cb5_main_avg": -0.1101,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": 0.6779,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": 0.9384,
       "name": "盛视科技",
-      "lr_prob": 0.4008
+      "lr_prob_base": 0.6813,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7313,
+      "lr_prob_with_boost": 0.7313
     },
     {
       "code": "002999",
@@ -3120,11 +3696,15 @@
       "d0_main_flow": 1.1475,
       "cb1_main_avg": -0.5261,
       "cb3_main_avg": -0.2449,
-      "cb5_main_avg": -0.2449,
-      "cb5_in_ratio": 0.0,
+      "cb5_main_avg": -0.1597,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": 0.009,
       "name": "天禾股份",
-      "lr_prob": 0.417
+      "lr_prob_base": 0.5291,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5791,
+      "lr_prob_with_boost": 0.5791
     },
     {
       "code": "003006",
@@ -3146,7 +3726,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.0209,
       "name": "百亚股份",
-      "lr_prob": 0.6659
+      "lr_prob_base": 0.7568,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8068,
+      "lr_prob_with_boost": 0.8068
     },
     {
       "code": "003018",
@@ -3168,7 +3752,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 1.227,
       "name": "金富科技",
-      "lr_prob": 0.8089
+      "lr_prob_base": 0.8866,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8866,
+      "lr_prob_with_boost": 0.8866
     },
     {
       "code": "003022",
@@ -3186,11 +3774,15 @@
       "d0_main_flow": 2.8772,
       "cb1_main_avg": -0.7966,
       "cb3_main_avg": -0.4349,
-      "cb5_main_avg": -0.5044,
-      "cb5_in_ratio": 0.25,
+      "cb5_main_avg": -0.3611,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.1164,
       "name": "联泓新科",
-      "lr_prob": 0.5863
+      "lr_prob_base": 0.6878,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7378,
+      "lr_prob_with_boost": 0.7378
     },
     {
       "code": "003023",
@@ -3212,7 +3804,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.1173,
       "name": "彩虹集团",
-      "lr_prob": 0.3899
+      "lr_prob_base": 0.4882,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5382,
+      "lr_prob_with_boost": 0.5382
     },
     {
       "code": "003027",
@@ -3234,7 +3830,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0335,
       "name": "同兴科技",
-      "lr_prob": 0.5077
+      "lr_prob_base": 0.6047,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6547,
+      "lr_prob_with_boost": 0.6547
     },
     {
       "code": "003031",
@@ -3256,7 +3856,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.8092,
       "name": "中瓷电子",
-      "lr_prob": 0.6974
+      "lr_prob_base": 0.7787,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7787,
+      "lr_prob_with_boost": 0.7787
     },
     {
       "code": "003036",
@@ -3273,12 +3877,16 @@
       "d0_lbc": 2,
       "d0_main_flow": 0.1841,
       "cb1_main_avg": 0.4861,
-      "cb3_main_avg": 0.1174,
-      "cb5_main_avg": 0.1174,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": -0.0866,
+      "cb5_main_avg": -0.0866,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.5895,
       "name": "泰坦股份",
-      "lr_prob": 0.5991
+      "lr_prob_base": 0.6788,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6788,
+      "lr_prob_with_boost": 0.6788
     },
     {
       "code": "003041",
@@ -3300,7 +3908,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.0277,
       "name": "真爱美家",
-      "lr_prob": 0.3749
+      "lr_prob_base": 0.4695,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5195,
+      "lr_prob_with_boost": 0.5195
     },
     {
       "code": "300027",
@@ -3322,7 +3934,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.078,
       "name": "ST华谊",
-      "lr_prob": 0.1939
+      "lr_prob_base": 0.2636,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3136,
+      "lr_prob_with_boost": 0.3136
     },
     {
       "code": "300061",
@@ -3340,11 +3956,15 @@
       "d0_main_flow": 0.9587,
       "cb1_main_avg": 0.0001,
       "cb3_main_avg": -0.1034,
-      "cb5_main_avg": -0.0957,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": -0.073,
+      "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0353,
       "name": "旗天科技",
-      "lr_prob": 0.5409
+      "lr_prob_base": 0.5934,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6434,
+      "lr_prob_with_boost": 0.6434
     },
     {
       "code": "300067",
@@ -3362,11 +3982,15 @@
       "d0_main_flow": -1.2868,
       "cb1_main_avg": -0.1393,
       "cb3_main_avg": 1.2434,
-      "cb5_main_avg": 0.4794,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": 0.2769,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.1223,
       "name": "安诺其",
-      "lr_prob": 0.593
+      "lr_prob_base": 0.7124,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7124,
+      "lr_prob_with_boost": 0.7124
     },
     {
       "code": "300283",
@@ -3384,11 +4008,15 @@
       "d0_main_flow": 1.4241,
       "cb1_main_avg": -0.0702,
       "cb3_main_avg": 0.008,
-      "cb5_main_avg": 0.008,
-      "cb5_in_ratio": 0.667,
+      "cb5_main_avg": 0.1527,
+      "cb5_in_ratio": 0.75,
       "pre_d0_5d_main_avg": 0.0732,
       "name": "温州宏丰",
-      "lr_prob": 0.3451
+      "lr_prob_base": 0.4717,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5217,
+      "lr_prob_with_boost": 0.5217
     },
     {
       "code": "300422",
@@ -3406,11 +4034,15 @@
       "d0_main_flow": 0.6079,
       "cb1_main_avg": -0.1076,
       "cb3_main_avg": 0.018,
-      "cb5_main_avg": 0.018,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.0071,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": 0.0022,
       "name": "博世科",
-      "lr_prob": 0.5356
+      "lr_prob_base": 0.653,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.703,
+      "lr_prob_with_boost": 0.703
     },
     {
       "code": "300533",
@@ -3432,7 +4064,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.0749,
       "name": "冰川网络",
-      "lr_prob": 0.1582
+      "lr_prob_base": 0.2239,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.2739,
+      "lr_prob_with_boost": 0.2739
     },
     {
       "code": "300582",
@@ -3449,12 +4085,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 1.3438,
       "cb1_main_avg": -0.2887,
-      "cb3_main_avg": -0.0175,
-      "cb5_main_avg": -0.0175,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": -0.0406,
+      "cb5_main_avg": -0.0406,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.0358,
       "name": "英飞特",
-      "lr_prob": 0.5443
+      "lr_prob_base": 0.6242,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6742,
+      "lr_prob_with_boost": 0.6742
     },
     {
       "code": "300590",
@@ -3472,11 +4112,15 @@
       "d0_main_flow": 3.1511,
       "cb1_main_avg": 0.4302,
       "cb3_main_avg": 0.3011,
-      "cb5_main_avg": 0.2864,
-      "cb5_in_ratio": 1.0,
+      "cb5_main_avg": 0.1916,
+      "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0043,
       "name": "移为通信",
-      "lr_prob": 0.3459
+      "lr_prob_base": 0.4392,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4892,
+      "lr_prob_with_boost": 0.4892
     },
     {
       "code": "300613",
@@ -3494,11 +4138,15 @@
       "d0_main_flow": 4.5632,
       "cb1_main_avg": 0.9114,
       "cb3_main_avg": -0.3745,
-      "cb5_main_avg": -0.3745,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.7824,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": 0.1309,
       "name": "富瀚微",
-      "lr_prob": 0.4659
+      "lr_prob_base": 0.5721,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6221,
+      "lr_prob_with_boost": 0.6221
     },
     {
       "code": "300721",
@@ -3516,11 +4164,15 @@
       "d0_main_flow": 0.665,
       "cb1_main_avg": 0.7073,
       "cb3_main_avg": 0.5374,
-      "cb5_main_avg": 0.3764,
-      "cb5_in_ratio": 0.75,
+      "cb5_main_avg": -0.0101,
+      "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.025,
       "name": "怡达股份",
-      "lr_prob": 0.5239
+      "lr_prob_base": 0.6023,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6523,
+      "lr_prob_with_boost": 0.6523
     },
     {
       "code": "300736",
@@ -3542,7 +4194,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0361,
       "name": "百邦科技",
-      "lr_prob": 0.5215
+      "lr_prob_base": 0.6329,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6829,
+      "lr_prob_with_boost": 0.6829
     },
     {
       "code": "300776",
@@ -3564,7 +4220,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.4035,
       "name": "帝尔激光",
-      "lr_prob": 0.6002
+      "lr_prob_base": 0.6947,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7447,
+      "lr_prob_with_boost": 0.7447
     },
     {
       "code": "300806",
@@ -3586,7 +4246,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.4432,
       "name": "斯迪克",
-      "lr_prob": 0.4488
+      "lr_prob_base": 0.5632,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6132,
+      "lr_prob_with_boost": 0.6132
     },
     {
       "code": "300890",
@@ -3608,7 +4272,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0799,
       "name": "翔丰华",
-      "lr_prob": 0.5776
+      "lr_prob_base": 0.6794,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7294,
+      "lr_prob_with_boost": 0.7294
     },
     {
       "code": "300970",
@@ -3626,11 +4294,15 @@
       "d0_main_flow": 2.4477,
       "cb1_main_avg": 0.6899,
       "cb3_main_avg": 0.1412,
-      "cb5_main_avg": 0.0535,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": 0.0632,
+      "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.229,
       "name": "华绿生物",
-      "lr_prob": 0.2044
+      "lr_prob_base": 0.2245,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.2745,
+      "lr_prob_with_boost": 0.2745
     },
     {
       "code": "301022",
@@ -3652,7 +4324,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.0,
       "name": "海泰科",
-      "lr_prob": 0.3633
+      "lr_prob_base": 0.4707,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5207,
+      "lr_prob_with_boost": 0.5207
     },
     {
       "code": "301077",
@@ -3670,11 +4346,15 @@
       "d0_main_flow": 2.9547,
       "cb1_main_avg": -1.3691,
       "cb3_main_avg": -0.6608,
-      "cb5_main_avg": -0.6608,
+      "cb5_main_avg": -0.5474,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.1235,
       "name": "星华新材",
-      "lr_prob": 0.1465
+      "lr_prob_base": 0.2159,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.2659,
+      "lr_prob_with_boost": 0.2659
     },
     {
       "code": "301148",
@@ -3696,7 +4376,11 @@
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.002,
       "name": "嘉戎技术",
-      "lr_prob": 0.3576
+      "lr_prob_base": 0.4687,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5187,
+      "lr_prob_with_boost": 0.5187
     },
     {
       "code": "301237",
@@ -3718,7 +4402,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0163,
       "name": "和顺科技",
-      "lr_prob": 0.3286
+      "lr_prob_base": 0.4241,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4741,
+      "lr_prob_with_boost": 0.4741
     },
     {
       "code": "301248",
@@ -3735,12 +4423,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 2.1638,
       "cb1_main_avg": 0.6689,
-      "cb3_main_avg": 0.1963,
-      "cb5_main_avg": 0.1963,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": -0.0947,
+      "cb5_main_avg": -0.0947,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.7664,
       "name": "杰创智能",
-      "lr_prob": 0.5917
+      "lr_prob_base": 0.6402,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6902,
+      "lr_prob_with_boost": 0.6902
     },
     {
       "code": "301265",
@@ -3762,7 +4454,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.0841,
       "name": "华新科技",
-      "lr_prob": 0.1394
+      "lr_prob_base": 0.1979,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.2479,
+      "lr_prob_with_boost": 0.2479
     },
     {
       "code": "301319",
@@ -3784,7 +4480,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.1771,
       "name": "唯特偶",
-      "lr_prob": 0.2446
+      "lr_prob_base": 0.339,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.389,
+      "lr_prob_with_boost": 0.389
     },
     {
       "code": "301396",
@@ -3806,7 +4506,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.9955,
       "name": "宏景科技",
-      "lr_prob": 0.6135
+      "lr_prob_base": 0.6895,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6895,
+      "lr_prob_with_boost": 0.6895
     },
     {
       "code": "301486",
@@ -3828,7 +4532,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.0462,
       "name": "致尚科技",
-      "lr_prob": 0.2364
+      "lr_prob_base": 0.3122,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3622,
+      "lr_prob_with_boost": 0.3622
     },
     {
       "code": "301500",
@@ -3845,12 +4553,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 6.4861,
       "cb1_main_avg": 0.0832,
-      "cb3_main_avg": 0.0294,
-      "cb5_main_avg": 0.0294,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": -0.1968,
+      "cb5_main_avg": -0.1968,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.1153,
       "name": "飞南资源",
-      "lr_prob": 0.4243
+      "lr_prob_base": 0.4856,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5356,
+      "lr_prob_with_boost": 0.5356
     },
     {
       "code": "600032",
@@ -3872,7 +4584,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0182,
       "name": "浙江新能",
-      "lr_prob": 0.4312
+      "lr_prob_base": 0.5245,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5745,
+      "lr_prob_with_boost": 0.5745
     },
     {
       "code": "600052",
@@ -3890,11 +4606,15 @@
       "d0_main_flow": 0.773,
       "cb1_main_avg": 0.0072,
       "cb3_main_avg": 0.1082,
-      "cb5_main_avg": 0.084,
+      "cb5_main_avg": 0.2463,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.1153,
       "name": "东望时代",
-      "lr_prob": 0.3867
+      "lr_prob_base": 0.5374,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5374,
+      "lr_prob_with_boost": 0.5374
     },
     {
       "code": "600072",
@@ -3916,7 +4636,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.1351,
       "name": "中船科技",
-      "lr_prob": 0.6163
+      "lr_prob_base": 0.7087,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7087,
+      "lr_prob_with_boost": 0.7087
     },
     {
       "code": "600103",
@@ -3938,7 +4662,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 2.6582,
       "name": "青山纸业",
-      "lr_prob": 0.3607
+      "lr_prob_base": 0.4811,
+      "lr_prob_boost": -0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4311,
+      "lr_prob_with_boost": 0.4311
     },
     {
       "code": "600105",
@@ -3960,7 +4688,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 3.5686,
       "name": "永鼎股份",
-      "lr_prob": 0.3452
+      "lr_prob_base": 0.429,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.479,
+      "lr_prob_with_boost": 0.479
     },
     {
       "code": "600118",
@@ -3982,7 +4714,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.5235,
       "name": "中国卫星",
-      "lr_prob": 0.4913
+      "lr_prob_base": 0.5891,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5891,
+      "lr_prob_with_boost": 0.5891
     },
     {
       "code": "600126",
@@ -4004,7 +4740,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.3887,
       "name": "杭钢股份",
-      "lr_prob": 0.2485
+      "lr_prob_base": 0.3211,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3211,
+      "lr_prob_with_boost": 0.3211
     },
     {
       "code": "600149",
@@ -4026,7 +4766,11 @@
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": -0.0077,
       "name": "廊坊发展",
-      "lr_prob": 0.3848
+      "lr_prob_base": 0.4837,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5337,
+      "lr_prob_with_boost": 0.5337
     },
     {
       "code": "600184",
@@ -4048,7 +4792,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 1.3275,
       "name": "光电股份",
-      "lr_prob": 0.3199
+      "lr_prob_base": 0.4006,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4506,
+      "lr_prob_with_boost": 0.4506
     },
     {
       "code": "600206",
@@ -4070,7 +4818,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.2791,
       "name": "有研新材",
-      "lr_prob": 0.5954
+      "lr_prob_base": 0.6939,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7439,
+      "lr_prob_with_boost": 0.7439
     },
     {
       "code": "600208",
@@ -4088,11 +4840,15 @@
       "d0_main_flow": 4.9254,
       "cb1_main_avg": -4.3458,
       "cb3_main_avg": -1.6594,
-      "cb5_main_avg": -1.6594,
-      "cb5_in_ratio": 0.0,
+      "cb5_main_avg": -0.2374,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": 1.7491,
       "name": "衢州发展",
-      "lr_prob": 0.3455
+      "lr_prob_base": 0.5566,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6066,
+      "lr_prob_with_boost": 0.6066
     },
     {
       "code": "600234",
@@ -4114,7 +4870,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.4273,
       "name": "科新发展",
-      "lr_prob": 0.4125
+      "lr_prob_base": 0.5116,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5616,
+      "lr_prob_with_boost": 0.5616
     },
     {
       "code": "600246",
@@ -4131,12 +4891,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 4.7006,
       "cb1_main_avg": -1.5518,
-      "cb3_main_avg": -0.8122,
-      "cb5_main_avg": -0.8122,
-      "cb5_in_ratio": 0.0,
+      "cb3_main_avg": 1.9944,
+      "cb5_main_avg": 1.9944,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.1526,
       "name": "万通发展",
-      "lr_prob": 0.4131
+      "lr_prob_base": 0.811,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.861,
+      "lr_prob_with_boost": 0.861
     },
     {
       "code": "600261",
@@ -4158,7 +4922,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.0196,
       "name": "阳光照明",
-      "lr_prob": 0.2935
+      "lr_prob_base": 0.3863,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4363,
+      "lr_prob_with_boost": 0.4363
     },
     {
       "code": "600284",
@@ -4180,7 +4948,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.0171,
       "name": "浦东建设",
-      "lr_prob": 0.3799
+      "lr_prob_base": 0.4784,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5284,
+      "lr_prob_with_boost": 0.5284
     },
     {
       "code": "600308",
@@ -4202,7 +4974,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.0086,
       "name": "华泰股份",
-      "lr_prob": 0.2706
+      "lr_prob_base": 0.3586,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4086,
+      "lr_prob_with_boost": 0.4086
     },
     {
       "code": "600310",
@@ -4220,11 +4996,15 @@
       "d0_main_flow": 1.5,
       "cb1_main_avg": -0.0111,
       "cb3_main_avg": 0.1331,
-      "cb5_main_avg": -0.1486,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": -0.1162,
+      "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.3306,
       "name": "广西能源",
-      "lr_prob": 0.434
+      "lr_prob_base": 0.464,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.514,
+      "lr_prob_with_boost": 0.514
     },
     {
       "code": "600330",
@@ -4246,7 +5026,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.58,
       "name": "天通股份",
-      "lr_prob": 0.7073
+      "lr_prob_base": 0.7821,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8321,
+      "lr_prob_with_boost": 0.8321
     },
     {
       "code": "600370",
@@ -4264,11 +5048,15 @@
       "d0_main_flow": 1.2987,
       "cb1_main_avg": 0.0382,
       "cb3_main_avg": -0.0362,
-      "cb5_main_avg": -0.0362,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.0311,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": 0.0205,
       "name": "*ST三房",
-      "lr_prob": 0.5183
+      "lr_prob_base": 0.6283,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6783,
+      "lr_prob_with_boost": 0.6783
     },
     {
       "code": "600396",
@@ -4285,12 +5073,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 6.2474,
       "cb1_main_avg": -1.2585,
-      "cb3_main_avg": -0.6376,
-      "cb5_main_avg": -0.6376,
+      "cb3_main_avg": -0.9344,
+      "cb5_main_avg": -0.9344,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 2.6783,
       "name": "华电辽能",
-      "lr_prob": 0.6687
+      "lr_prob_base": 0.7234,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7734,
+      "lr_prob_with_boost": 0.7734
     },
     {
       "code": "600400",
@@ -4307,12 +5099,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.9066,
       "cb1_main_avg": 0.3611,
-      "cb3_main_avg": 0.4019,
-      "cb5_main_avg": 0.4019,
+      "cb3_main_avg": 0.6835,
+      "cb5_main_avg": 0.6835,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.1485,
       "name": "红豆股份",
-      "lr_prob": 0.5191
+      "lr_prob_base": 0.7252,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7752,
+      "lr_prob_with_boost": 0.7752
     },
     {
       "code": "600418",
@@ -4329,12 +5125,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 17.5969,
       "cb1_main_avg": -1.9151,
-      "cb3_main_avg": -1.7624,
-      "cb5_main_avg": -1.7624,
+      "cb3_main_avg": -1.306,
+      "cb5_main_avg": -1.306,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": -0.4635,
       "name": "江淮汽车",
-      "lr_prob": 0.191
+      "lr_prob_base": 0.3071,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3571,
+      "lr_prob_with_boost": 0.3571
     },
     {
       "code": "600433",
@@ -4351,12 +5151,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 2.0865,
       "cb1_main_avg": 0.4758,
-      "cb3_main_avg": -0.0125,
-      "cb5_main_avg": -0.0125,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": 0.9842,
+      "cb5_main_avg": 0.9842,
+      "cb5_in_ratio": 0.667,
       "pre_d0_5d_main_avg": 0.1707,
       "name": "冠豪高新",
-      "lr_prob": 0.6115
+      "lr_prob_base": 0.7931,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8431,
+      "lr_prob_with_boost": 0.8431
     },
     {
       "code": "600446",
@@ -4378,7 +5182,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.0736,
       "name": "金证股份",
-      "lr_prob": 0.4596
+      "lr_prob_base": 0.5611,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6111,
+      "lr_prob_with_boost": 0.6111
     },
     {
       "code": "600487",
@@ -4400,7 +5208,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.6653,
       "name": "亨通光电",
-      "lr_prob": 0.4717
+      "lr_prob_base": 0.5652,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5652,
+      "lr_prob_with_boost": 0.5652
     },
     {
       "code": "600499",
@@ -4418,11 +5230,15 @@
       "d0_main_flow": 3.7001,
       "cb1_main_avg": 0.3581,
       "cb3_main_avg": -0.1777,
-      "cb5_main_avg": -0.1777,
-      "cb5_in_ratio": 0.667,
+      "cb5_main_avg": -0.139,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": 0.0821,
       "name": "科达制造",
-      "lr_prob": 0.5046
+      "lr_prob_base": 0.6731,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7231,
+      "lr_prob_with_boost": 0.7231
     },
     {
       "code": "600507",
@@ -4444,7 +5260,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": -0.0259,
       "name": "方大特钢",
-      "lr_prob": 0.2862
+      "lr_prob_base": 0.3824,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4324,
+      "lr_prob_with_boost": 0.4324
     },
     {
       "code": "600520",
@@ -4466,7 +5286,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.2231,
       "name": "三佳科技",
-      "lr_prob": 0.4083
+      "lr_prob_base": 0.5072,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5572,
+      "lr_prob_with_boost": 0.5572
     },
     {
       "code": "600522",
@@ -4488,7 +5312,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -1.0323,
       "name": "中天科技",
-      "lr_prob": 0.8768
+      "lr_prob_base": 0.9057,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.9057,
+      "lr_prob_with_boost": 0.9057
     },
     {
       "code": "600527",
@@ -4506,11 +5334,15 @@
       "d0_main_flow": 1.6831,
       "cb1_main_avg": 0.0819,
       "cb3_main_avg": 0.2093,
-      "cb5_main_avg": 0.2093,
+      "cb5_main_avg": 0.2483,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": -0.0554,
       "name": "江南高纤",
-      "lr_prob": 0.4909
+      "lr_prob_base": 0.6037,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6537,
+      "lr_prob_with_boost": 0.6537
     },
     {
       "code": "600537",
@@ -4528,11 +5360,15 @@
       "d0_main_flow": 2.2055,
       "cb1_main_avg": -1.3658,
       "cb3_main_avg": -0.4981,
-      "cb5_main_avg": -0.4981,
+      "cb5_main_avg": -0.3886,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": -0.685,
       "name": "*ST亿晶",
-      "lr_prob": 0.2159
+      "lr_prob_base": 0.3056,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3556,
+      "lr_prob_with_boost": 0.3556
     },
     {
       "code": "600549",
@@ -4554,7 +5390,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -1.3641,
       "name": "厦门钨业",
-      "lr_prob": 0.1155
+      "lr_prob_base": 0.1639,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.2139,
+      "lr_prob_with_boost": 0.2139
     },
     {
       "code": "600552",
@@ -4576,7 +5416,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.3311,
       "name": "凯盛科技",
-      "lr_prob": 0.5829
+      "lr_prob_base": 0.686,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.736,
+      "lr_prob_with_boost": 0.736
     },
     {
       "code": "600590",
@@ -4598,7 +5442,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.2089,
       "name": "泰豪科技",
-      "lr_prob": 0.3856
+      "lr_prob_base": 0.4818,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5318,
+      "lr_prob_with_boost": 0.5318
     },
     {
       "code": "600601",
@@ -4620,7 +5468,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.9802,
       "name": "方正科技",
-      "lr_prob": 0.6142
+      "lr_prob_base": 0.7034,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7534,
+      "lr_prob_with_boost": 0.7534
     },
     {
       "code": "600633",
@@ -4638,11 +5490,15 @@
       "d0_main_flow": 11.1123,
       "cb1_main_avg": -5.6554,
       "cb3_main_avg": -2.0249,
-      "cb5_main_avg": -2.0249,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -1.7603,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": 0.571,
       "name": "浙数文化",
-      "lr_prob": 0.1683
+      "lr_prob_base": 0.2513,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3013,
+      "lr_prob_with_boost": 0.3013
     },
     {
       "code": "600637",
@@ -4659,12 +5515,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 1.4815,
       "cb1_main_avg": -2.5767,
-      "cb3_main_avg": -1.6496,
-      "cb5_main_avg": -1.6496,
+      "cb3_main_avg": -1.1683,
+      "cb5_main_avg": -1.1683,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.02,
       "name": "东方明珠",
-      "lr_prob": 0.4734
+      "lr_prob_base": 0.6331,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6831,
+      "lr_prob_with_boost": 0.6831
     },
     {
       "code": "600641",
@@ -4686,7 +5546,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.4762,
       "name": "先导基电",
-      "lr_prob": 0.4926
+      "lr_prob_base": 0.5907,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5907,
+      "lr_prob_with_boost": 0.5907
     },
     {
       "code": "600678",
@@ -4708,7 +5572,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.0169,
       "name": "ST金顶",
-      "lr_prob": 0.4418
+      "lr_prob_base": 0.5456,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5956,
+      "lr_prob_with_boost": 0.5956
     },
     {
       "code": "600683",
@@ -4730,7 +5598,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.5215,
       "name": "京投发展",
-      "lr_prob": 0.5813
+      "lr_prob_base": 0.6772,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7272,
+      "lr_prob_with_boost": 0.7272
     },
     {
       "code": "600693",
@@ -4747,12 +5619,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 2.5341,
       "cb1_main_avg": -0.0774,
-      "cb3_main_avg": 0.2317,
-      "cb5_main_avg": 0.2317,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": 0.1994,
+      "cb5_main_avg": 0.1994,
+      "cb5_in_ratio": 0.667,
       "pre_d0_5d_main_avg": -0.0399,
       "name": "东百集团",
-      "lr_prob": 0.6112
+      "lr_prob_base": 0.6384,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6884,
+      "lr_prob_with_boost": 0.6884
     },
     {
       "code": "600699",
@@ -4774,7 +5650,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.252,
       "name": "均胜电子",
-      "lr_prob": 0.3866
+      "lr_prob_base": 0.4932,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4932,
+      "lr_prob_with_boost": 0.4932
     },
     {
       "code": "600703",
@@ -4796,7 +5676,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 1.5681,
       "name": "三安光电",
-      "lr_prob": 0.3332
+      "lr_prob_base": 0.4254,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4754,
+      "lr_prob_with_boost": 0.4754
     },
     {
       "code": "600707",
@@ -4813,12 +5697,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 3.2675,
       "cb1_main_avg": -1.4362,
-      "cb3_main_avg": -0.3404,
-      "cb5_main_avg": -0.3404,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": -0.3331,
+      "cb5_main_avg": -0.3331,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.8781,
       "name": "彩虹股份",
-      "lr_prob": 0.529
+      "lr_prob_base": 0.6049,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6549,
+      "lr_prob_with_boost": 0.6549
     },
     {
       "code": "600715",
@@ -4840,7 +5728,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.0525,
       "name": "文投控股",
-      "lr_prob": 0.2334
+      "lr_prob_base": 0.3125,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3625,
+      "lr_prob_with_boost": 0.3625
     },
     {
       "code": "600719",
@@ -4862,7 +5754,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.0157,
       "name": "大连热电",
-      "lr_prob": 0.5506
+      "lr_prob_base": 0.6513,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7013,
+      "lr_prob_with_boost": 0.7013
     },
     {
       "code": "600727",
@@ -4884,7 +5780,11 @@
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": -0.0628,
       "name": "鲁北化工",
-      "lr_prob": 0.5675
+      "lr_prob_base": 0.6671,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7171,
+      "lr_prob_with_boost": 0.7171
     },
     {
       "code": "600736",
@@ -4902,11 +5802,15 @@
       "d0_main_flow": -0.445,
       "cb1_main_avg": 10.915,
       "cb3_main_avg": 2.5229,
-      "cb5_main_avg": 2.1301,
-      "cb5_in_ratio": 0.75,
+      "cb5_main_avg": 1.7823,
+      "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.7167,
       "name": "苏州高新",
-      "lr_prob": 0.5664
+      "lr_prob_base": 0.6796,
+      "lr_prob_boost": -0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6296,
+      "lr_prob_with_boost": 0.6296
     },
     {
       "code": "600749",
@@ -4928,7 +5832,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.2309,
       "name": "西藏旅游",
-      "lr_prob": 0.2556
+      "lr_prob_base": 0.3305,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3805,
+      "lr_prob_with_boost": 0.3805
     },
     {
       "code": "600768",
@@ -4950,7 +5858,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.0251,
       "name": "宁波富邦",
-      "lr_prob": 0.4217
+      "lr_prob_base": 0.5242,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5742,
+      "lr_prob_with_boost": 0.5742
     },
     {
       "code": "600800",
@@ -4972,7 +5884,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.0396,
       "name": "渤海化学",
-      "lr_prob": 0.3469
+      "lr_prob_base": 0.4415,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4915,
+      "lr_prob_with_boost": 0.4915
     },
     {
       "code": "600815",
@@ -4989,12 +5905,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 2.4144,
       "cb1_main_avg": -0.2288,
-      "cb3_main_avg": 0.0431,
-      "cb5_main_avg": 0.0431,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": 0.0283,
+      "cb5_main_avg": 0.0283,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.6155,
       "name": "厦工股份",
-      "lr_prob": 0.6534
+      "lr_prob_base": 0.7158,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7658,
+      "lr_prob_with_boost": 0.7658
     },
     {
       "code": "600826",
@@ -5012,11 +5932,15 @@
       "d0_main_flow": 0.6318,
       "cb1_main_avg": 0.0124,
       "cb3_main_avg": -0.0061,
-      "cb5_main_avg": -0.0061,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.019,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": -0.0106,
       "name": "兰生股份",
-      "lr_prob": 0.5309
+      "lr_prob_base": 0.6336,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6836,
+      "lr_prob_with_boost": 0.6836
     },
     {
       "code": "600830",
@@ -5033,12 +5957,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.7606,
       "cb1_main_avg": 0.1933,
-      "cb3_main_avg": 0.2668,
-      "cb5_main_avg": 0.2668,
+      "cb3_main_avg": 0.2088,
+      "cb5_main_avg": 0.2088,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.0,
       "name": "香溢融通",
-      "lr_prob": 0.6749
+      "lr_prob_base": 0.7588,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8088,
+      "lr_prob_with_boost": 0.8088
     },
     {
       "code": "600847",
@@ -5060,7 +5988,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0157,
       "name": "万里股份",
-      "lr_prob": 0.2934
+      "lr_prob_base": 0.3919,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4419,
+      "lr_prob_with_boost": 0.4419
     },
     {
       "code": "600869",
@@ -5082,7 +6014,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.4586,
       "name": "远东股份",
-      "lr_prob": 0.2603
+      "lr_prob_base": 0.3388,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3888,
+      "lr_prob_with_boost": 0.3888
     },
     {
       "code": "600872",
@@ -5104,7 +6040,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.0573,
       "name": "中炬高新",
-      "lr_prob": 0.4333
+      "lr_prob_base": 0.5276,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5276,
+      "lr_prob_with_boost": 0.5276
     },
     {
       "code": "600875",
@@ -5126,7 +6066,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -2.6611,
       "name": "东方电气",
-      "lr_prob": 0.1564
+      "lr_prob_base": 0.219,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.269,
+      "lr_prob_with_boost": 0.269
     },
     {
       "code": "600961",
@@ -5148,7 +6092,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.4734,
       "name": "株冶集团",
-      "lr_prob": 0.8132
+      "lr_prob_base": 0.8954,
+      "lr_prob_boost": -0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8454,
+      "lr_prob_with_boost": 0.8454
     },
     {
       "code": "600962",
@@ -5170,7 +6118,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.0052,
       "name": "国投中鲁",
-      "lr_prob": 0.6052
+      "lr_prob_base": 0.7026,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7526,
+      "lr_prob_with_boost": 0.7526
     },
     {
       "code": "600979",
@@ -5192,7 +6144,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.3364,
       "name": "广安爱众",
-      "lr_prob": 0.4917
+      "lr_prob_base": 0.6237,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6237,
+      "lr_prob_with_boost": 0.6237
     },
     {
       "code": "600986",
@@ -5210,11 +6166,15 @@
       "d0_main_flow": 15.0766,
       "cb1_main_avg": 4.7989,
       "cb3_main_avg": -0.2812,
-      "cb5_main_avg": -0.1639,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": -0.3731,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 1.2689,
       "name": "浙文互联",
-      "lr_prob": 0.2288
+      "lr_prob_base": 0.2688,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.2688,
+      "lr_prob_with_boost": 0.2688
     },
     {
       "code": "601016",
@@ -5232,11 +6192,15 @@
       "d0_main_flow": 5.3478,
       "cb1_main_avg": -0.718,
       "cb3_main_avg": 0.1933,
-      "cb5_main_avg": -0.358,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": -0.7636,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.4826,
       "name": "节能风电",
-      "lr_prob": 0.5181
+      "lr_prob_base": 0.6122,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6622,
+      "lr_prob_with_boost": 0.6622
     },
     {
       "code": "601061",
@@ -5258,7 +6222,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.1724,
       "name": "中信金属",
-      "lr_prob": 0.5097
+      "lr_prob_base": 0.6135,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6635,
+      "lr_prob_with_boost": 0.6635
     },
     {
       "code": "601512",
@@ -5276,11 +6244,15 @@
       "d0_main_flow": 1.0065,
       "cb1_main_avg": -1.2153,
       "cb3_main_avg": -0.368,
-      "cb5_main_avg": -0.2712,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": -0.2013,
+      "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.2115,
       "name": "中新集团",
-      "lr_prob": 0.4509
+      "lr_prob_base": 0.5202,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5202,
+      "lr_prob_with_boost": 0.5202
     },
     {
       "code": "601619",
@@ -5302,7 +6274,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.4768,
       "name": "嘉泽新能",
-      "lr_prob": 0.2284
+      "lr_prob_base": 0.3031,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3531,
+      "lr_prob_with_boost": 0.3531
     },
     {
       "code": "601698",
@@ -5324,7 +6300,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.3266,
       "name": "中国卫通",
-      "lr_prob": 0.32
+      "lr_prob_base": 0.4109,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4609,
+      "lr_prob_with_boost": 0.4609
     },
     {
       "code": "601778",
@@ -5342,11 +6322,15 @@
       "d0_main_flow": 10.5335,
       "cb1_main_avg": -2.0911,
       "cb3_main_avg": -0.5627,
-      "cb5_main_avg": 0.4186,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": -0.1442,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 5.1983,
       "name": "晶科科技",
-      "lr_prob": 0.686
+      "lr_prob_base": 0.6877,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7377,
+      "lr_prob_with_boost": 0.7377
     },
     {
       "code": "603016",
@@ -5364,11 +6348,15 @@
       "d0_main_flow": 0.3619,
       "cb1_main_avg": -0.5836,
       "cb3_main_avg": -0.3195,
-      "cb5_main_avg": -0.3195,
+      "cb5_main_avg": -0.2901,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.2485,
       "name": "新宏泰",
-      "lr_prob": 0.6731
+      "lr_prob_base": 0.7649,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8149,
+      "lr_prob_with_boost": 0.8149
     },
     {
       "code": "603025",
@@ -5390,7 +6378,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.1229,
       "name": "大豪科技",
-      "lr_prob": 0.4544
+      "lr_prob_base": 0.5501,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6001,
+      "lr_prob_with_boost": 0.6001
     },
     {
       "code": "603030",
@@ -5412,7 +6404,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": -0.0643,
       "name": "全筑股份",
-      "lr_prob": 0.3886
+      "lr_prob_base": 0.4881,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5381,
+      "lr_prob_with_boost": 0.5381
     },
     {
       "code": "603031",
@@ -5434,7 +6430,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0553,
       "name": "安孚科技",
-      "lr_prob": 0.3972
+      "lr_prob_base": 0.4951,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5451,
+      "lr_prob_with_boost": 0.5451
     },
     {
       "code": "603032",
@@ -5456,7 +6456,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0368,
       "name": "德新科技",
-      "lr_prob": 0.3768
+      "lr_prob_base": 0.4796,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5296,
+      "lr_prob_with_boost": 0.5296
     },
     {
       "code": "603052",
@@ -5478,7 +6482,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.6374,
       "name": "可川科技",
-      "lr_prob": 0.544
+      "lr_prob_base": 0.6779,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6779,
+      "lr_prob_with_boost": 0.6779
     },
     {
       "code": "603057",
@@ -5500,7 +6508,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.019,
       "name": "紫燕食品",
-      "lr_prob": 0.4143
+      "lr_prob_base": 0.5083,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5583,
+      "lr_prob_with_boost": 0.5583
     },
     {
       "code": "603060",
@@ -5518,11 +6530,15 @@
       "d0_main_flow": 1.3257,
       "cb1_main_avg": -0.3602,
       "cb3_main_avg": -0.1513,
-      "cb5_main_avg": -0.1513,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.119,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": 0.0441,
       "name": "国检集团",
-      "lr_prob": 0.5028
+      "lr_prob_base": 0.6428,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6428,
+      "lr_prob_with_boost": 0.6428
     },
     {
       "code": "603063",
@@ -5544,7 +6560,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 3.2628,
       "name": "禾望电气",
-      "lr_prob": 0.4874
+      "lr_prob_base": 0.5751,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6251,
+      "lr_prob_with_boost": 0.6251
     },
     {
       "code": "603066",
@@ -5562,11 +6582,15 @@
       "d0_main_flow": 0.2352,
       "cb1_main_avg": -0.3021,
       "cb3_main_avg": -0.0397,
-      "cb5_main_avg": -0.0397,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.0176,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": 0.0008,
       "name": "音飞储存",
-      "lr_prob": 0.6993
+      "lr_prob_base": 0.8029,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8529,
+      "lr_prob_with_boost": 0.8529
     },
     {
       "code": "603108",
@@ -5588,7 +6612,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.0111,
       "name": "润达医疗",
-      "lr_prob": 0.4249
+      "lr_prob_base": 0.5198,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5698,
+      "lr_prob_with_boost": 0.5698
     },
     {
       "code": "603110",
@@ -5605,12 +6633,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 2.2103,
       "cb1_main_avg": 4.0356,
-      "cb3_main_avg": 2.5108,
-      "cb5_main_avg": 2.5108,
+      "cb3_main_avg": 1.7386,
+      "cb5_main_avg": 1.7386,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.1141,
       "name": "东方材料",
-      "lr_prob": 0.7644
+      "lr_prob_base": 0.7922,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7922,
+      "lr_prob_with_boost": 0.7922
     },
     {
       "code": "603115",
@@ -5632,7 +6664,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.3178,
       "name": "海星股份",
-      "lr_prob": 0.8606
+      "lr_prob_base": 0.9183,
+      "lr_prob_boost": -0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8683,
+      "lr_prob_with_boost": 0.8683
     },
     {
       "code": "603118",
@@ -5654,7 +6690,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.1229,
       "name": "共进股份",
-      "lr_prob": 0.4626
+      "lr_prob_base": 0.5558,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6058,
+      "lr_prob_with_boost": 0.6058
     },
     {
       "code": "603125",
@@ -5671,12 +6711,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.4295,
       "cb1_main_avg": 0.2016,
-      "cb3_main_avg": 0.0065,
-      "cb5_main_avg": 0.0065,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": -0.0008,
+      "cb5_main_avg": -0.0008,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.0181,
       "name": "常青科技",
-      "lr_prob": 0.7075
+      "lr_prob_base": 0.7695,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8195,
+      "lr_prob_with_boost": 0.8195
     },
     {
       "code": "603130",
@@ -5698,7 +6742,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0141,
       "name": "云中马",
-      "lr_prob": 0.6393
+      "lr_prob_base": 0.7277,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7777,
+      "lr_prob_with_boost": 0.7777
     },
     {
       "code": "603198",
@@ -5716,11 +6764,15 @@
       "d0_main_flow": 2.171,
       "cb1_main_avg": 0.6812,
       "cb3_main_avg": 0.141,
-      "cb5_main_avg": 0.0811,
-      "cb5_in_ratio": 0.25,
+      "cb5_main_avg": 0.0636,
+      "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.0039,
       "name": "迎驾贡酒",
-      "lr_prob": 0.4614
+      "lr_prob_base": 0.5689,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6189,
+      "lr_prob_with_boost": 0.6189
     },
     {
       "code": "603203",
@@ -5742,7 +6794,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.0367,
       "name": "快克智能",
-      "lr_prob": 0.3884
+      "lr_prob_base": 0.4873,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5373,
+      "lr_prob_with_boost": 0.5373
     },
     {
       "code": "603211",
@@ -5759,12 +6815,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.9323,
       "cb1_main_avg": 0.0093,
-      "cb3_main_avg": 0.2063,
-      "cb5_main_avg": 0.2063,
+      "cb3_main_avg": 0.1908,
+      "cb5_main_avg": 0.1908,
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": -0.1522,
       "name": "晋拓股份",
-      "lr_prob": 0.458
+      "lr_prob_base": 0.5672,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6172,
+      "lr_prob_with_boost": 0.6172
     },
     {
       "code": "603220",
@@ -5782,11 +6842,15 @@
       "d0_main_flow": 6.7542,
       "cb1_main_avg": -3.1605,
       "cb3_main_avg": -1.4938,
-      "cb5_main_avg": -1.1614,
-      "cb5_in_ratio": 0.25,
+      "cb5_main_avg": -1.1073,
+      "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.8552,
       "name": "中贝通信",
-      "lr_prob": 0.1662
+      "lr_prob_base": 0.2274,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.2774,
+      "lr_prob_with_boost": 0.2774
     },
     {
       "code": "603228",
@@ -5803,12 +6867,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 11.8655,
       "cb1_main_avg": -4.5245,
-      "cb3_main_avg": -3.4106,
-      "cb5_main_avg": -3.4106,
+      "cb3_main_avg": -3.0664,
+      "cb5_main_avg": -3.0664,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 2.4808,
       "name": "景旺电子",
-      "lr_prob": 0.2822
+      "lr_prob_base": 0.3996,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4496,
+      "lr_prob_with_boost": 0.4496
     },
     {
       "code": "603268",
@@ -5830,7 +6898,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.4253,
       "name": "松发股份",
-      "lr_prob": 0.6642
+      "lr_prob_base": 0.7506,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7506,
+      "lr_prob_with_boost": 0.7506
     },
     {
       "code": "603278",
@@ -5852,7 +6924,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0381,
       "name": "大业股份",
-      "lr_prob": 0.5615
+      "lr_prob_base": 0.6569,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7069,
+      "lr_prob_with_boost": 0.7069
     },
     {
       "code": "603308",
@@ -5870,11 +6946,15 @@
       "d0_main_flow": 8.4895,
       "cb1_main_avg": 0.7295,
       "cb3_main_avg": -0.205,
-      "cb5_main_avg": -0.501,
-      "cb5_in_ratio": 0.25,
+      "cb5_main_avg": -0.5507,
+      "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.6706,
       "name": "应流股份",
-      "lr_prob": 0.1912
+      "lr_prob_base": 0.2524,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3024,
+      "lr_prob_with_boost": 0.3024
     },
     {
       "code": "603315",
@@ -5892,11 +6972,15 @@
       "d0_main_flow": 0.6885,
       "cb1_main_avg": -0.1002,
       "cb3_main_avg": -0.1827,
-      "cb5_main_avg": -0.0526,
-      "cb5_in_ratio": 0.25,
+      "cb5_main_avg": -0.0655,
+      "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 1.0299,
       "name": "福鞍股份",
-      "lr_prob": 0.4771
+      "lr_prob_base": 0.5722,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6222,
+      "lr_prob_with_boost": 0.6222
     },
     {
       "code": "603322",
@@ -5918,7 +7002,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.0514,
       "name": "超讯通信",
-      "lr_prob": 0.3391
+      "lr_prob_base": 0.43,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.48,
+      "lr_prob_with_boost": 0.48
     },
     {
       "code": "603332",
@@ -5940,7 +7028,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.0001,
       "name": "苏州龙杰",
-      "lr_prob": 0.4775
+      "lr_prob_base": 0.5745,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6245,
+      "lr_prob_with_boost": 0.6245
     },
     {
       "code": "603335",
@@ -5962,7 +7054,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.1467,
       "name": "迪生力",
-      "lr_prob": 0.4002
+      "lr_prob_base": 0.4962,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5462,
+      "lr_prob_with_boost": 0.5462
     },
     {
       "code": "603365",
@@ -5980,11 +7076,15 @@
       "d0_main_flow": 0.1691,
       "cb1_main_avg": -0.16,
       "cb3_main_avg": -0.031,
-      "cb5_main_avg": -0.031,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.0226,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": -0.0024,
       "name": "水星家纺",
-      "lr_prob": 0.5094
+      "lr_prob_base": 0.6377,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6877,
+      "lr_prob_with_boost": 0.6877
     },
     {
       "code": "603390",
@@ -6002,11 +7102,15 @@
       "d0_main_flow": 0.5204,
       "cb1_main_avg": -0.3721,
       "cb3_main_avg": -0.2063,
-      "cb5_main_avg": -0.2063,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.1703,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": 0.0668,
       "name": "通达电气",
-      "lr_prob": 0.5037
+      "lr_prob_base": 0.6446,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6446,
+      "lr_prob_with_boost": 0.6446
     },
     {
       "code": "603486",
@@ -6023,12 +7127,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 4.4167,
       "cb1_main_avg": 0.1546,
-      "cb3_main_avg": -0.0858,
-      "cb5_main_avg": -0.0858,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": -0.2716,
+      "cb5_main_avg": -0.2716,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.0485,
       "name": "科沃斯",
-      "lr_prob": 0.5691
+      "lr_prob_base": 0.6209,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6709,
+      "lr_prob_with_boost": 0.6709
     },
     {
       "code": "603496",
@@ -6050,7 +7158,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.0577,
       "name": "恒为科技",
-      "lr_prob": 0.4254
+      "lr_prob_base": 0.5266,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5766,
+      "lr_prob_with_boost": 0.5766
     },
     {
       "code": "603501",
@@ -6067,12 +7179,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 12.5662,
       "cb1_main_avg": -5.4101,
-      "cb3_main_avg": -4.6602,
-      "cb5_main_avg": -4.6602,
+      "cb3_main_avg": -4.1511,
+      "cb5_main_avg": -4.1511,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.0729,
       "name": "豪威集团",
-      "lr_prob": 0.1742
+      "lr_prob_base": 0.2931,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.3431,
+      "lr_prob_with_boost": 0.3431
     },
     {
       "code": "603520",
@@ -6090,11 +7206,15 @@
       "d0_main_flow": 2.0468,
       "cb1_main_avg": -0.441,
       "cb3_main_avg": -0.0913,
-      "cb5_main_avg": -0.0913,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.0862,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": -0.0533,
       "name": "司太立",
-      "lr_prob": 0.6031
+      "lr_prob_base": 0.7011,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7511,
+      "lr_prob_with_boost": 0.7511
     },
     {
       "code": "603538",
@@ -6112,11 +7232,15 @@
       "d0_main_flow": 5.149,
       "cb1_main_avg": 1.2297,
       "cb3_main_avg": 1.3492,
-      "cb5_main_avg": 1.3627,
-      "cb5_in_ratio": 0.75,
+      "cb5_main_avg": 0.6631,
+      "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.9384,
       "name": "美诺华",
-      "lr_prob": 0.6964
+      "lr_prob_base": 0.7206,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7206,
+      "lr_prob_with_boost": 0.7206
     },
     {
       "code": "603579",
@@ -6133,12 +7257,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.1509,
       "cb1_main_avg": -0.1976,
-      "cb3_main_avg": -0.1193,
-      "cb5_main_avg": -0.1193,
-      "cb5_in_ratio": 0.0,
+      "cb3_main_avg": -0.0779,
+      "cb5_main_avg": -0.0779,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": -0.0071,
       "name": "荣泰健康",
-      "lr_prob": 0.6843
+      "lr_prob_base": 0.7759,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8259,
+      "lr_prob_with_boost": 0.8259
     },
     {
       "code": "603599",
@@ -6156,11 +7284,15 @@
       "d0_main_flow": 1.5217,
       "cb1_main_avg": -0.1762,
       "cb3_main_avg": 0.013,
-      "cb5_main_avg": 0.013,
-      "cb5_in_ratio": 0.667,
+      "cb5_main_avg": -0.019,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": -0.0516,
       "name": "广信股份",
-      "lr_prob": 0.2996
+      "lr_prob_base": 0.4619,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5119,
+      "lr_prob_with_boost": 0.5119
     },
     {
       "code": "603606",
@@ -6182,7 +7314,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.1537,
       "name": "东方电缆",
-      "lr_prob": 0.3245
+      "lr_prob_base": 0.4095,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4595,
+      "lr_prob_with_boost": 0.4595
     },
     {
       "code": "603610",
@@ -6199,12 +7335,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.281,
       "cb1_main_avg": -0.0472,
-      "cb3_main_avg": -0.0493,
-      "cb5_main_avg": -0.0493,
+      "cb3_main_avg": -0.0397,
+      "cb5_main_avg": -0.0397,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": -0.0162,
       "name": "麒盛科技",
-      "lr_prob": 0.4949
+      "lr_prob_base": 0.6064,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6564,
+      "lr_prob_with_boost": 0.6564
     },
     {
       "code": "603618",
@@ -6222,11 +7362,15 @@
       "d0_main_flow": 15.5501,
       "cb1_main_avg": 1.7495,
       "cb3_main_avg": 0.2435,
-      "cb5_main_avg": 0.1186,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": -0.079,
+      "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 1.4552,
       "name": "杭电股份",
-      "lr_prob": 0.4716
+      "lr_prob_base": 0.5675,
+      "lr_prob_boost": -0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5175,
+      "lr_prob_with_boost": 0.5175
     },
     {
       "code": "603626",
@@ -6243,12 +7387,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 4.1113,
       "cb1_main_avg": -0.3699,
-      "cb3_main_avg": -0.2081,
-      "cb5_main_avg": -0.2081,
-      "cb5_in_ratio": 0.0,
+      "cb3_main_avg": 0.4464,
+      "cb5_main_avg": 0.4464,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": -0.1554,
       "name": "科森科技",
-      "lr_prob": 0.4629
+      "lr_prob_base": 0.6408,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6908,
+      "lr_prob_with_boost": 0.6908
     },
     {
       "code": "603637",
@@ -6270,7 +7418,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0209,
       "name": "镇海股份",
-      "lr_prob": 0.2849
+      "lr_prob_base": 0.3687,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4187,
+      "lr_prob_with_boost": 0.4187
     },
     {
       "code": "603655",
@@ -6288,11 +7440,15 @@
       "d0_main_flow": 0.9281,
       "cb1_main_avg": 0.3017,
       "cb3_main_avg": 0.0827,
-      "cb5_main_avg": 0.0827,
-      "cb5_in_ratio": 0.667,
+      "cb5_main_avg": 0.0682,
+      "cb5_in_ratio": 0.75,
       "pre_d0_5d_main_avg": 0.0403,
       "name": "朗博科技",
-      "lr_prob": 0.3584
+      "lr_prob_base": 0.4513,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5013,
+      "lr_prob_with_boost": 0.5013
     },
     {
       "code": "603657",
@@ -6309,12 +7465,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.172,
       "cb1_main_avg": -0.0385,
-      "cb3_main_avg": -0.0063,
-      "cb5_main_avg": -0.0063,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": 0.1073,
+      "cb5_main_avg": 0.1073,
+      "cb5_in_ratio": 0.667,
       "pre_d0_5d_main_avg": -0.0034,
       "name": "春光科技",
-      "lr_prob": 0.5348
+      "lr_prob_base": 0.5784,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6284,
+      "lr_prob_with_boost": 0.6284
     },
     {
       "code": "603680",
@@ -6332,11 +7492,15 @@
       "d0_main_flow": 0.3845,
       "cb1_main_avg": -0.0161,
       "cb3_main_avg": -0.048,
-      "cb5_main_avg": -0.048,
-      "cb5_in_ratio": 0.0,
+      "cb5_main_avg": -0.0356,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": -0.0085,
       "name": "今创集团",
-      "lr_prob": 0.6913
+      "lr_prob_base": 0.7797,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8297,
+      "lr_prob_with_boost": 0.8297
     },
     {
       "code": "603699",
@@ -6358,7 +7522,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": -0.0121,
       "name": "纽威股份",
-      "lr_prob": 0.6608
+      "lr_prob_base": 0.7524,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8024,
+      "lr_prob_with_boost": 0.8024
     },
     {
       "code": "603709",
@@ -6376,11 +7544,15 @@
       "d0_main_flow": 0.1864,
       "cb1_main_avg": 0.0276,
       "cb3_main_avg": 0.009,
-      "cb5_main_avg": 0.0103,
-      "cb5_in_ratio": 0.75,
+      "cb5_main_avg": 0.0126,
+      "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0024,
       "name": "中源家居",
-      "lr_prob": 0.377
+      "lr_prob_base": 0.4751,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5251,
+      "lr_prob_with_boost": 0.5251
     },
     {
       "code": "603726",
@@ -6397,12 +7569,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.2783,
       "cb1_main_avg": 0.0102,
-      "cb3_main_avg": -0.0028,
-      "cb5_main_avg": -0.0028,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": 0.1669,
+      "cb5_main_avg": 0.1669,
+      "cb5_in_ratio": 0.667,
       "pre_d0_5d_main_avg": -0.0032,
       "name": "朗迪集团",
-      "lr_prob": 0.4327
+      "lr_prob_base": 0.4785,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5285,
+      "lr_prob_with_boost": 0.5285
     },
     {
       "code": "603778",
@@ -6424,7 +7600,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -3.06,
       "name": "国晟科技",
-      "lr_prob": 0.1245
+      "lr_prob_base": 0.1817,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.1817,
+      "lr_prob_with_boost": 0.1817
     },
     {
       "code": "603788",
@@ -6446,7 +7626,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.004,
       "name": "宁波高发",
-      "lr_prob": 0.4343
+      "lr_prob_base": 0.537,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.587,
+      "lr_prob_with_boost": 0.587
     },
     {
       "code": "603815",
@@ -6468,7 +7652,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0108,
       "name": "交建股份",
-      "lr_prob": 0.4465
+      "lr_prob_base": 0.555,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.605,
+      "lr_prob_with_boost": 0.605
     },
     {
       "code": "603819",
@@ -6486,11 +7674,15 @@
       "d0_main_flow": 0.166,
       "cb1_main_avg": -0.0242,
       "cb3_main_avg": 0.0147,
-      "cb5_main_avg": 0.0147,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": 0.0237,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": 0.0275,
       "name": "神力股份",
-      "lr_prob": 0.4048
+      "lr_prob_base": 0.5301,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5801,
+      "lr_prob_with_boost": 0.5801
     },
     {
       "code": "603826",
@@ -6512,7 +7704,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.3459,
       "name": "坤彩科技",
-      "lr_prob": 0.4436
+      "lr_prob_base": 0.55,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6,
+      "lr_prob_with_boost": 0.6
     },
     {
       "code": "603876",
@@ -6530,11 +7726,15 @@
       "d0_main_flow": 4.2544,
       "cb1_main_avg": 0.8572,
       "cb3_main_avg": 0.1512,
-      "cb5_main_avg": 0.1512,
-      "cb5_in_ratio": 0.667,
+      "cb5_main_avg": 0.1126,
+      "cb5_in_ratio": 0.5,
       "pre_d0_5d_main_avg": 0.7308,
       "name": "鼎胜新材",
-      "lr_prob": 0.5655
+      "lr_prob_base": 0.7153,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7653,
+      "lr_prob_with_boost": 0.7653
     },
     {
       "code": "603878",
@@ -6556,7 +7756,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0216,
       "name": "武进不锈",
-      "lr_prob": 0.4777
+      "lr_prob_base": 0.5748,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6248,
+      "lr_prob_with_boost": 0.6248
     },
     {
       "code": "603897",
@@ -6578,7 +7782,11 @@
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.5328,
       "name": "长城科技",
-      "lr_prob": 0.3784
+      "lr_prob_base": 0.4723,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4723,
+      "lr_prob_with_boost": 0.4723
     },
     {
       "code": "603898",
@@ -6600,7 +7808,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0119,
       "name": "好莱客",
-      "lr_prob": 0.4084
+      "lr_prob_base": 0.5074,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5574,
+      "lr_prob_with_boost": 0.5574
     },
     {
       "code": "603903",
@@ -6622,7 +7834,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": -0.0014,
       "name": "中持股份",
-      "lr_prob": 0.4312
+      "lr_prob_base": 0.5267,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5767,
+      "lr_prob_with_boost": 0.5767
     },
     {
       "code": "603912",
@@ -6640,11 +7856,15 @@
       "d0_main_flow": 2.2931,
       "cb1_main_avg": -0.6494,
       "cb3_main_avg": -0.3364,
-      "cb5_main_avg": -0.0433,
-      "cb5_in_ratio": 0.5,
+      "cb5_main_avg": 0.005,
+      "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.1744,
       "name": "佳力图",
-      "lr_prob": 0.3727
+      "lr_prob_base": 0.3982,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4482,
+      "lr_prob_with_boost": 0.4482
     },
     {
       "code": "603920",
@@ -6666,7 +7886,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": -0.6621,
       "name": "世运电路",
-      "lr_prob": 0.2853
+      "lr_prob_base": 0.3849,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4349,
+      "lr_prob_with_boost": 0.4349
     },
     {
       "code": "603922",
@@ -6688,7 +7912,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.004,
       "name": "ST金鸿顺",
-      "lr_prob": 0.531
+      "lr_prob_base": 0.6324,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6824,
+      "lr_prob_with_boost": 0.6824
     },
     {
       "code": "603926",
@@ -6710,7 +7938,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": -0.0141,
       "name": "铁流股份",
-      "lr_prob": 0.4178
+      "lr_prob_base": 0.5198,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5698,
+      "lr_prob_with_boost": 0.5698
     },
     {
       "code": "603967",
@@ -6728,11 +7960,15 @@
       "d0_main_flow": 0.3251,
       "cb1_main_avg": -0.0485,
       "cb3_main_avg": -0.0364,
-      "cb5_main_avg": -0.0364,
-      "cb5_in_ratio": 0.0,
+      "cb5_main_avg": -0.0202,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": 0.0028,
       "name": "中创物流",
-      "lr_prob": 0.3812
+      "lr_prob_base": 0.4817,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5317,
+      "lr_prob_with_boost": 0.5317
     },
     {
       "code": "603985",
@@ -6754,7 +7990,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.4089,
       "name": "恒润股份",
-      "lr_prob": 0.4897
+      "lr_prob_base": 0.5953,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.6453,
+      "lr_prob_with_boost": 0.6453
     },
     {
       "code": "605060",
@@ -6776,7 +8016,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": -0.2667,
       "name": "联德股份",
-      "lr_prob": 0.4245
+      "lr_prob_base": 0.5364,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5864,
+      "lr_prob_with_boost": 0.5864
     },
     {
       "code": "605118",
@@ -6793,12 +8037,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.4535,
       "cb1_main_avg": 0.0799,
-      "cb3_main_avg": 0.0311,
-      "cb5_main_avg": 0.0311,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": 0.0027,
+      "cb5_main_avg": 0.0027,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.0882,
       "name": "力鼎光电",
-      "lr_prob": 0.7203
+      "lr_prob_base": 0.7791,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8291,
+      "lr_prob_with_boost": 0.8291
     },
     {
       "code": "605138",
@@ -6815,12 +8063,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 0.2474,
       "cb1_main_avg": -0.0519,
-      "cb3_main_avg": -0.0637,
-      "cb5_main_avg": -0.0637,
-      "cb5_in_ratio": 0.0,
+      "cb3_main_avg": -0.0317,
+      "cb5_main_avg": -0.0317,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.0,
       "name": "盛泰集团",
-      "lr_prob": 0.6913
+      "lr_prob_base": 0.7811,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8311,
+      "lr_prob_with_boost": 0.8311
     },
     {
       "code": "605166",
@@ -6842,7 +8094,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": -0.0234,
       "name": "聚合顺",
-      "lr_prob": 0.5653
+      "lr_prob_base": 0.6649,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7149,
+      "lr_prob_with_boost": 0.7149
     },
     {
       "code": "605222",
@@ -6864,7 +8120,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.1646,
       "name": "起帆电缆",
-      "lr_prob": 0.6628
+      "lr_prob_base": 0.7461,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7961,
+      "lr_prob_with_boost": 0.7961
     },
     {
       "code": "605298",
@@ -6886,7 +8146,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.1172,
       "name": "必得科技",
-      "lr_prob": 0.5491
+      "lr_prob_base": 0.6506,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7006,
+      "lr_prob_with_boost": 0.7006
     },
     {
       "code": "605336",
@@ -6908,7 +8172,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.0008,
       "name": "*ST帅电",
-      "lr_prob": 0.3757
+      "lr_prob_base": 0.475,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.525,
+      "lr_prob_with_boost": 0.525
     },
     {
       "code": "605365",
@@ -6930,7 +8198,11 @@
       "cb5_in_ratio": 0.2,
       "pre_d0_5d_main_avg": 0.3969,
       "name": "立达信",
-      "lr_prob": 0.5702
+      "lr_prob_base": 0.7004,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7004,
+      "lr_prob_with_boost": 0.7004
     },
     {
       "code": "605376",
@@ -6952,7 +8224,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.2961,
       "name": "博迁新材",
-      "lr_prob": 0.5521
+      "lr_prob_base": 0.6566,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7066,
+      "lr_prob_with_boost": 0.7066
     },
     {
       "code": "605588",
@@ -6974,7 +8250,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0203,
       "name": "冠石科技",
-      "lr_prob": 0.4308
+      "lr_prob_base": 0.5244,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5744,
+      "lr_prob_with_boost": 0.5744
     },
     {
       "code": "688001",
@@ -6991,12 +8271,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 3.3125,
       "cb1_main_avg": 0.4392,
-      "cb3_main_avg": -0.0478,
-      "cb5_main_avg": -0.0478,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": -0.1064,
+      "cb5_main_avg": -0.1064,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": 0.4099,
       "name": "华兴源创",
-      "lr_prob": 0.2925
+      "lr_prob_base": 0.3517,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4017,
+      "lr_prob_with_boost": 0.4017
     },
     {
       "code": "688020",
@@ -7018,7 +8302,11 @@
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.0653,
       "name": "方邦股份",
-      "lr_prob": 0.6369
+      "lr_prob_base": 0.736,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.736,
+      "lr_prob_with_boost": 0.736
     },
     {
       "code": "688048",
@@ -7040,7 +8328,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": -1.0042,
       "name": "长光华芯",
-      "lr_prob": 0.1591
+      "lr_prob_base": 0.2247,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.2747,
+      "lr_prob_with_boost": 0.2747
     },
     {
       "code": "688221",
@@ -7057,12 +8349,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 4.6495,
       "cb1_main_avg": 0.5442,
-      "cb3_main_avg": 0.4318,
-      "cb5_main_avg": 0.4318,
-      "cb5_in_ratio": 1.0,
+      "cb3_main_avg": 0.225,
+      "cb5_main_avg": 0.225,
+      "cb5_in_ratio": 0.667,
       "pre_d0_5d_main_avg": 0.0427,
       "name": "前沿生物-U",
-      "lr_prob": 0.1769
+      "lr_prob_base": 0.2302,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.2802,
+      "lr_prob_with_boost": 0.2802
     },
     {
       "code": "688227",
@@ -7084,7 +8380,11 @@
       "cb5_in_ratio": 1.0,
       "pre_d0_5d_main_avg": 0.4548,
       "name": "品高股份",
-      "lr_prob": 0.8539
+      "lr_prob_base": 0.9151,
+      "lr_prob_boost": -0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.8651,
+      "lr_prob_with_boost": 0.8651
     },
     {
       "code": "688268",
@@ -7102,11 +8402,15 @@
       "d0_main_flow": 4.359,
       "cb1_main_avg": -1.1901,
       "cb3_main_avg": -0.7916,
-      "cb5_main_avg": -0.7916,
-      "cb5_in_ratio": 0.333,
+      "cb5_main_avg": -0.8415,
+      "cb5_in_ratio": 0.25,
       "pre_d0_5d_main_avg": 1.5142,
       "name": "华特气体",
-      "lr_prob": 0.5557
+      "lr_prob_base": 0.6568,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7068,
+      "lr_prob_with_boost": 0.7068
     },
     {
       "code": "688381",
@@ -7123,12 +8427,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 2.6463,
       "cb1_main_avg": -0.1169,
-      "cb3_main_avg": -0.0634,
-      "cb5_main_avg": -0.0634,
+      "cb3_main_avg": -0.1023,
+      "cb5_main_avg": -0.1023,
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.3492,
       "name": "帝奥微",
-      "lr_prob": 0.3171
+      "lr_prob_base": 0.4118,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4618,
+      "lr_prob_with_boost": 0.4618
     },
     {
       "code": "688530",
@@ -7145,12 +8453,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 3.2164,
       "cb1_main_avg": 0.8791,
-      "cb3_main_avg": 0.1718,
-      "cb5_main_avg": 0.1718,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": 0.2843,
+      "cb5_main_avg": 0.2843,
+      "cb5_in_ratio": 0.667,
       "pre_d0_5d_main_avg": 0.044,
       "name": "欧莱新材",
-      "lr_prob": 0.6468
+      "lr_prob_base": 0.6976,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7476,
+      "lr_prob_with_boost": 0.7476
     },
     {
       "code": "688560",
@@ -7172,7 +8484,11 @@
       "cb5_in_ratio": 0.0,
       "pre_d0_5d_main_avg": 0.0001,
       "name": "明冠新材",
-      "lr_prob": 0.2652
+      "lr_prob_base": 0.3555,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4055,
+      "lr_prob_with_boost": 0.4055
     },
     {
       "code": "688628",
@@ -7194,7 +8510,11 @@
       "cb5_in_ratio": 0.4,
       "pre_d0_5d_main_avg": 0.0194,
       "name": "优利德",
-      "lr_prob": 0.5688
+      "lr_prob_base": 0.6712,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.7212,
+      "lr_prob_with_boost": 0.7212
     },
     {
       "code": "688633",
@@ -7212,11 +8532,15 @@
       "d0_main_flow": 1.2969,
       "cb1_main_avg": 0.0922,
       "cb3_main_avg": 0.104,
-      "cb5_main_avg": 0.104,
-      "cb5_in_ratio": 0.667,
+      "cb5_main_avg": 0.0967,
+      "cb5_in_ratio": 0.75,
       "pre_d0_5d_main_avg": -0.001,
       "name": "星球石墨",
-      "lr_prob": 0.3567
+      "lr_prob_base": 0.468,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.518,
+      "lr_prob_with_boost": 0.518
     },
     {
       "code": "688661",
@@ -7238,7 +8562,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.0251,
       "name": "和林微纳",
-      "lr_prob": 0.462
+      "lr_prob_base": 0.5727,
+      "lr_prob_boost": 0.0,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.5727,
+      "lr_prob_with_boost": 0.5727
     },
     {
       "code": "688668",
@@ -7260,7 +8588,11 @@
       "cb5_in_ratio": 0.6,
       "pre_d0_5d_main_avg": 0.1692,
       "name": "鼎通科技",
-      "lr_prob": 0.3406
+      "lr_prob_base": 0.4454,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4954,
+      "lr_prob_with_boost": 0.4954
     },
     {
       "code": "688677",
@@ -7277,12 +8609,16 @@
       "d0_lbc": 1,
       "d0_main_flow": 3.0411,
       "cb1_main_avg": 0.2762,
-      "cb3_main_avg": -0.0361,
-      "cb5_main_avg": -0.0361,
-      "cb5_in_ratio": 0.5,
+      "cb3_main_avg": -0.0858,
+      "cb5_main_avg": -0.0858,
+      "cb5_in_ratio": 0.333,
       "pre_d0_5d_main_avg": -0.1953,
       "name": "海泰新光",
-      "lr_prob": 0.3198
+      "lr_prob_base": 0.3864,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4364,
+      "lr_prob_with_boost": 0.4364
     },
     {
       "code": "688807",
@@ -7304,7 +8640,11 @@
       "cb5_in_ratio": 0.8,
       "pre_d0_5d_main_avg": 0.4625,
       "name": "优迅股份",
-      "lr_prob": 0.323
+      "lr_prob_base": 0.4194,
+      "lr_prob_boost": 0.05,
+      "market_regime": "all_red_strong",
+      "lr_prob": 0.4694,
+      "lr_prob_with_boost": 0.4694
     }
   ]
 }

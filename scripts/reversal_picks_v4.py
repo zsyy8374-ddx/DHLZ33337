@@ -552,9 +552,46 @@ def extract_v10(c, regime):
     return f
 
 
+def _predict_tree_node(tree, x):
+    if tree[0] == "leaf": return tree[1]
+    _, feat, thr, left, right = tree
+    v = x.get(feat, 0) if isinstance(x, dict) else 0
+    if v <= thr: return _predict_tree_node(left, x)
+    return _predict_tree_node(right, x)
+
+
 def predict_lr(c, model, regime="normal", recent_5d=0.5, recent_10d=0.5, recent_20d=0.5):
-    """兼容 v1.1 / v1.0 / v0.8 / v0.5 / v0.4 模型"""
+    """兼容 v1.4 集成 / v1.1 / v1.0 / v0.8 / v0.5 / v0.4 模型"""
     ver = model.get("version", "")
+    
+    # v1.4 集成: LR + GBDT
+    if "v1.4" in ver or "ensemble" in ver:
+        f = extract_v11(c, regime, recent_5d, recent_10d, recent_20d)
+        # LR 部分
+        means = model["lr_feature_means"]; stds = model["lr_feature_stds"]
+        cont_keys = model["lr_cont_keys"]
+        z = model["lr_bias"]
+        for k in model["lr_features"]:
+            v = f.get(k, 0) or 0
+            if k in cont_keys:
+                v = (v - means.get(k, 0)) / max(stds.get(k, 1), 1e-9)
+            z += model["lr_weights"].get(k, 0) * v
+        z = max(-500, min(500, z))
+        p_lr = 1.0 / (1.0 + math.exp(-z))
+        
+        # GBDT 部分
+        z_gb = model["gbdt_base"]
+        gb_lr_step = model["gbdt_lr"]
+        for tree in model["gbdt_trees"]:
+            z_gb += gb_lr_step * _predict_tree_node(tree, f)
+        z_gb = max(-500, min(500, z_gb))
+        p_gb = 1.0 / (1.0 + math.exp(-z_gb))
+        
+        # 集成
+        w_lr = model.get("lr_weight", 0.6)
+        w_gb = model.get("gbdt_weight", 0.4)
+        return w_lr * p_lr + w_gb * p_gb
+    
     if "v1.1" in ver:
         f = extract_v11(c, regime, recent_5d, recent_10d, recent_20d)
     elif "v1.0" in ver:
@@ -634,11 +671,18 @@ def format_msg(candidates, model, date):
     tier_b = [c for c in candidates if P_mid <= c["lr_prob"] < P_high]
     tier_c = [c for c in candidates if 0.6 <= c["lr_prob"] < P_mid]
     
+    ver = model.get("version", "?")
+    is_v14 = "v1.4" in ver or "ensemble" in ver
+    label = "v1.4 集成" if is_v14 else ("v1.1" if "v1.1" in ver else "v0.4")
     lines = []
-    lines.append(f"⚔️ {date} 涨停回马枪 (v0.4 修复泄漏, 统一 cb5 窗口)")
+    lines.append(f"⚔️ {date} 涨停回马枪 ({label})")
     lines.append("━━━━━━━━━━━━━━━━━")
     lines.append(f"候选 {len(candidates)} | 极强 {len(tier_a)} | 强 {len(tier_b)} | 关注 {len(tier_c)}")
-    lines.append(f"模型: 时序 AUC {model['ts_auc']:.2f}, Top10% 命中 {model['top10_hit']*100:.0f}%")
+    if is_v14:
+        roos = model.get("rolling_oos", {})
+        lines.append(f"模型: 0.6 LR + 0.4 GBDT, 滚动 OOS AUC {roos.get('auc_avg',0):.2f}, T20 {roos.get('t20_avg',0)*100:.0f}%")
+    else:
+        lines.append(f"模型: 时序 AUC {model.get('ts_auc', 0):.2f}, Top10% 命中 {model.get('top10_hit', 0)*100:.0f}%")
     lines.append("")
     
     def render(c):
@@ -739,13 +783,20 @@ def main():
     if not target_date:
         target_date = datetime.now(BJT).strftime("%Y-%m-%d")
     
-    # 优先 v1.1 (含 recent_rev_rate 周级 regime), fallback v1.0/v0.8/v0.5/v0.4
+    # 优先 v1.4 集成 (LR+GBDT, 4-29 实战 Top 50 涨停 8 vs v1.1 的3), fallback v1.1/v1.0/v0.8/v0.5/v0.4
+    # 可用 "--use-v11" 参数强制退回 v1.1
+    use_v14 = True
+    if "--use-v11" in sys.argv: use_v14 = False
+    
+    v14_path = WORKSPACE / "picks" / "lr_v14_ensemble_model.json"
     v11_path = WORKSPACE / "picks" / "lr_v11_model.json"
     v10_path = WORKSPACE / "picks" / "lr_v10_model.json"
     v8_path = WORKSPACE / "picks" / "lr_v8_model.json"
     cands_v5 = sorted(BACKTEST_DIR.glob("reversal-lr-*-v5.json"), reverse=True)
     cands_v4 = sorted(BACKTEST_DIR.glob("reversal-lr-*-v4.json"), reverse=True)
-    if v11_path.exists():
+    if use_v14 and v14_path.exists():
+        model_path = v14_path
+    elif v11_path.exists():
         model_path = v11_path
     elif v10_path.exists():
         model_path = v10_path
@@ -761,8 +812,14 @@ def main():
     
     with open(model_path, encoding="utf-8") as f:
         model = json.load(f)
+    is_v14 = "v1.4" in model.get("version", "") or "ensemble" in model.get("version", "")
     print(f"📦 加载模型: {model_path.name} (version={model.get('version','?')})", flush=True)
-    print(f"   时序 AUC: {model.get('ts_auc', 0):.4f}", flush=True)
+    if is_v14:
+        roos = model.get("rolling_oos", {})
+        print(f"   集成: {model.get('lr_weight', 0.6)} LR + {model.get('gbdt_weight', 0.4)} GBDT ({len(model.get('gbdt_trees', []))} 棵)", flush=True)
+        print(f"   滚动 OOS: AUC={roos.get('auc_avg',0):.3f}, T20={roos.get('t20_avg',0)*100:.1f}%, P≥0.7命中={roos.get('p_high_hit_avg',0)*100:.1f}%", flush=True)
+    else:
+        print(f"   时序 AUC: {model.get('ts_auc', 0):.4f}", flush=True)
     print(f"   阈值: P_high={model.get('P_high','?')}, P_mid={model.get('P_mid','?')}", flush=True)
     
     # 拉市场风格指标
@@ -788,10 +845,11 @@ def main():
     regime = detect_regime_v5(style)
     print(f"🌺 今日 regime: {regime}", flush=True)
     
-    # v1.1: 拿近期反转率 (周级 regime)
+    # v1.1 / v1.4: 拿近期反转率 (周级 regime)
     # 从 backtest/reversal-events-2026-05-01-v8-enriched.json 中拿出近 5/10/20 交易日反转率
     recent_5d = recent_10d = recent_20d = 0.5
-    if "v1.1" in model.get("version", ""):
+    needs_recent_rev = "v1.1" in model.get("version", "") or "v1.4" in model.get("version", "") or "ensemble" in model.get("version", "")
+    if needs_recent_rev:
         try:
             evts_path = BACKTEST_DIR / "reversal-events-2026-05-01-v8-enriched.json"
             if evts_path.exists():
@@ -821,9 +879,9 @@ def main():
         except Exception as e:
             print(f"   ⚠️ 近期反转率计算失败: {e}", flush=True)
     
-    # v1.1 weak_market_penalty: 近 10 交易日反转率很低时, 全局压低 P
+    # v1.1 / v1.4 weak_market_penalty: 近 10 交易日反转率很低时, 全局压低 P
     weak_market_penalty = 0.0
-    if "v1.1" in model.get("version", ""):
+    if needs_recent_rev:
         if recent_10d < 0.30:
             weak_market_penalty = -0.15  # 弱接力市场
             print(f"   ⚠️ weak_market_penalty {weak_market_penalty:+.2f} (10日反转率仅 {recent_10d*100:.1f}%)", flush=True)

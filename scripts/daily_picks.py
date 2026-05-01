@@ -368,7 +368,7 @@ def get_today_picks(target_date=None):
         candidates.sort(key=lambda x: (-x.get("lr_prob", 0), -x["total"]))
         print(f"   LR: 已加载 {lr_model['version']} ({lr_model['trained_at']}), "
               f"P_high={lr_model['P_high']}, P_mid={lr_model['P_mid']}, "
-              f"Top 概率={candidates[0].get('lr_prob', 0):.3f}", flush=True)
+              f"Top 概率={candidates[0].get('lr_prob', 0):.3f}" if candidates else "无候选", flush=True)
     else:
         candidates.sort(key=lambda x: -x["total"])
     return candidates, date
