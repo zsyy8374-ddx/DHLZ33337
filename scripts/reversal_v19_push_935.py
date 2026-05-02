@@ -143,7 +143,13 @@ def get_features(pick, day_data, bar_5m, prev_close, feature_names):
     return [f.get(fn, 0) for fn in feature_names]
 
 
-def format_msg(top, date_str):
+WATCH_LIST = {
+    '600330': '天通股份',
+    '002866': '传艺科技',
+}
+
+
+def format_msg(top, date_str, all_results=None):
     lines = [
         f'🚀 v1.9 [9:35 极强档] {date_str}',
         f'━━━━━━━━━━━━━━━━━━',
@@ -154,6 +160,18 @@ def format_msg(top, date_str):
     for i, r in enumerate(top, 1):
         lines.append(f'{i}. {r["code"]} {r["name"]:<8} P={r["p_v19"]:.3f}')
         lines.append(f'   9:25 撮合 {r["auc_chg"]:+.2f}%, 5m 高 {r.get("pm_5m_high",0):+.2f}%, 5m 收 {r.get("pm_5m_close",0):+.2f}%')
+    
+    if all_results:
+        watch_in_results = [r for r in all_results if r.get('code') in WATCH_LIST]
+        if watch_in_results:
+            lines.append('')
+            lines.append('━━━ 你的持仓/关注 ━━━')
+            for r in watch_in_results:
+                p = r.get('p_v19', 0)
+                rank = sorted(all_results, key=lambda x: -x.get('p_v19', 0)).index(r) + 1
+                judge = '⭐强' if p >= 0.85 else '✅中等' if p >= 0.6 else '⚠️弱'
+                lines.append(f'  {r["code"]} {r.get("name","")[:8]} #{rank} P={p:.3f} {judge}')
+                lines.append(f'    9:25 撚合 {r.get("auc_chg",0):+.2f}%, 5m 高 {r.get("pm_5m_high",0):+.2f}%, 5m 收 {r.get("pm_5m_close",0):+.2f}%')
     
     lines.append('')
     lines.append('━━━ 操作建议 ━━━')
@@ -294,7 +312,7 @@ def main():
         print('⚠️ 今日无 P≥0.85 候选, 不推送')
         return
     
-    msg = format_msg(top, target_date)
+    msg = format_msg(top, target_date, all_results=results)
     print('\n' + '='*60)
     print(msg)
     print('='*60 + '\n')

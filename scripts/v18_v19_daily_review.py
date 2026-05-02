@@ -60,11 +60,28 @@ def is_zt(name, chg, code):
     return chg >= 9.5
 
 
+WATCH_LIST = {
+    '600330': '天通股份',
+    '002866': '传艺科技',
+}
+
+
 def main():
     target = sys.argv[1] if len(sys.argv) > 1 else datetime.now(BJT).strftime('%Y-%m-%d')
     print(f'📊 复盘 {target}', flush=True)
     
     msg_lines = [f'📊 {target} 盘后复盘', '━━━━━━━━━━━━━━━━━━']
+    
+    # 先拉你的持仓股今日表现
+    msg_lines.append('📌 你的持仓 (今日表现)')
+    for code, name in WATCH_LIST.items():
+        chg = get_close_chg(code, target)
+        if chg is not None:
+            zt_s = ' 🚀' if is_zt(name, chg, code) else ''
+            msg_lines.append(f'  {code} {name}: {chg:+.2f}%{zt_s}')
+        else:
+            msg_lines.append(f'  {code} {name}: NA (拉取失败)')
+    msg_lines.append('')
     
     # 1. v1.8 推送命中
     v18_file = WS / 'picks' / f'reversal-v18-{target}.json'
