@@ -57,12 +57,19 @@ def get_5m_first(code, today_str):
     return today_bars[0], prev_close
 
 
-def fetch_925_data(date_yyyymmdd):
+def fetch_925_data(date_yyyymmdd, max_retry=5):
     import pywencai
     q = f'{date_yyyymmdd} 9:25 委买 委卖 委差 多空比 撮合价 成交额 流通股本 涨跌幅'
     print(f'[{datetime.now().strftime("%H:%M:%S")}] 拉 9:25: {q}', flush=True)
-    df = pywencai.get(query=q, loop=True, timeout=180)
-    if df is None or isinstance(df, dict) or not len(df):
+    df = None
+    for retry in range(max_retry):
+        df_try = pywencai.get(query=q, loop=True, timeout=180)
+        if df_try is None or isinstance(df_try, dict) or not len(df_try):
+            time.sleep(30); continue
+        if len(df_try) < 1000:
+            time.sleep(30); continue
+        df = df_try; break
+    if df is None:
         return None
     print(f'✅ 拉到 {len(df)} 行', flush=True)
     

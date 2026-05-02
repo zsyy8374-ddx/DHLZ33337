@@ -21,14 +21,27 @@ def get_today_yyyymmdd():
     return datetime.now(BJT).strftime('%Y%m%d')
 
 
-def fetch_925_data(date_yyyymmdd):
-    """从 pywencai 拉今天 9:25 集合竞价 + 流通盘"""
+def fetch_925_data(date_yyyymmdd, max_retry=5):
+    """从 pywencai 拉今天 9:25 集合竞价 + 流通盘
+    加 retry: 如果只拉到 < 1000 行 (问财未更新完), 等 30s 重试
+    """
     import pywencai
     q = f'{date_yyyymmdd} 9:25 委买 委卖 委差 多空比 五档买盘 撮合价 成交额 流通股本 涨跌幅'
     print(f'[{datetime.now().strftime("%H:%M:%S")}] 拉 9:25 数据: {q}', flush=True)
-    df = pywencai.get(query=q, loop=True, timeout=180)
-    if df is None or isinstance(df, dict) or not len(df):
-        print(f'❌ pywencai 返回空', flush=True)
+    
+    df = None
+    for retry in range(max_retry):
+        df_try = pywencai.get(query=q, loop=True, timeout=180)
+        if df_try is None or isinstance(df_try, dict) or not len(df_try):
+            print(f'  retry {retry+1}: 空, 等 30s', flush=True)
+            time.sleep(30); continue
+        if len(df_try) < 1000:
+            print(f'  retry {retry+1}: 只 {len(df_try)} 行 (问财未更新完), 等 30s', flush=True)
+            time.sleep(30); continue
+        df = df_try; break
+    
+    if df is None:
+        print(f'❌ {max_retry} 次 retry 后失败', flush=True)
         return None
     print(f'✅ 拉到 {len(df)} 行', flush=True)
     
