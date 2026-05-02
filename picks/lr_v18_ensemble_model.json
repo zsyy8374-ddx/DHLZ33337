@@ -1,0 +1,140 @@
+{
+  "version": "v1.8-ensemble-9:25-sklearn",
+  "features": [
+    "d0_chg",
+    "d0_vol",
+    "d0_lbc",
+    "d0_main_flow",
+    "pre_d0_5d_main_avg",
+    "cb1_main_avg",
+    "cb3_main_avg",
+    "cb5_main_avg",
+    "cb5_in_ratio",
+    "pre10_n",
+    "pre10_days_in",
+    "pre10_in_ratio",
+    "pre10_max_streak",
+    "pre10_main_total",
+    "pre10_main_avg",
+    "pre10_strong_days",
+    "auc_buy",
+    "auc_sell",
+    "auc_diff",
+    "auc_ratio",
+    "auc_match_close",
+    "auc_amt",
+    "auc_vol",
+    "auc_turn",
+    "auc_chg",
+    "auc_amp",
+    "auc_buy_to_float",
+    "auc_sell_to_float",
+    "auc_amt_to_mcap",
+    "auc_strong_open",
+    "auc_zt_open"
+  ],
+  "oos_auc": 0.8072344322344321,
+  "oos_auc_lr": 0.7991643772893773,
+  "oos_auc_gb": 0.7964743589743589,
+  "oos_threshold_table": [
+    {
+      "p_thr": 0.9,
+      "n": 9,
+      "hit": 1.0
+    },
+    {
+      "p_thr": 0.85,
+      "n": 18,
+      "hit": 0.8888888888888888
+    },
+    {
+      "p_thr": 0.8,
+      "n": 19,
+      "hit": 0.8421052631578947
+    },
+    {
+      "p_thr": 0.75,
+      "n": 30,
+      "hit": 0.8333333333333334
+    },
+    {
+      "p_thr": 0.7,
+      "n": 47,
+      "hit": 0.7872340425531915
+    },
+    {
+      "p_thr": 0.65,
+      "n": 53,
+      "hit": 0.7547169811320755
+    },
+    {
+      "p_thr": 0.6,
+      "n": 66,
+      "hit": 0.696969696969697
+    },
+    {
+      "p_thr": 0.55,
+      "n": 80,
+      "hit": 0.6625
+    },
+    {
+      "p_thr": 0.5,
+      "n": 88,
+      "hit": 0.6477272727272727
+    },
+    {
+      "p_thr": 0.45,
+      "n": 97,
+      "hit": 0.6288659793814433
+    },
+    {
+      "p_thr": 0.4,
+      "n": 109,
+      "hit": 0.5963302752293578
+    }
+  ],
+  "oos_topk": {
+    "top5": 1.0,
+    "top10": 1.0,
+    "top20": 0.8,
+    "top30": 0.8333333333333334,
+    "top50": 0.74
+  },
+  "feature_importance": {
+    "auc_chg": 0.17779858594138662,
+    "cb5_main_avg": 0.17194352095238896,
+    "auc_turn": 0.09436465684605758,
+    "d0_chg": 0.05572450107638941,
+    "auc_amt_to_mcap": 0.052825333010023776,
+    "cb3_main_avg": 0.051447285262636415,
+    "cb1_main_avg": 0.04790595659010386,
+    "auc_buy": 0.03345366545230185,
+    "auc_buy_to_float": 0.02736070950646683,
+    "auc_amt": 0.02701961906522105,
+    "pre_d0_5d_main_avg": 0.02605573473106124,
+    "auc_sell": 0.024798781249033994,
+    "d0_vol": 0.02431956967359665,
+    "auc_sell_to_float": 0.02408951450633603,
+    "auc_ratio": 0.02266554287590529,
+    "auc_match_close": 0.018416540139539642,
+    "d0_main_flow": 0.018144313948662012,
+    "auc_diff": 0.01804743496431047,
+    "pre10_main_avg": 0.016657088078212378,
+    "pre10_main_total": 0.016335997083069768,
+    "cb5_in_ratio": 0.015802786012672515,
+    "auc_vol": 0.011926043498430914,
+    "pre10_max_streak": 0.008365188077135781,
+    "auc_strong_open": 0.00635874771480784,
+    "d0_lbc": 0.002761408491433082,
+    "pre10_strong_days": 0.0023780906936663802,
+    "pre10_in_ratio": 0.0021042814820430903,
+    "pre10_days_in": 0.0009291030771065161,
+    "pre10_n": 0.0,
+    "auc_amp": 0.0,
+    "auc_zt_open": 0.0
+  },
+  "train_size": 1128,
+  "oos_size": 283,
+  "sklearn_pkl": "/Users/openclaw/.openclaw/workspace-dengxian/picks/v18_sklearn_model.pkl",
+  "note": "v1.8 sklearn LR + GBDT, 31 维特征, 严格防泄漏 (删 days_between/callback_*/broke_*)"
+}
