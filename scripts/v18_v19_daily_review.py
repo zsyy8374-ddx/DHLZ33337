@@ -143,7 +143,24 @@ def main():
     
     msg_lines.append('')
     
-    # 3. 漏掉的票 (实际涨停但 v1.8 排名靠后)
+    # 3. v1.4 原始候选 (前一天 17:35 推送) 命中
+    # 找到前一个交易日 (D-1) 的 v1.4 picks
+    candidate_files = sorted((WS / 'picks').glob('reversal-v4-*.json'), reverse=True)
+    candidate_files = [f for f in candidate_files 
+                       if not f.name.endswith('with-4-30-actual.json')
+                       and f.name < f'reversal-v4-{target}.json']
+    if candidate_files:
+        with open(candidate_files[0]) as f:
+            v14 = json.load(f).get('candidates', [])
+        # 在 all_v18 里查涨跌幅 (我们已拉过)
+        v14_codes = {c['code']: c for c in v14}
+        v14_zt = sum(1 for r in all_v18 if r['code'] in v14_codes and r.get('is_zt'))
+        v14_in_v18 = sum(1 for r in all_v18 if r['code'] in v14_codes)
+        msg_lines.append(f'📊 v1.4 原始 (D-1 17:35 {candidate_files[0].name})')
+        msg_lines.append(f'   总 {len(v14)} 个候选, 其中有 9:25 数据 {v14_in_v18} 个, 涨停 {v14_zt}/{v14_in_v18} ({v14_zt/max(1,v14_in_v18)*100:.0f}%)')
+        msg_lines.append('')
+    
+    # 4. 漏掉的票 (实际涨停但 v1.8 排名靠后)
     if v18_file.exists():
         sorted_v18 = sorted(all_v18, key=lambda x: -x.get('p_v18', 0))
         # Top 30 内的涨停
