@@ -1,0 +1,135 @@
+{
+  "version": "v1.9-ensemble-925-935",
+  "features": [
+    "d0_chg",
+    "d0_vol",
+    "d0_lbc",
+    "d0_main_flow",
+    "pre_d0_5d_main_avg",
+    "cb1_main_avg",
+    "cb3_main_avg",
+    "cb5_main_avg",
+    "cb5_in_ratio",
+    "pre10_n",
+    "pre10_days_in",
+    "pre10_in_ratio",
+    "pre10_max_streak",
+    "pre10_main_total",
+    "pre10_main_avg",
+    "pre10_strong_days",
+    "auc_buy",
+    "auc_sell",
+    "auc_diff",
+    "auc_ratio",
+    "auc_match_close",
+    "auc_amt",
+    "auc_vol",
+    "auc_turn",
+    "auc_chg",
+    "auc_amp",
+    "auc_buy_to_float",
+    "auc_sell_to_float",
+    "auc_amt_to_mcap",
+    "auc_strong_open",
+    "auc_zt_open",
+    "pm_open_pct",
+    "pm_5m_high_pct",
+    "pm_5m_close_pct",
+    "pm_5m_amt_yi"
+  ],
+  "oos_auc": 0.9116237677984665,
+  "oos_threshold_table": [
+    {
+      "p_thr": 0.9,
+      "n": 38,
+      "hit": 1.0
+    },
+    {
+      "p_thr": 0.85,
+      "n": 44,
+      "hit": 1.0
+    },
+    {
+      "p_thr": 0.8,
+      "n": 51,
+      "hit": 1.0
+    },
+    {
+      "p_thr": 0.75,
+      "n": 56,
+      "hit": 0.9285714285714286
+    },
+    {
+      "p_thr": 0.7,
+      "n": 63,
+      "hit": 0.8888888888888888
+    },
+    {
+      "p_thr": 0.65,
+      "n": 68,
+      "hit": 0.8382352941176471
+    },
+    {
+      "p_thr": 0.6,
+      "n": 72,
+      "hit": 0.8194444444444444
+    },
+    {
+      "p_thr": 0.55,
+      "n": 78,
+      "hit": 0.7948717948717948
+    },
+    {
+      "p_thr": 0.5,
+      "n": 80,
+      "hit": 0.775
+    }
+  ],
+  "oos_topk": {
+    "top5": 1.0,
+    "top10": 1.0,
+    "top20": 1.0,
+    "top30": 1.0,
+    "top50": 1.0
+  },
+  "feature_importance": {
+    "pm_5m_high_pct": 0.22303991829329242,
+    "auc_chg": 0.15896011761441406,
+    "pm_open_pct": 0.1513129937263251,
+    "pm_5m_amt_yi": 0.142285322963923,
+    "pm_5m_close_pct": 0.09330144479217119,
+    "cb5_main_avg": 0.060574376109683525,
+    "auc_amt_to_mcap": 0.01792060105401276,
+    "auc_amt": 0.01715182173893904,
+    "cb1_main_avg": 0.016454184635320748,
+    "d0_main_flow": 0.012925585946867615,
+    "d0_chg": 0.011951002285961203,
+    "cb3_main_avg": 0.01151595139058449,
+    "auc_turn": 0.010736852171365007,
+    "auc_match_close": 0.009139101991597025,
+    "d0_vol": 0.008892167687293904,
+    "auc_vol": 0.0076042315001551945,
+    "auc_sell": 0.007152346570598817,
+    "pre_d0_5d_main_avg": 0.005328386026368338,
+    "auc_sell_to_float": 0.0049175961506344595,
+    "pre10_main_avg": 0.004901392225921081,
+    "pre10_main_total": 0.0036841765208797017,
+    "auc_buy": 0.0033367150233164157,
+    "auc_buy_to_float": 0.0032690915804904404,
+    "auc_diff": 0.0031139971655109997,
+    "auc_ratio": 0.0026939119557356657,
+    "d0_lbc": 0.0023046001345392243,
+    "pre10_max_streak": 0.0013091275629878594,
+    "pre10_days_in": 0.0010651841787058666,
+    "pre10_strong_days": 0.0010494781820560527,
+    "auc_strong_open": 0.0009252475419607545,
+    "cb5_in_ratio": 0.0008318636586833096,
+    "pre10_in_ratio": 0.00035121161970475613,
+    "pre10_n": 0.0,
+    "auc_zt_open": 0.0,
+    "auc_amp": 0.0
+  },
+  "train_size": 1032,
+  "oos_size": 259,
+  "note": "v1.9 = v1.8 + 9:30-9:35 5m K (35 维), 推送时点 9:35-9:36"
+}
