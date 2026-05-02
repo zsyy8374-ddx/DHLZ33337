@@ -3,3 +3,7 @@
 secrets/
 *.qq.smtp.json
 qq-send.log
+
+# v18 大数据文件 (320MB, pywencai 抓的)
+backtest/v18_auc_data.json
+backtest/v18_auc_ckpt.json
