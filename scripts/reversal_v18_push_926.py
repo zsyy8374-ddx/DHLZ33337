@@ -103,7 +103,14 @@ def get_features(pick, day_data, feature_names):
     return [f.get(fn, 0) for fn in feature_names]
 
 
-def format_msg(top, date_str, total_n):
+# Dengxian 持仓 / 关注股
+WATCH_LIST = {
+    '600330': '天通股份',
+    '002866': '传艺科技',
+}
+
+
+def format_msg(top, date_str, total_n, all_results=None):
     """格式化推送消息"""
     lines = [
         f'🚀 v1.8 [9:26 加强档] {date_str}',
@@ -128,6 +135,19 @@ def format_msg(top, date_str, total_n):
     lines.append(f'━━━ 强档 P 0.8-0.85 ━━━')
     for i, r in enumerate(strong[:10], 1):
         lines.append(f'{i}. {r["code"]} {r["name"]:<8} P={r["p_v18"]:.3f}')
+    
+    # 持仓股提醒 (在全部候选里找, 不只看 Top)
+    if all_results:
+        watch_in_results = [r for r in all_results if r.get('code') in WATCH_LIST]
+        if watch_in_results:
+            lines.append('')
+            lines.append('━━━ 你的持仓/关注 ━━━')
+            for r in watch_in_results:
+                p = r.get('p_v18', 0)
+                rank = sorted(all_results, key=lambda x: -x.get('p_v18', 0)).index(r) + 1
+                judge = '⭐强' if p >= 0.8 else '✅中等' if p >= 0.6 else '⚠️弱'
+                lines.append(f'  {r["code"]} {r.get("name","")[:8]} #{rank}/{len(all_results)} P={p:.3f} {judge}')
+                lines.append(f'    9:25 撚合 {r.get("auc_chg",0):+.2f}%, 多空比 {r.get("auc_ratio",0):.2f}')
     
     lines.append('')
     lines.append('━━━ 操作建议 ━━━')
@@ -269,7 +289,7 @@ def main():
     print(f'💾 落档: {out_path}', flush=True)
     
     # 7. 推送
-    msg = format_msg(top, target_date, len(top))
+    msg = format_msg(top, target_date, len(top), all_results=results)
     print('\n' + '='*60)
     print(msg)
     print('='*60 + '\n')
