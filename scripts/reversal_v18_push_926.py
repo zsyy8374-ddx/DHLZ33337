@@ -139,19 +139,37 @@ def format_msg(top, date_str, total_n):
     return '\n'.join(lines)
 
 
+WX_CHANNEL = "openclaw-weixin"
+WX_ACCOUNT = "ba28cc3242ca-im-bot"
+WX_TARGET = "o9cq80ykY28_hN0jDZS8efZ03Aw8@im.wechat"
+
+
 def send_wechat(msg):
-    """通过 OpenClaw 发微信"""
-    try:
-        import subprocess
-        # 用项目里现成的微信发送方式
-        wx_script = WORKSPACE / 'scripts' / 'send_wechat.sh'
-        if wx_script.exists():
-            r = subprocess.run(['bash', str(wx_script), msg], capture_output=True, text=True, timeout=30)
-            return r.returncode == 0
-        return False
-    except Exception as e:
-        print(f'微信发送失败: {e}', flush=True)
-        return False
+    """通过 openclaw message send 推送微信"""
+    import subprocess, re
+    cmd = ["openclaw", "message", "send",
+           "--channel", WX_CHANNEL, "--account", WX_ACCOUNT,
+           "--target", WX_TARGET, "--message", msg, "--json"]
+    for retry in range(3):
+        try:
+            r = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+            mid = None
+            if r.returncode == 0:
+                m = re.search(r'\{[\s\S]*\}', r.stdout)
+                if m:
+                    try:
+                        d = json.loads(m.group(0))
+                        mid = d.get("payload", {}).get("result", {}).get("messageId")
+                    except Exception: pass
+            if mid:
+                print(f"✅ 微信推送成功 (第{retry+1}次) mid={mid}", flush=True)
+                return True
+            print(f"⚠️ 微信 #{retry+1}: {r.stderr[-200:]}", flush=True)
+            time.sleep(2)
+        except Exception as e:
+            print(f"⚠️ 异常 #{retry+1}: {e}", flush=True)
+            time.sleep(2)
+    return False
 
 
 def main():

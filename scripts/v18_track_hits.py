@@ -41,6 +41,23 @@ def is_zt(name, chg, code):
     return chg >= 9.5
 
 
+WX_CHANNEL = "openclaw-weixin"
+WX_ACCOUNT = "ba28cc3242ca-im-bot"
+WX_TARGET = "o9cq80ykY28_hN0jDZS8efZ03Aw8@im.wechat"
+
+
+def send_wechat(msg):
+    import subprocess, re
+    cmd = ["openclaw", "message", "send",
+           "--channel", WX_CHANNEL, "--account", WX_ACCOUNT,
+           "--target", WX_TARGET, "--message", msg, "--json"]
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+        return r.returncode == 0
+    except Exception:
+        return False
+
+
 def main():
     target = sys.argv[1] if len(sys.argv) > 1 else get_today()
     print(f'📊 v1.8 命中追踪 — {target}', flush=True)
@@ -77,6 +94,29 @@ def main():
     with open(out, 'w') as f:
         json.dump({'date': target, 'results': all_results}, f, ensure_ascii=False, indent=2)
     print(f'\n💾 落档: {out}', flush=True)
+    
+    # 发微信汇报
+    track_msg_lines = [f'📊 v1.8 命中追踪 {target}', '━━━━━━━━━━━━━━━━━━']
+    for thr_name, thr in [('P≥0.85 极强', 0.85), ('P≥0.8 强档', 0.8), ('P≥0.7 中等', 0.7)]:
+        sub = [r for r in all_results if r.get('p_v18', 0) >= thr]
+        zt = sum(1 for r in sub if r.get('is_zt'))
+        track_msg_lines.append(f'  {thr_name}: {zt}/{len(sub)} ({zt/max(1,len(sub))*100:.0f}%)')
+    
+    # Top 5 详情
+    track_msg_lines.append('')
+    track_msg_lines.append('Top 5 表现:')
+    sorted_results = sorted(all_results, key=lambda x: -x.get('p_v18', 0))[:5]
+    for i, r in enumerate(sorted_results, 1):
+        chg = r.get('chg')
+        chg_s = f'{chg:+.2f}%' if chg is not None else 'NA'
+        zt_s = '✅' if r.get('is_zt') else '❌'
+        track_msg_lines.append(f'  {i}. {r["code"]} {r.get("name","")[:8]} P={r.get("p_v18",0):.3f} {chg_s} {zt_s}')
+    
+    msg = '\n'.join(track_msg_lines)
+    if send_wechat(msg):
+        print('✅ 微信发送 OK', flush=True)
+    else:
+        print('⚠️ 微信发送失败', flush=True)
 
 
 if __name__ == '__main__':
