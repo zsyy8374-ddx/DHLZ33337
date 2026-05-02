@@ -1,0 +1,53 @@
+{
+  "version": "pm-v1.0",
+  "trained_at": "2026-05-01 20:12:29 PDT",
+  "n_train": 1346,
+  "weights": {
+    "pm_open_pct": 0.3468017435483258,
+    "pm_5m_high_pct": 0.21000183460917396,
+    "pm_5m_close_pct": 0.2913161788312794,
+    "pm_10m_high_pct": 0.9545173121326591,
+    "pm_5m_amt_yi": 0.6436210615514953,
+    "pm_strong_open": 0.3388098632390297,
+    "pm_weak_open": -0.38539487325061644,
+    "pm_open_red_5m": 0.3070017535443313
+  },
+  "bias": 0.0677483275391115,
+  "feature_means": {
+    "pm_open_pct": 0.8161047548291224,
+    "pm_5m_high_pct": 2.327522288261513,
+    "pm_5m_close_pct": 1.0570490341753338,
+    "pm_10m_high_pct": 2.936419019316493,
+    "pm_5m_amt_yi": 1.8989042347696856
+  },
+  "feature_stds": {
+    "pm_open_pct": 4.472347030369145,
+    "pm_5m_high_pct": 2.3889675261261103,
+    "pm_5m_close_pct": 2.7408325213205718,
+    "pm_10m_high_pct": 2.8380918965789785,
+    "pm_5m_amt_yi": 3.0164396528607327
+  },
+  "cont_keys": [
+    "pm_open_pct",
+    "pm_5m_high_pct",
+    "pm_5m_close_pct",
+    "pm_10m_high_pct",
+    "pm_5m_amt_yi"
+  ],
+  "feature_names": [
+    "pm_open_pct",
+    "pm_5m_high_pct",
+    "pm_5m_close_pct",
+    "pm_10m_high_pct",
+    "pm_5m_amt_yi",
+    "pm_strong_open",
+    "pm_weak_open",
+    "pm_open_red_5m"
+  ],
+  "P_high": 0.85,
+  "P_mid": 0.65,
+  "ts_auc": 0.841,
+  "top10_hit": 0.983,
+  "purpose": "9:40 二次扫描, pm 8 维 LR, AUC 0.841 T20 98.3% on 滚动 OOS",
+  "note_calibration": "P_high=0.85 (≥91% hit), P_mid=0.65 (≥86% hit) on 2026-03-04 OOS 721 events"
+}
