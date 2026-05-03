@@ -3,52 +3,6 @@
   "date": "2026-04-30",
   "candidates": [
     {
-      "code": "603095",
-      "name": "越剑智能",
-      "total": 130,
-      "scores": {
-        "form": 20,
-        "fund_trap": 5,
-        "vol": 20,
-        "distinct": 20,
-        "cap": 10,
-        "volume": 5,
-        "emotion": 10,
-        "sector": 15,
-        "zt_time": 14,
-        "seal": 6,
-        "pure": 5
-      },
-      "features": {
-        "lbc": 4,
-        "fbt": 92503,
-        "lbt": 92503,
-        "fund_yi": 1.43,
-        "ltsz_yi": 65.5,
-        "hs": 1.5,
-        "zbc": 0,
-        "hybk": "专用设备",
-        "lhb_explain": "普通席位买入，成功率40.01%",
-        "vol_ratio": 0.16,
-        "vol_reason": "缩量加速",
-        "market_strength": 2.63,
-        "sector_zt": 5,
-        "seal_pct": 2.19,
-        "is_yizi": true
-      },
-      "in_lhb": true,
-      "lr_prob": 0.5908,
-      "_model_meta": {
-        "P_high": 0.716,
-        "P_mid": 0.288,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-02",
-        "ts_avg_auc": 0.6315719840493699
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
       "code": "600379",
       "name": "宝光股份",
       "total": 124,
@@ -80,100 +34,11 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 2.79,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.4884,
-      "_model_meta": {
-        "P_high": 0.716,
-        "P_mid": 0.288,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-02",
-        "ts_avg_auc": 0.6315719840493699
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "603399",
-      "name": "永杉锂业",
-      "total": 120,
-      "scores": {
-        "form": 20,
-        "fund_trap": 2,
-        "vol": 20,
-        "distinct": 20,
-        "cap": 6,
-        "volume": 5,
-        "emotion": 10,
-        "sector": 12,
-        "zt_time": 14,
-        "seal": 6,
-        "pure": 5
-      },
-      "features": {
-        "lbc": 3,
-        "fbt": 92503,
-        "lbt": 92503,
-        "fund_yi": 2.02,
-        "ltsz_yi": 99.3,
-        "hs": 1.7,
-        "zbc": 0,
-        "hybk": "能源金属",
-        "vol_ratio": 0.14,
-        "vol_reason": "缩量加速",
-        "market_strength": 2.63,
-        "sector_zt": 3,
-        "seal_pct": 2.03,
-        "is_yizi": true
-      },
-      "in_lhb": false,
-      "lr_prob": 0.4838,
-      "_model_meta": {
-        "P_high": 0.716,
-        "P_mid": 0.288,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-02",
-        "ts_avg_auc": 0.6315719840493699
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "603045",
-      "name": "福达合金",
-      "total": 100,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 20,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 5,
-        "emotion": 10,
-        "sector": 8,
-        "zt_time": 14,
-        "seal": 6,
-        "pure": 5
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 92503,
-        "lbt": 92503,
-        "fund_yi": 1.35,
-        "ltsz_yi": 63.2,
-        "hs": 1.8,
-        "zbc": 0,
-        "hybk": "金属新材",
-        "vol_ratio": 0.31,
-        "vol_reason": "缩量加速",
-        "market_strength": 2.63,
-        "sector_zt": 2,
-        "seal_pct": 2.13,
-        "is_yizi": true
-      },
-      "in_lhb": false,
-      "lr_prob": 0.3002,
       "_model_meta": {
         "P_high": 0.716,
         "P_mid": 0.288,
@@ -216,7 +81,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 0.56,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.2711,
@@ -272,7 +138,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 1.64,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.2469,
@@ -321,7 +188,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.3,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.2349,
@@ -367,7 +235,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.16,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.2335,
@@ -384,7 +253,7 @@
     {
       "code": "002805",
       "name": "丰元股份",
-      "total": 101,
+      "total": 100,
       "scores": {
         "form": 14,
         "fund_trap": -5,
@@ -396,7 +265,7 @@
         "sector": 8,
         "zt_time": 14,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 2,
@@ -413,7 +282,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 1.44,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.2308,
@@ -459,55 +329,11 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.1,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.2257,
-      "_model_meta": {
-        "P_high": 0.716,
-        "P_mid": 0.288,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-02",
-        "ts_avg_auc": 0.6315719840493699
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "001218",
-      "name": "丽臣实业",
-      "total": 102,
-      "scores": {
-        "form": 12,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 12,
-        "zt_time": 15,
-        "seal": 4,
-        "pure": 5
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 92500,
-        "lbt": 92500,
-        "fund_yi": 0.46,
-        "ltsz_yi": 32.6,
-        "hs": 2.1,
-        "zbc": 0,
-        "hybk": "化学制品",
-        "vol_ratio": 0.83,
-        "vol_reason": "温和放量",
-        "market_strength": 2.63,
-        "sector_zt": 3,
-        "seal_pct": 1.42,
-        "is_yizi": true
-      },
-      "in_lhb": false,
-      "lr_prob": 0.2192,
       "_model_meta": {
         "P_high": 0.716,
         "P_mid": 0.288,
@@ -549,7 +375,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.43,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.2129,
@@ -564,51 +391,6 @@
       "strong_tags": [
         "装配式建筑"
       ]
-    },
-    {
-      "code": "000553",
-      "name": "安道麦A",
-      "total": 91,
-      "scores": {
-        "form": 12,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 6,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 8,
-        "zt_time": 15,
-        "seal": 1,
-        "pure": 5
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 92500,
-        "lbt": 92500,
-        "fund_yi": 0.18,
-        "ltsz_yi": 148.5,
-        "hs": 0.6,
-        "zbc": 0,
-        "hybk": "农化制品",
-        "vol_ratio": 1.3,
-        "vol_reason": "温和放量",
-        "market_strength": 2.63,
-        "sector_zt": 2,
-        "seal_pct": 0.12,
-        "is_yizi": true
-      },
-      "in_lhb": false,
-      "lr_prob": 0.2109,
-      "_model_meta": {
-        "P_high": 0.716,
-        "P_mid": 0.288,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-02",
-        "ts_avg_auc": 0.6315719840493699
-      },
-      "mainline_tags": [],
-      "strong_tags": []
     },
     {
       "code": "002591",
@@ -641,7 +423,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 1.68,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.2051,
@@ -687,7 +470,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.34,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.2044,
@@ -733,7 +517,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 0.53,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1998,
@@ -778,7 +563,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.97,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1967,
@@ -823,7 +609,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.36,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1966,
@@ -868,7 +655,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 2.22,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.195,
@@ -917,7 +705,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 0.24,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1908,
@@ -934,7 +723,7 @@
     {
       "code": "300632",
       "name": "光莆股份",
-      "total": 87,
+      "total": 86,
       "scores": {
         "form": 14,
         "fund_trap": 5,
@@ -946,7 +735,7 @@
         "sector": 4,
         "zt_time": 14,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 2,
@@ -963,7 +752,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 1.24,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1897,
@@ -1009,7 +799,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.1,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1895,
@@ -1054,7 +845,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.91,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1867,
@@ -1099,55 +891,11 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 0.65,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1855,
-      "_model_meta": {
-        "P_high": 0.716,
-        "P_mid": 0.288,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-02",
-        "ts_avg_auc": 0.6315719840493699
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "002640",
-      "name": "跨境通",
-      "total": 95,
-      "scores": {
-        "form": 12,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 14,
-        "seal": 6,
-        "pure": 5
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93000,
-        "lbt": 93000,
-        "fund_yi": 0.96,
-        "ltsz_yi": 56.5,
-        "hs": 4.6,
-        "zbc": 0,
-        "hybk": "互联网电",
-        "vol_ratio": 1.44,
-        "vol_reason": "温和放量",
-        "market_strength": 2.63,
-        "sector_zt": 1,
-        "seal_pct": 1.71,
-        "is_yizi": true
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1685,
       "_model_meta": {
         "P_high": 0.716,
         "P_mid": 0.288,
@@ -1189,7 +937,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 1.4,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1667,
@@ -1234,7 +983,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.1,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1662,
@@ -1281,7 +1031,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.17,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1639,
@@ -1298,7 +1049,7 @@
     {
       "code": "001215",
       "name": "千味央厨",
-      "total": 79,
+      "total": 78,
       "scores": {
         "form": 16,
         "fund_trap": 2,
@@ -1310,7 +1061,7 @@
         "sector": 4,
         "zt_time": 3,
         "seal": 6,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -1326,7 +1077,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 1.73,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1631,
@@ -1371,7 +1123,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 0.63,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1608,
@@ -1388,7 +1141,7 @@
     {
       "code": "000980",
       "name": "众泰汽车",
-      "total": 94,
+      "total": 93,
       "scores": {
         "form": 14,
         "fund_trap": 2,
@@ -1400,7 +1153,7 @@
         "sector": 15,
         "zt_time": 10,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 2,
@@ -1416,7 +1169,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.6,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1579,
@@ -1433,7 +1187,7 @@
     {
       "code": "603717",
       "name": "天域生物",
-      "total": 75,
+      "total": 74,
       "scores": {
         "form": 8,
         "fund_trap": 5,
@@ -1445,7 +1199,7 @@
         "sector": 4,
         "zt_time": 5,
         "seal": 8,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -1462,7 +1216,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 4.27,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1561,
@@ -1510,7 +1265,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 1.57,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1518,
@@ -1555,7 +1311,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.35,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1509,
@@ -1604,7 +1361,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.74,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1502,
@@ -1650,7 +1408,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 0.46,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1501,
@@ -1695,7 +1454,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.6,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1499,
@@ -1714,7 +1474,7 @@
     {
       "code": "603131",
       "name": "上海沪工",
-      "total": 87,
+      "total": 86,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -1726,7 +1486,7 @@
         "sector": 12,
         "zt_time": 10,
         "seal": 6,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -1742,7 +1502,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 2.08,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1473,
@@ -1758,14 +1519,13 @@
       ],
       "strong_tags": [
         "商业航天",
-        "军工",
-        "机器人概念"
+        "军工"
       ]
     },
     {
       "code": "001268",
       "name": "联合精密",
-      "total": 76,
+      "total": 75,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -1777,7 +1537,7 @@
         "sector": 8,
         "zt_time": 5,
         "seal": 8,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -1793,7 +1553,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 3.92,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1469,
@@ -1838,7 +1599,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.17,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1456,
@@ -1883,7 +1645,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.37,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1443,
@@ -1929,7 +1692,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.26,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1439,
@@ -1946,7 +1710,7 @@
     {
       "code": "603726",
       "name": "朗迪集团",
-      "total": 101,
+      "total": 100,
       "scores": {
         "form": 16,
         "fund_trap": 2,
@@ -1958,7 +1722,7 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 6,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -1974,7 +1738,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 1.89,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1434,
@@ -1987,13 +1752,13 @@
       },
       "mainline_tags": [],
       "strong_tags": [
-        "机器人概念"
+        "先进封装"
       ]
     },
     {
       "code": "000790",
       "name": "华神科技",
-      "total": 77,
+      "total": 76,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2005,7 +1770,7 @@
         "sector": 4,
         "zt_time": 12,
         "seal": 6,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2021,7 +1786,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 2.25,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.143,
@@ -2041,7 +1807,7 @@
     {
       "code": "002453",
       "name": "华软科技",
-      "total": 103,
+      "total": 102,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -2053,7 +1819,7 @@
         "sector": 12,
         "zt_time": 14,
         "seal": 6,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2069,7 +1835,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 1.68,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1412,
@@ -2114,7 +1881,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 0.48,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1397,
@@ -2134,7 +1902,7 @@
     {
       "code": "002763",
       "name": "汇洁股份",
-      "total": 81,
+      "total": 80,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2146,7 +1914,7 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 6,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2162,7 +1930,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 1.83,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1329,
@@ -2179,7 +1948,7 @@
     {
       "code": "600714",
       "name": "金瑞矿业",
-      "total": 85,
+      "total": 84,
       "scores": {
         "form": 14,
         "fund_trap": 5,
@@ -2191,7 +1960,7 @@
         "sector": 4,
         "zt_time": 5,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 2,
@@ -2208,7 +1977,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 1.44,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1251,
@@ -2225,7 +1995,7 @@
     {
       "code": "601106",
       "name": "中国一重",
-      "total": 67,
+      "total": 66,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2237,7 +2007,7 @@
         "sector": 15,
         "zt_time": 7,
         "seal": 1,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2253,7 +2023,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.38,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1249,
@@ -2270,7 +2041,7 @@
     {
       "code": "300885",
       "name": "海昌新材",
-      "total": 87,
+      "total": 86,
       "scores": {
         "form": 8,
         "fund_trap": 5,
@@ -2282,7 +2053,7 @@
         "sector": 12,
         "zt_time": 7,
         "seal": 6,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2299,7 +2070,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 1.99,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1248,
@@ -2313,14 +2085,13 @@
       "mainline_tags": [],
       "strong_tags": [
         "商业航天",
-        "机器人概念",
         "消费电子概念"
       ]
     },
     {
       "code": "002158",
       "name": "汉钟精机",
-      "total": 74,
+      "total": 73,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2332,7 +2103,7 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2348,7 +2119,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 0.72,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1243,
@@ -2371,7 +2143,7 @@
     {
       "code": "603711",
       "name": "香飘飘",
-      "total": 72,
+      "total": 71,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2383,7 +2155,7 @@
         "sector": 4,
         "zt_time": 12,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2399,7 +2171,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.92,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1239,
@@ -2416,7 +2189,7 @@
     {
       "code": "601086",
       "name": "国芳集团",
-      "total": 76,
+      "total": 75,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2428,7 +2201,7 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2444,7 +2217,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 0.94,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1237,
@@ -2461,7 +2235,7 @@
     {
       "code": "603687",
       "name": "大胜达",
-      "total": 80,
+      "total": 79,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -2473,7 +2247,7 @@
         "sector": 4,
         "zt_time": 3,
         "seal": 6,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2489,7 +2263,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 1.62,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1205,
@@ -2512,7 +2287,7 @@
     {
       "code": "688699",
       "name": "明微电子",
-      "total": 87,
+      "total": 86,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2524,7 +2299,7 @@
         "sector": 12,
         "zt_time": 12,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2540,7 +2315,8 @@
         "market_strength": 2.63,
         "sector_zt": 4,
         "seal_pct": 0.93,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.12,
@@ -2586,7 +2362,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 0.03,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1199,
@@ -2603,7 +2380,7 @@
       "strong_tags": [
         "消费电子概念",
         "军工",
-        "机器人概念"
+        "华为概念"
       ]
     },
     {
@@ -2637,7 +2414,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.19,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1173,
@@ -2682,7 +2460,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 0.44,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.117,
@@ -2699,7 +2478,7 @@
     {
       "code": "002181",
       "name": "粤 传 媒",
-      "total": 70,
+      "total": 69,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2711,7 +2490,7 @@
         "sector": 4,
         "zt_time": 12,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2727,7 +2506,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.62,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1153,
@@ -2776,7 +2556,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 0.05,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1125,
@@ -2822,7 +2603,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.27,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1117,
@@ -2872,7 +2654,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 0.56,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.111,
@@ -2917,7 +2700,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.28,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.111,
@@ -2937,7 +2721,7 @@
     {
       "code": "000066",
       "name": "中国长城",
-      "total": 88,
+      "total": 87,
       "scores": {
         "form": 12,
         "fund_trap": 5,
@@ -2949,7 +2733,7 @@
         "sector": 8,
         "zt_time": 10,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2966,7 +2750,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 0.85,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.11,
@@ -3020,7 +2805,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 0.29,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.1099,
@@ -3037,7 +2823,7 @@
     {
       "code": "000628",
       "name": "高新发展",
-      "total": 70,
+      "total": 69,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -3049,7 +2835,7 @@
         "sector": 4,
         "zt_time": 7,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3065,7 +2851,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.84,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1088,
@@ -3117,7 +2904,8 @@
         "market_strength": 2.63,
         "sector_zt": 4,
         "seal_pct": 0.41,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1068,
@@ -3134,7 +2922,7 @@
     {
       "code": "000833",
       "name": "粤桂股份",
-      "total": 80,
+      "total": 79,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -3146,7 +2934,7 @@
         "sector": 4,
         "zt_time": 5,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3162,7 +2950,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.73,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.1004,
@@ -3183,7 +2972,7 @@
     {
       "code": "002929",
       "name": "润建股份",
-      "total": 66,
+      "total": 65,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -3195,7 +2984,7 @@
         "sector": 4,
         "zt_time": 3,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3211,7 +3000,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.65,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.0994,
@@ -3229,13 +3019,13 @@
       "strong_tags": [
         "数字孪生",
         "华为概念",
-        "机器人概念"
+        "储能"
       ]
     },
     {
       "code": "002685",
       "name": "华东重机",
-      "total": 78,
+      "total": 77,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -3247,7 +3037,7 @@
         "sector": 4,
         "zt_time": 3,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3263,7 +3053,8 @@
         "market_strength": 2.63,
         "sector_zt": 1,
         "seal_pct": 0.59,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.099,
@@ -3284,7 +3075,7 @@
     {
       "code": "002989",
       "name": "中天精装",
-      "total": 73,
+      "total": 72,
       "scores": {
         "form": 8,
         "fund_trap": -5,
@@ -3296,7 +3087,7 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3313,7 +3104,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 1.32,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.099,
@@ -3336,7 +3128,7 @@
     {
       "code": "000007",
       "name": "全新好",
-      "total": 88,
+      "total": 87,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -3348,7 +3140,7 @@
         "sector": 8,
         "zt_time": 5,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3364,7 +3156,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 0.76,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.0928,
@@ -3383,7 +3176,7 @@
     {
       "code": "600400",
       "name": "红豆股份",
-      "total": 86,
+      "total": 85,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -3395,7 +3188,7 @@
         "sector": 8,
         "zt_time": 3,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3411,7 +3204,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 1.17,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.0904,
@@ -3424,7 +3218,6 @@
       },
       "mainline_tags": [],
       "strong_tags": [
-        "机器人概念",
         "军工"
       ]
     },
@@ -3460,7 +3253,8 @@
         "market_strength": 2.63,
         "sector_zt": 5,
         "seal_pct": 0.31,
-        "is_yizi": false
+        "is_yizi": false,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.0859,
@@ -3479,13 +3273,13 @@
       "strong_tags": [
         "消费电子概念",
         "华为概念",
-        "机器人概念"
+        "2025年报预增"
       ]
     },
     {
       "code": "688521",
       "name": "芯原股份",
-      "total": 64,
+      "total": 63,
       "scores": {
         "form": 8,
         "fund_trap": -5,
@@ -3497,7 +3291,7 @@
         "sector": 12,
         "zt_time": 7,
         "seal": 1,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3514,7 +3308,8 @@
         "market_strength": 2.63,
         "sector_zt": 4,
         "seal_pct": 0.24,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.0819,
@@ -3529,12 +3324,14 @@
         "芯片概念",
         "人工智能"
       ],
-      "strong_tags": []
+      "strong_tags": [
+        "先进封装"
+      ]
     },
     {
       "code": "603360",
       "name": "百傲化学",
-      "total": 66,
+      "total": 65,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -3546,7 +3343,7 @@
         "sector": 8,
         "zt_time": 5,
         "seal": 4,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3562,7 +3359,8 @@
         "market_strength": 2.63,
         "sector_zt": 2,
         "seal_pct": 0.61,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.0687,
@@ -3576,14 +3374,12 @@
       "mainline_tags": [
         "芯片概念"
       ],
-      "strong_tags": [
-        "机器人概念"
-      ]
+      "strong_tags": []
     },
     {
       "code": "605222",
       "name": "起帆电缆",
-      "total": 81,
+      "total": 80,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -3595,7 +3391,7 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 1,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3611,7 +3407,8 @@
         "market_strength": 2.63,
         "sector_zt": 3,
         "seal_pct": 0.33,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": false,
       "lr_prob": 0.0666,
@@ -3628,7 +3425,7 @@
     {
       "code": "688256",
       "name": "寒武纪",
-      "total": 72,
+      "total": 71,
       "scores": {
         "form": 8,
         "fund_trap": 5,
@@ -3640,7 +3437,7 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 1,
-        "pure": 5
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3657,7 +3454,8 @@
         "market_strength": 2.63,
         "sector_zt": 4,
         "seal_pct": 0.11,
-        "is_yizi": true
+        "is_yizi": true,
+        "is_yizi_strict": false
       },
       "in_lhb": true,
       "lr_prob": 0.0652,
@@ -3673,8 +3471,10 @@
         "数据中心",
         "人工智能"
       ],
-      "strong_tags": []
+      "strong_tags": [
+        "先进封装"
+      ]
     }
   ],
-  "msg": "📊 2026-04-30 A股 v3.0-lr-rolling (2026-05-02) 候选股\n━━━━━━━━━━━━━━━━━\n涨停: 78 | 极强: 0 | 强: 4 | 关注: 32\n🔴 模型无强信号 - 历史胜率低, 谨慎出手\n\n🔥 ≥ 0.29 概率 强   (胜率≥50%)\n⭐⭐⭐⭐ 603095 越剑智能 130分 📊0.59 🐉\n   4板 | 09:25 | 封1.4亿 | 占2.2% | 66亿盘 | 专用设备\n   形20/辨20/时14/封6/价20\n⭐⭐⭐⭐ 600379 宝光股份 124分 📊0.49 🐉\n   3板 | 09:30 | 封1.6亿 | 占2.8% | 55亿盘 | 电网设备 | ⚠️1炸\n   形20/辨20/时14/封6/价20\n⭐⭐⭐⭐ 603399 永杉锂业 120分 📊0.48\n   3板 | 09:25 | 封2.0亿 | 占2.0% | 99亿盘 | 能源金属\n   形20/辨20/时14/封6/价20\n⭐⭐⭐⭐ 603045 福达合金 100分 📊0.30\n   1板 | 09:25 | 封1.4亿 | 占2.1% | 63亿盘 | 金属新材\n   形8/辨12/时14/封6/价20\n\n🟠 ≥ 0.15 概率 关注\n⭐⭐⭐ 002081 金 螳 螂 92分 📊0.27 🐉 🔥\n   3板 | 10:24 | 封0.9亿 | 占0.6% | 156亿盘 | 装修装饰 | ⚠️1炸\n   🔥主升: 新型城镇化/长三角一体化/第三代半导体\n   形20/辨20/时10/封4/价10\n⭐⭐⭐ 001316 润贝航科 92分 📊0.25 ⚡\n   1板 | 09:30 | 封0.9亿 | 占1.6% | 58亿盘 | 炼化及贸 | ⚠️2炸\n   ⚡强势: 商业航天/2025年报预增\n   形12/辨12/时14/封6/价16\n⭐⭐⭐ 688531 日联科技 74分 📊0.23 🐉\n   2板 | 09:41 | 138亿盘 | 专用设备 | ⚠️6炸\n   形14/辨16/时12/封1/价5\n⭐⭐⭐ 603937 丽岛新材 84分 📊0.23 🐉\n   2板 | 09:49 | 32亿盘 | 工业金属 | ⚠️12炸\n   形14/辨16/时12/封1/价10\n⭐⭐⭐ 002805 丰元股份 101分 📊0.23 🐉\n   2板 | 09:30 | 封0.9亿 | 占1.4% | 64亿盘 | 电池\n   形14/辨16/时14/封4/价20\n\n━━━━━━━━━━━━━━━━━\n💡 v3.0+v2.6: v2.4评分 + LR概率 + 滚动retrain + 🔥主升板块 (时序 AUC=0.63)\n🐉=同时上龙虎榜 | ⚠️=有炸板 | 📊=LR预测概率\n⚠️ 不构成投资建议, 次日开盘前人工二次确认"
+  "msg": "📊 2026-04-30 A股 v3.0-lr-rolling (2026-05-02) 候选股\n━━━━━━━━━━━━━━━━━\n涨停: 72 | 极强: 0 | 强: 1 | 关注: 29\n🔴 模型无强信号 - 历史胜率低, 谨慎出手\n\n🔥 ≥ 0.29 概率 强   (胜率≥50%)\n⭐⭐⭐⭐ 600379 宝光股份 124分 📊0.49 🐉\n   3板 | 09:30 | 封1.6亿 | 占2.8% | 55亿盘 | 电网设备 | ⚠️1炸\n   形20/辨20/时14/封6/价20\n\n🟠 ≥ 0.15 概率 关注\n⭐⭐⭐ 002081 金 螳 螂 92分 📊0.27 🐉 🔥\n   3板 | 10:24 | 封0.9亿 | 占0.6% | 156亿盘 | 装修装饰 | ⚠️1炸\n   🔥主升: 新型城镇化/长三角一体化/第三代半导体\n   形20/辨20/时10/封4/价10\n⭐⭐⭐ 001316 润贝航科 92分 📊0.25 ⚡\n   1板 | 09:30 | 封0.9亿 | 占1.6% | 58亿盘 | 炼化及贸 | ⚠️2炸\n   ⚡强势: 商业航天/2025年报预增\n   形12/辨12/时14/封6/价16\n⭐⭐⭐ 688531 日联科技 74分 📊0.23 🐉\n   2板 | 09:41 | 138亿盘 | 专用设备 | ⚠️6炸\n   形14/辨16/时12/封1/价5\n⭐⭐⭐ 603937 丽岛新材 84分 📊0.23 🐉\n   2板 | 09:49 | 32亿盘 | 工业金属 | ⚠️12炸\n   形14/辨16/时12/封1/价10\n⭐⭐⭐ 002805 丰元股份 100分 📊0.23 🐉\n   2板 | 09:30 | 封0.9亿 | 占1.4% | 64亿盘 | 电池\n   形14/辨16/时14/封4/价20\n\n━━━━━━━━━━━━━━━━━\n💡 v3.0+v2.6: v2.4评分 + LR概率 + 滚动retrain + 🔥主升板块 (时序 AUC=0.63)\n🐉=同时上龙虎榜 | ⚠️=有炸板 | 📊=LR预测概率\n⚠️ 不构成投资建议, 次日开盘前人工二次确认"
 }

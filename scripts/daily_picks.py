@@ -226,13 +226,22 @@ def score_v24(zt_rec, lhb_rec, kline, idx, sector_zt_count, market_strength):
     else:
         sc["seal"] = 0
 
-    # ⑪ 一字纯净
-    is_yizi = (fbt == lbt and fbt > 0)
-    if is_yizi and zbc == 0: sc["pure"] = 5
+    # ⑪ 一字板严格检测 + 严重降权 (一字板买不到)
+    p_open = today.get("open", 0)
+    p_close = today.get("close", 0)
+    p_high = today.get("high", 0)
+    p_low = today.get("low", 0)
+    is_yizi_strict = False
+    if p_open and p_close and p_high and p_low:
+        is_yizi_strict = (abs(p_open - p_close) / p_close < 0.005 and
+                          abs(p_high - p_low) / p_close < 0.005)
+    is_yizi = is_yizi_strict or (fbt == lbt and fbt > 0 and zbc == 0)
+    if is_yizi_strict: sc["pure"] = -30  # 一字板买不到, 直接扣 30 分剔除
     elif zbc == 0: sc["pure"] = 4
     elif zbc <= 2: sc["pure"] = 2
     else: sc["pure"] = 0
     ft["is_yizi"] = is_yizi
+    ft["is_yizi_strict"] = is_yizi_strict
 
     return {"scores": sc, "total": sum(sc.values()), "features": ft}
 
@@ -350,6 +359,9 @@ def get_today_picks(target_date=None):
         sc = score_v24(s, lhb_today.get(code), kl, i,
                        sector_count.get(s.get("hybk","unknown"), 1),
                        market_strength)
+        # 一字板 直接剔除 (买不到, 推也是误导)
+        if sc["features"].get("is_yizi_strict"):
+            continue
         candidates.append({
             "code": code, "name": s.get("n",""),
             "total": sc["total"], "scores": sc["scores"],
