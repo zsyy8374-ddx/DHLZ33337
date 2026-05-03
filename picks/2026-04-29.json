@@ -17,8 +17,7 @@
         "sector": 12,
         "zt_time": 12,
         "seal": 4,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 2,
@@ -39,75 +38,108 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.2794,
+      "lr_prob": 0.2723,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
     },
     {
-      "code": "002081",
-      "name": "金 螳 螂",
-      "total": 90,
+      "code": "002652",
+      "name": "扬子新材",
+      "total": 98,
       "scores": {
         "form": 14,
-        "fund_trap": -5,
-        "vol": 20,
+        "fund_trap": 2,
+        "vol": 16,
         "distinct": 16,
-        "cap": 6,
-        "volume": 5,
+        "cap": 10,
+        "volume": 4,
         "emotion": 10,
         "sector": 4,
-        "zt_time": 12,
-        "seal": 4,
-        "pure": 4,
-        "soft_early": 0
+        "zt_time": 14,
+        "seal": 6,
+        "pure": 2
       },
       "features": {
         "lbc": 2,
-        "fbt": 94809,
-        "lbt": 94809,
-        "fund_yi": 1.5,
-        "ltsz_yi": 141.7,
-        "hs": 11.9,
-        "zbc": 0,
-        "hybk": "装修装饰",
-        "lhb_explain": "1家机构买入，成功率49.81%",
-        "vol_ratio": 0.67,
-        "vol_reason": "缩量加速",
+        "fbt": 93136,
+        "lbt": 93242,
+        "fund_yi": 0.71,
+        "ltsz_yi": 31.6,
+        "hs": 6.8,
+        "zbc": 1,
+        "hybk": "装修建材",
+        "vol_ratio": 0.83,
+        "vol_reason": "温和放量",
         "market_strength": 3.33,
         "sector_zt": 1,
-        "seal_pct": 1.06,
-        "is_yizi": true,
+        "seal_pct": 2.25,
+        "is_yizi": false,
         "is_yizi_strict": false
       },
-      "in_lhb": true,
-      "lr_prob": 0.2576,
+      "in_lhb": false,
+      "lr_prob": 0.2649,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
-      "mainline_tags": [
-        "新型城镇化",
-        "长三角一体化",
-        "第三代半导体",
-        "芯片概念",
-        "人工智能",
-        "数据中心"
-      ],
-      "strong_tags": [
-        "装配式建筑",
-        "PPP概念",
-        "光伏建筑一体化"
-      ]
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "002903",
+      "name": "宇环数控",
+      "total": 83,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 12,
+        "zt_time": 7,
+        "seal": 8,
+        "pure": 2
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 111324,
+        "lbt": 112712,
+        "fund_yi": 1.2,
+        "ltsz_yi": 39.1,
+        "hs": 13.7,
+        "zbc": 1,
+        "hybk": "通用设备",
+        "vol_ratio": 1.56,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 3,
+        "seal_pct": 3.06,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.2531,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
     },
     {
       "code": "600379",
@@ -124,8 +156,7 @@
         "sector": 8,
         "zt_time": 14,
         "seal": 4,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 2,
@@ -146,63 +177,74 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.257,
+      "lr_prob": 0.2513,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
     },
     {
-      "code": "002903",
-      "name": "宇环数控",
-      "total": 83,
+      "code": "002081",
+      "name": "金 螳 螂",
+      "total": 90,
       "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 2,
+        "form": 14,
+        "fund_trap": -5,
+        "vol": 20,
+        "distinct": 16,
+        "cap": 6,
+        "volume": 5,
         "emotion": 10,
-        "sector": 12,
-        "zt_time": 7,
-        "seal": 8,
-        "pure": 2,
-        "soft_early": 0
+        "sector": 4,
+        "zt_time": 12,
+        "seal": 4,
+        "pure": 4
       },
       "features": {
-        "lbc": 1,
-        "fbt": 111324,
-        "lbt": 112712,
-        "fund_yi": 1.2,
-        "ltsz_yi": 39.1,
-        "hs": 13.7,
-        "zbc": 1,
-        "hybk": "通用设备",
-        "vol_ratio": 1.56,
-        "vol_reason": "爆量",
+        "lbc": 2,
+        "fbt": 94809,
+        "lbt": 94809,
+        "fund_yi": 1.5,
+        "ltsz_yi": 141.7,
+        "hs": 11.9,
+        "zbc": 0,
+        "hybk": "装修装饰",
+        "lhb_explain": "1家机构买入，成功率49.81%",
+        "vol_ratio": 0.67,
+        "vol_reason": "缩量加速",
         "market_strength": 3.33,
-        "sector_zt": 3,
-        "seal_pct": 3.06,
-        "is_yizi": false,
+        "sector_zt": 1,
+        "seal_pct": 1.06,
+        "is_yizi": true,
         "is_yizi_strict": false
       },
-      "in_lhb": false,
-      "lr_prob": 0.2536,
+      "in_lhb": true,
+      "lr_prob": 0.2495,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
-      "mainline_tags": [],
-      "strong_tags": []
+      "mainline_tags": [
+        "新型城镇化",
+        "长三角一体化",
+        "第三代半导体",
+        "芯片概念",
+        "人工智能",
+        "数据中心"
+      ],
+      "strong_tags": [
+        "装配式建筑",
+        "PPP概念",
+        "光伏建筑一体化"
+      ]
     },
     {
       "code": "002210",
@@ -219,8 +261,7 @@
         "sector": 4,
         "zt_time": 14,
         "seal": 4,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 3,
@@ -240,60 +281,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.2381,
+      "lr_prob": 0.2277,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "002652",
-      "name": "扬子新材",
-      "total": 113,
-      "scores": {
-        "form": 14,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 16,
-        "cap": 10,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 14,
-        "seal": 6,
-        "pure": 2,
-        "soft_early": 15
-      },
-      "features": {
-        "lbc": 2,
-        "fbt": 93136,
-        "lbt": 93242,
-        "fund_yi": 0.71,
-        "ltsz_yi": 31.6,
-        "hs": 6.8,
-        "zbc": 1,
-        "hybk": "装修建材",
-        "vol_ratio": 0.83,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 2.25,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.2326,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -313,8 +307,7 @@
         "sector": 8,
         "zt_time": 14,
         "seal": 4,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -334,13 +327,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.2248,
+      "lr_prob": 0.2188,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -360,8 +353,7 @@
         "sector": 12,
         "zt_time": 14,
         "seal": 4,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -381,13 +373,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.2215,
+      "lr_prob": 0.2185,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": [
@@ -410,8 +402,7 @@
         "sector": 4,
         "zt_time": 14,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -431,13 +422,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.2031,
+      "lr_prob": 0.2009,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [
         "长三角一体化"
@@ -459,8 +450,7 @@
         "sector": 4,
         "zt_time": 12,
         "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -480,13 +470,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.2015,
+      "lr_prob": 0.1993,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -506,8 +496,7 @@
         "sector": 8,
         "zt_time": 14,
         "seal": 4,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 2,
@@ -528,61 +517,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.1988,
+      "lr_prob": 0.1937,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "605168",
-      "name": "三人行",
-      "total": 87,
-      "scores": {
-        "form": 14,
-        "fund_trap": 0,
-        "vol": 16,
-        "distinct": 16,
-        "cap": 6,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 8,
-        "zt_time": 12,
-        "seal": 1,
-        "pure": 0,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 2,
-        "fbt": 93932,
-        "lbt": 143611,
-        "fund_yi": 0.32,
-        "ltsz_yi": 102.2,
-        "hs": 9.8,
-        "zbc": 5,
-        "hybk": "广告营销",
-        "lhb_explain": "买一主买，成功率49.47%",
-        "vol_ratio": 1.45,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 2,
-        "seal_pct": 0.31,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": true,
-      "lr_prob": 0.1952,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -602,8 +543,7 @@
         "sector": 12,
         "zt_time": 14,
         "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -625,11 +565,11 @@
       "in_lhb": false,
       "lr_prob": 0.1931,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [
         "新型城镇化"
@@ -639,9 +579,9 @@
       ]
     },
     {
-      "code": "002111",
-      "name": "威海广泰",
-      "total": 73,
+      "code": "000551",
+      "name": "创元科技",
+      "total": 88,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -649,758 +589,90 @@
         "distinct": 12,
         "cap": 10,
         "volume": 2,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 14,
-        "seal": 1,
-        "pure": 0,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93000,
-        "lbt": 93433,
-        "fund_yi": 0.17,
-        "ltsz_yi": 51.5,
-        "hs": 4.0,
-        "zbc": 3,
-        "hybk": "航空装备",
-        "vol_ratio": 1.93,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 0.34,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1906,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": [
-        "军工",
-        "2025年报预增"
-      ]
-    },
-    {
-      "code": "600186",
-      "name": "莲花控股",
-      "total": 85,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 20,
-        "distinct": 12,
-        "cap": 2,
-        "volume": 5,
-        "emotion": 10,
-        "sector": 8,
-        "zt_time": 12,
-        "seal": 4,
-        "pure": 2,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 95111,
-        "lbt": 95938,
-        "fund_yi": 1.21,
-        "ltsz_yi": 193.6,
-        "hs": 12.9,
-        "zbc": 1,
-        "hybk": "调味发酵",
-        "vol_ratio": 0.6,
-        "vol_reason": "缩量加速",
-        "market_strength": 3.33,
-        "sector_zt": 2,
-        "seal_pct": 0.63,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1861,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "603017",
-      "name": "中衡设计",
-      "total": 89,
-      "scores": {
-        "form": 16,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 12,
-        "seal": 1,
-        "pure": 2,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 95552,
-        "lbt": 100031,
-        "fund_yi": 0.18,
-        "ltsz_yi": 42.2,
-        "hs": 10.3,
-        "zbc": 1,
-        "hybk": "工程咨询",
-        "vol_ratio": 1.09,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 0.44,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1828,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "603933",
-      "name": "睿能科技",
-      "total": 91,
-      "scores": {
-        "form": 12,
-        "fund_trap": 5,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 14,
-        "seal": 4,
-        "pure": 0,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93045,
-        "lbt": 93410,
-        "fund_yi": 0.64,
-        "ltsz_yi": 48.3,
-        "hs": 3.9,
-        "zbc": 3,
-        "hybk": "其他电子",
-        "lhb_explain": "买一主买，成功率51.57%",
-        "vol_ratio": 1.25,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 1.34,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": true,
-      "lr_prob": 0.1816,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "000818",
-      "name": "航锦科技",
-      "total": 73,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 6,
-        "volume": 0,
         "emotion": 10,
         "sector": 12,
-        "zt_time": 12,
-        "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "zt_time": 14,
+        "seal": 6,
+        "pure": 2
       },
       "features": {
         "lbc": 1,
-        "fbt": 94027,
-        "lbt": 103554,
-        "fund_yi": 0.49,
-        "ltsz_yi": 101.5,
-        "hs": 11.5,
-        "zbc": 9,
-        "hybk": "化学原料",
-        "vol_ratio": 2.83,
+        "fbt": 93027,
+        "lbt": 93257,
+        "fund_yi": 1.39,
+        "ltsz_yi": 76.4,
+        "hs": 4.4,
+        "zbc": 2,
+        "hybk": "环保设备",
+        "vol_ratio": 1.9,
         "vol_reason": "爆量",
         "market_strength": 3.33,
-        "sector_zt": 4,
-        "seal_pct": 0.48,
+        "sector_zt": 3,
+        "seal_pct": 1.82,
         "is_yizi": false,
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1806,
+      "lr_prob": 0.19,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "603095",
-      "name": "越剑智能",
-      "total": 98,
-      "scores": {
-        "form": 20,
-        "fund_trap": 0,
-        "vol": 10,
-        "distinct": 20,
-        "cap": 10,
-        "volume": 0,
-        "emotion": 10,
-        "sector": 15,
-        "zt_time": 5,
-        "seal": 4,
-        "pure": 4,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 3,
-        "fbt": 131653,
-        "lbt": 131653,
-        "fund_yi": 0.57,
-        "ltsz_yi": 59.6,
-        "hs": 9.3,
-        "zbc": 0,
-        "hybk": "专用设备",
-        "lhb_explain": "上海资金买入，成功率44.27%",
-        "vol_ratio": 2.86,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 5,
-        "seal_pct": 0.96,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": true,
-      "lr_prob": 0.1786,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "002174",
-      "name": "游族网络",
-      "total": 76,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 6,
-        "volume": 2,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 14,
-        "seal": 4,
-        "pure": 4,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93209,
-        "lbt": 93209,
-        "fund_yi": 1.16,
-        "ltsz_yi": 99.7,
-        "hs": 2.9,
-        "zbc": 0,
-        "hybk": "游戏Ⅱ",
-        "vol_ratio": 1.65,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 1.16,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1755,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [
-        "人工智能"
-      ],
-      "strong_tags": [
-        "华为概念"
-      ]
-    },
-    {
-      "code": "002354",
-      "name": "天娱数科",
-      "total": 92,
-      "scores": {
-        "form": 12,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 6,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 8,
-        "zt_time": 14,
-        "seal": 4,
-        "pure": 4,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93000,
-        "lbt": 93000,
-        "fund_yi": 1.26,
-        "ltsz_yi": 96.7,
-        "hs": 3.2,
-        "zbc": 0,
-        "hybk": "广告营销",
-        "vol_ratio": 1.16,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 2,
-        "seal_pct": 1.31,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1694,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [
-        "人工智能",
         "芯片概念"
       ],
       "strong_tags": [
-        "数字孪生"
+        "商业航天",
+        "军工",
+        "氢能源"
       ]
     },
     {
-      "code": "603317",
-      "name": "天味食品",
-      "total": 75,
+      "code": "605168",
+      "name": "三人行",
+      "total": 87,
       "scores": {
         "form": 14,
         "fund_trap": 0,
-        "vol": 10,
+        "vol": 16,
         "distinct": 16,
-        "cap": 2,
-        "volume": 2,
+        "cap": 6,
+        "volume": 4,
         "emotion": 10,
         "sector": 8,
         "zt_time": 12,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 2,
-        "fbt": 94022,
-        "lbt": 94946,
-        "fund_yi": 0.28,
-        "ltsz_yi": 184.0,
-        "hs": 4.8,
+        "fbt": 93932,
+        "lbt": 143611,
+        "fund_yi": 0.32,
+        "ltsz_yi": 102.2,
+        "hs": 9.8,
         "zbc": 5,
-        "hybk": "调味发酵",
-        "lhb_explain": "普通席位买入，成功率36.15%",
-        "vol_ratio": 2.02,
-        "vol_reason": "爆量",
+        "hybk": "广告营销",
+        "lhb_explain": "买一主买，成功率49.47%",
+        "vol_ratio": 1.45,
+        "vol_reason": "温和放量",
         "market_strength": 3.33,
         "sector_zt": 2,
-        "seal_pct": 0.15,
+        "seal_pct": 0.31,
         "is_yizi": false,
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.1694,
+      "lr_prob": 0.1899,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "000692",
-      "name": "惠天热电",
-      "total": 80,
-      "scores": {
-        "form": 12,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 6,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 14,
-        "seal": 6,
-        "pure": 4,
-        "soft_early": -10
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93309,
-        "lbt": 93309,
-        "fund_yi": 0.74,
-        "ltsz_yi": 26.4,
-        "hs": 3.6,
-        "zbc": 0,
-        "hybk": "电力",
-        "vol_ratio": 1.04,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 2.8,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1692,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "000716",
-      "name": "黑芝麻",
-      "total": 94,
-      "scores": {
-        "form": 12,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 12,
-        "zt_time": 12,
-        "seal": 4,
-        "pure": 0,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 94700,
-        "lbt": 100430,
-        "fund_yi": 0.43,
-        "ltsz_yi": 38.3,
-        "hs": 6.1,
-        "zbc": 3,
-        "hybk": "休闲食品",
-        "vol_ratio": 1.12,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 3,
-        "seal_pct": 1.14,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1691,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "002805",
-      "name": "丰元股份",
-      "total": 99,
-      "scores": {
-        "form": 12,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 15,
-        "zt_time": 14,
-        "seal": 4,
-        "pure": 0,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93224,
-        "lbt": 95830,
-        "fund_yi": 0.79,
-        "ltsz_yi": 57.9,
-        "hs": 8.8,
-        "zbc": 3,
-        "hybk": "电池",
-        "vol_ratio": 0.96,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 8,
-        "seal_pct": 1.36,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1677,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "603139",
-      "name": "康惠股份",
-      "total": 74,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 2,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 10,
-        "seal": 4,
-        "pure": 2,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 100345,
-        "lbt": 135645,
-        "fund_yi": 0.42,
-        "ltsz_yi": 36.7,
-        "hs": 6.8,
-        "zbc": 1,
-        "hybk": "中药Ⅱ",
-        "vol_ratio": 2.22,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 1.16,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1676,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "000567",
-      "name": "海德股份",
-      "total": 72,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 6,
-        "volume": 0,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 12,
-        "seal": 4,
-        "pure": 4,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93909,
-        "lbt": 93909,
-        "fund_yi": 0.99,
-        "ltsz_yi": 118.1,
-        "hs": 2.6,
-        "zbc": 0,
-        "hybk": "多元金融",
-        "vol_ratio": 2.97,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 0.83,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1673,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "002842",
-      "name": "翔鹭钨业",
-      "total": 82,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 6,
-        "volume": 2,
-        "emotion": 10,
-        "sector": 15,
-        "zt_time": 7,
-        "seal": 6,
-        "pure": 4,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 104745,
-        "lbt": 104745,
-        "fund_yi": 1.81,
-        "ltsz_yi": 93.9,
-        "hs": 21.2,
-        "zbc": 0,
-        "hybk": "小金属",
-        "vol_ratio": 1.54,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 6,
-        "seal_pct": 1.92,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1672,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "605099",
-      "name": "共创草坪",
-      "total": 65,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 2,
-        "volume": 2,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 12,
-        "seal": 1,
-        "pure": 2,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93825,
-        "lbt": 94243,
-        "fund_yi": 0.18,
-        "ltsz_yi": 176.7,
-        "hs": 1.5,
-        "zbc": 2,
-        "hybk": "家居用品",
-        "vol_ratio": 1.8,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 0.1,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1649,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -1408,7 +680,7 @@
     {
       "code": "600156",
       "name": "华升股份",
-      "total": 122,
+      "total": 107,
       "scores": {
         "form": 14,
         "fund_trap": 5,
@@ -1420,8 +692,7 @@
         "sector": 4,
         "zt_time": 14,
         "seal": 6,
-        "pure": 4,
-        "soft_early": 15
+        "pure": 4
       },
       "features": {
         "lbc": 2,
@@ -1442,21 +713,67 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.1637,
+      "lr_prob": 0.1888,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
     },
     {
-      "code": "000551",
-      "name": "创元科技",
-      "total": 103,
+      "code": "600186",
+      "name": "莲花控股",
+      "total": 85,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 20,
+        "distinct": 12,
+        "cap": 2,
+        "volume": 5,
+        "emotion": 10,
+        "sector": 8,
+        "zt_time": 12,
+        "seal": 4,
+        "pure": 2
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 95111,
+        "lbt": 95938,
+        "fund_yi": 1.21,
+        "ltsz_yi": 193.6,
+        "hs": 12.9,
+        "zbc": 1,
+        "hybk": "调味发酵",
+        "vol_ratio": 0.6,
+        "vol_reason": "缩量加速",
+        "market_strength": 3.33,
+        "sector_zt": 2,
+        "seal_pct": 0.63,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1843,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "002111",
+      "name": "威海广泰",
+      "total": 73,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -1465,51 +782,283 @@
         "cap": 10,
         "volume": 2,
         "emotion": 10,
-        "sector": 12,
+        "sector": 4,
         "zt_time": 14,
-        "seal": 6,
-        "pure": 2,
-        "soft_early": 15
+        "seal": 1,
+        "pure": 0
       },
       "features": {
         "lbc": 1,
-        "fbt": 93027,
-        "lbt": 93257,
-        "fund_yi": 1.39,
-        "ltsz_yi": 76.4,
-        "hs": 4.4,
-        "zbc": 2,
-        "hybk": "环保设备",
-        "vol_ratio": 1.9,
+        "fbt": 93000,
+        "lbt": 93433,
+        "fund_yi": 0.17,
+        "ltsz_yi": 51.5,
+        "hs": 4.0,
+        "zbc": 3,
+        "hybk": "航空装备",
+        "vol_ratio": 1.93,
         "vol_reason": "爆量",
         "market_strength": 3.33,
-        "sector_zt": 3,
-        "seal_pct": 1.82,
+        "sector_zt": 1,
+        "seal_pct": 0.34,
         "is_yizi": false,
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1622,
+      "lr_prob": 0.1843,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
-      "mainline_tags": [
-        "芯片概念"
-      ],
+      "mainline_tags": [],
       "strong_tags": [
-        "商业航天",
         "军工",
-        "氢能源"
+        "2025年报预增"
       ]
     },
     {
-      "code": "000980",
-      "name": "众泰汽车",
+      "code": "603017",
+      "name": "中衡设计",
+      "total": 89,
+      "scores": {
+        "form": 16,
+        "fund_trap": 2,
+        "vol": 16,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 4,
+        "emotion": 10,
+        "sector": 4,
+        "zt_time": 12,
+        "seal": 1,
+        "pure": 2
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 95552,
+        "lbt": 100031,
+        "fund_yi": 0.18,
+        "ltsz_yi": 42.2,
+        "hs": 10.3,
+        "zbc": 1,
+        "hybk": "工程咨询",
+        "vol_ratio": 1.09,
+        "vol_reason": "温和放量",
+        "market_strength": 3.33,
+        "sector_zt": 1,
+        "seal_pct": 0.44,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1807,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "000818",
+      "name": "航锦科技",
+      "total": 73,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 6,
+        "volume": 0,
+        "emotion": 10,
+        "sector": 12,
+        "zt_time": 12,
+        "seal": 1,
+        "pure": 0
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 94027,
+        "lbt": 103554,
+        "fund_yi": 0.49,
+        "ltsz_yi": 101.5,
+        "hs": 11.5,
+        "zbc": 9,
+        "hybk": "化学原料",
+        "vol_ratio": 2.83,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 4,
+        "seal_pct": 0.48,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1786,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "603933",
+      "name": "睿能科技",
       "total": 91,
+      "scores": {
+        "form": 12,
+        "fund_trap": 5,
+        "vol": 16,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 4,
+        "emotion": 10,
+        "sector": 4,
+        "zt_time": 14,
+        "seal": 4,
+        "pure": 0
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 93045,
+        "lbt": 93410,
+        "fund_yi": 0.64,
+        "ltsz_yi": 48.3,
+        "hs": 3.9,
+        "zbc": 3,
+        "hybk": "其他电子",
+        "lhb_explain": "买一主买，成功率51.57%",
+        "vol_ratio": 1.25,
+        "vol_reason": "温和放量",
+        "market_strength": 3.33,
+        "sector_zt": 1,
+        "seal_pct": 1.34,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": true,
+      "lr_prob": 0.1775,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "002174",
+      "name": "游族网络",
+      "total": 76,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 6,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 4,
+        "zt_time": 14,
+        "seal": 4,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 93209,
+        "lbt": 93209,
+        "fund_yi": 1.16,
+        "ltsz_yi": 99.7,
+        "hs": 2.9,
+        "zbc": 0,
+        "hybk": "游戏Ⅱ",
+        "vol_ratio": 1.65,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 1,
+        "seal_pct": 1.16,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1721,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [
+        "人工智能"
+      ],
+      "strong_tags": [
+        "华为概念"
+      ]
+    },
+    {
+      "code": "603095",
+      "name": "越剑智能",
+      "total": 98,
+      "scores": {
+        "form": 20,
+        "fund_trap": 0,
+        "vol": 10,
+        "distinct": 20,
+        "cap": 10,
+        "volume": 0,
+        "emotion": 10,
+        "sector": 15,
+        "zt_time": 5,
+        "seal": 4,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 3,
+        "fbt": 131653,
+        "lbt": 131653,
+        "fund_yi": 0.57,
+        "ltsz_yi": 59.6,
+        "hs": 9.3,
+        "zbc": 0,
+        "hybk": "专用设备",
+        "lhb_explain": "上海资金买入，成功率44.27%",
+        "vol_ratio": 2.86,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 5,
+        "seal_pct": 0.96,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": true,
+      "lr_prob": 0.1719,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "000692",
+      "name": "惠天热电",
+      "total": 90,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -1518,40 +1067,413 @@
         "cap": 6,
         "volume": 4,
         "emotion": 10,
-        "sector": 12,
+        "sector": 4,
         "zt_time": 14,
-        "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "seal": 6,
+        "pure": 4
       },
       "features": {
         "lbc": 1,
-        "fbt": 93121,
-        "lbt": 93506,
-        "fund_yi": 0.55,
-        "ltsz_yi": 115.5,
-        "hs": 3.0,
-        "zbc": 1,
-        "hybk": "汽车零部",
-        "vol_ratio": 1.24,
+        "fbt": 93309,
+        "lbt": 93309,
+        "fund_yi": 0.74,
+        "ltsz_yi": 26.4,
+        "hs": 3.6,
+        "zbc": 0,
+        "hybk": "电力",
+        "vol_ratio": 1.04,
+        "vol_reason": "温和放量",
+        "market_strength": 3.33,
+        "sector_zt": 1,
+        "seal_pct": 2.8,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1677,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "603317",
+      "name": "天味食品",
+      "total": 75,
+      "scores": {
+        "form": 14,
+        "fund_trap": 0,
+        "vol": 10,
+        "distinct": 16,
+        "cap": 2,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 8,
+        "zt_time": 12,
+        "seal": 1,
+        "pure": 0
+      },
+      "features": {
+        "lbc": 2,
+        "fbt": 94022,
+        "lbt": 94946,
+        "fund_yi": 0.28,
+        "ltsz_yi": 184.0,
+        "hs": 4.8,
+        "zbc": 5,
+        "hybk": "调味发酵",
+        "lhb_explain": "普通席位买入，成功率36.15%",
+        "vol_ratio": 2.02,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 2,
+        "seal_pct": 0.15,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": true,
+      "lr_prob": 0.166,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "000716",
+      "name": "黑芝麻",
+      "total": 94,
+      "scores": {
+        "form": 12,
+        "fund_trap": 2,
+        "vol": 16,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 4,
+        "emotion": 10,
+        "sector": 12,
+        "zt_time": 12,
+        "seal": 4,
+        "pure": 0
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 94700,
+        "lbt": 100430,
+        "fund_yi": 0.43,
+        "ltsz_yi": 38.3,
+        "hs": 6.1,
+        "zbc": 3,
+        "hybk": "休闲食品",
+        "vol_ratio": 1.12,
         "vol_reason": "温和放量",
         "market_strength": 3.33,
         "sector_zt": 3,
-        "seal_pct": 0.47,
+        "seal_pct": 1.14,
         "is_yizi": false,
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1606,
+      "lr_prob": 0.1655,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
+    },
+    {
+      "code": "605099",
+      "name": "共创草坪",
+      "total": 65,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 2,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 4,
+        "zt_time": 12,
+        "seal": 1,
+        "pure": 2
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 93825,
+        "lbt": 94243,
+        "fund_yi": 0.18,
+        "ltsz_yi": 176.7,
+        "hs": 1.5,
+        "zbc": 2,
+        "hybk": "家居用品",
+        "vol_ratio": 1.8,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 1,
+        "seal_pct": 0.1,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1645,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "000567",
+      "name": "海德股份",
+      "total": 72,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 6,
+        "volume": 0,
+        "emotion": 10,
+        "sector": 4,
+        "zt_time": 12,
+        "seal": 4,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 93909,
+        "lbt": 93909,
+        "fund_yi": 0.99,
+        "ltsz_yi": 118.1,
+        "hs": 2.6,
+        "zbc": 0,
+        "hybk": "多元金融",
+        "vol_ratio": 2.97,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 1,
+        "seal_pct": 0.83,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1644,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "603139",
+      "name": "康惠股份",
+      "total": 74,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 4,
+        "zt_time": 10,
+        "seal": 4,
+        "pure": 2
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 100345,
+        "lbt": 135645,
+        "fund_yi": 0.42,
+        "ltsz_yi": 36.7,
+        "hs": 6.8,
+        "zbc": 1,
+        "hybk": "中药Ⅱ",
+        "vol_ratio": 2.22,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 1,
+        "seal_pct": 1.16,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.164,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "002805",
+      "name": "丰元股份",
+      "total": 99,
+      "scores": {
+        "form": 12,
+        "fund_trap": 2,
+        "vol": 16,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 4,
+        "emotion": 10,
+        "sector": 15,
+        "zt_time": 14,
+        "seal": 4,
+        "pure": 0
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 93224,
+        "lbt": 95830,
+        "fund_yi": 0.79,
+        "ltsz_yi": 57.9,
+        "hs": 8.8,
+        "zbc": 3,
+        "hybk": "电池",
+        "vol_ratio": 0.96,
+        "vol_reason": "温和放量",
+        "market_strength": 3.33,
+        "sector_zt": 8,
+        "seal_pct": 1.36,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1639,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "002842",
+      "name": "翔鹭钨业",
+      "total": 82,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 6,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 15,
+        "zt_time": 7,
+        "seal": 6,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 104745,
+        "lbt": 104745,
+        "fund_yi": 1.81,
+        "ltsz_yi": 93.9,
+        "hs": 21.2,
+        "zbc": 0,
+        "hybk": "小金属",
+        "vol_ratio": 1.54,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 6,
+        "seal_pct": 1.92,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1635,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "002354",
+      "name": "天娱数科",
+      "total": 92,
+      "scores": {
+        "form": 12,
+        "fund_trap": 2,
+        "vol": 16,
+        "distinct": 12,
+        "cap": 6,
+        "volume": 4,
+        "emotion": 10,
+        "sector": 8,
+        "zt_time": 14,
+        "seal": 4,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 93000,
+        "lbt": 93000,
+        "fund_yi": 1.26,
+        "ltsz_yi": 96.7,
+        "hs": 3.2,
+        "zbc": 0,
+        "hybk": "广告营销",
+        "vol_ratio": 1.16,
+        "vol_reason": "温和放量",
+        "market_strength": 3.33,
+        "sector_zt": 2,
+        "seal_pct": 1.31,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1622,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [
+        "人工智能",
+        "芯片概念"
+      ],
+      "strong_tags": [
+        "数字孪生"
+      ]
     },
     {
       "code": "603345",
@@ -1568,8 +1490,7 @@
         "sector": 4,
         "zt_time": 14,
         "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -1589,13 +1510,105 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1598,
+      "lr_prob": 0.1595,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "002520",
+      "name": "日发精机",
+      "total": 90,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 12,
+        "zt_time": 14,
+        "seal": 6,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 93454,
+        "lbt": 93454,
+        "fund_yi": 1.05,
+        "ltsz_yi": 41.3,
+        "hs": 4.6,
+        "zbc": 0,
+        "hybk": "通用设备",
+        "vol_ratio": 2.01,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 3,
+        "seal_pct": 2.54,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.158,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "000980",
+      "name": "众泰汽车",
+      "total": 91,
+      "scores": {
+        "form": 12,
+        "fund_trap": 2,
+        "vol": 16,
+        "distinct": 12,
+        "cap": 6,
+        "volume": 4,
+        "emotion": 10,
+        "sector": 12,
+        "zt_time": 14,
+        "seal": 1,
+        "pure": 2
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 93121,
+        "lbt": 93506,
+        "fund_yi": 0.55,
+        "ltsz_yi": 115.5,
+        "hs": 3.0,
+        "zbc": 1,
+        "hybk": "汽车零部",
+        "vol_ratio": 1.24,
+        "vol_reason": "温和放量",
+        "market_strength": 3.33,
+        "sector_zt": 3,
+        "seal_pct": 0.47,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1577,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -1615,8 +1628,7 @@
         "sector": 12,
         "zt_time": 12,
         "seal": 4,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -1637,13 +1649,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.1596,
+      "lr_prob": 0.1565,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -1663,8 +1675,7 @@
         "sector": 12,
         "zt_time": 12,
         "seal": 1,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -1684,13 +1695,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1578,
+      "lr_prob": 0.1554,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -1710,8 +1721,7 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 1,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -1731,13 +1741,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1557,
+      "lr_prob": 0.1541,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [
         "芯片概念",
@@ -1748,6 +1758,104 @@
         "2025年报预增",
         "华为概念"
       ]
+    },
+    {
+      "code": "002786",
+      "name": "银宝山新",
+      "total": 91,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 15,
+        "zt_time": 12,
+        "seal": 6,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 94448,
+        "lbt": 94448,
+        "fund_yi": 0.89,
+        "ltsz_yi": 38.4,
+        "hs": 4.3,
+        "zbc": 0,
+        "hybk": "专用设备",
+        "vol_ratio": 2.48,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 5,
+        "seal_pct": 2.31,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1533,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [
+        "芯片概念"
+      ],
+      "strong_tags": [
+        "粤港澳大湾区",
+        "华为概念",
+        "消费电子概念"
+      ]
+    },
+    {
+      "code": "603937",
+      "name": "丽岛新材",
+      "total": 92,
+      "scores": {
+        "form": 12,
+        "fund_trap": 2,
+        "vol": 16,
+        "distinct": 12,
+        "cap": 6,
+        "volume": 4,
+        "emotion": 10,
+        "sector": 8,
+        "zt_time": 12,
+        "seal": 6,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 94042,
+        "lbt": 94042,
+        "fund_yi": 0.72,
+        "ltsz_yi": 29.0,
+        "hs": 5.8,
+        "zbc": 0,
+        "hybk": "工业金属",
+        "vol_ratio": 0.83,
+        "vol_reason": "温和放量",
+        "market_strength": 3.33,
+        "sector_zt": 2,
+        "seal_pct": 2.48,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1532,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
     },
     {
       "code": "002627",
@@ -1764,8 +1872,7 @@
         "sector": 4,
         "zt_time": 7,
         "seal": 6,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -1785,13 +1892,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1554,
+      "lr_prob": 0.1506,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -1811,8 +1918,7 @@
         "sector": 4,
         "zt_time": 12,
         "seal": 4,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -1833,13 +1939,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.1528,
+      "lr_prob": 0.1498,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -1859,8 +1965,7 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 4,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -1880,13 +1985,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1516,
+      "lr_prob": 0.1488,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -1906,8 +2011,7 @@
         "sector": 4,
         "zt_time": 12,
         "seal": 1,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -1927,13 +2031,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1505,
+      "lr_prob": 0.1484,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -1953,8 +2057,7 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -1974,13 +2077,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1496,
+      "lr_prob": 0.1473,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -2000,8 +2103,7 @@
         "sector": 12,
         "zt_time": 12,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -2021,13 +2123,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1476,
+      "lr_prob": 0.1454,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -2047,8 +2149,7 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -2068,13 +2169,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.147,
+      "lr_prob": 0.1444,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -2094,8 +2195,7 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -2115,13 +2215,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1466,
+      "lr_prob": 0.1443,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -2141,8 +2241,7 @@
         "sector": 15,
         "zt_time": 7,
         "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -2162,13 +2261,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1438,
+      "lr_prob": 0.1435,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -2188,8 +2287,7 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -2209,13 +2307,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1424,
+      "lr_prob": 0.1401,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -2235,8 +2333,7 @@
         "sector": 15,
         "zt_time": 10,
         "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -2256,13 +2353,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1423,
+      "lr_prob": 0.14,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -2282,8 +2379,7 @@
         "sector": 8,
         "zt_time": 7,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -2303,17 +2399,63 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1417,
+      "lr_prob": 0.1396,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [
         "人工智能"
       ],
+      "strong_tags": []
+    },
+    {
+      "code": "002548",
+      "name": "金新农",
+      "total": 92,
+      "scores": {
+        "form": 12,
+        "fund_trap": 2,
+        "vol": 16,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 4,
+        "emotion": 10,
+        "sector": 4,
+        "zt_time": 12,
+        "seal": 6,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 95127,
+        "lbt": 95127,
+        "fund_yi": 0.71,
+        "ltsz_yi": 40.9,
+        "hs": 4.3,
+        "zbc": 0,
+        "hybk": "饲料",
+        "vol_ratio": 1.13,
+        "vol_reason": "温和放量",
+        "market_strength": 3.33,
+        "sector_zt": 1,
+        "seal_pct": 1.73,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1395,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
       "strong_tags": []
     },
     {
@@ -2331,8 +2473,7 @@
         "sector": 8,
         "zt_time": 14,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -2352,163 +2493,16 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1383,
+      "lr_prob": 0.1363,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
-    },
-    {
-      "code": "002520",
-      "name": "日发精机",
-      "total": 105,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 2,
-        "emotion": 10,
-        "sector": 12,
-        "zt_time": 14,
-        "seal": 6,
-        "pure": 4,
-        "soft_early": 15
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93454,
-        "lbt": 93454,
-        "fund_yi": 1.05,
-        "ltsz_yi": 41.3,
-        "hs": 4.6,
-        "zbc": 0,
-        "hybk": "通用设备",
-        "vol_ratio": 2.01,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 3,
-        "seal_pct": 2.54,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1351,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "603937",
-      "name": "丽岛新材",
-      "total": 107,
-      "scores": {
-        "form": 12,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 6,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 8,
-        "zt_time": 12,
-        "seal": 6,
-        "pure": 4,
-        "soft_early": 15
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 94042,
-        "lbt": 94042,
-        "fund_yi": 0.72,
-        "ltsz_yi": 29.0,
-        "hs": 5.8,
-        "zbc": 0,
-        "hybk": "工业金属",
-        "vol_ratio": 0.83,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 2,
-        "seal_pct": 2.48,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1308,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "002786",
-      "name": "银宝山新",
-      "total": 106,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 2,
-        "emotion": 10,
-        "sector": 15,
-        "zt_time": 12,
-        "seal": 6,
-        "pure": 4,
-        "soft_early": 15
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 94448,
-        "lbt": 94448,
-        "fund_yi": 0.89,
-        "ltsz_yi": 38.4,
-        "hs": 4.3,
-        "zbc": 0,
-        "hybk": "专用设备",
-        "vol_ratio": 2.48,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 5,
-        "seal_pct": 2.31,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1308,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [
-        "芯片概念"
-      ],
-      "strong_tags": [
-        "粤港澳大湾区",
-        "华为概念",
-        "消费电子概念"
-      ]
     },
     {
       "code": "605158",
@@ -2525,8 +2519,7 @@
         "sector": 4,
         "zt_time": 3,
         "seal": 4,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2546,13 +2539,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1305,
+      "lr_prob": 0.1294,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -2572,8 +2565,7 @@
         "sector": 8,
         "zt_time": 14,
         "seal": 4,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -2593,107 +2585,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1295,
+      "lr_prob": 0.128,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "002136",
-      "name": "安 纳 达",
-      "total": 72,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 5,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 0,
-        "emotion": 10,
-        "sector": 12,
-        "zt_time": 3,
-        "seal": 6,
-        "pure": 4,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 143821,
-        "lbt": 143821,
-        "fund_yi": 0.58,
-        "ltsz_yi": 32.8,
-        "hs": 11.9,
-        "zbc": 0,
-        "hybk": "化学原料",
-        "vol_ratio": 4.32,
-        "vol_reason": "天量",
-        "market_strength": 3.33,
-        "sector_zt": 4,
-        "seal_pct": 1.76,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1268,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "603516",
-      "name": "淳中科技",
-      "total": 69,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 6,
-        "distinct": 12,
-        "cap": 2,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 8,
-        "zt_time": 12,
-        "seal": 1,
-        "pure": 4,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93914,
-        "lbt": 93914,
-        "fund_yi": 1.52,
-        "ltsz_yi": 321.3,
-        "hs": 2.8,
-        "zbc": 0,
-        "hybk": "计算机设",
-        "vol_ratio": 0.77,
-        "vol_reason": "缩量但弱",
-        "market_strength": 3.33,
-        "sector_zt": 2,
-        "seal_pct": 0.47,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1268,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -2713,8 +2611,7 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 8,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2734,13 +2631,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1263,
+      "lr_prob": 0.1261,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [
         "新型城镇化"
@@ -2748,6 +2645,301 @@
       "strong_tags": [
         "储能",
         "氢能源"
+      ]
+    },
+    {
+      "code": "603516",
+      "name": "淳中科技",
+      "total": 69,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 6,
+        "distinct": 12,
+        "cap": 2,
+        "volume": 4,
+        "emotion": 10,
+        "sector": 8,
+        "zt_time": 12,
+        "seal": 1,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 93914,
+        "lbt": 93914,
+        "fund_yi": 1.52,
+        "ltsz_yi": 321.3,
+        "hs": 2.8,
+        "zbc": 0,
+        "hybk": "计算机设",
+        "vol_ratio": 0.77,
+        "vol_reason": "缩量但弱",
+        "market_strength": 3.33,
+        "sector_zt": 2,
+        "seal_pct": 0.47,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1259,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "002136",
+      "name": "安 纳 达",
+      "total": 72,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 5,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 0,
+        "emotion": 10,
+        "sector": 12,
+        "zt_time": 3,
+        "seal": 6,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 143821,
+        "lbt": 143821,
+        "fund_yi": 0.58,
+        "ltsz_yi": 32.8,
+        "hs": 11.9,
+        "zbc": 0,
+        "hybk": "化学原料",
+        "vol_ratio": 4.32,
+        "vol_reason": "天量",
+        "market_strength": 3.33,
+        "sector_zt": 4,
+        "seal_pct": 1.76,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1252,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "001203",
+      "name": "大中矿业",
+      "total": 56,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 2,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 4,
+        "zt_time": 5,
+        "seal": 1,
+        "pure": 0
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 132242,
+        "lbt": 140142,
+        "fund_yi": 0.53,
+        "ltsz_yi": 670.0,
+        "hs": 2.5,
+        "zbc": 11,
+        "hybk": "冶钢原料",
+        "vol_ratio": 1.68,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 1,
+        "seal_pct": 0.08,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1247,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": [
+        "锂电池概念",
+        "储能"
+      ]
+    },
+    {
+      "code": "601233",
+      "name": "桐昆股份",
+      "total": 62,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 2,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 8,
+        "zt_time": 5,
+        "seal": 1,
+        "pure": 2
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 135034,
+        "lbt": 135220,
+        "fund_yi": 0.37,
+        "ltsz_yi": 547.6,
+        "hs": 2.9,
+        "zbc": 1,
+        "hybk": "炼化及贸",
+        "vol_ratio": 1.9,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 2,
+        "seal_pct": 0.07,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1236,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [
+        "长三角一体化"
+      ],
+      "strong_tags": [
+        "2025年报预增"
+      ]
+    },
+    {
+      "code": "002851",
+      "name": "麦格米特",
+      "total": 65,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 2,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 4,
+        "zt_time": 14,
+        "seal": 1,
+        "pure": 0
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 93142,
+        "lbt": 102033,
+        "fund_yi": 2.34,
+        "ltsz_yi": 529.6,
+        "hs": 5.0,
+        "zbc": 3,
+        "hybk": "其他电源",
+        "vol_ratio": 1.59,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 1,
+        "seal_pct": 0.44,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1232,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [
+        "第三代半导体",
+        "芯片概念",
+        "数据中心"
+      ],
+      "strong_tags": [
+        "储能",
+        "智能家居"
+      ]
+    },
+    {
+      "code": "300982",
+      "name": "苏文电能",
+      "total": 63,
+      "scores": {
+        "form": 8,
+        "fund_trap": -5,
+        "vol": 5,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 0,
+        "emotion": 10,
+        "sector": 8,
+        "zt_time": 5,
+        "seal": 6,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 130439,
+        "lbt": 130439,
+        "fund_yi": 0.72,
+        "ltsz_yi": 46.1,
+        "hs": 11.0,
+        "zbc": 0,
+        "hybk": "基础建设",
+        "lhb_explain": "4家机构买入，成功率43.53%",
+        "vol_ratio": 3.12,
+        "vol_reason": "天量",
+        "market_strength": 3.33,
+        "sector_zt": 2,
+        "seal_pct": 1.57,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": true,
+      "lr_prob": 0.123,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [
+        "数据中心"
+      ],
+      "strong_tags": [
+        "储能"
       ]
     },
     {
@@ -2765,8 +2957,7 @@
         "sector": 12,
         "zt_time": 7,
         "seal": 4,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2786,13 +2977,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1255,
+      "lr_prob": 0.1225,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": [
@@ -2814,8 +3005,7 @@
         "sector": 15,
         "zt_time": 12,
         "seal": 4,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -2835,172 +3025,16 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1249,
+      "lr_prob": 0.1217,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
-    },
-    {
-      "code": "300982",
-      "name": "苏文电能",
-      "total": 63,
-      "scores": {
-        "form": 8,
-        "fund_trap": -5,
-        "vol": 5,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 0,
-        "emotion": 10,
-        "sector": 8,
-        "zt_time": 5,
-        "seal": 6,
-        "pure": 4,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 130439,
-        "lbt": 130439,
-        "fund_yi": 0.72,
-        "ltsz_yi": 46.1,
-        "hs": 11.0,
-        "zbc": 0,
-        "hybk": "基础建设",
-        "lhb_explain": "4家机构买入，成功率43.53%",
-        "vol_ratio": 3.12,
-        "vol_reason": "天量",
-        "market_strength": 3.33,
-        "sector_zt": 2,
-        "seal_pct": 1.57,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": true,
-      "lr_prob": 0.1245,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [
-        "数据中心"
-      ],
-      "strong_tags": [
-        "储能"
-      ]
-    },
-    {
-      "code": "002851",
-      "name": "麦格米特",
-      "total": 65,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 2,
-        "volume": 2,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 14,
-        "seal": 1,
-        "pure": 0,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 93142,
-        "lbt": 102033,
-        "fund_yi": 2.34,
-        "ltsz_yi": 529.6,
-        "hs": 5.0,
-        "zbc": 3,
-        "hybk": "其他电源",
-        "vol_ratio": 1.59,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 0.44,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1244,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [
-        "第三代半导体",
-        "芯片概念",
-        "数据中心"
-      ],
-      "strong_tags": [
-        "储能",
-        "智能家居"
-      ]
-    },
-    {
-      "code": "001203",
-      "name": "大中矿业",
-      "total": 56,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 2,
-        "volume": 2,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 5,
-        "seal": 1,
-        "pure": 0,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 132242,
-        "lbt": 140142,
-        "fund_yi": 0.53,
-        "ltsz_yi": 670.0,
-        "hs": 2.5,
-        "zbc": 11,
-        "hybk": "冶钢原料",
-        "vol_ratio": 1.68,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 0.08,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1238,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": [
-        "锂电池概念",
-        "储能"
-      ]
     },
     {
       "code": "002645",
@@ -3017,8 +3051,7 @@
         "sector": 12,
         "zt_time": 10,
         "seal": 4,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3038,67 +3071,16 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1229,
+      "lr_prob": 0.1201,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
-    },
-    {
-      "code": "601233",
-      "name": "桐昆股份",
-      "total": 62,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 2,
-        "volume": 2,
-        "emotion": 10,
-        "sector": 8,
-        "zt_time": 5,
-        "seal": 1,
-        "pure": 2,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 135034,
-        "lbt": 135220,
-        "fund_yi": 0.37,
-        "ltsz_yi": 547.6,
-        "hs": 2.9,
-        "zbc": 1,
-        "hybk": "炼化及贸",
-        "vol_ratio": 1.9,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 2,
-        "seal_pct": 0.07,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1226,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [
-        "长三角一体化"
-      ],
-      "strong_tags": [
-        "2025年报预增"
-      ]
     },
     {
       "code": "300769",
@@ -3115,8 +3097,7 @@
         "sector": 15,
         "zt_time": 7,
         "seal": 4,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3137,60 +3118,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.1202,
+      "lr_prob": 0.119,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "002818",
-      "name": "富森美",
-      "total": 71,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 5,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 0,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 12,
-        "seal": 4,
-        "pure": 4,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 95633,
-        "lbt": 95633,
-        "fund_yi": 0.39,
-        "ltsz_yi": 36.5,
-        "hs": 8.3,
-        "zbc": 0,
-        "hybk": "一般零售",
-        "vol_ratio": 6.68,
-        "vol_reason": "天量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 1.07,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1189,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -3210,8 +3144,7 @@
         "sector": 15,
         "zt_time": 7,
         "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -3231,60 +3164,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1184,
+      "lr_prob": 0.1174,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "002548",
-      "name": "金新农",
-      "total": 107,
-      "scores": {
-        "form": 12,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 4,
-        "zt_time": 12,
-        "seal": 6,
-        "pure": 4,
-        "soft_early": 15
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 95127,
-        "lbt": 95127,
-        "fund_yi": 0.71,
-        "ltsz_yi": 40.9,
-        "hs": 4.3,
-        "zbc": 0,
-        "hybk": "饲料",
-        "vol_ratio": 1.13,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 1,
-        "seal_pct": 1.73,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1183,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -3304,8 +3190,7 @@
         "sector": 8,
         "zt_time": 5,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -3326,13 +3211,59 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.117,
+      "lr_prob": 0.1173,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "002818",
+      "name": "富森美",
+      "total": 71,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 5,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 0,
+        "emotion": 10,
+        "sector": 4,
+        "zt_time": 12,
+        "seal": 4,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 95633,
+        "lbt": 95633,
+        "fund_yi": 0.39,
+        "ltsz_yi": 36.5,
+        "hs": 8.3,
+        "zbc": 0,
+        "hybk": "一般零售",
+        "vol_ratio": 6.68,
+        "vol_reason": "天量",
+        "market_strength": 3.33,
+        "sector_zt": 1,
+        "seal_pct": 1.07,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.116,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -3352,8 +3283,7 @@
         "sector": 4,
         "zt_time": 10,
         "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -3373,60 +3303,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1168,
+      "lr_prob": 0.1158,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "600397",
-      "name": "江钨装备",
-      "total": 89,
-      "scores": {
-        "form": 12,
-        "fund_trap": 2,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 6,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 15,
-        "zt_time": 7,
-        "seal": 1,
-        "pure": 4,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 111814,
-        "lbt": 111814,
-        "fund_yi": 0.66,
-        "ltsz_yi": 143.7,
-        "hs": 4.9,
-        "zbc": 0,
-        "hybk": "专用设备",
-        "vol_ratio": 1.46,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 5,
-        "seal_pct": 0.46,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.114,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -3446,8 +3329,7 @@
         "sector": 8,
         "zt_time": 7,
         "seal": 4,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3467,13 +3349,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.1126,
+      "lr_prob": 0.1118,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": [
@@ -3481,6 +3363,52 @@
         "华为概念",
         "智能家居"
       ]
+    },
+    {
+      "code": "600397",
+      "name": "江钨装备",
+      "total": 89,
+      "scores": {
+        "form": 12,
+        "fund_trap": 2,
+        "vol": 16,
+        "distinct": 12,
+        "cap": 6,
+        "volume": 4,
+        "emotion": 10,
+        "sector": 15,
+        "zt_time": 7,
+        "seal": 1,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 111814,
+        "lbt": 111814,
+        "fund_yi": 0.66,
+        "ltsz_yi": 143.7,
+        "hs": 4.9,
+        "zbc": 0,
+        "hybk": "专用设备",
+        "vol_ratio": 1.46,
+        "vol_reason": "温和放量",
+        "market_strength": 3.33,
+        "sector_zt": 5,
+        "seal_pct": 0.46,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1116,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
     },
     {
       "code": "000973",
@@ -3497,8 +3425,7 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -3519,110 +3446,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.1089,
+      "lr_prob": 0.1097,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": []
-    },
-    {
-      "code": "600367",
-      "name": "红星发展",
-      "total": 79,
-      "scores": {
-        "form": 8,
-        "fund_trap": 2,
-        "vol": 10,
-        "distinct": 12,
-        "cap": 10,
-        "volume": 2,
-        "emotion": 10,
-        "sector": 12,
-        "zt_time": 5,
-        "seal": 4,
-        "pure": 4,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 131207,
-        "lbt": 131207,
-        "fund_yi": 0.61,
-        "ltsz_yi": 74.8,
-        "hs": 12.7,
-        "zbc": 0,
-        "hybk": "化学原料",
-        "vol_ratio": 1.99,
-        "vol_reason": "爆量",
-        "market_strength": 3.33,
-        "sector_zt": 4,
-        "seal_pct": 0.82,
-        "is_yizi": true,
-        "is_yizi_strict": false
-      },
-      "in_lhb": false,
-      "lr_prob": 0.1058,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
-      },
-      "mainline_tags": [],
-      "strong_tags": [
-        "锂电池概念"
-      ]
-    },
-    {
-      "code": "002709",
-      "name": "天赐材料",
-      "total": 72,
-      "scores": {
-        "form": 12,
-        "fund_trap": -5,
-        "vol": 16,
-        "distinct": 12,
-        "cap": 2,
-        "volume": 4,
-        "emotion": 10,
-        "sector": 15,
-        "zt_time": 5,
-        "seal": 1,
-        "pure": 0,
-        "soft_early": 0
-      },
-      "features": {
-        "lbc": 1,
-        "fbt": 131512,
-        "lbt": 134009,
-        "fund_yi": 1.85,
-        "ltsz_yi": 895.1,
-        "hs": 12.0,
-        "zbc": 6,
-        "hybk": "电池",
-        "lhb_explain": "3家机构买入，成功率41.27%",
-        "vol_ratio": 1.12,
-        "vol_reason": "温和放量",
-        "market_strength": 3.33,
-        "sector_zt": 8,
-        "seal_pct": 0.21,
-        "is_yizi": false,
-        "is_yizi_strict": false
-      },
-      "in_lhb": true,
-      "lr_prob": 0.1057,
-      "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
-        "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -3642,8 +3472,7 @@
         "sector": 15,
         "zt_time": 5,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -3664,16 +3493,111 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.1056,
+      "lr_prob": 0.1066,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
+    },
+    {
+      "code": "002709",
+      "name": "天赐材料",
+      "total": 72,
+      "scores": {
+        "form": 12,
+        "fund_trap": -5,
+        "vol": 16,
+        "distinct": 12,
+        "cap": 2,
+        "volume": 4,
+        "emotion": 10,
+        "sector": 15,
+        "zt_time": 5,
+        "seal": 1,
+        "pure": 0
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 131512,
+        "lbt": 134009,
+        "fund_yi": 1.85,
+        "ltsz_yi": 895.1,
+        "hs": 12.0,
+        "zbc": 6,
+        "hybk": "电池",
+        "lhb_explain": "3家机构买入，成功率41.27%",
+        "vol_ratio": 1.12,
+        "vol_reason": "温和放量",
+        "market_strength": 3.33,
+        "sector_zt": 8,
+        "seal_pct": 0.21,
+        "is_yizi": false,
+        "is_yizi_strict": false
+      },
+      "in_lhb": true,
+      "lr_prob": 0.1066,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": []
+    },
+    {
+      "code": "600367",
+      "name": "红星发展",
+      "total": 79,
+      "scores": {
+        "form": 8,
+        "fund_trap": 2,
+        "vol": 10,
+        "distinct": 12,
+        "cap": 10,
+        "volume": 2,
+        "emotion": 10,
+        "sector": 12,
+        "zt_time": 5,
+        "seal": 4,
+        "pure": 4
+      },
+      "features": {
+        "lbc": 1,
+        "fbt": 131207,
+        "lbt": 131207,
+        "fund_yi": 0.61,
+        "ltsz_yi": 74.8,
+        "hs": 12.7,
+        "zbc": 0,
+        "hybk": "化学原料",
+        "vol_ratio": 1.99,
+        "vol_reason": "爆量",
+        "market_strength": 3.33,
+        "sector_zt": 4,
+        "seal_pct": 0.82,
+        "is_yizi": true,
+        "is_yizi_strict": false
+      },
+      "in_lhb": false,
+      "lr_prob": 0.1051,
+      "_model_meta": {
+        "P_high": 0.716,
+        "P_mid": 0.288,
+        "version": "v3.0-lr-rolling",
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
+      },
+      "mainline_tags": [],
+      "strong_tags": [
+        "锂电池概念"
+      ]
     },
     {
       "code": "002176",
@@ -3690,8 +3614,7 @@
         "sector": 8,
         "zt_time": 5,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -3712,13 +3635,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.0999,
+      "lr_prob": 0.101,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -3738,8 +3661,7 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 4,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3759,13 +3681,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0964,
+      "lr_prob": 0.0947,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [
         "长三角一体化"
@@ -3789,8 +3711,7 @@
         "sector": 15,
         "zt_time": 5,
         "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -3811,13 +3732,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.0933,
+      "lr_prob": 0.0934,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -3837,8 +3758,7 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -3858,13 +3778,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0921,
+      "lr_prob": 0.0923,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [
         "数据中心",
@@ -3891,8 +3811,7 @@
         "sector": 12,
         "zt_time": 7,
         "seal": 1,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3912,13 +3831,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0913,
+      "lr_prob": 0.0902,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -3938,8 +3857,7 @@
         "sector": 12,
         "zt_time": 12,
         "seal": 1,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -3959,13 +3877,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0911,
+      "lr_prob": 0.0899,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": [
@@ -3989,8 +3907,7 @@
         "sector": 8,
         "zt_time": 10,
         "seal": 1,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -4010,13 +3927,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0907,
+      "lr_prob": 0.0896,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -4036,8 +3953,7 @@
         "sector": 15,
         "zt_time": 10,
         "seal": 1,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -4057,13 +3973,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0895,
+      "lr_prob": 0.0885,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": [
@@ -4087,8 +4003,7 @@
         "sector": 15,
         "zt_time": 5,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -4108,13 +4023,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.087,
+      "lr_prob": 0.0872,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": [
@@ -4136,8 +4051,7 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 1,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -4157,13 +4071,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0857,
+      "lr_prob": 0.0849,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [
         "新型城镇化"
@@ -4185,8 +4099,7 @@
         "sector": 8,
         "zt_time": 7,
         "seal": 4,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -4206,13 +4119,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0851,
+      "lr_prob": 0.0841,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -4232,8 +4145,7 @@
         "sector": 8,
         "zt_time": 5,
         "seal": 4,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -4253,13 +4165,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0841,
+      "lr_prob": 0.083,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [
         "芯片概念"
@@ -4283,8 +4195,7 @@
         "sector": 15,
         "zt_time": 5,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -4305,13 +4216,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.0825,
+      "lr_prob": 0.0828,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -4331,8 +4242,7 @@
         "sector": 8,
         "zt_time": 5,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -4352,13 +4262,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0809,
+      "lr_prob": 0.0816,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -4378,8 +4288,7 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -4400,13 +4309,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.0793,
+      "lr_prob": 0.08,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -4426,8 +4335,7 @@
         "sector": 15,
         "zt_time": 5,
         "seal": 1,
-        "pure": 2,
-        "soft_early": 0
+        "pure": 2
       },
       "features": {
         "lbc": 1,
@@ -4448,13 +4356,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.077,
+      "lr_prob": 0.0777,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -4474,8 +4382,7 @@
         "sector": 4,
         "zt_time": 3,
         "seal": 1,
-        "pure": 0,
-        "soft_early": 0
+        "pure": 0
       },
       "features": {
         "lbc": 1,
@@ -4495,13 +4402,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0743,
+      "lr_prob": 0.075,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -4521,8 +4428,7 @@
         "sector": 4,
         "zt_time": 5,
         "seal": 1,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -4542,13 +4448,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": false,
-      "lr_prob": 0.0605,
+      "lr_prob": 0.0606,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": []
@@ -4568,8 +4474,7 @@
         "sector": 15,
         "zt_time": 3,
         "seal": 1,
-        "pure": 4,
-        "soft_early": 0
+        "pure": 4
       },
       "features": {
         "lbc": 1,
@@ -4590,13 +4495,13 @@
         "is_yizi_strict": false
       },
       "in_lhb": true,
-      "lr_prob": 0.0588,
+      "lr_prob": 0.0589,
       "_model_meta": {
-        "P_high": 0.728,
-        "P_mid": 0.263,
+        "P_high": 0.716,
+        "P_mid": 0.288,
         "version": "v3.0-lr-rolling",
-        "trained_at": "2026-05-04",
-        "ts_avg_auc": 0.6337629050246271
+        "trained_at": "2026-05-02",
+        "ts_avg_auc": 0.6315719840493699
       },
       "mainline_tags": [],
       "strong_tags": [
@@ -4605,5 +4510,5 @@
       ]
     }
   ],
-  "msg": "📊 2026-04-29 A股 v3.0-lr-rolling (2026-05-04) 候选股\n━━━━━━━━━━━━━━━━━\n涨停: 95 | 极强: 0 | 强: 1 | 关注: 39\n🔴 模型无强信号 - 历史胜率低, 谨慎出手\n\n🔥 ≥ 0.26 概率 强   (胜率≥50%)\n⭐⭐⭐⭐ 603399 永杉锂业 101分 📊0.28 🐉\n   2板 | 09:56 | 封1.2亿 | 占1.3% | 90亿盘 | 能源金属 | ⚠️2炸\n   形14/辨16/时12/封4/价16\n\n🟠 ≥ 0.15 概率 关注\n⭐⭐⭐ 002081 金 螳 螂 90分 📊0.26 🐉 🔥\n   2板 | 09:48 | 封1.5亿 | 占1.1% | 142亿盘 | 装修装饰\n   🔥主升: 新型城镇化/长三角一体化/第三代半导体\n   形14/辨16/时12/封4/价20\n⭐⭐⭐ 600379 宝光股份 88分 📊0.26 🐉\n   2板 | 09:30 | 占0.7% | 50亿盘 | 电网设备 | ⚠️2炸\n   形14/辨16/时14/封4/价10\n⭐⭐⭐ 002903 宇环数控 83分 📊0.25\n   1板 | 11:13 | 封1.2亿 | 占3.1% | 39亿盘 | 通用设备 | ⚠️1炸\n   形8/辨12/时7/封8/价10\n⭐⭐⭐ 002210 飞马国际 104分 📊0.24\n   3板 | 09:31 | 封0.9亿 | 占1.0% | 88亿盘 | 环境治理\n   形20/辨20/时14/封4/价16\n⭐⭐⭐ 002652 扬子新材 113分 📊0.23\n   2板 | 09:31 | 封0.7亿 | 占2.2% | 32亿盘 | 装修建材 | ⚠️1炸\n   形14/辨16/时14/封6/价16\n\n━━━━━━━━━━━━━━━━━\n💡 v3.0+v2.6: v2.4评分 + LR概率 + 滚动retrain + 🔥主升板块 (时序 AUC=0.63)\n🐉=同时上龙虎榜 | ⚠️=有炸板 | 📊=LR预测概率\n⚠️ 不构成投资建议, 次日开盘前人工二次确认"
+  "msg": "📊 2026-04-29 A股 v3.0-lr-rolling (2026-05-02) 候选股\n━━━━━━━━━━━━━━━━━\n涨停: 95 | 极强: 0 | 强: 0 | 关注: 40\n🔴 模型无强信号 - 历史胜率低, 谨慎出手\n\n🟠 ≥ 0.15 概率 关注\n⭐⭐⭐ 603399 永杉锂业 101分 📊0.27 🐉\n   2板 | 09:56 | 封1.2亿 | 占1.3% | 90亿盘 | 能源金属 | ⚠️2炸\n   形14/辨16/时12/封4/价16\n⭐⭐⭐ 002652 扬子新材 98分 📊0.26\n   2板 | 09:31 | 封0.7亿 | 占2.2% | 32亿盘 | 装修建材 | ⚠️1炸\n   形14/辨16/时14/封6/价16\n⭐⭐⭐ 002903 宇环数控 83分 📊0.25\n   1板 | 11:13 | 封1.2亿 | 占3.1% | 39亿盘 | 通用设备 | ⚠️1炸\n   形8/辨12/时7/封8/价10\n⭐⭐⭐ 600379 宝光股份 88分 📊0.25 🐉\n   2板 | 09:30 | 占0.7% | 50亿盘 | 电网设备 | ⚠️2炸\n   形14/辨16/时14/封4/价10\n⭐⭐⭐ 002081 金 螳 螂 90分 📊0.25 🐉 🔥\n   2板 | 09:48 | 封1.5亿 | 占1.1% | 142亿盘 | 装修装饰\n   🔥主升: 新型城镇化/长三角一体化/第三代半导体\n   形14/辨16/时12/封4/价20\n\n━━━━━━━━━━━━━━━━━\n💡 v3.0+v2.6: v2.4评分 + LR概率 + 滚动retrain + 🔥主升板块 (时序 AUC=0.63)\n🐉=同时上龙虎榜 | ⚠️=有炸板 | 📊=LR预测概率\n⚠️ 不构成投资建议, 次日开盘前人工二次确认"
 }
