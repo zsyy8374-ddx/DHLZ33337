@@ -23,7 +23,7 @@ PICKS_DIR = WORKSPACE / "picks"
 PICKS_DIR.mkdir(exist_ok=True)
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0)"
 BJT = timezone(timedelta(hours=8))
-VERSION = "v2.6"  # v2.5 + 主升板块加分 (8日趋势)
+VERSION = "v2.7"  # v2.6 + 一字板剔除 + 主升板块真加分 + 板块资金净流入加分
 LR_MODEL_PATH = WORKSPACE / "backtest" / "v25-lr-results-2026-04-28.json"
 SECTOR_TREND_PATH = WORKSPACE / "mx_output" / "sector_trend_8day_2026-04-21_to_30.csv"
 WENCAI_ZT_DIR = WORKSPACE / "mx_output"  # wencai_zt_<DATE>.csv
@@ -430,17 +430,60 @@ def load_concepts_for_date(date):
         return {}
 
 
+def load_sector_today(date):
+    """加载当日 sector_strength_<date>.csv, 返回资金净流入 Top 5 板块集合"""
+    f = WORKSPACE / "mx_output" / f"sector_strength_{date}.csv"
+    if not f.exists():
+        return set(), set()
+    try:
+        import csv
+        rows = []
+        with f.open(encoding='utf-8-sig') as fh:
+            for r in csv.DictReader(fh):
+                try:
+                    zhuli = float(r.get('主力(亿)','0') or 0)
+                    score = float(r.get('综合分','0') or 0)
+                    rows.append((r['板块'], zhuli, score))
+                except: pass
+        # 资金净流入 Top 5 = 今日热点
+        rows_zhuli = sorted(rows, key=lambda x: x[1], reverse=True)[:5]
+        hot_capital = set(r[0] for r in rows_zhuli if r[1] > 0)
+        # 综合分 Top 10 = 今日强势
+        rows_score = sorted(rows, key=lambda x: x[2], reverse=True)[:10]
+        strong_today = set(r[0] for r in rows_score)
+        return hot_capital, strong_today
+    except Exception as e:
+        print(f"⚠ 加载当日板块资金失败: {e}")
+        return set(), set()
+
+
 def annotate_mainline(candidates, date):
-    """给每个候选股加 mainline_tags / strong_tags 字段"""
+    """给候选股加 mainline/strong/hot_capital tags + 真加分"""
     mainline, strong = load_mainline_sectors()
-    if not mainline:
+    hot_capital, strong_today = load_sector_today(date)
+    if not (mainline or hot_capital):
         return
     concepts = load_concepts_for_date(date)
     n_main = 0
+    n_hot = 0
     for c in candidates:
         cs = concepts.get(c['code'], [])
         m_tags = [x for x in cs if x in mainline]
         s_tags = [x for x in cs if x in strong and x not in mainline]
+        # 新: 今日资金净流入 Top 5 板块
+        h_tags = [x for x in cs if x in hot_capital]
+        # 新: 今日综合强势 Top 10
+        st_tags = [x for x in cs if x in strong_today and x not in hot_capital]
+        # 真加分 (最小幅度, 不胖走个股自身分 — 龙头本身已经高分)
+        bonus = 0
+        if m_tags: bonus += 3  # 8 日主升
+        elif s_tags: bonus += 2  # 8 日强势
+        if h_tags: bonus += 2   # 今日资金净流入 Top 5
+        if bonus > 0:
+            c['scores']['sector_main'] = bonus
+            c['total'] = c['total'] + bonus
+            c['mainline_tags_score'] = bonus  # 用于推送显示
+        c['hot_capital_tags'] = h_tags[:3]
         c['mainline_tags'] = m_tags
         c['strong_tags'] = s_tags[:3]
         if m_tags: n_main += 1
