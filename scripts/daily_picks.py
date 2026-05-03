@@ -240,6 +240,15 @@ def score_v24(zt_rec, lhb_rec, kline, idx, sector_zt_count, market_strength):
     elif zbc == 0: sc["pure"] = 4
     elif zbc <= 2: sc["pure"] = 2
     else: sc["pure"] = 0
+
+    # ⑫ 软封+早封 加分 (战法 B v2 38天验证 +3.63%/66%)
+    # 映射: wencai 封流比 3-5 ↔ daily seal_pct 1.5-2.8
+    if not is_yizi_strict and 0 < fbt <= 100000 and 1.5 <= seal_pct < 2.8:
+        sc["soft_early"] = 15  # 加分 (B v2 金信号)
+    elif not is_yizi_strict and seal_pct >= 2.8 and 0 < fbt <= 100000:
+        sc["soft_early"] = -10  # 硬封陷阱 (B v2 38天 -2.98%)
+    else:
+        sc["soft_early"] = 0
     ft["is_yizi"] = is_yizi
     ft["is_yizi_strict"] = is_yizi_strict
 
@@ -289,6 +298,9 @@ def extract_lr_features(c):
         "hs_active": 1.0 if 15 <= hs < 20 else 0.0,
         "hs_high": 1.0 if hs >= 20 else 0.0,
         "early_big_seal": 1.0 if (0 < fbt <= 93000 and seal_pct >= 3) else 0.0,
+        # 新增 (战法 B v2 38天验证, 映射: wencai 3-5 ↔ daily 1.5-2.5)
+        "early_soft_seal": 1.0 if (0 < fbt <= 100000 and 1.5 <= seal_pct < 2.8) else 0.0,
+        "seal_pct_high": 1.0 if seal_pct >= 2.8 else 0.0,
     }
 
 

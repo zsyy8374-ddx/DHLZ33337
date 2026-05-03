@@ -65,6 +65,9 @@ def extract_features(s):
         "hs_active": 1.0 if 15 <= hs < 20 else 0.0,
         "hs_high": 1.0 if hs >= 20 else 0.0,
         "early_big_seal": 1.0 if (0 < fbt <= 93000 and seal_pct >= 3) else 0.0,
+        # 新增 (战法 B v2 38天验证, 阈值按 wencai 3-5↔daily 1.5-2.5 映射)
+        "early_soft_seal": 1.0 if (0 < fbt <= 100000 and 1.5 <= seal_pct < 2.8) else 0.0,
+        "seal_pct_high": 1.0 if seal_pct >= 2.8 else 0.0,
     }
 
 
