@@ -11,7 +11,28 @@ log_file="$log_dir/${today}.log"
 
 echo "=== 战法 B v2 推送 $today ===" | tee "$log_file"
 
-# 跑选股
+# 1. 检查今天是否交易日 (周末 + 节假日跳过)
+weekday=$(TZ=Asia/Shanghai date +%u)
+if [ "$weekday" -ge 6 ]; then
+    echo "周末 ($weekday) 不交易, 跳过" | tee -a "$log_file"
+    exit 2
+fi
+
+# A 股 2026 节假日 (不交易)
+case "$today" in
+    20260101|20260202|20260203|20260204|20260205|20260206|20260207|20260208|20260209|20260210|20260211|20260212|20260213|20260214|20260215|20260216|20260217)
+        echo "春节休市 $today, 跳过" | tee -a "$log_file"; exit 2 ;;
+    20260403|20260404|20260405|20260406)
+        echo "清明休市 $today, 跳过" | tee -a "$log_file"; exit 2 ;;
+    20260501|20260504|20260505)
+        echo "五一休市 $today, 跳过" | tee -a "$log_file"; exit 2 ;;
+    20260622|20260623|20260624)
+        echo "端午休市 $today, 跳过" | tee -a "$log_file"; exit 2 ;;
+    20260928|20260929|20260930|20261001|20261002|20261003|20261004|20261005|20261006|20261007)
+        echo "中秋+国庆休市 $today, 跳过" | tee -a "$log_file"; exit 2 ;;
+esac
+
+# 2. 跑选股
 python3 scripts/yedan_push_v2.py --date "$today" 2>&1 | tee -a "$log_file"
 
 picks_file="data/wencai/yedan_v2_picks_${today}.txt"
