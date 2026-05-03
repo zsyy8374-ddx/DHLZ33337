@@ -1,0 +1,583 @@
+{
+  "success": true,
+  "status": 0,
+  "code": 0,
+  "message": "ok",
+  "data": {
+    "requestId": null,
+    "message": "OK",
+    "status": 0,
+    "code": 0,
+    "data": {
+      "protocolType": "SEARCH_DATA",
+      "id": "3c1117ec-e9ee-4871-9f60-d9fa23b7047c",
+      "refSeq": null,
+      "keyEntityList": null,
+      "searchDataResultDTO": {
+        "questionId": "b3f7c742-0df1-46d0-b524-ce43bb5c9003",
+        "dataTableDTOList": [
+          {
+            "code": "90.BK1303",
+            "entityName": "2026-04-30",
+            "table": {
+              "100000000018654": [
+                "-6355万股",
+                "224.2万股",
+                "-1.063亿股"
+              ],
+              "100000000016969": [
+                "239.4亿元",
+                "24.01亿元",
+                "400.2亿元"
+              ],
+              "100000000016970": [
+                "257.1亿元",
+                "23.09亿元",
+                "454.5亿元"
+              ],
+              "100000000016971": [
+                "-17.68亿元",
+                "9182万元",
+                "-54.26亿元"
+              ],
+              "100000000016974": [
+                "155.6亿元",
+                "16.33亿元",
+                "233.5亿元"
+              ],
+              "100000000016975": [
+                "159.1亿元",
+                "16.61亿元",
+                "255.6亿元"
+              ],
+              "100000000016976": [
+                "186.1亿元",
+                "21.37亿元",
+                "273.9亿元"
+              ],
+              "100000000016977": [
+                "175.6亿元",
+                "21.96亿元",
+                "269.2亿元"
+              ],
+              "100000000016978": [
+                "113.2亿元",
+                "14.57亿元",
+                "245.1亿元"
+              ],
+              "100000000016979": [
+                "106.3亿元",
+                "14.8亿元",
+                "195.7亿元"
+              ],
+              "headName": [
+                "锂电池",
+                "机器人",
+                "消费电子"
+              ]
+            },
+            "rawTable": {
+              "100000000018654": [
+                "-63553862",
+                "2242045.0",
+                "-106255026"
+              ],
+              "100000000016969": [
+                "23944630545",
+                "2401021028",
+                "40020101516"
+              ],
+              "100000000016970": [
+                "25712409027",
+                "2309199720",
+                "45445981481"
+              ],
+              "100000000016971": [
+                "-1767778482",
+                "91821308",
+                "-5425879965"
+              ],
+              "100000000016974": [
+                "15561940680",
+                "1632695372",
+                "23348714876"
+              ],
+              "100000000016975": [
+                "15907916592",
+                "1661420727",
+                "25560772951"
+              ],
+              "100000000016976": [
+                "18606599048",
+                "2136969101",
+                "27393415760"
+              ],
+              "100000000016977": [
+                "17563546593",
+                "2196053833",
+                "26918590405"
+              ],
+              "100000000016978": [
+                "11315752319",
+                "1456545660",
+                "24507617898"
+              ],
+              "100000000016979": [
+                "10631106297",
+                "1479679571",
+                "19567222780"
+              ],
+              "headName": [
+                "锂电池",
+                "机器人",
+                "消费电子"
+              ]
+            },
+            "truncateRawTable": {},
+            "nameMap": {
+              "100000000018654": "(区间)净流入量(合计)",
+              "headNameSub": "数据来源",
+              "100000000016969": "(区间)主力流入资金(合计)",
+              "100000000016970": "(区间)主力流出资金(合计)",
+              "100000000016971": "(区间)主力净流入资金(合计)",
+              "100000000016974": "(区间)大单流入资金(合计)",
+              "100000000016975": "(区间)大单流出资金(合计)",
+              "100000000016976": "(区间)中单流入资金(合计)",
+              "100000000016977": "(区间)中单流出资金(合计)",
+              "100000000016978": "(区间)小单流入资金(合计)",
+              "100000000016979": "(区间)小单流出资金(合计)",
+              "securityName": "股票名称"
+            },
+            "headNameMap": {},
+            "field": {
+              "returnCode": "100000000018654",
+              "returnName": "(区间)净流入量(合计)",
+              "classCode": "007109",
+              "checkedRelatedIndicators": false,
+              "startDate": "2026-05-03 00:00:00",
+              "endDate": "2026-05-03 00:00:00",
+              "fuzzy": false,
+              "dateGranularity": "DAY",
+              "defineType": -1,
+              "isLoopN": false,
+              "fixedParamValue": "IsHistory=0",
+              "quantType": "9",
+              "isGroup": false,
+              "returnSourceCode": "PERIODVFDNETFLOW",
+              "returnSourceName": "(区间)净流入量(合计)",
+              "graph": "1",
+              "unit": "1",
+              "tableType": "1",
+              "unitName": "股",
+              "unitDesc": "10302:股:股"
+            },
+            "entityCodes": [
+              "90.BK1303",
+              "90.BK1408",
+              "90.BK1037"
+            ],
+            "macroAttributeExcelMap": {},
+            "fieldSet": [
+              {
+                "returnCode": "100000000016974",
+                "returnName": "(区间)大单流入资金(合计)",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-03 00:00:00",
+                "endDate": "2026-05-03 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "FLOWINLQ",
+                "returnSourceName": "(区间)大单流入资金(合计)",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000016969",
+                "returnName": "(区间)主力流入资金(合计)",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-03 00:00:00",
+                "endDate": "2026-05-03 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "INQ",
+                "returnSourceName": "(区间)主力流入资金(合计)",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000016970",
+                "returnName": "(区间)主力流出资金(合计)",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-03 00:00:00",
+                "endDate": "2026-05-03 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "OUTQ",
+                "returnSourceName": "(区间)主力流出资金(合计)",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000016977",
+                "returnName": "(区间)中单流出资金(合计)",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-03 00:00:00",
+                "endDate": "2026-05-03 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "FLOWOUTMQ",
+                "returnSourceName": "(区间)中单流出资金(合计)",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000016978",
+                "returnName": "(区间)小单流入资金(合计)",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-03 00:00:00",
+                "endDate": "2026-05-03 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "FLOWINLSQ",
+                "returnSourceName": "(区间)小单流入资金(合计)",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000016976",
+                "returnName": "(区间)中单流入资金(合计)",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-03 00:00:00",
+                "endDate": "2026-05-03 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "FLOWINMQ",
+                "returnSourceName": "(区间)中单流入资金(合计)",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000016975",
+                "returnName": "(区间)大单流出资金(合计)",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-03 00:00:00",
+                "endDate": "2026-05-03 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "FLOWOUTLQ",
+                "returnSourceName": "(区间)大单流出资金(合计)",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000018654",
+                "returnName": "(区间)净流入量(合计)",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-03 00:00:00",
+                "endDate": "2026-05-03 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "PERIODVFDNETFLOW",
+                "returnSourceName": "(区间)净流入量(合计)",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "股",
+                "unitDesc": "10302:股:股"
+              },
+              {
+                "returnCode": "100000000016979",
+                "returnName": "(区间)小单流出资金(合计)",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-03 00:00:00",
+                "endDate": "2026-05-03 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "FLOWOUTSQ",
+                "returnSourceName": "(区间)小单流出资金(合计)",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000016971",
+                "returnName": "(区间)主力净流入资金(合计)",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-03 00:00:00",
+                "endDate": "2026-05-03 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "INFLOWQ",
+                "returnSourceName": "(区间)主力净流入资金(合计)",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              }
+            ],
+            "dataTableType": "NORM_TABLE",
+            "rowInfo": {},
+            "colInfo": {},
+            "indicatorOrder": [
+              "100000000018654",
+              "100000000016969",
+              "100000000016970",
+              "100000000016971",
+              "100000000016974",
+              "100000000016975",
+              "100000000016976",
+              "100000000016977",
+              "100000000016978",
+              "100000000016979"
+            ],
+            "tipFlags": [],
+            "dataType": "数据浏览器",
+            "title": "锂电池等的(区间)净流入量(合计)、(区间)主力流入资金(合计)等",
+            "hasThumbnail": true,
+            "indicatorLimited": false,
+            "dataPositionEnum": "MetricLeftEntityTop",
+            "orderCol": {},
+            "jumpUrlList": [
+              {
+                "choiceUrl": "EM://stockdatacenter?type=browser&modType=BLOCK&code=90.BK1303,90.BK1408,90.BK1037&indId=100000000018654|102:2026-04-30|283:2026-04-30,100000000016969|102:2026-04-30|101:2026-04-30,100000000016970|102:2026-04-30|101:2026-04-30,100000000016971|102:2026-04-30|101:2026-04-30,100000000016974|102:2026-04-30|101:2026-04-30,100000000016975|102:2026-04-30|101:2026-04-30,100000000016976|102:2026-04-30|101:2026-04-30,100000000016977|102:2026-04-30|101:2026-04-30,100000000016978|102:2026-04-30|101:2026-04-30,100000000016979|102:2026-04-30|101:2026-04-30",
+                "typeName": "板块数据浏览器"
+              }
+            ],
+            "dataTypeEnum": "DATA_BROWSER",
+            "dateRuleSet": [],
+            "freqConvert": false,
+            "deleteInfo": [],
+            "macroCodeMap": {},
+            "entityTagDTO": {
+              "entityId": "BK1303",
+              "entityType": "BLOCK",
+              "entityTypeCode": "1",
+              "entityTypeName": "财富通行业板块3级",
+              "classCode": "005002",
+              "className": "行业板块",
+              "fullName": "锂电池",
+              "secuCode": "BK1303",
+              "market": "90",
+              "correct": false,
+              "hasKLine": false,
+              "valuation": false
+            },
+            "entityTagDTOList": [
+              {
+                "entityId": "BK1303",
+                "entityType": "BLOCK",
+                "entityTypeCode": "1",
+                "entityTypeName": "财富通行业板块3级",
+                "classCode": "005002",
+                "className": "行业板块",
+                "fullName": "锂电池",
+                "secuCode": "BK1303",
+                "market": "90",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              },
+              {
+                "entityId": "BK1408",
+                "entityType": "BLOCK",
+                "entityTypeCode": "1",
+                "entityTypeName": "财富通行业板块3级",
+                "classCode": "005002",
+                "className": "行业板块",
+                "fullName": "机器人",
+                "secuCode": "BK1408",
+                "market": "90",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              },
+              {
+                "entityId": "BK1037",
+                "entityType": "BLOCK",
+                "entityTypeCode": "3",
+                "entityTypeName": "财富通行业板块2级",
+                "classCode": "005002",
+                "className": "行业板块",
+                "fullName": "消费电子",
+                "secuCode": "BK1037",
+                "market": "90",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              }
+            ],
+            "indexTable": false,
+            "edbThirdData": false,
+            "dataUpdate": {
+              "2026-04-30": false
+            },
+            "supportsTimeSeries": false,
+            "estimatedTokens": 0,
+            "summaryTips": {
+              "periodicalReport": null
+            },
+            "nestEntityListMap": {},
+            "excelTimeTruncate": false,
+            "frontendEntityName": "",
+            "frontendEntityCode": "",
+            "frontendTitle": "",
+            "frontendDesc": "",
+            "indicatorCount": 0,
+            "fieldParameterStr": "",
+            "tdayEnum": "NORMAL"
+          }
+        ],
+        "condition": {
+          "search_data_task_0": [
+            "锂电池",
+            "(区间)净流入量(合计)(区间)主力流入资金(合计)(区间)主力流出资金(合计)(区间)主力净流入资金(合计)(区间)大单流入资金(合计)(区间)大单流出资金(合计)(区间)中单流入资金(合计)(区间)中单流出资金(合计)(区间)小单流入资金(合计)(区间)小单流出资金(合计)",
+            "2026-05-03至2026-05-03"
+          ],
+          "search_data_task_1": [
+            "机器人",
+            "(区间)净流入量(合计)(区间)主力流入资金(合计)(区间)主力流出资金(合计)(区间)主力净流入资金(合计)(区间)大单流入资金(合计)(区间)大单流出资金(合计)(区间)中单流入资金(合计)(区间)中单流出资金(合计)(区间)小单流入资金(合计)(区间)小单流出资金(合计)",
+            "2026-05-03至2026-05-03"
+          ],
+          "search_data_task_2": [
+            "消费电子",
+            "(区间)净流入量(合计)(区间)主力流入资金(合计)(区间)主力流出资金(合计)(区间)主力净流入资金(合计)(区间)大单流入资金(合计)(区间)大单流出资金(合计)(区间)中单流入资金(合计)(区间)中单流出资金(合计)(区间)小单流入资金(合计)(区间)小单流出资金(合计)",
+            "2026-05-03至2026-05-03"
+          ]
+        },
+        "entityTagDTOList": [
+          {
+            "entityId": "BK1303",
+            "entityType": "BLOCK",
+            "entityTypeCode": "1",
+            "entityTypeName": "财富通行业板块3级",
+            "classCode": "005002",
+            "className": "行业板块",
+            "fullName": "锂电池",
+            "secuCode": "BK1303",
+            "market": "90",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          },
+          {
+            "entityId": "BK1408",
+            "entityType": "BLOCK",
+            "entityTypeCode": "1",
+            "entityTypeName": "财富通行业板块3级",
+            "classCode": "005002",
+            "className": "行业板块",
+            "fullName": "机器人",
+            "secuCode": "BK1408",
+            "market": "90",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          },
+          {
+            "entityId": "BK1037",
+            "entityType": "BLOCK",
+            "entityTypeCode": "3",
+            "entityTypeName": "财富通行业板块2级",
+            "classCode": "005002",
+            "className": "行业板块",
+            "fullName": "消费电子",
+            "secuCode": "BK1037",
+            "market": "90",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          }
+        ]
+      },
+      "entityName": null,
+      "message": null,
+      "tableTruncated": false
+    },
+    "stack": null
+  },
+  "requestId": "0a03e53827db4550a6124f3e4a2197ff"
+}

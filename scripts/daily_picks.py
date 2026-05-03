@@ -23,8 +23,10 @@ PICKS_DIR = WORKSPACE / "picks"
 PICKS_DIR.mkdir(exist_ok=True)
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0)"
 BJT = timezone(timedelta(hours=8))
-VERSION = "v2.5"  # v2.4 评分 + LR 概率
+VERSION = "v2.6"  # v2.5 + 主升板块加分 (8日趋势)
 LR_MODEL_PATH = WORKSPACE / "backtest" / "v25-lr-results-2026-04-28.json"
+SECTOR_TREND_PATH = WORKSPACE / "mx_output" / "sector_trend_8day_2026-04-21_to_30.csv"
+WENCAI_ZT_DIR = WORKSPACE / "mx_output"  # wencai_zt_<DATE>.csv
 
 WX_CHANNEL = "openclaw-weixin"
 WX_ACCOUNT = "ba28cc3242ca-im-bot"
@@ -371,7 +373,66 @@ def get_today_picks(target_date=None):
               f"Top 概率={candidates[0].get('lr_prob', 0):.3f}" if candidates else "无候选", flush=True)
     else:
         candidates.sort(key=lambda x: -x["total"])
+    
+    # 主升板块加分 (v2.6) — 不改 total/lr_prob, 只加个 tag 供推送显示
+    annotate_mainline(candidates, date)
     return candidates, date
+
+
+def load_mainline_sectors():
+    """加载 8 日趋势, 返回 (主升集合, 强势集合)"""
+    if not SECTOR_TREND_PATH.exists():
+        return set(), set()
+    try:
+        import csv
+        mainline = set()
+        strong = set()
+        with SECTOR_TREND_PATH.open(encoding='utf-8-sig') as f:
+            for row in csv.DictReader(f):
+                top_days = int(row.get('Top20天数', 0) or 0)
+                if top_days >= 5: mainline.add(row['板块'])
+                if top_days >= 3: strong.add(row['板块'])
+        return mainline, strong
+    except Exception as e:
+        print(f"⚠ 加载主升板块失败: {e}")
+        return set(), set()
+
+
+def load_concepts_for_date(date):
+    """加载 wencai_zt_<DATE>.csv, 返回 {code: [concept,...]}"""
+    f = WENCAI_ZT_DIR / f'wencai_zt_{date}.csv'
+    if not f.exists():
+        return {}
+    try:
+        import csv
+        out = {}
+        with f.open(encoding='utf-8-sig') as fh:
+            for r in csv.DictReader(fh):
+                code = str(r.get('code') or r.get('股票代码','')).split('.')[0]
+                if not code: continue
+                concepts_str = r.get('所属概念','') or ''
+                out[code] = [c.strip() for c in concepts_str.split(';') if c.strip()]
+        return out
+    except Exception as e:
+        print(f"⚠ 加载概念失败: {e}")
+        return {}
+
+
+def annotate_mainline(candidates, date):
+    """给每个候选股加 mainline_tags / strong_tags 字段"""
+    mainline, strong = load_mainline_sectors()
+    if not mainline:
+        return
+    concepts = load_concepts_for_date(date)
+    n_main = 0
+    for c in candidates:
+        cs = concepts.get(c['code'], [])
+        m_tags = [x for x in cs if x in mainline]
+        s_tags = [x for x in cs if x in strong and x not in mainline]
+        c['mainline_tags'] = m_tags
+        c['strong_tags'] = s_tags[:3]
+        if m_tags: n_main += 1
+    print(f"   主升板块标记: {n_main}/{len(candidates)} 只股在主升 ({sorted(mainline)})", flush=True)
 
 
 def fmt_time(fbt):
@@ -444,10 +505,14 @@ def format_wechat_msg(candidates, date):
         hybk = ft.get("hybk", "")
         zbc = ft.get("zbc", 0)
         lhb_tag = " 🐉" if c["in_lhb"] else ""
+        # 主升板块 tag (v2.6)
+        m_tags = c.get('mainline_tags', [])
+        s_tags = c.get('strong_tags', [])
+        main_tag = " 🔥" if m_tags else (" ⚡" if s_tags else "")
         prob = c.get("lr_prob")
         prob_str = f" 📊{prob:.2f}" if prob is not None else ""
         
-        out = [f"{prefix}{c['code']} {c['name']} {c['total']}分{prob_str}{lhb_tag}"]
+        out = [f"{prefix}{c['code']} {c['name']} {c['total']}分{prob_str}{lhb_tag}{main_tag}"]
         feat_parts = [f"{lbc}板", fbt]
         if fund_yi >= 0.5: feat_parts.append(f"封{fund_yi:.1f}亿")
         if seal_pct >= 0.5: feat_parts.append(f"占{seal_pct:.1f}%")
@@ -455,6 +520,11 @@ def format_wechat_msg(candidates, date):
         if hybk: feat_parts.append(hybk[:6])
         if zbc > 0: feat_parts.append(f"⚠️{zbc}炸")
         out.append(f"   {' | '.join(feat_parts)}")
+        # 主升板块详情 (只在有时显示)
+        if m_tags:
+            out.append(f"   🔥主升: {'/'.join(m_tags[:3])}")
+        elif s_tags:
+            out.append(f"   ⚡强势: {'/'.join(s_tags[:2])}")
         out.append(f"   形{sc.get('form',0)}/辨{sc.get('distinct',0)}/时{sc.get('zt_time',0)}/封{sc.get('seal',0)}/价{sc.get('vol',0)}")
         return out
     
@@ -489,9 +559,9 @@ def format_wechat_msg(candidates, date):
             mm = candidates[0].get("_model_meta", {})
             ts_auc = mm.get("ts_avg_auc", 0)
             auc_tag = f"时序 AUC={ts_auc:.2f}" if ts_auc else "AUC=?"
-            lines.append(f"💡 v3.0: v2.4评分 + LR概率 + 滚动retrain ({auc_tag})")
+            lines.append(f"💡 v3.0+v2.6: v2.4评分 + LR概率 + 滚动retrain + 🔥主升板块 ({auc_tag})")
         else:
-            lines.append(f"💡 v2.5: v2.4评分 + LR概率")
+            lines.append(f"💡 v2.6: v2.4评分 + LR概率 + 🔥主升板块")
     else:
         lines.append(f"💡 v2.4 11维 (满分~135) | 封单强度+涨停时间为关键")
     lines.append(f"🐉=同时上龙虎榜 | ⚠️=有炸板 | 📊=LR预测概率")

@@ -1,0 +1,8 @@
+金融数据查询结果说明
+========================================
+查询内容: 芯片 储能 锂电池 机器人 消费电子 5个板块今日涨跌幅 成交额 主力净流入
+数据文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/mx_data_芯片_储能_锂电池_机器人_消费电子_5个板块今日涨跌幅_成交额_主力净流入.xlsx
+描述文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/mx_data_芯片_储能_锂电池_机器人_消费电子_5个板块今日涨跌幅_成交额_主力净流入_description.txt
+数据行数: 3
+表数量: 1
+Sheet 列表: 锂电池等的(区间)净流入量(合计)、(区间)主力流入资金(合计)等

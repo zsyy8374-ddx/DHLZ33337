@@ -1,0 +1,8 @@
+金融数据查询结果说明
+========================================
+查询内容: 天通股份最新价
+数据文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/mx_data_天通股份最新价.xlsx
+描述文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/mx_data_天通股份最新价_description.txt
+数据行数: 4
+表数量: 1
+Sheet 列表: 天通股份(600330.SH)的收盘价

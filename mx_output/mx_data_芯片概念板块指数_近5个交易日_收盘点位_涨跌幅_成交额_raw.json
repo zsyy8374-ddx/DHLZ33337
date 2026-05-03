@@ -1,0 +1,296 @@
+{
+  "success": true,
+  "status": 0,
+  "code": 0,
+  "message": "ok",
+  "data": {
+    "requestId": null,
+    "message": "OK",
+    "status": 0,
+    "code": 0,
+    "data": {
+      "protocolType": "SEARCH_DATA",
+      "id": "63ca97d7-d54a-4b90-ba42-bdd54b6c7238",
+      "refSeq": null,
+      "keyEntityList": null,
+      "searchDataResultDTO": {
+        "questionId": "cc704c35-431b-4716-b763-88a172879eb1",
+        "dataTableDTOList": [
+          {
+            "code": "90.BK1036",
+            "entityName": "半导体",
+            "table": {
+              "327199": [
+                "90.2895元",
+                "86.1853元",
+                "86.3286元",
+                "87.6159元",
+                "84.0958元",
+                "82.002元"
+              ],
+              "326256": [
+                "3367亿元",
+                "2526亿元",
+                "2763亿元",
+                "3069亿元",
+                "2694亿元",
+                "2561亿元"
+              ],
+              "326808": [
+                "3.383%",
+                "0.1938%",
+                "-1.992%",
+                "3.51%",
+                "1.139%",
+                "-2.033%"
+              ],
+              "headName": [
+                "2026-04-30(日)",
+                "2026-04-29(日)",
+                "2026-04-28(日)",
+                "2026-04-27(日)",
+                "2026-04-24(日)",
+                "2026-04-23(日)"
+              ]
+            },
+            "rawTable": {
+              "327199": [
+                "90.289544501322",
+                "86.185318567343",
+                "86.328605298182",
+                "87.61591926885",
+                "84.095761908566",
+                "82.001966001185"
+              ],
+              "326256": [
+                "336688394528.02",
+                "252613658398.12",
+                "276279554574.49",
+                "306871868979.87",
+                "269402482788.17",
+                "256118388948.41"
+              ],
+              "326808": [
+                "0.033833855398",
+                "0.00193818831",
+                "-0.019924591045",
+                "0.035099672338",
+                "0.011386350883",
+                "-0.020334267733"
+              ],
+              "headName": [
+                "2026-04-30",
+                "2026-04-29",
+                "2026-04-28",
+                "2026-04-27",
+                "2026-04-24",
+                "2026-04-23"
+              ]
+            },
+            "truncateRawTable": {},
+            "nameMap": {
+              "327199": "收盘价(总股本加权平均)",
+              "headNameSub": "数据来源",
+              "326256": "成交额(合计)",
+              "326808": "涨跌幅(算数平均)"
+            },
+            "headNameMap": {},
+            "field": {
+              "returnCode": "327199",
+              "returnName": "收盘价(总股本加权平均)",
+              "classCode": "007121",
+              "checkedRelatedIndicators": false,
+              "startDate": "2026-04-23 00:00:00",
+              "endDate": "2026-04-30 00:00:00",
+              "fuzzy": false,
+              "dateGranularity": "DAY",
+              "defineType": -1,
+              "isLoopN": false,
+              "fixedParamValue": "IsHistory=0,CurType=2,Period=1",
+              "isGroup": false,
+              "returnSourceCode": "TSCLOSE",
+              "returnSourceName": "收盘价(总股本加权平均)_板块_序列",
+              "graph": "0",
+              "unit": "2",
+              "tableType": "20",
+              "unitName": "元",
+              "unitDesc": "元"
+            },
+            "entityCodes": [
+              "90.BK1036"
+            ],
+            "macroAttributeExcelMap": {},
+            "fieldSet": [
+              {
+                "returnCode": "327199",
+                "returnName": "收盘价(总股本加权平均)",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-04-23 00:00:00",
+                "endDate": "2026-04-30 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0,CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "TSCLOSE",
+                "returnSourceName": "收盘价(总股本加权平均)_板块_序列",
+                "graph": "0",
+                "unit": "2",
+                "tableType": "20",
+                "unitName": "元",
+                "unitDesc": "元"
+              },
+              {
+                "returnCode": "326256",
+                "returnName": "成交额(合计)",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-04-23 00:00:00",
+                "endDate": "2026-04-30 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0,CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "TVAL",
+                "returnSourceName": "成交额(合计)_板块_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "元",
+                "unitDesc": "元"
+              },
+              {
+                "returnCode": "326808",
+                "returnName": "涨跌幅(算数平均)",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-04-23 00:00:00",
+                "endDate": "2026-04-30 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "ZDFSSPJ",
+                "returnSourceName": "涨跌幅(算数平均)_板块_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "100%",
+                "unitDesc": "100%"
+              }
+            ],
+            "dataTableType": "NORM_TABLE",
+            "rowInfo": {},
+            "colInfo": {},
+            "indicatorOrder": [
+              "327199",
+              "326256",
+              "326808"
+            ],
+            "tipFlags": [],
+            "dataType": "数据浏览器",
+            "title": "半导体的收盘价(总股本加权平均)、成交额(合计)等",
+            "hasThumbnail": true,
+            "indicatorLimited": false,
+            "dataPositionEnum": "MetricLeftTimeTop",
+            "orderCol": {},
+            "jumpUrlList": [
+              {
+                "choiceUrl": "EM://stockdatacenter?type=browser&modType=BLOCK&code=90.BK1036&indId=100000000021306|121:GetLatestDay|469:0|261:108:%:%",
+                "typeName": "板块数据浏览器"
+              }
+            ],
+            "dataTypeEnum": "DATA_BROWSER",
+            "dateRuleSet": [],
+            "freqConvert": false,
+            "deleteInfo": [],
+            "macroCodeMap": {},
+            "entityTagDTO": {
+              "entityId": "BK1036",
+              "entityType": "BLOCK",
+              "entityTypeCode": "3",
+              "entityTypeName": "财富通行业板块2级",
+              "classCode": "005002",
+              "className": "行业板块",
+              "fullName": "半导体",
+              "secuCode": "BK1036",
+              "market": "90",
+              "correct": false,
+              "hasKLine": false,
+              "valuation": false
+            },
+            "entityTagDTOList": [
+              {
+                "entityId": "BK1036",
+                "entityType": "BLOCK",
+                "entityTypeCode": "3",
+                "entityTypeName": "财富通行业板块2级",
+                "classCode": "005002",
+                "className": "行业板块",
+                "fullName": "半导体",
+                "secuCode": "BK1036",
+                "market": "90",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              }
+            ],
+            "indexTable": false,
+            "edbThirdData": false,
+            "dataUpdate": {
+              "2026-04-30": false
+            },
+            "supportsTimeSeries": false,
+            "estimatedTokens": 0,
+            "summaryTips": {
+              "periodicalReport": null
+            },
+            "nestEntityListMap": {},
+            "excelTimeTruncate": false,
+            "frontendEntityName": "",
+            "frontendEntityCode": "",
+            "frontendTitle": "",
+            "frontendDesc": "",
+            "indicatorCount": 0,
+            "fieldParameterStr": "",
+            "tdayEnum": "NORMAL"
+          }
+        ],
+        "condition": {
+          "search_data_task_0": [
+            "半导体",
+            "收盘价(总股本加权平均)成交额(合计)涨跌幅(算数平均)",
+            "2026-04-23至2026-04-30"
+          ]
+        },
+        "entityTagDTOList": [
+          {
+            "entityId": "BK1036",
+            "entityType": "BLOCK",
+            "entityTypeCode": "3",
+            "entityTypeName": "财富通行业板块2级",
+            "classCode": "005002",
+            "className": "行业板块",
+            "fullName": "半导体",
+            "secuCode": "BK1036",
+            "market": "90",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          }
+        ]
+      },
+      "entityName": null,
+      "message": null,
+      "tableTruncated": false
+    },
+    "stack": null
+  },
+  "requestId": "92b7cff02f8c46879816b230459192d6"
+}

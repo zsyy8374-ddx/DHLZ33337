@@ -1,0 +1,8 @@
+金融数据查询结果说明
+========================================
+查询内容: 半导体板块4-30涨跌幅 4-29涨跌幅 4-28涨跌幅 成交额
+数据文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/mx_data_半导体板块4-30涨跌幅_4-29涨跌幅_4-28涨跌幅_成交额.xlsx
+描述文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/mx_data_半导体板块4-30涨跌幅_4-29涨跌幅_4-28涨跌幅_成交额_description.txt
+数据行数: 3
+表数量: 1
+Sheet 列表: 半导体的成交额(合计)、涨跌幅(算数平均)

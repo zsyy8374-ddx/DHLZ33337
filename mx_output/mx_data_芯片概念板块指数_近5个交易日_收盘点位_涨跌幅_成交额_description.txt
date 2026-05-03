@@ -1,0 +1,8 @@
+金融数据查询结果说明
+========================================
+查询内容: 芯片概念板块指数 近5个交易日 收盘点位 涨跌幅 成交额
+数据文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/mx_data_芯片概念板块指数_近5个交易日_收盘点位_涨跌幅_成交额.xlsx
+描述文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/mx_data_芯片概念板块指数_近5个交易日_收盘点位_涨跌幅_成交额_description.txt
+数据行数: 6
+表数量: 1
+Sheet 列表: 半导体的收盘价(总股本加权平均)、成交额(合计)等
