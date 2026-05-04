@@ -1,5 +1,5 @@
 {
-  "version": "v2.6",
+  "version": "v2.7",
   "date": "2026-04-30",
   "candidates": [
     {
@@ -46,13 +46,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "002081",
       "name": "金 螳 螂",
-      "total": 92,
+      "total": 97,
       "scores": {
         "form": 20,
         "fund_trap": 0,
@@ -64,7 +65,8 @@
         "sector": 12,
         "zt_time": 10,
         "seal": 4,
-        "pure": 2
+        "pure": 2,
+        "sector_main": 5
       },
       "features": {
         "lbc": 3,
@@ -93,6 +95,12 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "芯片概念",
+        "人工智能",
+        "数据中心"
+      ],
       "mainline_tags": [
         "新型城镇化",
         "长三角一体化",
@@ -110,7 +118,7 @@
     {
       "code": "001316",
       "name": "润贝航科",
-      "total": 92,
+      "total": 94,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -122,7 +130,8 @@
         "sector": 4,
         "zt_time": 14,
         "seal": 6,
-        "pure": 2
+        "pure": 2,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -150,6 +159,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "商业航天",
@@ -200,6 +211,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -247,6 +259,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -294,6 +307,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -341,13 +355,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "000402",
       "name": "金 融 街",
-      "total": 85,
+      "total": 87,
       "scores": {
         "form": 14,
         "fund_trap": 2,
@@ -359,7 +374,8 @@
         "sector": 15,
         "zt_time": 14,
         "seal": 1,
-        "pure": 2
+        "pure": 2,
+        "sector_main": 2
       },
       "features": {
         "lbc": 2,
@@ -387,6 +403,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "装配式建筑"
@@ -435,6 +453,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -482,6 +501,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -529,6 +549,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -575,6 +596,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -621,13 +643,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "600052",
       "name": "东望时代",
-      "total": 94,
+      "total": 96,
       "scores": {
         "form": 16,
         "fund_trap": 2,
@@ -639,7 +662,8 @@
         "sector": 4,
         "zt_time": 12,
         "seal": 6,
-        "pure": 2
+        "pure": 2,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -667,6 +691,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "储能",
@@ -717,6 +743,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -764,6 +791,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -811,6 +839,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -857,6 +886,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -903,6 +933,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -949,13 +980,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "002785",
       "name": "万里石",
-      "total": 65,
+      "total": 67,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -967,7 +999,8 @@
         "sector": 4,
         "zt_time": 10,
         "seal": 1,
-        "pure": 0
+        "pure": 0,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -995,6 +1028,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "锂电池概念"
@@ -1043,6 +1078,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -1089,6 +1125,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -1135,6 +1172,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -1181,13 +1219,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "603717",
       "name": "天域生物",
-      "total": 74,
+      "total": 76,
       "scores": {
         "form": 8,
         "fund_trap": 5,
@@ -1199,7 +1238,8 @@
         "sector": 4,
         "zt_time": 5,
         "seal": 8,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -1228,6 +1268,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "PPP概念",
@@ -1277,13 +1319,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "605123",
       "name": "派克新材",
-      "total": 62,
+      "total": 64,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -1295,7 +1338,8 @@
         "sector": 4,
         "zt_time": 12,
         "seal": 1,
-        "pure": 2
+        "pure": 2,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -1323,6 +1367,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "商业航天",
@@ -1373,6 +1419,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -1420,13 +1467,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "600158",
       "name": "中体产业",
-      "total": 86,
+      "total": 91,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -1438,7 +1486,8 @@
         "sector": 4,
         "zt_time": 14,
         "seal": 4,
-        "pure": 2
+        "pure": 2,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -1466,6 +1515,10 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "数据中心"
+      ],
       "mainline_tags": [
         "数据中心"
       ],
@@ -1474,7 +1527,7 @@
     {
       "code": "603131",
       "name": "上海沪工",
-      "total": 86,
+      "total": 89,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -1486,7 +1539,8 @@
         "sector": 12,
         "zt_time": 10,
         "seal": 6,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 3
       },
       "features": {
         "lbc": 1,
@@ -1514,6 +1568,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 3,
+      "hot_capital_tags": [],
       "mainline_tags": [
         "长三角一体化"
       ],
@@ -1565,6 +1621,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -1611,6 +1668,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -1657,6 +1715,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -1704,13 +1763,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "603726",
       "name": "朗迪集团",
-      "total": 100,
+      "total": 102,
       "scores": {
         "form": 16,
         "fund_trap": 2,
@@ -1722,7 +1782,8 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 6,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -1750,6 +1811,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "先进封装"
@@ -1758,7 +1821,7 @@
     {
       "code": "000790",
       "name": "华神科技",
-      "total": 76,
+      "total": 78,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -1770,7 +1833,8 @@
         "sector": 4,
         "zt_time": 12,
         "seal": 6,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -1798,6 +1862,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "装配式建筑",
@@ -1847,13 +1913,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "600433",
       "name": "冠豪高新",
-      "total": 87,
+      "total": 89,
       "scores": {
         "form": 16,
         "fund_trap": 2,
@@ -1865,7 +1932,8 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 1,
-        "pure": 0
+        "pure": 0,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -1893,6 +1961,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "氢能源",
@@ -1942,6 +2012,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -1989,6 +2060,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -2035,13 +2107,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "300885",
       "name": "海昌新材",
-      "total": 86,
+      "total": 88,
       "scores": {
         "form": 8,
         "fund_trap": 5,
@@ -2053,7 +2126,8 @@
         "sector": 12,
         "zt_time": 7,
         "seal": 6,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -2082,6 +2156,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "商业航天",
@@ -2091,7 +2167,7 @@
     {
       "code": "002158",
       "name": "汉钟精机",
-      "total": 73,
+      "total": 78,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2103,7 +2179,8 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 4,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -2131,6 +2208,11 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "芯片概念",
+        "数据中心"
+      ],
       "mainline_tags": [
         "第三代半导体",
         "芯片概念",
@@ -2183,6 +2265,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -2229,13 +2312,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "603687",
       "name": "大胜达",
-      "total": 79,
+      "total": 84,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -2247,7 +2331,8 @@
         "sector": 4,
         "zt_time": 3,
         "seal": 6,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -2275,6 +2360,11 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "人工智能",
+        "芯片概念"
+      ],
       "mainline_tags": [
         "人工智能",
         "芯片概念"
@@ -2327,13 +2417,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "300083",
       "name": "创世纪",
-      "total": 53,
+      "total": 58,
       "scores": {
         "form": 8,
         "fund_trap": -5,
@@ -2345,7 +2436,8 @@
         "sector": 8,
         "zt_time": 12,
         "seal": 1,
-        "pure": 0
+        "pure": 0,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -2374,6 +2466,10 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "人工智能"
+      ],
       "mainline_tags": [
         "人工智能"
       ],
@@ -2426,6 +2522,7 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
@@ -2472,13 +2569,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "002181",
       "name": "粤 传 媒",
-      "total": 69,
+      "total": 74,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2490,7 +2588,8 @@
         "sector": 4,
         "zt_time": 12,
         "seal": 4,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -2518,6 +2617,10 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "人工智能"
+      ],
       "mainline_tags": [
         "人工智能"
       ],
@@ -2568,13 +2671,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "600246",
       "name": "万通发展",
-      "total": 75,
+      "total": 80,
       "scores": {
         "form": 8,
         "fund_trap": 5,
@@ -2586,7 +2690,8 @@
         "sector": 15,
         "zt_time": 10,
         "seal": 1,
-        "pure": 0
+        "pure": 0,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -2615,6 +2720,10 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "芯片概念"
+      ],
       "mainline_tags": [
         "芯片概念"
       ],
@@ -2666,13 +2775,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "603698",
       "name": "航天工程",
-      "total": 76,
+      "total": 78,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2684,7 +2794,8 @@
         "sector": 15,
         "zt_time": 12,
         "seal": 1,
-        "pure": 2
+        "pure": 2,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -2712,6 +2823,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "军工",
@@ -2721,7 +2834,7 @@
     {
       "code": "000066",
       "name": "中国长城",
-      "total": 87,
+      "total": 92,
       "scores": {
         "form": 12,
         "fund_trap": 5,
@@ -2733,7 +2846,8 @@
         "sector": 8,
         "zt_time": 10,
         "seal": 4,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -2762,6 +2876,12 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "东数西算(算力)",
+        "国产操作系统",
+        "数据中心"
+      ],
       "mainline_tags": [
         "数据中心",
         "人工智能",
@@ -2817,13 +2937,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "000628",
       "name": "高新发展",
-      "total": 69,
+      "total": 74,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2835,7 +2956,8 @@
         "sector": 4,
         "zt_time": 7,
         "seal": 4,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -2863,6 +2985,10 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "芯片概念"
+      ],
       "mainline_tags": [
         "芯片概念",
         "新型城镇化"
@@ -2916,13 +3042,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "000833",
       "name": "粤桂股份",
-      "total": 79,
+      "total": 81,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -2934,7 +3061,8 @@
         "sector": 4,
         "zt_time": 5,
         "seal": 4,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -2962,6 +3090,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "锂电池概念",
@@ -2972,7 +3102,7 @@
     {
       "code": "002929",
       "name": "润建股份",
-      "total": 65,
+      "total": 70,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -2984,7 +3114,8 @@
         "sector": 4,
         "zt_time": 3,
         "seal": 4,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -3012,6 +3143,12 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "东数西算(算力)",
+        "数据中心",
+        "人工智能"
+      ],
       "mainline_tags": [
         "数据中心",
         "人工智能"
@@ -3025,7 +3162,7 @@
     {
       "code": "002685",
       "name": "华东重机",
-      "total": 77,
+      "total": 82,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -3037,7 +3174,8 @@
         "sector": 4,
         "zt_time": 3,
         "seal": 4,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -3065,6 +3203,10 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "芯片概念"
+      ],
       "mainline_tags": [
         "芯片概念"
       ],
@@ -3075,7 +3217,7 @@
     {
       "code": "002989",
       "name": "中天精装",
-      "total": 72,
+      "total": 77,
       "scores": {
         "form": 8,
         "fund_trap": -5,
@@ -3087,7 +3229,8 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 4,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -3116,6 +3259,11 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "芯片概念",
+        "人工智能"
+      ],
       "mainline_tags": [
         "新型城镇化",
         "芯片概念",
@@ -3128,7 +3276,7 @@
     {
       "code": "000007",
       "name": "全新好",
-      "total": 87,
+      "total": 89,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -3140,7 +3288,8 @@
         "sector": 8,
         "zt_time": 5,
         "seal": 4,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -3168,6 +3317,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "粤港澳大湾区"
@@ -3176,7 +3327,7 @@
     {
       "code": "600400",
       "name": "红豆股份",
-      "total": 85,
+      "total": 87,
       "scores": {
         "form": 12,
         "fund_trap": 2,
@@ -3188,7 +3339,8 @@
         "sector": 8,
         "zt_time": 3,
         "seal": 4,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 2
       },
       "features": {
         "lbc": 1,
@@ -3216,6 +3368,8 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 2,
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": [
         "军工"
@@ -3224,7 +3378,7 @@
     {
       "code": "688400",
       "name": "凌云光",
-      "total": 84,
+      "total": 89,
       "scores": {
         "form": 12,
         "fund_trap": 5,
@@ -3236,7 +3390,8 @@
         "sector": 15,
         "zt_time": 5,
         "seal": 1,
-        "pure": 2
+        "pure": 2,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -3265,6 +3420,12 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "芯片概念",
+        "数据中心",
+        "人工智能"
+      ],
       "mainline_tags": [
         "芯片概念",
         "数据中心",
@@ -3279,7 +3440,7 @@
     {
       "code": "688521",
       "name": "芯原股份",
-      "total": 63,
+      "total": 68,
       "scores": {
         "form": 8,
         "fund_trap": -5,
@@ -3291,7 +3452,8 @@
         "sector": 12,
         "zt_time": 7,
         "seal": 1,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -3320,6 +3482,12 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "芯片概念",
+        "东数西算(算力)",
+        "人工智能"
+      ],
       "mainline_tags": [
         "芯片概念",
         "人工智能"
@@ -3331,7 +3499,7 @@
     {
       "code": "603360",
       "name": "百傲化学",
-      "total": 65,
+      "total": 70,
       "scores": {
         "form": 8,
         "fund_trap": 2,
@@ -3343,7 +3511,8 @@
         "sector": 8,
         "zt_time": 5,
         "seal": 4,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -3371,6 +3540,10 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "芯片概念"
+      ],
       "mainline_tags": [
         "芯片概念"
       ],
@@ -3419,13 +3592,14 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "hot_capital_tags": [],
       "mainline_tags": [],
       "strong_tags": []
     },
     {
       "code": "688256",
       "name": "寒武纪",
-      "total": 71,
+      "total": 76,
       "scores": {
         "form": 8,
         "fund_trap": 5,
@@ -3437,7 +3611,8 @@
         "sector": 12,
         "zt_time": 5,
         "seal": 1,
-        "pure": 4
+        "pure": 4,
+        "sector_main": 5
       },
       "features": {
         "lbc": 1,
@@ -3466,6 +3641,12 @@
         "trained_at": "2026-05-02",
         "ts_avg_auc": 0.6315719840493699
       },
+      "mainline_tags_score": 5,
+      "hot_capital_tags": [
+        "芯片概念",
+        "数据中心",
+        "东数西算(算力)"
+      ],
       "mainline_tags": [
         "芯片概念",
         "数据中心",
@@ -3476,5 +3657,5 @@
       ]
     }
   ],
-  "msg": "📊 2026-04-30 A股 v3.0-lr-rolling (2026-05-02) 候选股\n━━━━━━━━━━━━━━━━━\n涨停: 72 | 极强: 0 | 强: 1 | 关注: 29\n🔴 模型无强信号 - 历史胜率低, 谨慎出手\n\n🔥 ≥ 0.29 概率 强   (胜率≥50%)\n⭐⭐⭐⭐ 600379 宝光股份 124分 📊0.49 🐉\n   3板 | 09:30 | 封1.6亿 | 占2.8% | 55亿盘 | 电网设备 | ⚠️1炸\n   形20/辨20/时14/封6/价20\n\n🟠 ≥ 0.15 概率 关注\n⭐⭐⭐ 002081 金 螳 螂 92分 📊0.27 🐉 🔥\n   3板 | 10:24 | 封0.9亿 | 占0.6% | 156亿盘 | 装修装饰 | ⚠️1炸\n   🔥主升: 新型城镇化/长三角一体化/第三代半导体\n   形20/辨20/时10/封4/价10\n⭐⭐⭐ 001316 润贝航科 92分 📊0.25 ⚡\n   1板 | 09:30 | 封0.9亿 | 占1.6% | 58亿盘 | 炼化及贸 | ⚠️2炸\n   ⚡强势: 商业航天/2025年报预增\n   形12/辨12/时14/封6/价16\n⭐⭐⭐ 688531 日联科技 74分 📊0.23 🐉\n   2板 | 09:41 | 138亿盘 | 专用设备 | ⚠️6炸\n   形14/辨16/时12/封1/价5\n⭐⭐⭐ 603937 丽岛新材 84分 📊0.23 🐉\n   2板 | 09:49 | 32亿盘 | 工业金属 | ⚠️12炸\n   形14/辨16/时12/封1/价10\n⭐⭐⭐ 002805 丰元股份 100分 📊0.23 🐉\n   2板 | 09:30 | 封0.9亿 | 占1.4% | 64亿盘 | 电池\n   形14/辨16/时14/封4/价20\n\n━━━━━━━━━━━━━━━━━\n💡 v3.0+v2.6: v2.4评分 + LR概率 + 滚动retrain + 🔥主升板块 (时序 AUC=0.63)\n🐉=同时上龙虎榜 | ⚠️=有炸板 | 📊=LR预测概率\n⚠️ 不构成投资建议, 次日开盘前人工二次确认"
+  "msg": "📊 2026-04-30 A股 v3.0-lr-rolling (2026-05-02) 候选股\n━━━━━━━━━━━━━━━━━\n涨停: 72 | 极强: 0 | 强: 1 | 关注: 29\n🔴 模型无强信号 - 历史胜率低, 谨慎出手\n\n🔥 ≥ 0.29 概率 强   (胜率≥50%)\n⭐⭐⭐⭐ 600379 宝光股份 124分 📊0.49 🐉\n   3板 | 09:30 | 封1.6亿 | 占2.8% | 55亿盘 | 电网设备 | ⚠️1炸\n   形20/辨20/时14/封6/价20\n\n🟠 ≥ 0.15 概率 关注\n⭐⭐⭐ 002081 金 螳 螂 97分 📊0.27 🐉 🔥\n   3板 | 10:24 | 封0.9亿 | 占0.6% | 156亿盘 | 装修装饰 | ⚠️1炸\n   🔥主升: 新型城镇化/长三角一体化/第三代半导体\n   形20/辨20/时10/封4/价10\n⭐⭐⭐ 001316 润贝航科 94分 📊0.25 ⚡\n   1板 | 09:30 | 封0.9亿 | 占1.6% | 58亿盘 | 炼化及贸 | ⚠️2炸\n   ⚡强势: 商业航天/2025年报预增\n   形12/辨12/时14/封6/价16\n⭐⭐⭐ 688531 日联科技 74分 📊0.23 🐉\n   2板 | 09:41 | 138亿盘 | 专用设备 | ⚠️6炸\n   形14/辨16/时12/封1/价5\n⭐⭐⭐ 603937 丽岛新材 84分 📊0.23 🐉\n   2板 | 09:49 | 32亿盘 | 工业金属 | ⚠️12炸\n   形14/辨16/时12/封1/价10\n⭐⭐⭐ 002805 丰元股份 100分 📊0.23 🐉\n   2板 | 09:30 | 封0.9亿 | 占1.4% | 64亿盘 | 电池\n   形14/辨16/时14/封4/价20\n\n━━━━━━━━━━━━━━━━━\n💡 v3.0+v2.6: v2.4评分 + LR概率 + 滚动retrain + 🔥主升板块 (时序 AUC=0.63)\n🐉=同时上龙虎榜 | ⚠️=有炸板 | 📊=LR预测概率\n⚠️ 不构成投资建议, 次日开盘前人工二次确认"
 }

@@ -614,9 +614,9 @@ def format_wechat_msg(candidates, date):
             mm = candidates[0].get("_model_meta", {})
             ts_auc = mm.get("ts_avg_auc", 0)
             auc_tag = f"时序 AUC={ts_auc:.2f}" if ts_auc else "AUC=?"
-            lines.append(f"💡 v3.0+v2.6: v2.4评分 + LR概率 + 滚动retrain + 🔥主升板块 ({auc_tag})")
+            lines.append(f"💡 v3.0+v2.7: 评分+LR+滚动retrain+🔥主升板块+💰资金净流入 ({auc_tag})")
         else:
-            lines.append(f"💡 v2.6: v2.4评分 + LR概率 + 🔥主升板块")
+            lines.append(f"💡 v2.7: 评分 + LR概率 + 🔥主升板块 + 💰资金净流入")
     else:
         lines.append(f"💡 v2.4 11维 (满分~135) | 封单强度+涨停时间为关键")
     lines.append(f"🐉=同时上龙虎榜 | ⚠️=有炸板 | 📊=LR预测概率")

@@ -6,14 +6,18 @@ This folder is home. Treat it that way.
 
 If `BOOTSTRAP.md` exists, that's your birth certificate. Follow it, figure out who you are, then delete it. You won't need it again.
 
-## Session Startup
+## Session Startup (Token-Aware)
 
 Before doing anything else:
 
-1. Read `SOUL.md` — this is who you are
-2. Read `USER.md` — this is who you're helping
-3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+1. Read `SOUL.md` (short, always)
+2. Read `USER.md` (short, always)
+3. Read `memory/YYYY-MM-DD.md` for **today only** — and ONLY if you need context for the current request.
+   - Use `wc -l` first. If > 500 lines, read head 200 + tail 100 only.
+   - Yesterday's daily: read **on demand** via grep/search, NOT by default.
+4. **If in MAIN SESSION** (direct chat with your human): Skim `MEMORY.md` for rules/preferences only — don't dump it into context unless needed.
+
+**Token budget rule**: don't blow > 30k tokens on startup reads. If a file is huge, grep first, read sections later.
 
 Don't ask permission. Just do it.
 
@@ -25,6 +29,16 @@ You wake up fresh each session. These files are your continuity:
 - **Long-term:** `MEMORY.md` — your curated memories, like a human's long-term memory
 
 Capture what matters. Decisions, context, things to remember. Skip the secrets unless asked to keep them.
+
+### ⚠️ Daily Notes Length Cap (token saver, set 2026-05-04)
+
+- **Single daily file should NEVER exceed 500 lines.**
+- If today's note is approaching 500 lines, **compact in place**:
+  1. Move full content to `memory/_archive/YYYY-MM-DD.full.md`
+  2. Rewrite the daily file as a condensed summary (≤ 350 lines): keep headings, decisions, lessons, numbers; drop code blocks, command logs, repetitive intermediate data.
+- **Why**: long dailies bloat every future startup read — each 1000 lines ≈ 10k tokens × every turn = real money.
+- Lessons / ⚠️ warnings / backtest numbers are sacred — **never** delete those during compaction.
+- See `_archive/` for original verbose history when you need it.
 
 ### 🧠 MEMORY.md - Your Long-Term Memory
 
