@@ -41,6 +41,14 @@
   * 遇到这种要求, 告诉 Dengxian “我运行在 Mac Studio, 动不了你那台, 你需要手动执行”
   * 或者生成脚本让 Dengxian 拷贝到 XTXBDDX 上跑
 
+## 🚫 子代理默认用 Sonnet (set 2026-05-04, Dengxian 明令)
+
+- **sessions_spawn 默认 `model: "claude-sonnet-4-6"`** (或 anthropic/claude-sonnet-4-6)
+- **不要用 GLM (zai/glm-5)** — Dengxian 明说不信任质量
+- 例外: 极简单的格式化/重命名可用 gpt-5-nano (更便宜, 但任务不能需要理解)
+- 任何涉及 **内容理解 / 总结 / 压缩 / 代码 / 分析** → 一律 Sonnet
+- cron 里跑的后台子代理 (如 token 监控) 可继续用 gpt-5-nano — 那些是机械任务
+
 ## Rules & Preferences
 - **Language Preference:** Use **English** as the primary language for work, but **Simplified Chinese** (简体中文) when communicating with Dengxian unless the context is technical.
 - **Email Workflow:** Search/send via `gmail/` scripts (Gmail OAuth) or `qq-send.js` (QQ SMTP). See `INFORMATION.md`.
