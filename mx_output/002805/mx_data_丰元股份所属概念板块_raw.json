@@ -1,0 +1,482 @@
+{
+  "success": true,
+  "status": 0,
+  "code": 0,
+  "message": "ok",
+  "data": {
+    "requestId": null,
+    "message": "OK",
+    "status": 0,
+    "code": 0,
+    "data": {
+      "protocolType": "SEARCH_DATA",
+      "id": "2b8e8978-d47d-40f6-9642-561be0670d3c",
+      "refSeq": null,
+      "keyEntityList": null,
+      "searchDataResultDTO": {
+        "questionId": "4f316d43-77f1-4adb-89a6-6ae25e930770",
+        "dataTableDTOList": [
+          {
+            "code": "002805.SZ",
+            "entityName": "板块代码",
+            "table": {
+              "headName": [
+                "板块名称"
+              ],
+              "0": [
+                "化工原料"
+              ],
+              "1": [
+                "QFII重仓"
+              ],
+              "2": [
+                "预亏预减"
+              ],
+              "3": [
+                "锂电池"
+              ],
+              "4": [
+                "融资融券"
+              ],
+              "5": [
+                "新能源车"
+              ],
+              "6": [
+                "昨日涨停"
+              ],
+              "7": [
+                "昨日连板"
+              ],
+              "8": [
+                "固态电池"
+              ],
+              "9": [
+                "昨日涨停_含一字"
+              ],
+              "10": [
+                "昨日连板_含一字"
+              ],
+              "11": [
+                "东方财富热股"
+              ],
+              "12": [
+                "最近多板"
+              ],
+              "13": [
+                "电池技术"
+              ],
+              "14": [
+                "近期新高"
+              ],
+              "15": [
+                "百日新高 "
+              ]
+            },
+            "rawTable": {},
+            "truncateRawTable": {},
+            "nameMap": {
+              "0": "861020.EI",
+              "1": "861034.EI",
+              "2": "861053.EI",
+              "3": "861057.EI",
+              "4": "861076.EI",
+              "5": "861206.EI",
+              "6": "861225.EI",
+              "7": "861226.EI",
+              "8": "861361.EI",
+              "9": "861413.EI",
+              "10": "861414.EI",
+              "11": "861571.EI",
+              "12": "861572.EI",
+              "13": "861594.EI",
+              "14": "861620.EI",
+              "15": "861622.EI"
+            },
+            "headNameMap": {},
+            "field": {
+              "returnCode": "RPT_CONCEPT_INDEX",
+              "returnName": "所属概念",
+              "classCode": "007202",
+              "checkedRelatedIndicators": true,
+              "startDate": "2026-05-05 00:00:00",
+              "endDate": "2026-05-05 00:00:00",
+              "fuzzy": true,
+              "defineType": 0,
+              "isLoopN": false,
+              "isGroup": false,
+              "returnSourceCode": "INDEX_CODE,INDEX_NAME_ABBR,INDEX_NAME",
+              "returnSourceName": "板块代码,板块简称,板块名称",
+              "nestedSubName": "板块代码",
+              "tableType": "10"
+            },
+            "macroAttributeExcelMap": {},
+            "fieldSet": [
+              {
+                "returnCode": "RPT_CONCEPT_INDEX",
+                "returnName": "所属概念",
+                "classCode": "007202",
+                "checkedRelatedIndicators": true,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "defineType": 0,
+                "isLoopN": false,
+                "isGroup": false,
+                "returnSourceCode": "INDEX_CODE,INDEX_NAME_ABBR,INDEX_NAME",
+                "returnSourceName": "板块代码,板块简称,板块名称",
+                "nestedSubName": "板块代码",
+                "tableType": "10"
+              }
+            ],
+            "dataTableType": "F10_TABLE",
+            "inputTitle": "丰元股份(002805.SZ)所属概念板块",
+            "rowInfo": {},
+            "colInfo": {},
+            "indicatorOrder": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15"
+            ],
+            "tipFlags": [],
+            "hasThumbnail": true,
+            "indicatorLimited": false,
+            "dataPositionEnum": "MetricLeftTimeTop",
+            "orderCol": {},
+            "jumpUrlList": [],
+            "dataTypeEnum": "F9",
+            "dateRuleSet": [],
+            "freqConvert": false,
+            "deleteInfo": [],
+            "macroCodeMap": {},
+            "entityTagDTO": {
+              "entityId": "1000011552",
+              "entityType": "SEC",
+              "entityTypeCode": "058001001",
+              "entityTypeName": "A股",
+              "classCode": "002001",
+              "className": "沪深京股票",
+              "fullName": "丰元股份",
+              "secuCode": "002805",
+              "market": "0",
+              "marketChar": ".SZ",
+              "correct": false,
+              "hasKLine": false,
+              "valuation": false
+            },
+            "nestTableEnum": "BELONG_CONCEPT",
+            "entityTagDTOList": [
+              {
+                "entityId": "1000011552",
+                "entityType": "SEC",
+                "entityTypeCode": "058001001",
+                "entityTypeName": "A股",
+                "classCode": "002001",
+                "className": "沪深京股票",
+                "fullName": "丰元股份",
+                "secuCode": "002805",
+                "market": "0",
+                "marketChar": ".SZ",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              }
+            ],
+            "indexTable": false,
+            "edbThirdData": false,
+            "dataUpdate": {},
+            "supportsTimeSeries": false,
+            "estimatedTokens": 0,
+            "summaryTips": {
+              "periodicalReport": null
+            },
+            "nestEntityListMap": {
+              "丰元股份|所属概念": [
+                {
+                  "entityId": "1000158099",
+                  "entityType": "INDEX",
+                  "entityTypeCode": "DC_CONCEPT",
+                  "entityTypeName": "东财概念指数",
+                  "classCode": "006007",
+                  "className": "DC_CONCEPT_INDEX",
+                  "publishCode": "905017012",
+                  "fullName": "化工原料",
+                  "shortName": "",
+                  "matchWord": "861020.EI",
+                  "offset": 0,
+                  "length": 9,
+                  "secuCode": "861020",
+                  "market": "47",
+                  "marketChar": ".EI",
+                  "correct": false,
+                  "correctWord": "",
+                  "hasKLine": false,
+                  "valuation": false
+                },
+                {
+                  "entityId": "1000158803",
+                  "entityType": "INDEX",
+                  "entityTypeCode": "DC_CONCEPT",
+                  "entityTypeName": "东财概念指数",
+                  "classCode": "006007",
+                  "className": "DC_CONCEPT_INDEX",
+                  "publishCode": "905017012",
+                  "fullName": "QFII重仓",
+                  "shortName": "",
+                  "matchWord": "861034.EI",
+                  "offset": 10,
+                  "length": 9,
+                  "secuCode": "861034",
+                  "market": "47",
+                  "marketChar": ".EI",
+                  "correct": false,
+                  "correctWord": "",
+                  "hasKLine": false,
+                  "valuation": false
+                },
+                {
+                  "entityId": "1000155635",
+                  "entityType": "INDEX",
+                  "entityTypeCode": "DC_CONCEPT",
+                  "entityTypeName": "东财概念指数",
+                  "classCode": "006007",
+                  "className": "DC_CONCEPT_INDEX",
+                  "publishCode": "905017012",
+                  "fullName": "预亏预减",
+                  "shortName": "",
+                  "matchWord": "861053.EI",
+                  "offset": 20,
+                  "length": 9,
+                  "secuCode": "861053",
+                  "market": "47",
+                  "marketChar": ".EI",
+                  "correct": false,
+                  "correctWord": "",
+                  "hasKLine": false,
+                  "valuation": false
+                },
+                {
+                  "entityId": "1000155638",
+                  "entityType": "INDEX",
+                  "entityTypeCode": "DC_CONCEPT",
+                  "entityTypeName": "东财概念指数",
+                  "classCode": "006007",
+                  "className": "DC_CONCEPT_INDEX",
+                  "publishCode": "905017012",
+                  "fullName": "锂电池",
+                  "shortName": "",
+                  "matchWord": "861057.EI",
+                  "offset": 30,
+                  "length": 9,
+                  "secuCode": "861057",
+                  "market": "47",
+                  "marketChar": ".EI",
+                  "correct": false,
+                  "correctWord": "",
+                  "hasKLine": false,
+                  "valuation": false
+                },
+                {
+                  "entityId": "1000156685",
+                  "entityType": "INDEX",
+                  "entityTypeCode": "DC_CONCEPT",
+                  "entityTypeName": "东财概念指数",
+                  "classCode": "006007",
+                  "className": "DC_CONCEPT_INDEX",
+                  "publishCode": "905017012",
+                  "fullName": "融资融券",
+                  "shortName": "",
+                  "matchWord": "861076.EI",
+                  "offset": 40,
+                  "length": 9,
+                  "secuCode": "861076",
+                  "market": "47",
+                  "marketChar": ".EI",
+                  "correct": false,
+                  "correctWord": "",
+                  "hasKLine": false,
+                  "valuation": false
+                },
+                {
+                  "entityId": "1000738041",
+                  "entityType": "INDEX",
+                  "entityTypeCode": "DC_CONCEPT",
+                  "entityTypeName": "东财概念指数",
+                  "classCode": "006007",
+                  "className": "DC_CONCEPT_INDEX",
+                  "publishCode": "905017012",
+                  "fullName": "新能源车",
+                  "shortName": "",
+                  "matchWord": "861206.EI",
+                  "offset": 50,
+                  "length": 9,
+                  "secuCode": "861206",
+                  "market": "47",
+                  "marketChar": ".EI",
+                  "correct": false,
+                  "correctWord": "",
+                  "hasKLine": false,
+                  "valuation": false
+                },
+                {
+                  "entityId": "1000995014",
+                  "entityType": "INDEX",
+                  "entityTypeCode": "DC_CONCEPT",
+                  "entityTypeName": "东财概念指数",
+                  "classCode": "006007",
+                  "className": "DC_CONCEPT_INDEX",
+                  "publishCode": "905017012",
+                  "fullName": "昨日涨停",
+                  "shortName": "",
+                  "matchWord": "861225.EI",
+                  "offset": 60,
+                  "length": 9,
+                  "secuCode": "861225",
+                  "market": "47",
+                  "marketChar": ".EI",
+                  "correct": false,
+                  "correctWord": "",
+                  "hasKLine": false,
+                  "valuation": false
+                },
+                {
+                  "entityId": "1000995015",
+                  "entityType": "INDEX",
+                  "entityTypeCode": "DC_CONCEPT",
+                  "entityTypeName": "东财概念指数",
+                  "classCode": "006007",
+                  "className": "DC_CONCEPT_INDEX",
+                  "publishCode": "905017012",
+                  "fullName": "昨日连板",
+                  "shortName": "",
+                  "matchWord": "861226.EI",
+                  "offset": 70,
+                  "length": 9,
+                  "secuCode": "861226",
+                  "market": "47",
+                  "marketChar": ".EI",
+                  "correct": false,
+                  "correctWord": "",
+                  "hasKLine": false,
+                  "valuation": false
+                },
+                {
+                  "entityId": "1002478635",
+                  "entityType": "INDEX",
+                  "entityTypeCode": "DC_CONCEPT",
+                  "entityTypeName": "东财概念指数",
+                  "classCode": "006007",
+                  "className": "DC_CONCEPT_INDEX",
+                  "publishCode": "905017012",
+                  "fullName": "固态电池",
+                  "shortName": "",
+                  "matchWord": "861361.EI",
+                  "offset": 80,
+                  "length": 9,
+                  "secuCode": "861361",
+                  "market": "47",
+                  "marketChar": ".EI",
+                  "correct": false,
+                  "correctWord": "",
+                  "hasKLine": false,
+                  "valuation": false
+                },
+                {
+                  "entityId": "1002884502",
+                  "entityType": "INDEX",
+                  "entityTypeCode": "DC_CONCEPT",
+                  "entityTypeName": "东财概念指数",
+                  "classCode": "006007",
+                  "className": "DC_CONCEPT_INDEX",
+                  "publishCode": "905017012",
+                  "fullName": "昨日涨停_含一字",
+                  "shortName": "",
+                  "matchWord": "861413.EI",
+                  "offset": 90,
+                  "length": 9,
+                  "secuCode": "861413",
+                  "market": "47",
+                  "marketChar": ".EI",
+                  "correct": false,
+                  "correctWord": "",
+                  "hasKLine": false,
+                  "valuation": false
+                },
+                {
+                  "entityId": "1002884503",
+                  "entityType": "INDEX",
+                  "entityTypeCode": "DC_CONCEPT",
+                  "entityTypeName": "东财概念指数",
+                  "classCode": "006007",
+                  "className": "DC_CONCEPT_INDEX",
+                  "publishCode": "905017012",
+                  "fullName": "昨日连板_含一字",
+                  "shortName": "",
+                  "matchWord": "861414.EI",
+                  "offset": 100,
+                  "length": 9,
+                  "secuCode": "861414",
+                  "market": "47",
+                  "marketChar": ".EI",
+                  "correct": false,
+                  "correctWord": "",
+                  "hasKLine": false,
+                  "valuation": false
+                }
+              ]
+            },
+            "excelTimeTruncate": false,
+            "frontendEntityName": "丰元股份",
+            "frontendEntityCode": "002805.SZ",
+            "frontendTitle": "所属概念板块",
+            "frontendDesc": "",
+            "indicatorCount": 0,
+            "fieldParameterStr": "",
+            "tdayEnum": "NORMAL"
+          }
+        ],
+        "condition": {
+          "search_data_task_0": [
+            "丰元股份",
+            "所属概念",
+            "2026-05-05至2026-05-05"
+          ]
+        },
+        "entityTagDTOList": [
+          {
+            "entityId": "1000011552",
+            "entityType": "SEC",
+            "entityTypeCode": "058001001",
+            "entityTypeName": "A股",
+            "classCode": "002001",
+            "className": "沪深京股票",
+            "fullName": "丰元股份",
+            "secuCode": "002805",
+            "market": "0",
+            "marketChar": ".SZ",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          }
+        ]
+      },
+      "entityName": null,
+      "message": null,
+      "tableTruncated": false
+    },
+    "stack": null
+  },
+  "requestId": "16cdae1f147f4a2b8c416284b0dc7e71"
+}

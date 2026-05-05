@@ -1,0 +1,8 @@
+金融数据查询结果说明
+========================================
+查询内容: 002805主力资金净流入
+数据文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/watch/mx_data_002805主力资金净流入.xlsx
+描述文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/watch/mx_data_002805主力资金净流入_description.txt
+数据行数: 6
+表数量: 2
+Sheet 列表: 丰元股份(002805.SZ)的(区间)主力净流入资金、(区间)资金净流入天数等, 丰元股份(002805.SZ)的超大单流出资金、大单流入资金等

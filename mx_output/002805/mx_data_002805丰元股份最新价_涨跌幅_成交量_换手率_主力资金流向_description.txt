@@ -1,0 +1,8 @@
+金融数据查询结果说明
+========================================
+查询内容: 002805丰元股份最新价 涨跌幅 成交量 换手率 主力资金流向
+数据文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/mx_data_002805丰元股份最新价_涨跌幅_成交量_换手率_主力资金流向.xlsx
+描述文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/mx_data_002805丰元股份最新价_涨跌幅_成交量_换手率_主力资金流向_description.txt
+数据行数: 6
+表数量: 2
+Sheet 列表: 丰元股份(002805.SZ)的成交量、收盘价等, 丰元股份(002805.SZ)的(区间)主力净流入资金、(区间)资金净流入天数等

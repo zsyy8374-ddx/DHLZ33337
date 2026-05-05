@@ -1,0 +1,259 @@
+{
+  "success": true,
+  "status": 0,
+  "code": 0,
+  "message": "ok",
+  "data": {
+    "requestId": null,
+    "message": "OK",
+    "status": 0,
+    "code": 0,
+    "data": {
+      "protocolType": "SEARCH_DATA",
+      "id": "b96cbb30-3269-48eb-a63a-0ef395e1365e",
+      "refSeq": null,
+      "keyEntityList": null,
+      "searchDataResultDTO": {
+        "questionId": "8fb732ec-8e56-4abc-a33a-961605921006",
+        "dataTableDTOList": [
+          {
+            "code": "90.BK0968",
+            "entityName": "2026-04-30",
+            "table": {
+              "100000000019292": [
+                "3"
+              ],
+              "headName": [
+                "固态电池"
+              ]
+            },
+            "rawTable": {
+              "100000000019292": [
+                "3"
+              ],
+              "headName": [
+                "固态电池"
+              ]
+            },
+            "truncateRawTable": {},
+            "nameMap": {
+              "100000000019292": "涨停家数",
+              "headNameSub": "数据来源",
+              "securityName": "股票名称",
+              "100000000020845": "涨停家数"
+            },
+            "headNameMap": {},
+            "field": {
+              "returnCode": "100000000019292",
+              "returnName": "涨停家数",
+              "classCode": "007109",
+              "checkedRelatedIndicators": false,
+              "startDate": "2026-05-05 00:00:00",
+              "endDate": "2026-05-05 00:00:00",
+              "fuzzy": false,
+              "dateGranularity": "DAY",
+              "defineType": -1,
+              "isLoopN": false,
+              "fixedParamValue": "IsHistory=0",
+              "quantType": "9",
+              "isGroup": false,
+              "returnSourceCode": "HIGHSTOC",
+              "returnSourceName": "涨停家数",
+              "graph": "1",
+              "unit": "0",
+              "tableType": "1"
+            },
+            "entityCodes": [
+              "90.BK0968",
+              "861361.EI"
+            ],
+            "macroAttributeExcelMap": {},
+            "fieldSet": [
+              {
+                "returnCode": "100000000020845",
+                "returnName": "涨停家数",
+                "classCode": "007101",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "quantType": "1",
+                "isGroup": false,
+                "returnSourceCode": "ZTJS",
+                "returnSourceName": "涨停家数",
+                "graph": "1",
+                "unit": "0",
+                "tableType": "1"
+              },
+              {
+                "returnCode": "100000000019292",
+                "returnName": "涨停家数",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "HIGHSTOC",
+                "returnSourceName": "涨停家数",
+                "graph": "1",
+                "unit": "0",
+                "tableType": "1"
+              }
+            ],
+            "dataTableType": "NORM_TABLE",
+            "rowInfo": {},
+            "colInfo": {},
+            "indicatorOrder": [
+              "100000000019292"
+            ],
+            "tipFlags": [],
+            "dataType": "数据浏览器",
+            "title": "固态电池的涨停家数",
+            "hasThumbnail": true,
+            "indicatorLimited": false,
+            "dataPositionEnum": "MetricLeftEntityTop",
+            "orderCol": {},
+            "jumpUrlList": [
+              {
+                "choiceUrl": "EM://stockdatacenter?type=browser&modType=BLOCK&code=007361&indId=100000000019292|121:2026-04-30",
+                "typeName": "数据浏览器"
+              },
+              {
+                "choiceUrl": "EM://stockdatacenter?type=browser&modType=INDEX&code=861361.EI&indId=100000000020845|121:2026-04-30",
+                "typeName": "数据浏览器"
+              }
+            ],
+            "dataTypeEnum": "DATA_BROWSER",
+            "dateRuleSet": [],
+            "freqConvert": false,
+            "deleteInfo": [],
+            "macroCodeMap": {},
+            "entityTagDTO": {
+              "entityId": "BK0968",
+              "entityType": "BLOCK",
+              "entityTypeCode": "BLOCK",
+              "entityTypeName": "概念板块",
+              "classCode": "005003",
+              "className": "概念板块",
+              "fullName": "固态电池",
+              "secuCode": "BK0968",
+              "market": "90",
+              "correct": false,
+              "hasKLine": false,
+              "valuation": false
+            },
+            "entityTagDTOList": [
+              {
+                "entityId": "BK0968",
+                "entityType": "BLOCK",
+                "entityTypeCode": "BLOCK",
+                "entityTypeName": "概念板块",
+                "classCode": "005003",
+                "className": "概念板块",
+                "fullName": "固态电池",
+                "secuCode": "BK0968",
+                "market": "90",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              },
+              {
+                "entityId": "1002478635",
+                "entityType": "INDEX",
+                "entityTypeCode": "DC_CONCEPT",
+                "entityTypeName": "东财概念指数",
+                "classCode": "006007",
+                "className": "DC_CONCEPT_INDEX",
+                "publishCode": "905017012",
+                "fullName": "固态电池",
+                "secuCode": "861361",
+                "market": "47",
+                "marketChar": ".EI",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              }
+            ],
+            "indexTable": false,
+            "edbThirdData": false,
+            "dataUpdate": {
+              "2026-04-30": false
+            },
+            "supportsTimeSeries": false,
+            "estimatedTokens": 0,
+            "summaryTips": {
+              "periodicalReport": null
+            },
+            "nestEntityListMap": {},
+            "excelTimeTruncate": false,
+            "frontendEntityName": "",
+            "frontendEntityCode": "",
+            "frontendTitle": "",
+            "frontendDesc": "",
+            "indicatorCount": 0,
+            "fieldParameterStr": "",
+            "tdayEnum": "NORMAL"
+          }
+        ],
+        "condition": {
+          "search_data_task_0": [
+            "固态电池",
+            "涨停家数",
+            "2026-05-05至2026-05-05"
+          ],
+          "search_data_task_1": [
+            "固态电池",
+            "涨停家数",
+            "2026-05-05至2026-05-05"
+          ]
+        },
+        "entityTagDTOList": [
+          {
+            "entityId": "BK0968",
+            "entityType": "BLOCK",
+            "entityTypeCode": "BLOCK",
+            "entityTypeName": "概念板块",
+            "classCode": "005003",
+            "className": "概念板块",
+            "fullName": "固态电池",
+            "secuCode": "BK0968",
+            "market": "90",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          },
+          {
+            "entityId": "1002478635",
+            "entityType": "INDEX",
+            "entityTypeCode": "DC_CONCEPT",
+            "entityTypeName": "东财概念指数",
+            "classCode": "006007",
+            "className": "DC_CONCEPT_INDEX",
+            "publishCode": "905017012",
+            "fullName": "固态电池",
+            "secuCode": "861361",
+            "market": "47",
+            "marketChar": ".EI",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          }
+        ]
+      },
+      "entityName": null,
+      "message": null,
+      "tableTruncated": false
+    },
+    "stack": null
+  },
+  "requestId": "685c77dabf124a0995bffb9c89db3d6e"
+}

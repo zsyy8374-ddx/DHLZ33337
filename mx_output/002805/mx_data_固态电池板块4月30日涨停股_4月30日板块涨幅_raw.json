@@ -1,0 +1,356 @@
+{
+  "success": true,
+  "status": 0,
+  "code": 0,
+  "message": "ok",
+  "data": {
+    "requestId": null,
+    "message": "OK",
+    "status": 0,
+    "code": 0,
+    "data": {
+      "protocolType": "SEARCH_DATA",
+      "id": "971ab2e2-c2d2-4849-9dc9-84d1b6acf1a7",
+      "refSeq": null,
+      "keyEntityList": null,
+      "searchDataResultDTO": {
+        "questionId": "5aebc2e6-9668-4b18-94b1-a6575fd89a2b",
+        "dataTableDTOList": [
+          {
+            "code": "90.BK0968",
+            "entityName": "固态电池",
+            "table": {
+              "100000000019292": [
+                "3"
+              ],
+              "headName": [
+                "2026-04-30"
+              ]
+            },
+            "rawTable": {
+              "100000000019292": [
+                "3"
+              ],
+              "headName": [
+                "2026-04-30"
+              ]
+            },
+            "truncateRawTable": {},
+            "nameMap": {
+              "100000000019292": "涨停家数",
+              "headNameSub": "数据来源"
+            },
+            "headNameMap": {},
+            "field": {
+              "returnCode": "100000000019292",
+              "returnName": "涨停家数",
+              "classCode": "007109",
+              "checkedRelatedIndicators": false,
+              "startDate": "2026-04-30 00:00:00",
+              "endDate": "2026-04-30 00:00:00",
+              "fuzzy": false,
+              "dateGranularity": "DAY",
+              "defineType": -1,
+              "isLoopN": false,
+              "fixedParamValue": "IsHistory=0",
+              "quantType": "9",
+              "isGroup": false,
+              "returnSourceCode": "HIGHSTOC",
+              "returnSourceName": "涨停家数",
+              "graph": "1",
+              "unit": "0",
+              "tableType": "1"
+            },
+            "macroAttributeExcelMap": {},
+            "fieldSet": [
+              {
+                "returnCode": "100000000019292",
+                "returnName": "涨停家数",
+                "classCode": "007109",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-04-30 00:00:00",
+                "endDate": "2026-04-30 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0",
+                "quantType": "9",
+                "isGroup": false,
+                "returnSourceCode": "HIGHSTOC",
+                "returnSourceName": "涨停家数",
+                "graph": "1",
+                "unit": "0",
+                "tableType": "1"
+              }
+            ],
+            "dataTableType": "NORM_TABLE",
+            "rowInfo": {},
+            "colInfo": {},
+            "indicatorOrder": [
+              "100000000019292"
+            ],
+            "tipFlags": [],
+            "dataType": "数据浏览器",
+            "title": "固态电池的涨停家数",
+            "hasThumbnail": true,
+            "indicatorLimited": false,
+            "dataPositionEnum": "MetricLeftTimeTop",
+            "orderCol": {},
+            "jumpUrlList": [
+              {
+                "choiceUrl": "EM://stockdatacenter?type=browser&modType=BLOCK&code=007361&indId=100000000019292|121:2026-04-30",
+                "typeName": "板块数据浏览器"
+              }
+            ],
+            "dataTypeEnum": "DATA_BROWSER",
+            "dateRuleSet": [],
+            "freqConvert": false,
+            "deleteInfo": [],
+            "macroCodeMap": {},
+            "entityTagDTO": {
+              "entityId": "BK0968",
+              "entityType": "BLOCK",
+              "entityTypeCode": "BLOCK",
+              "entityTypeName": "概念板块",
+              "classCode": "005003",
+              "className": "概念板块",
+              "fullName": "固态电池",
+              "secuCode": "BK0968",
+              "market": "90",
+              "correct": false,
+              "hasKLine": false,
+              "valuation": false
+            },
+            "entityTagDTOList": [
+              {
+                "entityId": "BK0968",
+                "entityType": "BLOCK",
+                "entityTypeCode": "BLOCK",
+                "entityTypeName": "概念板块",
+                "classCode": "005003",
+                "className": "概念板块",
+                "fullName": "固态电池",
+                "secuCode": "BK0968",
+                "market": "90",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              }
+            ],
+            "indexTable": false,
+            "edbThirdData": false,
+            "dataUpdate": {
+              "2026-04-30": false
+            },
+            "supportsTimeSeries": false,
+            "estimatedTokens": 0,
+            "summaryTips": {
+              "periodicalReport": null
+            },
+            "nestEntityListMap": {},
+            "excelTimeTruncate": false,
+            "frontendEntityName": "",
+            "frontendEntityCode": "",
+            "frontendTitle": "",
+            "frontendDesc": "",
+            "indicatorCount": 0,
+            "fieldParameterStr": "",
+            "tdayEnum": "NORMAL"
+          },
+          {
+            "code": "90.BK0968",
+            "entityName": "固态电池",
+            "table": {
+              "326808": [
+                "-0.6176%"
+              ],
+              "headName": [
+                "2026-04-30(日)"
+              ]
+            },
+            "rawTable": {
+              "326808": [
+                "-0.006176001411"
+              ],
+              "headName": [
+                "2026-04-30"
+              ]
+            },
+            "truncateRawTable": {},
+            "nameMap": {
+              "326808": "涨跌幅(算数平均)",
+              "headNameSub": "数据来源"
+            },
+            "headNameMap": {},
+            "field": {
+              "returnCode": "326808",
+              "returnName": "涨跌幅(算数平均)",
+              "classCode": "007121",
+              "checkedRelatedIndicators": false,
+              "startDate": "2026-04-30 00:00:00",
+              "endDate": "2026-04-30 00:00:00",
+              "fuzzy": false,
+              "dateGranularity": "DAY",
+              "defineType": -1,
+              "isLoopN": false,
+              "fixedParamValue": "IsHistory=0,Period=1",
+              "isGroup": false,
+              "returnSourceCode": "ZDFSSPJ",
+              "returnSourceName": "涨跌幅(算数平均)_板块_序列",
+              "graph": "0",
+              "unit": "1",
+              "tableType": "20",
+              "unitName": "100%",
+              "unitDesc": "100%"
+            },
+            "macroAttributeExcelMap": {},
+            "fieldSet": [
+              {
+                "returnCode": "326808",
+                "returnName": "涨跌幅(算数平均)",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-04-30 00:00:00",
+                "endDate": "2026-04-30 00:00:00",
+                "fuzzy": false,
+                "dateGranularity": "DAY",
+                "defineType": -1,
+                "isLoopN": false,
+                "fixedParamValue": "IsHistory=0,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "ZDFSSPJ",
+                "returnSourceName": "涨跌幅(算数平均)_板块_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "100%",
+                "unitDesc": "100%"
+              }
+            ],
+            "dataTableType": "NORM_TABLE",
+            "rowInfo": {},
+            "colInfo": {},
+            "indicatorOrder": [
+              "326808"
+            ],
+            "tipFlags": [],
+            "dataType": "数据浏览器",
+            "title": "固态电池的涨跌幅(算数平均)",
+            "hasThumbnail": true,
+            "indicatorLimited": false,
+            "dataPositionEnum": "MetricLeftTimeTop",
+            "orderCol": {},
+            "jumpUrlList": [
+              {
+                "choiceUrl": "EM://stockdatacenter?type=browser&modType=BLOCK&code=007361&indId=100000000021306|121:GetLatestDay|469:0|261:108:%:%",
+                "typeName": "板块数据浏览器"
+              }
+            ],
+            "dataTypeEnum": "DATA_BROWSER",
+            "dateRuleSet": [],
+            "freqConvert": false,
+            "deleteInfo": [],
+            "macroCodeMap": {},
+            "entityTagDTO": {
+              "entityId": "BK0968",
+              "entityType": "BLOCK",
+              "entityTypeCode": "BLOCK",
+              "entityTypeName": "概念板块",
+              "classCode": "005003",
+              "className": "概念板块",
+              "fullName": "固态电池",
+              "secuCode": "BK0968",
+              "market": "90",
+              "correct": false,
+              "hasKLine": false,
+              "valuation": false
+            },
+            "entityTagDTOList": [
+              {
+                "entityId": "BK0968",
+                "entityType": "BLOCK",
+                "entityTypeCode": "BLOCK",
+                "entityTypeName": "概念板块",
+                "classCode": "005003",
+                "className": "概念板块",
+                "fullName": "固态电池",
+                "secuCode": "BK0968",
+                "market": "90",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              }
+            ],
+            "indexTable": false,
+            "edbThirdData": false,
+            "dataUpdate": {
+              "2026-04-30": false
+            },
+            "supportsTimeSeries": false,
+            "estimatedTokens": 0,
+            "summaryTips": {
+              "periodicalReport": null
+            },
+            "nestEntityListMap": {},
+            "excelTimeTruncate": false,
+            "frontendEntityName": "",
+            "frontendEntityCode": "",
+            "frontendTitle": "",
+            "frontendDesc": "",
+            "indicatorCount": 0,
+            "fieldParameterStr": "",
+            "tdayEnum": "NORMAL"
+          }
+        ],
+        "condition": {
+          "search_data_task_1": [
+            "固态电池",
+            "涨停家数",
+            "2026-04-30至2026-04-30"
+          ],
+          "search_data_task_0": [
+            "固态电池",
+            "涨跌幅(算数平均)",
+            "2026-04-30至2026-04-30"
+          ]
+        },
+        "entityTagDTOList": [
+          {
+            "entityId": "BK0968",
+            "entityType": "BLOCK",
+            "entityTypeCode": "BLOCK",
+            "entityTypeName": "概念板块",
+            "classCode": "005003",
+            "className": "概念板块",
+            "fullName": "固态电池",
+            "secuCode": "BK0968",
+            "market": "90",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          },
+          {
+            "entityId": "BK0968",
+            "entityType": "BLOCK",
+            "entityTypeCode": "BLOCK",
+            "entityTypeName": "概念板块",
+            "classCode": "005003",
+            "className": "概念板块",
+            "fullName": "固态电池",
+            "secuCode": "BK0968",
+            "market": "90",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          }
+        ]
+      },
+      "entityName": null,
+      "message": null,
+      "tableTruncated": false
+    },
+    "stack": null
+  },
+  "requestId": "2da8881b493344d1abb4364669cd0fd6"
+}

@@ -1,0 +1,8 @@
+金融数据查询结果说明
+========================================
+查询内容: 固态电池板块4月30日涨停股 4月30日板块涨幅
+数据文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/mx_data_固态电池板块4月30日涨停股_4月30日板块涨幅.xlsx
+描述文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/mx_data_固态电池板块4月30日涨停股_4月30日板块涨幅_description.txt
+数据行数: 2
+表数量: 2
+Sheet 列表: 固态电池的涨停家数, 固态电池的涨跌幅(算数平均)

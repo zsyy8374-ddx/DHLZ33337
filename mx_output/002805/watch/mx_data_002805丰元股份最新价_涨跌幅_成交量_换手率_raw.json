@@ -1,0 +1,308 @@
+{
+  "success": true,
+  "status": 0,
+  "code": 0,
+  "message": "ok",
+  "data": {
+    "requestId": null,
+    "message": "OK",
+    "status": 0,
+    "code": 0,
+    "data": {
+      "protocolType": "SEARCH_DATA",
+      "id": "b81b1990-93c3-445d-b2a4-14377eef7574",
+      "refSeq": null,
+      "keyEntityList": null,
+      "searchDataResultDTO": {
+        "questionId": "9ccd4cf8-afc7-4392-b2cd-77f465261bcf",
+        "dataTableDTOList": [
+          {
+            "code": "002805.SZ",
+            "entityName": "丰元股份(002805.SZ)",
+            "table": {
+              "324785": [
+                "1304万股",
+                "2449万股",
+                "2538万股"
+              ],
+              "325898": [
+                "22.85元",
+                "20.77元",
+                "18.88元"
+              ],
+              "326865": [
+                "10.01%",
+                "10.01%",
+                "2.832%"
+              ],
+              "326699": [
+                "4.678%",
+                "8.783%",
+                "9.103%"
+              ],
+              "headName": [
+                "2026-04-30(日)",
+                "2026-04-29(日)",
+                "2026-04-28(日)"
+              ]
+            },
+            "rawTable": {
+              "324785": [
+                "13042577",
+                "24488376",
+                "25380980"
+              ],
+              "325898": [
+                "22.85",
+                "20.77",
+                "18.88"
+              ],
+              "326865": [
+                "0.10014443909484844",
+                "0.10010593220338987",
+                "0.028322440087145948"
+              ],
+              "326699": [
+                "4.6779",
+                "8.783",
+                "9.1032"
+              ],
+              "headName": [
+                "2026-04-30",
+                "2026-04-29",
+                "2026-04-28"
+              ]
+            },
+            "truncateRawTable": {},
+            "nameMap": {
+              "324785": "成交量",
+              "headNameSub": "数据来源",
+              "325898": "收盘价",
+              "326865": "涨跌幅",
+              "326699": "换手率"
+            },
+            "headNameMap": {},
+            "field": {
+              "returnCode": "324785",
+              "returnName": "成交量",
+              "classCode": "007121",
+              "checkedRelatedIndicators": false,
+              "startDate": "2026-05-05 00:00:00",
+              "endDate": "2026-05-05 00:00:00",
+              "fuzzy": true,
+              "dateGranularity": "DAY",
+              "defineType": 0,
+              "isLoopN": false,
+              "fixedParamValue": "Period=1",
+              "isGroup": false,
+              "returnSourceCode": "VOLUME",
+              "returnSourceName": "成交量(全品种)_序列",
+              "graph": "0",
+              "unit": "1",
+              "tableType": "20",
+              "unitName": "股",
+              "unitDesc": "股"
+            },
+            "entityCodes": [
+              "002805.SZ"
+            ],
+            "macroAttributeExcelMap": {},
+            "fieldSet": [
+              {
+                "returnCode": "326865",
+                "returnName": "涨跌幅",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "AdjustFlag=1,CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "PCTCHANGE",
+                "returnSourceName": "涨跌幅(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "100%",
+                "unitDesc": "100%"
+              },
+              {
+                "returnCode": "324785",
+                "returnName": "成交量",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "Period=1",
+                "isGroup": false,
+                "returnSourceCode": "VOLUME",
+                "returnSourceName": "成交量(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "股",
+                "unitDesc": "股"
+              },
+              {
+                "returnCode": "325898",
+                "returnName": "收盘价",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "AdjustFlag=1,CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "CLOSE",
+                "returnSourceName": "收盘价(全品种)_序列",
+                "graph": "0",
+                "unit": "2",
+                "tableType": "20",
+                "unitName": "元",
+                "unitDesc": "元"
+              },
+              {
+                "returnCode": "326699",
+                "returnName": "换手率",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "Period=1",
+                "isGroup": false,
+                "returnSourceCode": "TURN",
+                "returnSourceName": "换手率(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "%",
+                "unitDesc": "%"
+              }
+            ],
+            "dataTableType": "NORM_TABLE",
+            "rowInfo": {},
+            "colInfo": {},
+            "indicatorOrder": [
+              "324785",
+              "325898",
+              "326865",
+              "326699"
+            ],
+            "tipFlags": [],
+            "dataType": "数据浏览器",
+            "title": "丰元股份(002805.SZ)的成交量、收盘价等",
+            "hasThumbnail": true,
+            "indicatorLimited": false,
+            "dataPositionEnum": "MetricLeftTimeTop",
+            "orderCol": {},
+            "jumpUrlList": [
+              {
+                "choiceUrl": "EM://stockdatacenter?type=browser&modType=STOCK&code=002805.SZ&indId=100000000020860|121:GetLatestDay|261:102:股:股,100000000001098|121:GetLatestDay|513:1,100000000001097|121:GetLatestDay|261:108:%:%,100000000001099|121:GetLatestDay|261:108:%:%",
+                "typeName": "股票数据浏览器"
+              }
+            ],
+            "dataTypeEnum": "DATA_BROWSER",
+            "dateRuleSet": [],
+            "freqConvert": false,
+            "deleteInfo": [],
+            "macroCodeMap": {},
+            "entityTagDTO": {
+              "entityId": "1000011552",
+              "entityType": "SEC",
+              "entityTypeCode": "058001001",
+              "entityTypeName": "A股",
+              "classCode": "002001",
+              "className": "沪深京股票",
+              "fullName": "丰元股份",
+              "secuCode": "002805",
+              "market": "0",
+              "marketChar": ".SZ",
+              "correct": false,
+              "hasKLine": false,
+              "valuation": false
+            },
+            "entityTagDTOList": [
+              {
+                "entityId": "1000011552",
+                "entityType": "SEC",
+                "entityTypeCode": "058001001",
+                "entityTypeName": "A股",
+                "classCode": "002001",
+                "className": "沪深京股票",
+                "fullName": "丰元股份",
+                "secuCode": "002805",
+                "market": "0",
+                "marketChar": ".SZ",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              }
+            ],
+            "indexTable": false,
+            "edbThirdData": false,
+            "dataUpdate": {
+              "2026-04-30": false
+            },
+            "supportsTimeSeries": false,
+            "estimatedTokens": 0,
+            "summaryTips": {
+              "periodicalReport": null
+            },
+            "nestEntityListMap": {},
+            "excelTimeTruncate": false,
+            "frontendEntityName": "",
+            "frontendEntityCode": "",
+            "frontendTitle": "",
+            "frontendDesc": "",
+            "indicatorCount": 0,
+            "fieldParameterStr": "",
+            "tdayEnum": "TDAY"
+          }
+        ],
+        "condition": {
+          "search_data_task_0": [
+            "丰元股份",
+            "成交量收盘价涨跌幅换手率",
+            "2026-05-05至2026-05-05"
+          ]
+        },
+        "entityTagDTOList": [
+          {
+            "entityId": "1000011552",
+            "entityType": "SEC",
+            "entityTypeCode": "058001001",
+            "entityTypeName": "A股",
+            "classCode": "002001",
+            "className": "沪深京股票",
+            "fullName": "丰元股份",
+            "secuCode": "002805",
+            "market": "0",
+            "marketChar": ".SZ",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          }
+        ]
+      },
+      "entityName": null,
+      "message": null,
+      "tableTruncated": false
+    },
+    "stack": null
+  },
+  "requestId": "cd1c8fd27cfe4fdeb5f6ee14c60960eb"
+}

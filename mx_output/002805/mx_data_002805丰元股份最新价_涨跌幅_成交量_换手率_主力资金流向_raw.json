@@ -1,0 +1,942 @@
+{
+  "success": true,
+  "status": 0,
+  "code": 0,
+  "message": "ok",
+  "data": {
+    "requestId": null,
+    "message": "OK",
+    "status": 0,
+    "code": 0,
+    "data": {
+      "protocolType": "SEARCH_DATA",
+      "id": "ca665f9d-c398-4da9-9d53-0dd46d1a5ad6",
+      "refSeq": null,
+      "keyEntityList": null,
+      "searchDataResultDTO": {
+        "questionId": "52db3508-1178-4aa1-b3ed-ad8e7d8ece9e",
+        "dataTableDTOList": [
+          {
+            "code": "002805.SZ",
+            "entityName": "丰元股份(002805.SZ)",
+            "table": {
+              "324785": [
+                "1304万股",
+                "2449万股",
+                "2538万股"
+              ],
+              "325898": [
+                "22.85元",
+                "20.77元",
+                "18.88元"
+              ],
+              "326865": [
+                "10.01%",
+                "10.01%",
+                "2.832%"
+              ],
+              "326699": [
+                "4.678%",
+                "8.783%",
+                "9.103%"
+              ],
+              "327663": [
+                "3585万元",
+                "8242万元",
+                "2738万元"
+              ],
+              "327521": [
+                "6522万元",
+                "1.136亿元",
+                "1.142亿元"
+              ],
+              "327806": [
+                "6430万元",
+                "1.366亿元",
+                "8678万元"
+              ],
+              "327886": [
+                "6060万元",
+                "9578万元",
+                "1.536亿元"
+              ],
+              "327812": [
+                "6729万元",
+                "1.561亿元",
+                "1.566亿元"
+              ],
+              "327907": [
+                "5207万元",
+                "7438万元",
+                "1.794亿元"
+              ],
+              "327917": [
+                "5903万元",
+                "1.168亿元",
+                "2.016亿元"
+              ],
+              "headName": [
+                "2026-04-30(日)",
+                "2026-04-29(日)",
+                "2026-04-28(日)"
+              ]
+            },
+            "rawTable": {
+              "324785": [
+                "13042577",
+                "24488376",
+                "25380980"
+              ],
+              "325898": [
+                "22.85",
+                "20.77",
+                "18.88"
+              ],
+              "326865": [
+                "0.10014443909484844",
+                "0.10010593220338987",
+                "0.028322440087145948"
+              ],
+              "326699": [
+                "4.6779",
+                "8.783",
+                "9.1032"
+              ],
+              "327663": [
+                "35847083",
+                "82416779",
+                "27384430"
+              ],
+              "327521": [
+                "65220496",
+                "113568905",
+                "114182215"
+              ],
+              "327806": [
+                "64301015",
+                "136577465",
+                "86776794"
+              ],
+              "327886": [
+                "60602882",
+                "95779493",
+                "153602271"
+              ],
+              "327812": [
+                "67289280",
+                "156099733",
+                "156554233"
+              ],
+              "327907": [
+                "52071243",
+                "74378457",
+                "179396018"
+              ],
+              "327917": [
+                "59027269",
+                "116830966",
+                "201570417"
+              ],
+              "headName": [
+                "2026-04-30",
+                "2026-04-29",
+                "2026-04-28"
+              ]
+            },
+            "truncateRawTable": {},
+            "nameMap": {
+              "324785": "成交量",
+              "headNameSub": "数据来源",
+              "325898": "收盘价",
+              "326865": "涨跌幅",
+              "326699": "换手率",
+              "327663": "超大单流出资金",
+              "327521": "大单流入资金",
+              "327806": "大单流出资金",
+              "327886": "中单流入资金",
+              "327812": "中单流出资金",
+              "327907": "小单流入资金",
+              "327917": "小单流出资金"
+            },
+            "headNameMap": {},
+            "field": {
+              "returnCode": "324785",
+              "returnName": "成交量",
+              "classCode": "007121",
+              "checkedRelatedIndicators": false,
+              "startDate": "2026-05-05 00:00:00",
+              "endDate": "2026-05-05 00:00:00",
+              "fuzzy": true,
+              "dateGranularity": "DAY",
+              "defineType": 0,
+              "isLoopN": false,
+              "fixedParamValue": "Period=1",
+              "isGroup": false,
+              "returnSourceCode": "VOLUME",
+              "returnSourceName": "成交量(全品种)_序列",
+              "graph": "0",
+              "unit": "1",
+              "tableType": "20",
+              "unitName": "股",
+              "unitDesc": "股"
+            },
+            "entityCodes": [
+              "002805.SZ"
+            ],
+            "macroAttributeExcelMap": {},
+            "fieldSet": [
+              {
+                "returnCode": "327521",
+                "returnName": "大单流入资金",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "BIGDEAL_INFLOWQ",
+                "returnSourceName": "大单流入资金(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "元",
+                "unitDesc": "元"
+              },
+              {
+                "returnCode": "327886",
+                "returnName": "中单流入资金",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "MIDDEAL_INFLOWQ",
+                "returnSourceName": "中单流入资金(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "元",
+                "unitDesc": "元"
+              },
+              {
+                "returnCode": "326865",
+                "returnName": "涨跌幅",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "AdjustFlag=1,CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "PCTCHANGE",
+                "returnSourceName": "涨跌幅(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "100%",
+                "unitDesc": "100%"
+              },
+              {
+                "returnCode": "327663",
+                "returnName": "超大单流出资金",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "SUPERDEAL_OUTFLOWQ",
+                "returnSourceName": "超大单流出资金(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "元",
+                "unitDesc": "元"
+              },
+              {
+                "returnCode": "324785",
+                "returnName": "成交量",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "Period=1",
+                "isGroup": false,
+                "returnSourceCode": "VOLUME",
+                "returnSourceName": "成交量(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "股",
+                "unitDesc": "股"
+              },
+              {
+                "returnCode": "325898",
+                "returnName": "收盘价",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "AdjustFlag=1,CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "CLOSE",
+                "returnSourceName": "收盘价(全品种)_序列",
+                "graph": "0",
+                "unit": "2",
+                "tableType": "20",
+                "unitName": "元",
+                "unitDesc": "元"
+              },
+              {
+                "returnCode": "327812",
+                "returnName": "中单流出资金",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "MIDDEAL_OUTFLOWQ",
+                "returnSourceName": "中单流出资金(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "元",
+                "unitDesc": "元"
+              },
+              {
+                "returnCode": "326699",
+                "returnName": "换手率",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "Period=1",
+                "isGroup": false,
+                "returnSourceCode": "TURN",
+                "returnSourceName": "换手率(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "%",
+                "unitDesc": "%"
+              },
+              {
+                "returnCode": "327806",
+                "returnName": "大单流出资金",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "BIGDEAL_OUTFLOWQ",
+                "returnSourceName": "大单流出资金(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "元",
+                "unitDesc": "元"
+              },
+              {
+                "returnCode": "327907",
+                "returnName": "小单流入资金",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "SMALLDEAL_INFLOWQ",
+                "returnSourceName": "小单流入资金(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "元",
+                "unitDesc": "元"
+              },
+              {
+                "returnCode": "327917",
+                "returnName": "小单流出资金",
+                "classCode": "007121",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "fixedParamValue": "CurType=2,Period=1",
+                "isGroup": false,
+                "returnSourceCode": "SMALLDEAL_OUTFLOWQ",
+                "returnSourceName": "小单流出资金(全品种)_序列",
+                "graph": "0",
+                "unit": "1",
+                "tableType": "20",
+                "unitName": "元",
+                "unitDesc": "元"
+              }
+            ],
+            "dataTableType": "NORM_TABLE",
+            "rowInfo": {},
+            "colInfo": {},
+            "indicatorOrder": [
+              "324785",
+              "325898",
+              "326865",
+              "326699",
+              "327663",
+              "327521",
+              "327806",
+              "327886",
+              "327812",
+              "327907",
+              "327917"
+            ],
+            "tipFlags": [],
+            "dataType": "数据浏览器",
+            "title": "丰元股份(002805.SZ)的成交量、收盘价等",
+            "hasThumbnail": true,
+            "indicatorLimited": false,
+            "dataPositionEnum": "MetricLeftTimeTop",
+            "orderCol": {},
+            "jumpUrlList": [
+              {
+                "choiceUrl": "EM://stockdatacenter?type=browser&modType=STOCK&code=002805.SZ&indId=100000000020860|121:GetLatestDay|261:102:股:股,100000000001098|121:GetLatestDay|513:1,100000000001097|121:GetLatestDay|261:108:%:%,100000000001099|121:GetLatestDay|261:108:%:%,100000000006359|121:GetLatestDay|261:101:元:元,100000000004196|121:GetLatestDay|261:101:元:元,100000000004197|121:GetLatestDay|261:101:元:元,100000000004198|121:GetLatestDay|261:101:元:元,100000000004199|121:GetLatestDay|261:101:元:元,100000000004200|121:GetLatestDay|261:101:元:元,100000000004201|121:GetLatestDay|261:101:元:元",
+                "typeName": "股票数据浏览器"
+              }
+            ],
+            "dataTypeEnum": "DATA_BROWSER",
+            "dateRuleSet": [],
+            "freqConvert": false,
+            "deleteInfo": [],
+            "macroCodeMap": {},
+            "entityTagDTO": {
+              "entityId": "1000011552",
+              "entityType": "SEC",
+              "entityTypeCode": "058001001",
+              "entityTypeName": "A股",
+              "classCode": "002001",
+              "className": "沪深京股票",
+              "fullName": "丰元股份",
+              "secuCode": "002805",
+              "market": "0",
+              "marketChar": ".SZ",
+              "correct": false,
+              "hasKLine": false,
+              "valuation": false
+            },
+            "entityTagDTOList": [
+              {
+                "entityId": "1000011552",
+                "entityType": "SEC",
+                "entityTypeCode": "058001001",
+                "entityTypeName": "A股",
+                "classCode": "002001",
+                "className": "沪深京股票",
+                "fullName": "丰元股份",
+                "secuCode": "002805",
+                "market": "0",
+                "marketChar": ".SZ",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              }
+            ],
+            "indexTable": false,
+            "edbThirdData": false,
+            "dataUpdate": {
+              "2026-04-30": false
+            },
+            "supportsTimeSeries": false,
+            "estimatedTokens": 0,
+            "summaryTips": {
+              "periodicalReport": null
+            },
+            "nestEntityListMap": {},
+            "excelTimeTruncate": false,
+            "frontendEntityName": "",
+            "frontendEntityCode": "",
+            "frontendTitle": "",
+            "frontendDesc": "",
+            "indicatorCount": 0,
+            "fieldParameterStr": "",
+            "tdayEnum": "TDAY"
+          },
+          {
+            "code": "002805.SZ",
+            "entityName": "丰元股份(002805.SZ)",
+            "table": {
+              "100000000006404": [
+                "1364万元",
+                "1.028亿元",
+                "2513万元"
+              ],
+              "100000000017077": [
+                "1天",
+                "1天",
+                "1天"
+              ],
+              "100000000017078": [
+                "0天",
+                "0天",
+                "0天"
+              ],
+              "100000000018937": [
+                "1364万元",
+                "1.028亿元",
+                "2513万元"
+              ],
+              "100000000021528": [
+                "1272万元",
+                "1.258亿元",
+                "-227.9万元"
+              ],
+              "100000000021529": [
+                "91.95万元",
+                "-2301万元",
+                "2741万元"
+              ],
+              "100000000027619": [
+                "-668.6万元",
+                "-6032万元",
+                "-295.2万元"
+              ],
+              "100000000027620": [
+                "-695.6万元",
+                "-4245万元",
+                "-2217万元"
+              ],
+              "headName": [
+                "2026-04-30",
+                "2026-04-29",
+                "2026-04-28"
+              ]
+            },
+            "rawTable": {
+              "100000000006404": [
+                "13642423",
+                "102772750",
+                "25126360"
+              ],
+              "100000000017077": [
+                "1",
+                "1",
+                "1"
+              ],
+              "100000000017078": [
+                "0",
+                "0",
+                "0"
+              ],
+              "100000000018937": [
+                "13642423",
+                "102772750",
+                "25126360"
+              ],
+              "100000000021528": [
+                "12722942",
+                "125781310",
+                "-2279061.0"
+              ],
+              "100000000021529": [
+                "919481.0",
+                "-23008560",
+                "27405421"
+              ],
+              "100000000027619": [
+                "-6686398.0",
+                "-60320240",
+                "-2951962.0"
+              ],
+              "100000000027620": [
+                "-6956026.0",
+                "-42452509",
+                "-22174399"
+              ],
+              "headName": [
+                "2026-04-30",
+                "2026-04-29",
+                "2026-04-28"
+              ]
+            },
+            "truncateRawTable": {},
+            "nameMap": {
+              "100000000006404": "(区间)主力净流入资金",
+              "headNameSub": "数据来源",
+              "100000000017077": "(区间)资金净流入天数",
+              "100000000017078": "(区间)资金净流出天数",
+              "100000000018937": "(区间)资金平均净流入",
+              "100000000021528": "(区间)超大单净流入资金",
+              "100000000021529": "(区间)大单净流入资金",
+              "100000000027619": "(区间)中单净流入资金",
+              "100000000027620": "(区间)小单净流入资金"
+            },
+            "headNameMap": {},
+            "field": {
+              "returnCode": "100000000006404",
+              "returnName": "(区间)主力净流入资金",
+              "classCode": "007101",
+              "checkedRelatedIndicators": false,
+              "startDate": "2026-05-05 00:00:00",
+              "endDate": "2026-05-05 00:00:00",
+              "fuzzy": true,
+              "dateGranularity": "DAY",
+              "defineType": 0,
+              "isLoopN": false,
+              "quantType": "1",
+              "isGroup": false,
+              "returnSourceCode": "PERIODMFDINFLOW",
+              "returnSourceName": "(区间)主力净流入资金",
+              "graph": "1",
+              "unit": "1",
+              "tableType": "1",
+              "unitName": "元",
+              "unitDesc": "101:元:元"
+            },
+            "entityCodes": [
+              "002805.SZ"
+            ],
+            "macroAttributeExcelMap": {},
+            "fieldSet": [
+              {
+                "returnCode": "100000000021528",
+                "returnName": "(区间)超大单净流入资金",
+                "classCode": "007101",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "quantType": "1",
+                "isGroup": false,
+                "returnSourceCode": "PERIODMFDNETFLOWINXL",
+                "returnSourceName": "(区间)超大单净流入资金",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000021529",
+                "returnName": "(区间)大单净流入资金",
+                "classCode": "007101",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "quantType": "1",
+                "isGroup": false,
+                "returnSourceCode": "PERIODMFDNETFLOWINL",
+                "returnSourceName": "(区间)大单净流入资金",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000018937",
+                "returnName": "(区间)资金平均净流入",
+                "classCode": "007101",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "quantType": "1",
+                "isGroup": false,
+                "returnSourceCode": "INFLOWAVG",
+                "returnSourceName": "(区间)资金平均净流入",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000027619",
+                "returnName": "(区间)中单净流入资金",
+                "classCode": "007101",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "quantType": "1",
+                "isGroup": false,
+                "returnSourceCode": "PERIODMFDNETFLOWINM",
+                "returnSourceName": "(区间)中单净流入资金",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000017078",
+                "returnName": "(区间)资金净流出天数",
+                "classCode": "007101",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "quantType": "1",
+                "isGroup": false,
+                "returnSourceCode": "QJZJJLCTS",
+                "returnSourceName": "(区间)资金净流出天数",
+                "graph": "1",
+                "unit": "0",
+                "tableType": "1",
+                "unitName": "天",
+                "unitDesc": "111:天:天"
+              },
+              {
+                "returnCode": "100000000006404",
+                "returnName": "(区间)主力净流入资金",
+                "classCode": "007101",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "quantType": "1",
+                "isGroup": false,
+                "returnSourceCode": "PERIODMFDINFLOW",
+                "returnSourceName": "(区间)主力净流入资金",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              },
+              {
+                "returnCode": "100000000017077",
+                "returnName": "(区间)资金净流入天数",
+                "classCode": "007101",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "quantType": "1",
+                "isGroup": false,
+                "returnSourceCode": "QJZJJLRTS",
+                "returnSourceName": "(区间)资金净流入天数",
+                "graph": "1",
+                "unit": "0",
+                "tableType": "1",
+                "unitName": "天",
+                "unitDesc": "111:天:天"
+              },
+              {
+                "returnCode": "100000000027620",
+                "returnName": "(区间)小单净流入资金",
+                "classCode": "007101",
+                "checkedRelatedIndicators": false,
+                "startDate": "2026-05-05 00:00:00",
+                "endDate": "2026-05-05 00:00:00",
+                "fuzzy": true,
+                "dateGranularity": "DAY",
+                "defineType": 0,
+                "isLoopN": false,
+                "quantType": "1",
+                "isGroup": false,
+                "returnSourceCode": "PERIODMFDNETFLOWINS",
+                "returnSourceName": "(区间)小单净流入资金",
+                "graph": "1",
+                "unit": "1",
+                "tableType": "1",
+                "unitName": "元",
+                "unitDesc": "101:元:元"
+              }
+            ],
+            "dataTableType": "NORM_TABLE",
+            "rowInfo": {},
+            "colInfo": {},
+            "indicatorOrder": [
+              "100000000006404",
+              "100000000017077",
+              "100000000017078",
+              "100000000018937",
+              "100000000021528",
+              "100000000021529",
+              "100000000027619",
+              "100000000027620"
+            ],
+            "tipFlags": [],
+            "dataType": "数据浏览器",
+            "title": "丰元股份(002805.SZ)的(区间)主力净流入资金、(区间)资金净流入天数等",
+            "hasThumbnail": true,
+            "indicatorLimited": false,
+            "dataPositionEnum": "MetricLeftTimeTop",
+            "orderCol": {},
+            "jumpUrlList": [
+              {
+                "choiceUrl": "EM://stockdatacenter?type=browser&modType=STOCK&code=002805.SZ&indId=100000000006404|102:2026-04-28|101:2026-04-28,100000000006404|102:2026-04-29|101:2026-04-29,100000000006404|102:2026-04-30|101:2026-04-30,100000000017077|102:2026-04-28|101:2026-04-28,100000000017077|102:2026-04-29|101:2026-04-29,100000000017077|102:2026-04-30|101:2026-04-30,100000000017078|102:2026-04-28|101:2026-04-28,100000000017078|102:2026-04-29|101:2026-04-29,100000000017078|102:2026-04-30|101:2026-04-30,100000000018937|102:2026-04-28|101:2026-04-28,100000000018937|102:2026-04-29|101:2026-04-29,100000000018937|102:2026-04-30|101:2026-04-30,100000000021528|102:2026-04-28|101:2026-04-28,100000000021528|102:2026-04-29|101:2026-04-29,100000000021528|102:2026-04-30|101:2026-04-30,100000000021529|102:2026-04-28|101:2026-04-28,100000000021529|102:2026-04-29|101:2026-04-29,100000000021529|102:2026-04-30|101:2026-04-30,100000000027619|102:2026-04-28|101:2026-04-28,100000000027619|102:2026-04-29|101:2026-04-29,100000000027619|102:2026-04-30|101:2026-04-30,100000000027620|102:2026-04-28|101:2026-04-28,100000000027620|102:2026-04-29|101:2026-04-29,100000000027620|102:2026-04-30|101:2026-04-30",
+                "typeName": "股票数据浏览器"
+              }
+            ],
+            "dataTypeEnum": "DATA_BROWSER",
+            "dateRuleSet": [],
+            "freqConvert": false,
+            "deleteInfo": [],
+            "macroCodeMap": {},
+            "entityTagDTO": {
+              "entityId": "1000011552",
+              "entityType": "SEC",
+              "entityTypeCode": "058001001",
+              "entityTypeName": "A股",
+              "classCode": "002001",
+              "className": "沪深京股票",
+              "fullName": "丰元股份",
+              "secuCode": "002805",
+              "market": "0",
+              "marketChar": ".SZ",
+              "correct": false,
+              "hasKLine": false,
+              "valuation": false
+            },
+            "entityTagDTOList": [
+              {
+                "entityId": "1000011552",
+                "entityType": "SEC",
+                "entityTypeCode": "058001001",
+                "entityTypeName": "A股",
+                "classCode": "002001",
+                "className": "沪深京股票",
+                "fullName": "丰元股份",
+                "secuCode": "002805",
+                "market": "0",
+                "marketChar": ".SZ",
+                "correct": false,
+                "hasKLine": false,
+                "valuation": false
+              }
+            ],
+            "indexTable": false,
+            "edbThirdData": false,
+            "dataUpdate": {
+              "2026-04-30": false
+            },
+            "supportsTimeSeries": false,
+            "estimatedTokens": 0,
+            "summaryTips": {
+              "periodicalReport": null
+            },
+            "nestEntityListMap": {},
+            "excelTimeTruncate": false,
+            "frontendEntityName": "",
+            "frontendEntityCode": "",
+            "frontendTitle": "",
+            "frontendDesc": "",
+            "indicatorCount": 0,
+            "fieldParameterStr": "",
+            "tdayEnum": "NORMAL"
+          }
+        ],
+        "condition": {
+          "search_data_task_0": [
+            "丰元股份",
+            "成交量收盘价涨跌幅换手率(区间)主力净流入资金(区间)资金净流入天数(区间)资金净流出天数(区间)资金平均净流入(区间)超大单净流入资金(区间)大单净流入资金(区间)中单净流入资金(区间)小单净流入资金超大单流出资金大单流入资金大单流出资金中单流入资金中单流出资金小单流入资金小单流出资金",
+            "2026-05-05至2026-05-05"
+          ]
+        },
+        "entityTagDTOList": [
+          {
+            "entityId": "1000011552",
+            "entityType": "SEC",
+            "entityTypeCode": "058001001",
+            "entityTypeName": "A股",
+            "classCode": "002001",
+            "className": "沪深京股票",
+            "fullName": "丰元股份",
+            "secuCode": "002805",
+            "market": "0",
+            "marketChar": ".SZ",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          },
+          {
+            "entityId": "1000011552",
+            "entityType": "SEC",
+            "entityTypeCode": "058001001",
+            "entityTypeName": "A股",
+            "classCode": "002001",
+            "className": "沪深京股票",
+            "fullName": "丰元股份",
+            "secuCode": "002805",
+            "market": "0",
+            "marketChar": ".SZ",
+            "correct": false,
+            "hasKLine": false,
+            "valuation": false
+          }
+        ]
+      },
+      "entityName": null,
+      "message": null,
+      "tableTruncated": false
+    },
+    "stack": null
+  },
+  "requestId": "8618c5d0a9c845fb8d8df334e02bc7a0"
+}

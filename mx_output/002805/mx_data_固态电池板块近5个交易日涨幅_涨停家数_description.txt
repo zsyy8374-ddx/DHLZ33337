@@ -1,0 +1,8 @@
+金融数据查询结果说明
+========================================
+查询内容: 固态电池板块近5个交易日涨幅 涨停家数
+数据文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/mx_data_固态电池板块近5个交易日涨幅_涨停家数.xlsx
+描述文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/mx_data_固态电池板块近5个交易日涨幅_涨停家数_description.txt
+数据行数: 24
+表数量: 4
+Sheet 列表: 固态电池的涨跌幅(算数平均), 固态电池的涨停家数, 固态电池的涨停家数, 固态电池的区间涨跌幅

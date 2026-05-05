@@ -1,0 +1,8 @@
+金融数据查询结果说明
+========================================
+查询内容: 固态电池板块今日涨停股数量
+数据文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/watch/mx_data_固态电池板块今日涨停股数量.xlsx
+描述文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/watch/mx_data_固态电池板块今日涨停股数量_description.txt
+数据行数: 1
+表数量: 1
+Sheet 列表: 固态电池的涨停家数

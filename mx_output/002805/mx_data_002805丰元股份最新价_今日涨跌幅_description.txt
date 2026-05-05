@@ -1,0 +1,8 @@
+金融数据查询结果说明
+========================================
+查询内容: 002805丰元股份最新价 今日涨跌幅
+数据文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/mx_data_002805丰元股份最新价_今日涨跌幅.xlsx
+描述文件路径: /Users/openclaw/.openclaw/workspace-dengxian/mx_output/002805/mx_data_002805丰元股份最新价_今日涨跌幅_description.txt
+数据行数: 3
+表数量: 1
+Sheet 列表: 丰元股份(002805.SZ)的收盘价、涨跌幅
