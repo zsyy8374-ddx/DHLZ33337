@@ -1,0 +1,7 @@
+{
+  "date": "2026-05-05",
+  "model_version": "v1.9-ensemble-925-935",
+  "d_minus_1_picks": "reversal-v4-2026-04-29.json",
+  "top_p085": 0,
+  "all_results": []
+}
