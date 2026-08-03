@@ -4,7 +4,7 @@ display_name: 三平台板块池
 title: 三平台板块池构建 (THS + TDX + DFCF)
 description: 给定题材关键词，自动搜索同花顺/通达信/东方财富三大平台相关概念板块，拉取成分股，合并去重输出统一股票池。雷达 Step 0.0 板块查重的核心工具。
 author: dengxian
-version: 1.0.0
+version: 2.2.0
 ---
 
 # sector-pool 三平台板块池

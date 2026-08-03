@@ -14,7 +14,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-WORKSPACE = SCRIPT_DIR.parent.parent
+WORKSPACE = SCRIPT_DIR.parent.parent.parent  # scripts → sector-pool → skills → workspace
 TOOLS = WORKSPACE / "tools"
 
 # ============================================================
@@ -72,17 +72,34 @@ def _ths_get_stocks(sector_code: str) -> list[dict]:
 # ============================================================
 
 def _tdx_query(query: str) -> list[dict]:
-    """tdx_zhangting.py --query → 完整字段股票列表."""
+    """tdx_zhangting.py --query → 完整字段股票列表.
+    
+    用临时文件接收输出，避免 pipe 缓冲区死锁。
+    """
+    import tempfile
     tdx_tool = TOOLS / "tdx_zhangting.py"
     if not tdx_tool.exists():
         return []
+    tmpf = tempfile.NamedTemporaryFile(mode='w+', suffix='.json', delete=False, dir='/tmp')
+    tmpf.close()
     try:
-        r = subprocess.run(["/usr/bin/python3", str(tdx_tool), "--query", query],
-                          capture_output=True, text=True, timeout=120, cwd=str(WORKSPACE))
-        if r.returncode == 0 and r.stdout.strip():
-            return json.loads(r.stdout)
+        r = subprocess.run(
+            ["/usr/bin/python3", str(tdx_tool), "--query", query],
+            stdout=open(tmpf.name, 'w'), stderr=subprocess.PIPE,
+            text=True, timeout=120, cwd=str(WORKSPACE)
+        )
+        if r.returncode == 0:
+            with open(tmpf.name) as f:
+                content = f.read().strip()
+                if content:
+                    return json.loads(content)
     except Exception as e:
         print(f"[TDX] query error '{query}': {e}", file=sys.stderr)
+    finally:
+        try:
+            Path(tmpf.name).unlink(missing_ok=True)
+        except Exception:
+            pass
     return []
 
 
@@ -92,15 +109,19 @@ def _parse_tdx_field(val: str) -> list[str]:
 
 
 def _tdx_find_sectors(keywords: list[str]) -> dict:
-    """问小达多词查询 → 按「所属通达信概念」聚合板块，附带板块代码(index_code).
+    """问小达查询 → 按「所属通达信概念」聚合板块，附带概念代码(index_code).
     
-    并行执行多词查询，总时间 ≈ 单次最长（~40s）而非累加。
+    策略（借鉴东财全量筛选思想）：
+    1. 每个子关键词一次查询 ≈ 拉一个「概念板块」的全部成分股
+    2. 从返回股票中提取 所属通达信概念 + index_code → 得到概念板块代码
+    3. 概念字段为空时，回退到 所属行业 分类
+    4. 串行查询（Chromium 不支持并行），总耗时 = 查询数 × 40s
     """
     all_stocks = []
     seen = set()
     
-    # 串行查询，只跑前2个核心词（同花顺已覆盖板块映射，TDX做补充验证）
-    kw_list = keywords[:2]
+    # 串行查询（Playwright/Chromium 不支持并行多实例）
+    kw_list = keywords[:3]  # 最多3个核心词
     print(f"[TDX] 串行查询 {len(kw_list)} 个关键词 (~{len(kw_list)*40}s)...", file=sys.stderr)
     for kw in kw_list:
         try:
@@ -117,31 +138,45 @@ def _tdx_find_sectors(keywords: list[str]) -> dict:
     if not all_stocks:
         return {}
     
-    # 检测概念字段名
-    concept_field = None
-    for f in ['所属通达信概念', '所属通达信指数']:
-        if any(s.get(f, '') for s in all_stocks[:10]):
-            concept_field = f
-            break
-    
-    # 按概念聚合
+    # 按概念聚合（优先使用 TDX 官方概念分类）
     sectors = {}
-    for s in all_stocks:
-        concepts = _parse_tdx_field(s.get(concept_field, '')) if concept_field else []
-        concepts = concepts or ['(未分类)']
-        code = s.get('sec_code', '')
-        name = s.get('sec_name', '')
-        idx_code = s.get('index_code', '')
-        idx_market = s.get('index_market', '')
-        
-        for cname in concepts:
-            if cname not in sectors:
-                sectors[cname] = {
+    has_concept = any(s.get('所属通达信概念', '') for s in all_stocks[:20])
+    
+    if has_concept:
+        # 模式A: 有通达信概念标签 → 按概念板块聚合
+        for s in all_stocks:
+            cname = s.get('所属通达信概念', '').replace('@', '').strip()
+            idx_code = s.get('index_code', '')
+            idx_market = s.get('index_market', '')
+            if not cname:
+                continue
+            sector_key = f"{idx_market}{idx_code}" if idx_code else cname
+            if sector_key not in sectors:
+                sectors[sector_key] = {
                     'name': cname,
-                    'tdx_concept_code': f"{idx_market}{idx_code}" if idx_code else '',
+                    'tdx_concept_code': sector_key,
                     'stocks': []
                 }
-            sectors[cname]['stocks'].append({'code': code, 'name': name})
+            sectors[sector_key]['stocks'].append({
+                'code': s.get('sec_code', ''),
+                'name': s.get('sec_name', '')
+            })
+    else:
+        # 模式B: 无概念标签（抽象主题如"新型电力系统"）→ 按行业分类
+        for s in all_stocks:
+            industry = s.get('所属行业', '').replace('@', '/').strip('/')
+            if not industry:
+                industry = '(未分类)'
+            if industry not in sectors:
+                sectors[industry] = {
+                    'name': f'TDX行业·{industry}',
+                    'tdx_concept_code': '',
+                    'stocks': []
+                }
+            sectors[industry]['stocks'].append({
+                'code': s.get('sec_code', ''),
+                'name': s.get('sec_name', '')
+            })
     
     return sectors
 
@@ -327,28 +362,45 @@ def _run_dfcf(keywords):
 
 
 def build_pool(theme: str, keywords: list[str], platforms=('ths','tdx','dfcf')):
-    """三平台并行构建板块池."""
+    """三平台并行构建板块池.
+    
+    TDX 在主线程跑（subprocess/Playwright 不支持线程内调用），
+    THS + DFCF 在子线程并行跑。总耗时 ≈ max(TDX, THS+DFCF) ≈ TDX时间。
+    """
     pool = {'theme': theme, 'platforms': {}, 'merged_stocks': {}}
     
-    # 三大平台并行执行
-    tasks = []
+    # 启动 THS + DFCF 并行（子线程安全，都是纯 API 调用）
+    fast_tasks = {}
     if 'ths' in platforms:
-        tasks.append(('ths', _run_ths, keywords))
-    if 'tdx' in platforms:
-        tasks.append(('tdx', _run_tdx, keywords))
+        fast_tasks['ths'] = _run_ths
     if 'dfcf' in platforms:
-        tasks.append(('dfcf', _run_dfcf, keywords))
+        fast_tasks['dfcf'] = _run_dfcf
     
-    with ThreadPoolExecutor(max_workers=3) as ex:
-        futures = {ex.submit(fn, kw): name for name, fn, kw in tasks}
-        for fut in as_completed(futures):
-            try:
-                name, data, stocks = fut.result(timeout=300)
-                pool['platforms'][name] = data
-                for s in stocks:
-                    pool['merged_stocks'].setdefault(s['code'], s)
-            except Exception as e:
-                print(f"[sector_pool] Platform {futures[fut]} failed: {e}", file=sys.stderr)
+    fast_futures = {}
+    if fast_tasks:
+        ex = ThreadPoolExecutor(max_workers=2)
+        for name, fn in fast_tasks.items():
+            fast_futures[ex.submit(fn, keywords)] = name
+    
+    # TDX 在主线程执行（不能放子线程，subprocess+Playwright 冲突）
+    if 'tdx' in platforms:
+        name, data, stocks = _run_tdx(keywords)
+        pool['platforms'][name] = data
+        for s in stocks:
+            pool['merged_stocks'].setdefault(s['code'], s)
+    
+    # 等待 THS + DFCF 完成并合并
+    for fut in as_completed(fast_futures):
+        try:
+            name, data, stocks = fut.result(timeout=300)
+            pool['platforms'][name] = data
+            for s in stocks:
+                pool['merged_stocks'].setdefault(s['code'], s)
+        except Exception as e:
+            print(f"[sector_pool] Platform {fast_futures[fut]} failed: {e}", file=sys.stderr)
+    
+    if 'tdx' not in platforms and 'ths' in platforms:
+        pass  # 已经在线程里处理了
     
     pool['total_merged'] = len(pool['merged_stocks'])
     return pool
@@ -384,9 +436,10 @@ def main():
     output = json.dumps(pool, ensure_ascii=False, indent=2)
     if args.output:
         Path(args.output).write_text(output)
-        print(f"✅ {args.output} ({pool['total_merged']} stocks)")
+        print(f"✅ {args.output} ({pool['total_merged']} stocks)", file=sys.stderr)
     elif args.json:
-        print(output)
+        sys.stdout.write(output + '\n')
+        sys.stdout.flush()
     else:
         # 文本报告
         print(f"\n{'='*60}")
