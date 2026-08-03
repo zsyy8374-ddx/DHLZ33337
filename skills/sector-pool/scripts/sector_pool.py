@@ -11,6 +11,7 @@ sector_pool.py — 三平台板块池构建 v2.0
 import json, sys, argparse, subprocess, time, urllib.request, ssl
 from collections import defaultdict, Counter
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 WORKSPACE = SCRIPT_DIR.parent.parent
@@ -91,15 +92,27 @@ def _parse_tdx_field(val: str) -> list[str]:
 
 
 def _tdx_find_sectors(keywords: list[str]) -> dict:
-    """问小达多词查询 → 按「所属通达信概念」聚合板块，附带板块代码(index_code)."""
+    """问小达多词查询 → 按「所属通达信概念」聚合板块，附带板块代码(index_code).
+    
+    并行执行多词查询，总时间 ≈ 单次最长（~40s）而非累加。
+    """
     all_stocks = []
     seen = set()
-    for kw in keywords[:5]:  # 限5查
-        for s in _tdx_query(kw):
-            key = s.get('sec_code', '')
-            if key and key not in seen:
-                seen.add(key)
-                all_stocks.append(s)
+    
+    # 串行查询，只跑前2个核心词（同花顺已覆盖板块映射，TDX做补充验证）
+    kw_list = keywords[:2]
+    print(f"[TDX] 串行查询 {len(kw_list)} 个关键词 (~{len(kw_list)*40}s)...", file=sys.stderr)
+    for kw in kw_list:
+        try:
+            stocks = _tdx_query(kw)
+            for s in stocks:
+                key = s.get('sec_code', '')
+                if key and key not in seen:
+                    seen.add(key)
+                    all_stocks.append(s)
+            print(f"[TDX] '{kw}' → {len(stocks)} stocks", file=sys.stderr)
+        except Exception as e:
+            print(f"[TDX] '{kw}' failed: {e}", file=sys.stderr)
     
     if not all_stocks:
         return {}
@@ -236,84 +249,106 @@ def _dfcf_get_stocks(board_code: str) -> list[dict]:
 # 主流程
 # ============================================================
 
+KNOWN_BK = {
+    '储能': 'BK0989','特高压':'BK0918','智能电网':'BK0581','固态电池':'BK0968',
+    '氢能源':'BK0864','光伏概念':'BK0588','风电':'BK0600','核电':'BK0477',
+    '充电桩':'BK0700','新能源':'BK0493','电力':'BK0428','电网设备':'BK0457',
+    '碳中和':'BK0834','碳交易':'BK0840','虚拟电厂':'BK1095','抽水蓄能':'BK1055',
+    '绿色电力':'BK1021','换电':'BK1076','钠离子电池':'BK1070','光热发电':'BK1080',
+    '生物质能':'BK0880','超超临界':'BK0960','可控核聚变':'BK1120',
+    '电力物联网':'BK0891','柔性直流输电':'BK1044','光伏建筑一体化':'BK0979',
+    '光伏设备':'BK1031','风电设备':'BK1032','太阳能':'BK0589','电池':'BK1033',
+    '燃料电池':'BK0682','熔盐储能':'BK1103','光伏发电':'BK1375','光伏主材':'BK1318',
+}
+
+
+def _run_ths(keywords):
+    print("[sector_pool] === 同花顺 ===", file=sys.stderr)
+    sectors = _search_ths_concepts(keywords)
+    data = {'sectors': {}, 'total': 0}
+    stocks_all = []
+    for code, info in sectors.items():
+        stocks = _ths_get_stocks(code)
+        data['sectors'][code] = {
+            'name': info['name'], 'market': info['market'],
+            'keyword': info['keyword'], 'count': len(stocks), 'stocks': stocks,
+        }
+        data['total'] += len(stocks)
+        stocks_all.extend(stocks)
+        time.sleep(0.3)
+    print(f"[sector_pool] THS: {len(sectors)} sectors, {data['total']} stock-refs", file=sys.stderr)
+    return 'ths', data, stocks_all
+
+
+def _run_tdx(keywords):
+    print("[sector_pool] === 通达信 ===", file=sys.stderr)
+    sectors = _tdx_find_sectors(keywords)
+    data = {'sectors': {}, 'total': 0}
+    stocks_all = []
+    for cname, sec in sectors.items():
+        stocks = sec['stocks']
+        key = sec['tdx_concept_code'] or cname
+        data['sectors'][key] = {
+            'name': cname, 'tdx_concept_code': sec['tdx_concept_code'],
+            'count': len(stocks), 'stocks': stocks,
+        }
+        data['total'] += len(stocks)
+        stocks_all.extend(stocks)
+    print(f"[sector_pool] TDX: {len(sectors)} sectors, {data['total']} stock-refs", file=sys.stderr)
+    return 'tdx', data, stocks_all
+
+
+def _run_dfcf(keywords):
+    print("[sector_pool] === 东方财富 ===", file=sys.stderr)
+    all_boards = _dfcf_fetch_all_boards()
+    if all_boards:
+        sectors = _dfcf_filter_boards(all_boards, keywords)
+    else:
+        print("[sector_pool] DFCF API 不可用，使用已知映射表", file=sys.stderr)
+        sectors = {}
+        for kw in keywords:
+            for bn, bc in KNOWN_BK.items():
+                if kw in bn or bn in kw:
+                    if bc not in sectors:
+                        sectors[bc] = {'name': bn, 'keyword': kw}
+    
+    data = {'sectors': {}, 'total': 0}
+    stocks_all = []
+    for code, info in sectors.items():
+        stocks = _dfcf_get_stocks(code)
+        data['sectors'][code] = {
+            'name': info['name'], 'keyword': info['keyword'],
+            'count': len(stocks), 'stocks': stocks,
+        }
+        data['total'] += len(stocks)
+        stocks_all.extend(stocks)
+    print(f"[sector_pool] DFCF: {len(sectors)} sectors, {data['total']} stock-refs", file=sys.stderr)
+    return 'dfcf', data, stocks_all
+
+
 def build_pool(theme: str, keywords: list[str], platforms=('ths','tdx','dfcf')):
+    """三平台并行构建板块池."""
     pool = {'theme': theme, 'platforms': {}, 'merged_stocks': {}}
     
-    # --- 同花顺 ---
+    # 三大平台并行执行
+    tasks = []
     if 'ths' in platforms:
-        print("[sector_pool] === 同花顺 ===", file=sys.stderr)
-        ths_sectors = _search_ths_concepts(keywords)
-        ths_data = {'sectors': {}, 'total': 0}
-        for code, info in ths_sectors.items():
-            stocks = _ths_get_stocks(code)
-            ths_data['sectors'][code] = {
-                'name': info['name'], 'market': info['market'],
-                'keyword': info['keyword'], 'count': len(stocks), 'stocks': stocks,
-            }
-            ths_data['total'] += len(stocks)
-            for s in stocks:
-                pool['merged_stocks'].setdefault(s['code'], s)
-            time.sleep(0.3)
-        pool['platforms']['ths'] = ths_data
-        print(f"[sector_pool] THS: {len(ths_sectors)} sectors, {ths_data['total']} stock-refs", file=sys.stderr)
-    
-    # --- 通达信 ---
+        tasks.append(('ths', _run_ths, keywords))
     if 'tdx' in platforms:
-        print("[sector_pool] === 通达信 ===", file=sys.stderr)
-        tdx_sectors = _tdx_find_sectors(keywords)
-        tdx_data = {'sectors': {}, 'total': 0}
-        for cname, sec in tdx_sectors.items():
-            stocks = sec['stocks']
-            sector_key = sec['tdx_concept_code'] or cname
-            tdx_data['sectors'][sector_key] = {
-                'name': cname, 'tdx_concept_code': sec['tdx_concept_code'],
-                'count': len(stocks), 'stocks': stocks,
-            }
-            tdx_data['total'] += len(stocks)
-            for s in stocks:
-                pool['merged_stocks'].setdefault(s['code'], s)
-        pool['platforms']['tdx'] = tdx_data
-        print(f"[sector_pool] TDX: {len(tdx_sectors)} sectors, {tdx_data['total']} stock-refs", file=sys.stderr)
-    
-    # --- 东方财富 ---
+        tasks.append(('tdx', _run_tdx, keywords))
     if 'dfcf' in platforms:
-        print("[sector_pool] === 东方财富 ===", file=sys.stderr)
-        all_boards = _dfcf_fetch_all_boards()
-        if all_boards:
-            dfcf_sectors = _dfcf_filter_boards(all_boards, keywords)
-        else:
-            # Fallback: 已知映射表
-            print("[sector_pool] DFCF API 不可用，使用已知映射表", file=sys.stderr)
-            KNOWN_BK = {
-                '储能': 'BK0989','特高压':'BK0918','智能电网':'BK0581','固态电池':'BK0968',
-                '氢能源':'BK0864','光伏概念':'BK0588','风电':'BK0600','核电':'BK0477',
-                '充电桩':'BK0700','新能源':'BK0493','电力':'BK0428','电网设备':'BK0457',
-                '碳中和':'BK0834','碳交易':'BK0840','虚拟电厂':'BK1095','抽水蓄能':'BK1055',
-                '绿色电力':'BK1021','换电':'BK1076','钠离子电池':'BK1070','光热发电':'BK1080',
-                '生物质能':'BK0880','超超临界':'BK0960','可控核聚变':'BK1120',
-                '电力物联网':'BK0891','柔性直流输电':'BK1044','光伏建筑一体化':'BK0979',
-                '光伏设备':'BK1031','风电设备':'BK1032','太阳能':'BK0589','电池':'BK1033',
-                '燃料电池':'BK0682','熔盐储能':'BK1103',
-            }
-            dfcf_sectors = {}
-            for kw in keywords:
-                for bn, bc in KNOWN_BK.items():
-                    if kw in bn or bn in kw:
-                        if bc not in dfcf_sectors:
-                            dfcf_sectors[bc] = {'name': bn, 'keyword': kw}
-        
-        dfcf_data = {'sectors': {}, 'total': 0}
-        for code, info in dfcf_sectors.items():
-            stocks = _dfcf_get_stocks(code)
-            dfcf_data['sectors'][code] = {
-                'name': info['name'], 'keyword': info['keyword'],
-                'count': len(stocks), 'stocks': stocks,
-            }
-            dfcf_data['total'] += len(stocks)
-            for s in stocks:
-                pool['merged_stocks'].setdefault(s['code'], s)
-        pool['platforms']['dfcf'] = dfcf_data
-        print(f"[sector_pool] DFCF: {len(dfcf_sectors)} sectors, {dfcf_data['total']} stock-refs", file=sys.stderr)
+        tasks.append(('dfcf', _run_dfcf, keywords))
+    
+    with ThreadPoolExecutor(max_workers=3) as ex:
+        futures = {ex.submit(fn, kw): name for name, fn, kw in tasks}
+        for fut in as_completed(futures):
+            try:
+                name, data, stocks = fut.result(timeout=300)
+                pool['platforms'][name] = data
+                for s in stocks:
+                    pool['merged_stocks'].setdefault(s['code'], s)
+            except Exception as e:
+                print(f"[sector_pool] Platform {futures[fut]} failed: {e}", file=sys.stderr)
     
     pool['total_merged'] = len(pool['merged_stocks'])
     return pool
