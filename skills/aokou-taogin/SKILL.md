@@ -64,11 +64,12 @@ description: |
 
 ## 目标筛选流程
 
-> **数据源（v3.0，2026-08-05 优化）**：
+> **数据源（v3.1，2026-08-05 优化）**：
 > - ✅ **K线**：通达信本地 `.day` 文件（`~/tdx/vipdoc/`），全市场 ~5000 只本地秒级读取，无需网络
 > - ✅ **股票池/名称**：本地缓存 JSON（`scripts/cache/stock_names.json`，首次 akshare 拉取后离线可用）
 > - ✅ **粗筛**：全市场并行扫描（不随机采样、不遗漏标的），过滤 ST/退市/次新
 > - ✅ **精筛**：本地 `.day` 六级评分，8 线程并行
+> - ✅ **首跌缩量修正（v3.1）**：首跌日 = 高点后 10 天内跌幅最大的阴线（原版误用涨停日量，涨停日放量被误判为出货）
 > - ✅ **fallback**：本地数据缺失时自动降级 akshare (Sina源)
 > - 🚀 全市场 full 扫描约 45 秒完成（旧版 akshare 随机采样需十几分钟）
 
@@ -91,7 +92,7 @@ python3 skills/aokou-taogin/scripts/scan_aokou.py --mode coarse --days 60
 python3 skills/aokou-taogin/scripts/scan_aokou.py --mode fine --input /tmp/aokou_coarse.csv
 ```
 
-> 注：v3.0 粗筛输出已含条件说明（CSV 头注释），精筛直接读取本地 .day 评分，无网络请求。
+> 注：v3.1 首跌缩量已修正（见数据源说明），精筛直接读取本地 .day 评分，无网络请求。
 
 对每只候选股逐项打分（六级条件每项 0-1分，满分 6分）：
 

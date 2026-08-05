@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """
-凹口淘金形态扫描器 v3.0 — 数据源优化版
+凹口淘金形态扫描器 v3.1 — 数据源优化版
 ========================================
+v3.1（2026-08-05）：首跌缩量判定修正
+  ✅ 首跌日 = 高点后10天内跌幅最大的阴线（原版误用涨停日当天量，涨停日放量被误判为出货）
+  ✅ 量学本意：看坑的第一根大阴线是否缩量，而非涨停日
+  ✅ 高点后无阴线 → 首跌缩量不成立（0分）
+
 v3.0 数据源升级（2026-08-05）：
   ✅ K线: 通达信本地 .day 文件（~5000只全市场秒级读取，无需网络）
   ✅ 股票池/名称: 本地缓存 JSON（首用 akshare 拉一次，之后离线可用）
@@ -324,12 +329,27 @@ def score_aokou(df, high_idx):
         scores['❶凹陷'] = 1.0 if drop >= 7 else (0.7 if drop >= 5 else (0.4 if drop >= 3 else 0.2))
         details['凹陷%'] = round(drop, 1)
 
-    # ❷ 首跌缩量
+    # ❷ 首跌缩量（v3.1: 首跌日=高点后跌幅最大的阴线，贴合量学定义）
     ma20 = df['volume'].rolling(20).mean()
-    if high_idx < len(ma20) and pd.notna(ma20.iloc[high_idx]):
-        vr = hr['volume'] / ma20.iloc[high_idx]
-        scores['❷缩量'] = 1.0 if vr <= 0.5 else (0.7 if vr <= 0.67 else (0.4 if vr <= 0.8 else 0.0))
-        details['量比'] = round(vr, 2)
+    if high_idx + 1 < len(df) and high_idx >= 20 and pd.notna(ma20.iloc[high_idx]):
+        post2 = df.iloc[high_idx+1:min(high_idx+11, len(df))]  # 高点后10天内找首跌日
+        neg = post2[post2['pct_chg'] < 0]
+        if not neg.empty:
+            drop_idx = neg['pct_chg'].idxmin()  # 跌幅最大的阴线 = 首跌日
+            fd = df.loc[drop_idx]
+            vr = fd['volume'] / ma20.iloc[high_idx]  # 首跌日量 vs 高点前20日均量
+            scores['❷缩量'] = 1.0 if vr <= 0.5 else (0.7 if vr <= 0.67 else (0.4 if vr <= 0.8 else 0.0))
+            details['量比'] = round(vr, 2)
+            details['首跌日'] = fd['date'].strftime('%m-%d')
+            details['首跌幅%'] = round(fd['pct_chg'], 1)
+        else:
+            # 高点后10天无阴线：回调未发生，首跌缩量不成立
+            scores['❷缩量'] = 0.0
+            details['量比'] = 0.0
+            details['首跌日'] = '无阴线'
+    else:
+        scores['❷缩量'] = 0.0
+        details['量比'] = 0.0
 
     # ❸ 凹底地量
     if high_idx + 5 < len(df):
@@ -473,7 +493,7 @@ def fine_scan(csv_path, source='auto'):
 # ── main ──────────────────────────────────────────────────
 
 def main():
-    p = argparse.ArgumentParser(description='凹口淘金扫描器 v3.0（通达信本地数据源）')
+    p = argparse.ArgumentParser(description='凹口淘金扫描器 v3.1（通达信本地数据源）')
     p.add_argument('--mode', choices=['coarse','fine','full'], default='full')
     p.add_argument('--days', type=int, default=60)
     p.add_argument('--input', default=COARSE_OUT)
