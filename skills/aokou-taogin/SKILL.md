@@ -64,13 +64,21 @@ description: |
 
 ## 目标筛选流程
 
+> **数据源（v3.0，2026-08-05 优化）**：
+> - ✅ **K线**：通达信本地 `.day` 文件（`~/tdx/vipdoc/`），全市场 ~5000 只本地秒级读取，无需网络
+> - ✅ **股票池/名称**：本地缓存 JSON（`scripts/cache/stock_names.json`，首次 akshare 拉取后离线可用）
+> - ✅ **粗筛**：全市场并行扫描（不随机采样、不遗漏标的），过滤 ST/退市/次新
+> - ✅ **精筛**：本地 `.day` 六级评分，8 线程并行
+> - ✅ **fallback**：本地数据缺失时自动降级 akshare (Sina源)
+> - 🚀 全市场 full 扫描约 45 秒完成（旧版 akshare 随机采样需十几分钟）
+
 ### Step 1 — 粗筛候选池
 
 ```bash
 python3 skills/aokou-taogin/scripts/scan_aokou.py --mode coarse --days 60
+# 调试参数: --limit 500（只扫前500只）| --source akshare（强制网络源）
+# 输出: /tmp/aokou_coarse.csv
 ```
-
-粗筛条件：
 - 近60天内有涨停记录（涨幅≥9.5%）
 - 涨停后出现过缩量回调（回调期量柱 ≤ 前20日均量2/3）
 - 当前价格处于回调后的相对低位或刚反弹
@@ -82,6 +90,8 @@ python3 skills/aokou-taogin/scripts/scan_aokou.py --mode coarse --days 60
 ```bash
 python3 skills/aokou-taogin/scripts/scan_aokou.py --mode fine --input /tmp/aokou_coarse.csv
 ```
+
+> 注：v3.0 粗筛输出已含条件说明（CSV 头注释），精筛直接读取本地 .day 评分，无网络请求。
 
 对每只候选股逐项打分（六级条件每项 0-1分，满分 6分）：
 

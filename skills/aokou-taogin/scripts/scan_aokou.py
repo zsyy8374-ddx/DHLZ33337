@@ -1,16 +1,25 @@
 #!/usr/bin/env python3
 """
-凹口淘金形态扫描器 v2.1
-使用 akshare (Sina数据源) 避免东方财富API封锁
+凹口淘金形态扫描器 v3.0 — 数据源优化版
+========================================
+v3.0 数据源升级（2026-08-05）：
+  ✅ K线: 通达信本地 .day 文件（~5000只全市场秒级读取，无需网络）
+  ✅ 股票池/名称: 本地缓存 JSON（首用 akshare 拉一次，之后离线可用）
+  ✅ 粗筛: 全市场并行扫描（不再随机采样，不遗漏标的）
+  ✅ 精筛: 本地 .day 六级评分（不再逐只网络拉K线）
+  ✅ fallback: 本地数据不可用时自动降级 akshare (Sina源)
 
 用法:
-  python3 scan_aokou.py --mode coarse --days 60 --max-samples 100
+  python3 scan_aokou.py --mode coarse --days 60
   python3 scan_aokou.py --mode fine --input /tmp/aokou_coarse.csv
   python3 scan_aokou.py --mode full --days 60
+  python3 scan_aokou.py --mode coarse --limit 500    # 调试：只扫前500只
+  python3 scan_aokou.py --mode coarse --source akshare  # 强制用网络源
 """
 
-import argparse, json, os, sys, time, random
+import argparse, json, os, sys, time, struct, random
 from datetime import datetime, timedelta
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 try:
     import pandas as pd
@@ -18,35 +27,90 @@ try:
 except ImportError:
     print("pip install pandas numpy"); sys.exit(1)
 
-try:
-    import akshare as ak
-except ImportError:
-    print("pip install akshare"); sys.exit(1)
+# ========= 配置 =========
+TDX_PATH = os.path.expanduser('~/tdx')
+NAME_CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cache', 'stock_names.json')
+os.makedirs(os.path.dirname(NAME_CACHE), exist_ok=True)
+COARSE_OUT = '/tmp/aokou_coarse.csv'
+RESULT_CSV = '/tmp/aokou_results.csv'
+RESULT_JSON = '/tmp/aokou_results.json'
 
+# ── 数据源1: 通达信本地 .day ──────────────────────────────
 
-# ── 数据 ──────────────────────────────────────────────────
-
-def get_stock_list():
-    """全A列表（去ST/退市/北交所/B股）"""
+def read_tdx_day(filepath):
+    """解析通达信.day文件（numpy批量加速），返回标准OHLCV DataFrame（含pct_chg）"""
     try:
+        with open(filepath, 'rb') as f:
+            data = np.frombuffer(f.read(), dtype=np.uint32).reshape(-1, 8)
+        dt = data[:, 0].astype(np.int64)
+        dates = pd.to_datetime(dt.astype(str), format='%Y%m%d')
+        df = pd.DataFrame({
+            'date': dates,
+            'open': data[:, 1]/100, 'high': data[:, 2]/100,
+            'low': data[:, 3]/100, 'close': data[:, 4]/100,
+            'volume': data[:, 6].astype(np.int64),
+        }).sort_values('date').reset_index(drop=True)
+        df['pct_chg'] = df['close'].pct_change() * 100
+        return df
+    except:
+        return None
+
+
+def get_all_a_stocks():
+    """扫描通达信本地所有A股 day 文件（排除指数/基金/北交所/B股）"""
+    stocks = []
+    for prefix in ('sh', 'sz'):
+        d = f'{TDX_PATH}/vipdoc/{prefix}/lday'
+        if not os.path.isdir(d): continue
+        for f in os.listdir(d):
+            if not f.endswith('.day') or len(f) not in (12, 13): continue
+            code = f[2:8]
+            if prefix == 'sh':
+                if not code.startswith('6'): continue          # 只要沪市A股
+            else:
+                if not code.startswith(('0', '3')): continue   # 只要深市A股(含创业板)
+            stocks.append({'code': code, 'file': f'{d}/{f}'})
+    return sorted(stocks, key=lambda x: x['code'])
+
+
+def is_bad_name(name):
+    """过滤 ST/退市/新股/次新（N/C开头）"""
+    if not name:
+        return False
+    return ('ST' in name.upper() or '退' in name or
+            name.startswith(('N', 'C', 'c')) or 'PT' in name.upper())
+
+
+def load_name_cache():
+    """股票名称缓存：本地JSON → akshare → 空"""
+    if os.path.exists(NAME_CACHE):
+        try:
+            with open(NAME_CACHE) as f:
+                return json.load(f)
+        except:
+            pass
+    names = {}
+    try:
+        import akshare as ak
         df = ak.stock_info_a_code_name()
-        # akshare返回列名可能是 'code'/'name' 或 '代码'/'名称'
         if 'code' in df.columns:
             df = df.rename(columns={'code': '代码', 'name': '名称'})
-    except:
-        df = ak.stock_zh_a_spot_em()
-        df = df[['代码', '名称']].copy()
+        for _, r in df.iterrows():
+            names[str(r['代码']).zfill(6)] = str(r['名称'])
+        with open(NAME_CACHE, 'w') as f:
+            json.dump(names, f, ensure_ascii=False)
+        print(f"  📇 名称缓存已生成: {len(names)}只 → {NAME_CACHE}")
+    except Exception as e:
+        print(f"  ⚠️ 名称缓存生成失败: {e}（将用代码代替名称）")
+    return names
 
-    df = df[~df['名称'].str.contains('ST|退|N|C', na=False)]
-    df = df[~df['代码'].str.startswith(('8', '4', '9'))]
-    codes = df['代码'].tolist()
-    names = df['名称'].tolist()
-    return list(zip(codes, names))
 
+# ── 数据源2: akshare fallback（本地数据不可用时）────────────
 
-def get_kline(code, days=120):
-    """获取个股K线（akshare Sina源）"""
+def get_kline_akshare(code, days=120):
+    """akshare Sina源K线（fallback）"""
     try:
+        import akshare as ak
         end = datetime.now().strftime('%Y%m%d')
         start = (datetime.now() - timedelta(days=days+30)).strftime('%Y%m%d')
         df = ak.stock_zh_a_hist(symbol=code, period='daily',
@@ -64,29 +128,76 @@ def get_kline(code, days=120):
         return None
 
 
-# ── 筛选 ──────────────────────────────────────────────────
+# ── 数据层统一入口 ────────────────────────────────────────
 
-def find_highs(df, days=60, threshold=5.0):
-    """找近期阶段高点（涨幅≥threshold%）"""
+class DataSource:
+    """数据源管理器：tdx本地(主) + akshare(fallback)"""
+    def __init__(self, source='auto'):
+        self.source = source
+        self.tdx_ok = os.path.isdir(f'{TDX_PATH}/vipdoc/sh/lday')
+        self.stocks = []
+        self.names = {}
+        if source == 'auto' and self.tdx_ok:
+            self.source = 'tdx'
+        elif source == 'auto':
+            self.source = 'akshare'
+        if self.source == 'tdx':
+            self.stocks = get_all_a_stocks()
+            self.names = load_name_cache()
+            print(f"  📡 数据源: 通达信本地 ({len(self.stocks)}只A股)")
+
+    def get_kline(self, code, days=120):
+        if self.source == 'tdx':
+            s = next((s for s in self.stocks if s['code'] == code), None)
+            if s:
+                df = read_tdx_day(s['file'])
+                if df is not None and len(df) > 30:
+                    return df.tail(days + 60).reset_index(drop=True)
+            return None
+        else:
+            return get_kline_akshare(code, days=days)
+
+    def name_of(self, code):
+        if self.source == 'tdx':
+            return self.names.get(code, code)
+        # akshare模式：动态拉列表
+        return dict(get_stock_list_akshare()).get(code, code)
+
+
+def get_stock_list_akshare():
+    """akshare全A列表（fallback用）"""
+    try:
+        import akshare as ak
+        df = ak.stock_info_a_code_name()
+        if 'code' in df.columns:
+            df = df.rename(columns={'code': '代码', 'name': '名称'})
+        df = df[~df['名称'].str.contains('ST|退|N|C', na=False)]
+        df = df[~df['代码'].str.startswith(('8', '4', '9'))]
+        return list(zip(df['代码'].tolist(), df['名称'].tolist()))
+    except:
+        return []
+
+
+# ── 形态判断 ──────────────────────────────────────────────
+
+def find_highs(df, days=60, threshold=9.5):
+    """找近期涨停日（涨幅≥threshold，默认9.5%覆盖10cm/20cm涨停）"""
     recent = df.tail(days)
     return recent[recent['pct_chg'] >= threshold].index.tolist()
 
 
 def check_pullback(df, high_idx):
-    """检查高点后缩量回调"""
+    """检查涨停后缩量回调（量柱 ≤ 前20日均量2/3，回调≥5%）"""
     if high_idx >= len(df) - 10:
         return None
-
     post = df.iloc[high_idx+1:high_idx+31]
     if len(post) < 5:
         return None
-
     high_price = df.iloc[high_idx]['close']
     low_price = post['close'].min()
     pullback = (high_price - low_price) / high_price * 100
     if pullback < 5:
         return None
-
     ma20 = df['volume'].rolling(20).mean()
     if high_idx >= 20 and pd.notna(ma20.iloc[high_idx]):
         ratio = post['volume'].mean() / ma20.iloc[high_idx]
@@ -104,57 +215,92 @@ def check_pullback(df, high_idx):
     return None
 
 
-# ── 粗筛 ──────────────────────────────────────────────────
+def scan_one(ds, code, days):
+    """单只股票粗筛"""
+    df = ds.get_kline(code, days=days)
+    if df is None or len(df) < 30:
+        return None
+    for hi in find_highs(df, days=days):
+        r = check_pullback(df, hi)
+        if r:
+            return {
+                '代码': code, '名称': ds.name_of(code),
+                '高点日期': r['high_date'].strftime('%Y-%m-%d'),
+                '高点涨幅': round(r['high_pct'], 1),
+                '高点价': r['high_price'],
+                '回调最低': r['low_price'],
+                '回调幅度%': r['pullback'],
+                '缩量比': r['vol_ratio'],
+                '当前价': r['current'],
+            }
+    return None
 
-def coarse_scan(days=60, max_samples=200):
-    print(f"🔍 凹口淘金粗筛（{days}天回溯, 最多{max_samples}只）")
 
-    all_stocks = get_stock_list()
-    total = len(all_stocks)
-    print(f"  A股总数: {total}")
+# ── 粗筛（全市场并行）─────────────────────────────────────
 
-    # 采样（优先采样有换手率的中等市值，这里简单随机采样）
-    if total > max_samples:
-        random.seed(42)
-        samples = random.sample(all_stocks, max_samples)
+def coarse_scan(days=60, max_samples=0, limit=0, source='auto'):
+    ds = DataSource(source)
+    t0 = time.time()
+    print(f"🔍 凹口淘金粗筛 v3.0（{days}天回溯）")
+
+    if ds.source == 'tdx':
+        stocks = ds.stocks
+        if ds.names:  # 名称缓存可用时才过滤（缓存空=拉取失败，不误杀）
+            stocks = [s for s in stocks
+                      if ds.names.get(s['code'], '') and not is_bad_name(ds.names[s['code']])]
+        if limit > 0:
+            stocks = stocks[:limit]
+        print(f"  全市场扫描: {len(stocks)} 只（已过滤ST/退市/次新）")
+        candidates = []
+        with ThreadPoolExecutor(max_workers=16) as ex:
+            futs = {ex.submit(scan_one, ds, s['code'], days): s['code'] for s in stocks}
+            done = 0
+            for fut in as_completed(futs):
+                done += 1
+                r = fut.result()
+                if r:
+                    candidates.append(r)
+                if done % 1000 == 0:
+                    print(f"  进度: {done}/{len(stocks)} | 候选:{len(candidates)} | {time.time()-t0:.0f}s", flush=True)
     else:
-        samples = all_stocks
+        # akshare fallback（原逻辑：随机采样）
+        all_stocks = get_stock_list_akshare()
+        total = len(all_stocks)
+        print(f"  A股总数: {total}（akshare fallback）")
+        samples = all_stocks[:max_samples] if max_samples > 0 else all_stocks
+        if max_samples > 0 and total > max_samples:
+            random.seed(42)
+            samples = random.sample(all_stocks, max_samples)
+        print(f"  采样: {len(samples)} 只")
+        candidates = []
+        for i, (code, name) in enumerate(samples):
+            df = get_kline_akshare(code, days=days)
+            if df is None:
+                continue
+            for hi in find_highs(df, days=days):
+                r = check_pullback(df, hi)
+                if r:
+                    candidates.append({
+                        '代码': code, '名称': name,
+                        '高点日期': r['high_date'].strftime('%Y-%m-%d'),
+                        '高点涨幅': round(r['high_pct'], 1),
+                        '高点价': r['high_price'],
+                        '回调最低': r['low_price'],
+                        '回调幅度%': r['pullback'],
+                        '缩量比': r['vol_ratio'],
+                        '当前价': r['current'],
+                    })
+                    break
+            if (i+1) % 50 == 0:
+                print(f"  进度: {i+1}/{len(samples)} ({len(candidates)}候选)")
+            time.sleep(0.12)
 
-    print(f"  采样: {len(samples)} 只")
+    print(f"✅ 粗筛完成: {len(candidates)} 候选 | 耗时 {time.time()-t0:.1f}s")
 
-    candidates = []
-    for i, (code, name) in enumerate(samples):
-        df = get_kline(code, days=days)
-        if df is None:
-            continue
-
-        for hi in find_highs(df, days=days):
-            r = check_pullback(df, hi)
-            if r:
-                candidates.append({
-                    '代码': code, '名称': name,
-                    '高点日期': r['high_date'].strftime('%Y-%m-%d'),
-                    '高点涨幅': round(r['high_pct'], 1),
-                    '高点价': r['high_price'],
-                    '回调最低': r['low_price'],
-                    '回调幅度%': r['pullback'],
-                    '缩量比': r['vol_ratio'],
-                    '当前价': r['current'],
-                })
-                break
-
-        if (i+1) % 50 == 0:
-            print(f"  进度: {i+1}/{len(samples)} ({len(candidates)}候选)")
-
-        time.sleep(0.12)
-
-    print(f"✅ 粗筛: {len(candidates)} 候选")
-
-    out = '/tmp/aokou_coarse.csv'
     if candidates:
         df_out = pd.DataFrame(candidates).sort_values('回调幅度%', ascending=False)
-        df_out.to_csv(out, index=False, encoding='utf-8-sig')
-        print(f"📁 {out}")
+        df_out.to_csv(COARSE_OUT, index=False, encoding='utf-8-sig')
+        print(f"📁 {COARSE_OUT}")
         print("\n📊 TOP 10:")
         for i, c in enumerate(candidates[:10]):
             print(f"  {i+1}. {c['代码']} {c['名称']} | +{c['高点涨幅']}%→回调{c['回调幅度%']}% | 缩量{c['缩量比']}x")
@@ -164,7 +310,7 @@ def coarse_scan(days=60, max_samples=200):
     return candidates
 
 
-# ── 精筛 ──────────────────────────────────────────────────
+# ── 精筛（本地 .day 六级评分）─────────────────────────────
 
 def score_aokou(df, high_idx):
     scores = {}
@@ -244,32 +390,36 @@ def score_aokou(df, high_idx):
     }
 
 
-def fine_scan(csv_path):
-    print(f"🔬 精筛: {csv_path}")
+def fine_scan(csv_path, source='auto'):
+    ds = DataSource(source)
+    t0 = time.time()
+    print(f"🔬 精筛 v3.0: {csv_path}")
     if not os.path.exists(csv_path):
         print(f"❌ 不存在"); return []
 
     df_in = pd.read_csv(csv_path)
     results = []
 
-    for i, (_, row) in enumerate(df_in.iterrows()):
+    def fine_one(row):
         code = str(row['代码']).zfill(6)
-        name = row['名称']
-        df = get_kline(code, days=120)
+        name = row.get('名称', ds.name_of(code))
+        df = ds.get_kline(code, days=120)
         if df is None:
-            continue
-
+            return None
         hd = row.get('高点日期', '')
+        hi = None
         if hd:
-            m = df[df['date'] == pd.to_datetime(hd)]
-            hi = m.index[0] if not m.empty else (find_highs(df)[-1] if find_highs(df) else None)
-        else:
+            try:
+                m = df[df['date'] == pd.to_datetime(hd)]
+                if not m.empty:
+                    hi = m.index[0]
+            except:
+                pass
+        if hi is None:
             hl = find_highs(df)
             hi = hl[-1] if hl else None
-
         if hi is None:
-            continue
-
+            return None
         sc = score_aokou(df, hi)
         r = {
             '代码': code, '名称': name,
@@ -279,25 +429,32 @@ def fine_scan(csv_path):
         }
         for k, v in json.loads(sc['评分明细']).items():
             r[k] = v
-        results.append(r)
-        time.sleep(0.15)
+        return r
+
+    with ThreadPoolExecutor(max_workers=8) as ex:
+        futs = [ex.submit(fine_one, row) for _, row in df_in.iterrows()]
+        for fut in as_completed(futs):
+            r = fut.result()
+            if r:
+                results.append(r)
 
     results.sort(key=lambda x: x['总评分'], reverse=True)
 
     sc = sum(1 for r in results if 'S' in r.get('等级',''))
     ac = sum(1 for r in results if 'A' in r.get('等级',''))
     bc = sum(1 for r in results if 'B' in r.get('等级',''))
-    print(f"✅ S:{sc} A:{ac} B:{bc}")
+    print(f"✅ 精筛完成: S:{sc} A:{ac} B:{bc} | 耗时 {time.time()-t0:.1f}s")
 
-    out_csv = '/tmp/aokou_results.csv'
-    out_json = '/tmp/aokou_results.json'
     cols = ['代码','名称','总评分','等级','凹口类型','高点日期','高点涨幅','当前价','回调幅度%',
             '❶凹陷','❷缩量','❸地量','❹黄金柱','❺换挡','❻保顶']
-    avail = [c for c in cols if c in pd.DataFrame(results).columns]
-    pd.DataFrame(results)[avail].to_csv(out_csv, index=False, encoding='utf-8-sig')
-    with open(out_json, 'w') as f:
+    out_df = pd.DataFrame(results)
+    if '代码' in out_df.columns:
+        out_df['代码'] = out_df['代码'].astype(str).str.zfill(6)
+    avail = [c for c in cols if c in out_df.columns]
+    out_df[avail].to_csv(RESULT_CSV, index=False, encoding='utf-8-sig')
+    with open(RESULT_JSON, 'w') as f:
         json.dump(results, f, ensure_ascii=False, indent=2, default=str)
-    print(f"📁 {out_csv} / {out_json}")
+    print(f"📁 {RESULT_CSV} / {RESULT_JSON}")
 
     print("\n" + "="*55)
     print("📐 凹口淘金结果")
@@ -316,20 +473,23 @@ def fine_scan(csv_path):
 # ── main ──────────────────────────────────────────────────
 
 def main():
-    p = argparse.ArgumentParser(description='凹口淘金扫描器 v2.1')
+    p = argparse.ArgumentParser(description='凹口淘金扫描器 v3.0（通达信本地数据源）')
     p.add_argument('--mode', choices=['coarse','fine','full'], default='full')
     p.add_argument('--days', type=int, default=60)
-    p.add_argument('--input', default='/tmp/aokou_coarse.csv')
-    p.add_argument('--max-samples', type=int, default=100)
+    p.add_argument('--input', default=COARSE_OUT)
+    p.add_argument('--max-samples', type=int, default=0, help='akshare模式采样上限(0=全部)')
+    p.add_argument('--limit', type=int, default=0, help='调试：只扫前N只(本地模式)')
+    p.add_argument('--source', choices=['auto','tdx','akshare'], default='auto')
     args = p.parse_args()
 
     if args.mode in ('coarse','full'):
-        c = coarse_scan(days=args.days, max_samples=args.max_samples)
+        c = coarse_scan(days=args.days, max_samples=args.max_samples,
+                        limit=args.limit, source=args.source)
         if args.mode == 'coarse' or not c:
             return
 
     if args.mode in ('fine','full'):
-        fine_scan(args.input)
+        fine_scan(args.input, source=args.source)
 
 
 if __name__ == '__main__':
